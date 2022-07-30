@@ -1,0 +1,17 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "CSCI-0145"
+  chapters:
+   - index.qmd 
+   - schedule.qmd
+
+
+format:
+  html:
+    theme: [flatly, custom.scss]
+    css: styles.css
+    toc: true
+    number-depth: 0

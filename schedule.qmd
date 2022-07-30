@@ -1,0 +1,7 @@
+---
+listing: 
+  contents: schedule.yml
+  template: schedule.ejs
+---
+
+# Course Schedule {.unnumbered}

@@ -1,0 +1,74 @@
+- date: 2022-09-12
+  day: 1
+  header: | 
+    Welcome to CSCI 0145!
+  summary: |
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis!   
+  reading:
+    - <a href="index.qmd">index</a>
+  module: Introduction
+  assigned: 
+    - <a href="index.qmd">some assignments</a>
+  due: 
+    - <a href="index.qmd">some other assignments</a> 
+- date: 2022-09-14
+  day: 2
+  header: | 
+    Thinking Algorithmically
+  summary: |
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! 
+  reading:
+    - <a href="index.qmd">different</a>
+    - <a href="index.qmd">different</a>
+    - <a href="index.qmd">different</a>
+  module: Introduction
+  assigned: 
+  due: 
+    - <a href="index.qmd">some other assignments</a> 
+- date: 2022-09-15
+  header: | 
+    Exercise: Making Decisions
+  summary: |
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! 
+  reading:
+    - <a href="index.qmd">different</a>
+    - <a href="index.qmd">different</a>
+    - <a href="index.qmd">different</a>
+  module: Introduction
+  assigned: 
+  due: 
+    - <a href="index.qmd">some other assignments</a> 
+- date: 2022-09-16
+  header: | 
+    Lab: Programming as Decision-Making 
+  summary: |
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! 
+  reading:
+    - <a href="index.qmd">index</a>
+  module: Introduction
+  assigned: 
+    - <a href="index.qmd">some assignments</a>
+  due: 
+    - <a href="index.qmd">some other assignments</a> 
+- date: 2022-09-19
+  day: 4
+  header: | 
+    Welcome to CSCI 0145!
+  summary: |
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! 
+  reading:
+    - <a href="index.qmd">index</a>
+  assigned: 
+    - <a href="index.qmd">some assignments</a>
+  module: Algorithmic Thinking 
+- date: 2022-09-21
+  day: 5
+  header: | 
+    Welcome to CSCI 0145!
+  summary: |
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! 
+  module: Something Else
+  assigned: 
+    - <a href="index.qmd">some assignments</a>
+  due: 
+    - <a href="index.qmd">some other assignments</a> 
