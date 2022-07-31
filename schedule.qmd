@@ -2,6 +2,7 @@
 listing: 
   contents: schedule.yml
   template: schedule.ejs
+toc: false
 ---
 
 # Course Schedule {.unnumbered}

@@ -3,15 +3,19 @@ project:
   output-dir: docs
 
 book:
-  title: "CSCI-0145"
+  title: "<b>Introduction to Computing</b><br>CSCI 0145"
   chapters:
-   - index.qmd 
+   - text: Welcome!
+     href: index.qmd 
+   - syllabus.qmd
    - schedule.qmd
+   - acknowledgements.qmd
+  favicon: assets/img/icons/favicon.png
 
 
 format:
   html:
-    theme: [flatly, custom.scss]
+    theme: [cosmo, custom.scss]
     css: styles.css
     toc: true
     number-depth: 0

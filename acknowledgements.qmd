@@ -1,0 +1,5 @@
+# Acknowledgements {.unnumbered}
+
+- The design of the [course schedule](schedule.qmd) page is heavily inspired by [Dr. Nicole Eikmeier](https://eikmeier.sites.grinnell.edu/)'s [schedule for CS 151](https://eikmeier.sites.grinnell.edu/csc-151-s221/schedule/) at Grinnell College.
+- The due date adjustment policy and form is heavily inspired by [a tweet](https://twitter.com/siwelwerd/status/1424826930952560640) from Dr. Drew Lewis. 
+

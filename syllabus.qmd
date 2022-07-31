@@ -1,0 +1,228 @@
+# Syllabus {.unnumbered}
+
+
+### Learning Objectives
+
+A learning objective is a primary goal for your achievement at the end of the course. The purpose of graded assignments is to help both you and me keep track of your progress toward these objectives. We have six learning objectives in CSCI 0145. 
+
+<table>
+    <tr>
+        <td class="syllabus-description-table-header">
+            <b>Computational Thinking</b>
+        </td>
+        <td class="syllabus-description-table-entry">
+            You will describe and use computational tools including functions, iteration, data structures, control flow, recursion, and objects. 
+        </td>
+    </tr>
+    <tr>
+        <td class="syllabus-description-table-header">
+            <b>Programming</b>
+        </td>
+        <td class="syllabus-description-table-entry">
+            You will design, implement, document, and debug programs of medium complexity in the Python programming language. 
+        </td>
+    </tr>
+    <tr>
+        <td class="syllabus-description-table-header">
+            <b>Positionality and Collaboration</b>
+        </td>
+        <td class="syllabus-description-table-entry">
+            You will reflect on your identity as a computer scientist and how it informs your strengths when collaborating with others.  
+        </td>
+    </tr>
+    <tr>
+        <td class="syllabus-description-table-header">
+            <b>Ethical Reasoning</b>
+        </td>
+        <td class="syllabus-description-table-entry">
+            You will describe, analyze, and critique arguments related to the impact of computing on society, especially as it relates to ongoing forms of oppression, inequity, and injustice. 
+        </td>
+    </tr>
+    <tr>
+        <td class="syllabus-description-table-header">
+            <b>Analysis</b>
+        </td>
+        <td class="syllabus-description-table-entry">
+            You will use informal mathematical arguments to demonstrate the correctness and characterize the runtime of programs that involve iteration and recursion. 
+        </td>
+    </tr>
+    <tr>
+        <td class="syllabus-description-table-header">
+            <b>Applications</b>
+        </td>
+        <td class="syllabus-description-table-entry">
+            You will create complex programs to manipulate images and text. 
+        </td>
+    </tr>
+</table>
+
+## Logistics and Key
+
+<table>
+    <tr>
+        <td class="syllabus-description-table-header"> 
+            <b>Lecture Time and Location</b> 
+        </td> 
+        <td class="syllabus-description-table-entry"> 
+            Mondays, Wednesdays, and Fridays
+            <br>
+            75 Shannon Street, Room 224
+            <br>
+            Section A: 8:00am-8:50am
+            <br>
+            Section B: 9:05am-9:55am 
+        </td>
+    </tr>
+    <tr>
+        <td class="syllabus-description-table-header">
+             <b>Lab Time and Location</b> 
+        </td> 
+        <td class="syllabus-description-table-entry"> 
+            Thursdays 
+            <br> 
+            75 Shannon Street, Room 203 
+            <br> 
+            Section X: 8:00am - 9:15am
+            <br> 
+            Section Y: 9:30am - 10:45am
+            <br> 
+            Section Z: 11:00am - 12:15pm
+        </td>
+    </tr>
+    <tr>
+        <td class="syllabus-description-table-header"> 
+            <b>Instructor</b> 
+        </td> 
+        <td class="syllabus-description-table-entry"> 
+            Dr. [Phil Chodrow](www.philchodrow.com) <br> 
+            <table style="margin-bottom:0;"> 
+                <tr> 
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                    </td>
+                    <td>
+                        75 Shannon Street, Room 218 
+                    </td>
+                </tr>
+                <tr> 
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/></svg>
+                    </td>
+                    <td>
+                        [pchodrow@middlebury.edu](mailto:pchodrow@middlebury.edu), though please see email policy below. 
+                    </td>
+                </tr>
+                <tr> 
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/></svg>
+                    </td>
+                    <td>
+                        Student Hours 
+                        <ul style="margin-bottom:0;">
+                            <li> Mondays </li>
+                            <li> Mondays </li>
+                            <li> Mondays </li>
+                        </ul>
+                    </td>
+                </tr>   
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="syllabus-description-table-header">
+            <b> Important Policies </b>
+        </td>
+        <td class="syllabus-description-table-entry">
+            It's fine to address me as Phil, Prof. Phil, Professor Phil, or Professor Chodrow. 
+            <br> <br> 
+            Generally speaking, you should only email me if you need to talk about something personal or sensitive. Otherwise, please direct message me on [Slack](#slack).
+            <br> <br> 
+            I expect you to [prepare to ask for help](#help) when approaching me, your tutors, and your fellow students. 
+            <br> <br> 
+            Requests for extensions should be submitted through the [extension request form](https://forms.gle/VXJjYHMZ4U4EePEf7). 
+        </td>
+    </tr>
+</table>
+
+## Assessments
+
+The purpose of assessments is for both you and I to understand your progress towards the course's [learning objectives](#learning-objectives).
+
+
+## Course Tools
+
+### Thonny
+
+### Slack
+
+### Gradescope
+
+## Asking For Help {#help}
+
+Both I and your tutors like talking with you about the course content. Here's what you can do in order to make our conversations efficient and productive. 
+
+When asking me a question, you should usually expect me to start with a question of my own: 
+
+> What have you tried so far? 
+
+This question has two functions. First, it helps me understand where you are and how I can most effectively help you. Second, it reminds you to take steps to support your own independent learning prior to approaching me. Here are the steps that I expect you to follow in some of the most common cases: 
+
+**For conceptual questions**: 
+
+- Make a reasonable effort to review relevant readings ahead of time. 
+- Formulate your question in as precise and specific a way as you are able. 
+- If applicable, find an example that illustrates your question. 
+
+**For programming questions**: 
+
+- Formulate the task you are attempting to accomplish as precisely and specifically as possible. 
+- Write down a few concepts, functions, data structures, or other ideas that seem like they might be relevant in this problem. 
+- Get as far as you can on the problem using the tools available to you. Make sure you can carefully describe what you did and why it seems like progress toward the goal. 
+- Be prepared to explain approaches what you have already tried when speaking with me or a tutor. 
+
+**If you are debugging and encountering an error message**: 
+
+- ***Read your error message*** and do your best to understand what it means. 
+- If you're not sure how to interpret your error message in the context of your task, try Googling the message and reading some of the resulting answers. 
+- If you're still stuck, you can bring your error message to tutoring or to Student Hours. 
+
+**If you are debugging and not encountering an error message**: 
+
+- Make use of Thonny's debugger to step through your program. 
+- Identify the first point at which something is clearly wrong.
+- Develop at least one hypothesis about the source of the error, and test that hypothesis. 
+- If you're still stuck, you can bring your code to tutoring or to Student Hours. 
+
+
+## Beyond CSCI 0145
+
+
+### Advice and Letters of Recommendation 
+
+#### Advice 
+
+I am always happy to talk with you about your future plans, including internships, research opportunities, and graduate school applications. Because I am a creature of the academy, I am less knowledgeable about industry jobs, although you are welcome to ask about those too. 
+
+#### Letters of Recommendation 
+
+If you have completed a course with me or are currently enrolled, you are welcome to request a letter from me. If I feel that I am not able to write you a strong letter, I will tell you -- but if you still want a letter from me, I will still write it.
+
+Please keep in mind that I can write stronger letters for students whom I see more frequently, such as in lecture or office hours. If you’d like a letter, talking to me in these contexts, or scheduling another meeting time, is highly recommended.
+
+To request a letter, fill out [this request form](https://forms.gle/tL79wtFrfHC5Vspw7)! Please give me at least one month of advance notice when possible.
+
+#### When I Won't Write a Letter 
+
+As a matter of moral principle, I will not write letters of recommendation for programs or jobs involving any of the following:
+
+- Policing (including but not limited to predictive policing, development of algorithms that predict recidivism, etc.);
+- Military applications (such as internships at the Department of Defense or any of its international counterparts);
+- Weapons manufacturing, broadly construed;
+- Intelligence gathering (such as internships at the NSA, FBI, or any international counterpart).
+
+I am very happy to discuss this policy with any student who has questions. Conversations about when and how mathematics, data science, and programming should be used are lacking in our community. If you'd like to engage me in such a conversation, that would be great! However, this policy is non-negotiable. Therefore, if I refuse to write you a letter on these grounds, please know that it doesn't reflect on your ability to succeed in PIC16B, your career potential, your worth as a person, or whether I like you. 
+
+The [Just Mathematics Collective](https://www.justmathematicscollective.net/) has compiled a list of resources for students on making ethical career decisions, which is available [here](https://justmathematicscollective.net/career_resources.html). The text of this section is lightly modified from their [suggested text](https://www.justmathematicscollective.net/letter_writing.html) on letter-writing. 
+
+
+
