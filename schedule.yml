@@ -4,13 +4,16 @@
     Welcome to CSCI 0145!
   summary: |
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis!   
+  objectives: 
+    - Computational Thinking
+    - Positionality and Collaboration
   reading:
     - <a href="index.qmd">index</a>
   module: Introduction
   assigned: 
-    - <a href="index.qmd">some assignments</a>
+    - <a href="index.qmd">Lab 1</a> 
   due: 
-    - <a href="index.qmd">some other assignments</a> 
+    - <a href="index.qmd">Lab 1</a> 
 - date: 2022-09-14
   day: 2
   header: | 
@@ -24,7 +27,7 @@
   module: Introduction
   assigned: 
   due: 
-    - <a href="index.qmd">some other assignments</a> 
+    - <a href="index.qmd">Lab 1</a> 
 - date: 2022-09-15
   header: | 
     Exercise: Making Decisions
@@ -37,7 +40,7 @@
   module: Introduction
   assigned: 
   due: 
-    - <a href="index.qmd">some other assignments</a> 
+    - <a href="index.qmd">Lab 1</a> 
 - date: 2022-09-16
   header: | 
     Lab: Programming as Decision-Making 
@@ -47,9 +50,9 @@
     - <a href="index.qmd">index</a>
   module: Introduction
   assigned: 
-    - <a href="index.qmd">some assignments</a>
+    - <a href="index.qmd">Lab 1</a> 
   due: 
-    - <a href="index.qmd">some other assignments</a> 
+    - <a href="index.qmd">Lab 1</a> 
 - date: 2022-09-19
   day: 4
   header: | 
@@ -59,7 +62,7 @@
   reading:
     - <a href="index.qmd">index</a>
   assigned: 
-    - <a href="index.qmd">some assignments</a>
+    - <a href="index.qmd">Lab 1</a> 
   module: Algorithmic Thinking 
 - date: 2022-09-21
   day: 5
@@ -69,6 +72,6 @@
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! 
   module: Something Else
   assigned: 
-    - <a href="index.qmd">some assignments</a>
+    - <a href="index.qmd">Lab 1</a> 
   due: 
-    - <a href="index.qmd">some other assignments</a> 
+    - <a href="index.qmd">Lab 1</a> 

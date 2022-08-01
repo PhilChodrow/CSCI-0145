@@ -36,7 +36,15 @@
     </tr>
     <tr>
         <td></td>
-        <td class="smaller syllabus-item-bottom">
+        <td class="smaller syllabus-item-objective">
+            <% if (currentItem.objectives) { %>
+                <b>Learning Objectives</b><br>
+                <% for (obj of currentItem.objectives) { %>
+                        <%= obj %> <br> 
+                <% } %>  
+            <% } %>  
+        </td>
+        <td class="smaller syllabus-item-readings">
             <% if (currentItem.reading) { %>
                 <b>Reading</b><br>
                 <% for (read of currentItem.reading) { %>
@@ -44,7 +52,7 @@
                 <% } %>  
             <% } %>  
         </td>
-        <td class="smaller syllabus-item-bottom">
+        <td class="smaller syllabus-item-assignment">
             <% if (currentItem.assigned) { %>
                 <b>Assigned</b><br>
                 <% for (assigned of currentItem.assigned) { %>
@@ -52,7 +60,7 @@
                 <% } %>  
             <% } %>
         </td>
-        <td class="smaller syllabus-item-bottom">
+        <td class="smaller syllabus-item-assignment">
             <% if (currentItem.due) { %>
                 <b>Due</b><br>
                 <% for (due of currentItem.due) { %>

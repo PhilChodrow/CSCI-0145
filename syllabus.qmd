@@ -3,11 +3,13 @@
 
 ### Learning Objectives
 
-A learning objective is a primary goal for your achievement at the end of the course. The purpose of graded assignments is to help both you and me keep track of your progress toward these objectives. We have six learning objectives in CSCI 0145. 
+A learning objective is a primary goal for your achievement at the end of the course. By the end of this course, 
+
+The purpose of graded assignments is to help both you and me keep track of your progress toward these objectives. We have six learning objectives in CSCI 0145. 
 
 <table>
     <tr>
-        <td class="syllabus-description-table-header">
+        <td class="syllabus-description-learning-objective">      
             <b>Computational Thinking</b>
         </td>
         <td class="syllabus-description-table-entry">
@@ -15,15 +17,15 @@ A learning objective is a primary goal for your achievement at the end of the co
         </td>
     </tr>
     <tr>
-        <td class="syllabus-description-table-header">
+        <td class="syllabus-description-learning-objective">
             <b>Programming</b>
         </td>
         <td class="syllabus-description-table-entry">
-            You will design, implement, document, and debug programs of medium complexity in the Python programming language. 
+            You will design, implement, document, and debug programs of medium complexity in the Python programming language.  
         </td>
     </tr>
-    <tr>
-        <td class="syllabus-description-table-header">
+    <tr>   
+        <td class="syllabus-description-learning-objective">
             <b>Positionality and Collaboration</b>
         </td>
         <td class="syllabus-description-table-entry">
@@ -31,7 +33,7 @@ A learning objective is a primary goal for your achievement at the end of the co
         </td>
     </tr>
     <tr>
-        <td class="syllabus-description-table-header">
+        <td class="syllabus-description-learning-objective">
             <b>Ethical Reasoning</b>
         </td>
         <td class="syllabus-description-table-entry">
@@ -39,7 +41,7 @@ A learning objective is a primary goal for your achievement at the end of the co
         </td>
     </tr>
     <tr>
-        <td class="syllabus-description-table-header">
+        <td class="syllabus-description-learning-objective">
             <b>Analysis</b>
         </td>
         <td class="syllabus-description-table-entry">
@@ -47,7 +49,7 @@ A learning objective is a primary goal for your achievement at the end of the co
         </td>
     </tr>
     <tr>
-        <td class="syllabus-description-table-header">
+        <td class="syllabus-description-learning-objective">
             <b>Applications</b>
         </td>
         <td class="syllabus-description-table-entry">
