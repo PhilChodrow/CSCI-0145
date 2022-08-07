@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>index</title>
+<title>assignments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,6 +26,8 @@ ul.task-list{list-style: none;}
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./assets/img/icons/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -54,7 +56,65 @@ ul.task-list{list-style: none;}
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-labs .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-summary',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-labs'] = new List('listing-labs', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-discovery .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-summary',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-discovery'] = new List('listing-discovery', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -90,7 +150,7 @@ ul.task-list{list-style: none;}
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Welcome!</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome!</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -150,7 +210,7 @@ ul.task-list{list-style: none;}
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./assignments.html" class="sidebar-item-text sidebar-link">Assignments</a>
+  <a href="./assignments.html" class="sidebar-item-text sidebar-link active">Assignments</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -167,7 +227,12 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#instructor" id="toc-instructor" class="nav-link active" data-scroll-target="#instructor">Instructor</a></li>
+  <li><a href="#index-of-assignments" id="toc-index-of-assignments" class="nav-link active" data-scroll-target="#index-of-assignments">Index of Assignments</a>
+  <ul class="collapse">
+  <li><a href="#labs" id="toc-labs" class="nav-link" data-scroll-target="#labs">Labs</a></li>
+  <li><a href="#guided-discovery" id="toc-guided-discovery" class="nav-link" data-scroll-target="#guided-discovery">Guided Discovery</a></li>
+  <li><a href="#homework-exercises" id="toc-homework-exercises" class="nav-link" data-scroll-target="#homework-exercises">Homework Exercises</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -176,19 +241,99 @@ ul.task-list{list-style: none;}
 
 
 
-<section id="welcome" class="level2 unnumbered unlisted">
-<h2 class="unnumbered unlisted anchored" data-anchor-id="welcome">Welcome!</h2>
-<p>CSCI 0145, “Introduction to Computing,” is an introductory course in computer science at Middlebury College. It is one of several ways in which you might begin a computer science major at Midd. It’s also a great way for you to develop your computational skills to support other majors.</p>
-<p>The primary aim of CSCI 0145 is to help you build strong foundations in computational thinking and programming skills. We will cover a fair amount of the Python programming language. That said, our primary focus will be on reasoning, program design, and implementation principles rather than the details of Python programming.</p>
+<section id="index-of-assignments" class="level1 unnumbered">
+<h1 class="unnumbered">Index of Assignments</h1>
+<section id="labs" class="level2">
+<h2 class="anchored" data-anchor-id="labs">Labs</h2>
+<div id="listing-labs" class="quarto-listing quarto-listing-container-table">
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Title
+</th>
+<th>
+summary
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1659900761615" data-listing-reading-time-sort="0.035" data-listing-title-sort="Designing Simple Programs" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./labs/prelims/index.html" class="title">Designing Simple Programs</a>
+</td>
+<td class="listing-summary">
+</td>
+</tr>
+<tr data-index="1" data-listing-file-modified-sort="1659900719997" data-listing-reading-time-sort="0.035" data-listing-title-sort="Functions" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./labs/functions/index.html" class="title">Functions</a>
+</td>
+<td class="listing-summary">
+We work with functions!
+</td>
+</tr>
+<tr data-index="2" data-listing-file-modified-sort="1659901174592" data-listing-reading-time-sort="0.075" data-listing-title-sort="Developers as Decision-Makers" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./labs/decision-making/index.html" class="title">Developers as Decision-Makers</a>
+</td>
+<td class="listing-summary">
+Some stuff we do.
+</td>
+</tr>
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 </section>
-<section id="instructor" class="level2">
-<h2 class="anchored" data-anchor-id="instructor">Instructor</h2>
-<p><img src="assets/img/sitting-cropped.png" class="img-responsive img-profile" alt="Phil Chodrow seated on a bench, smiling leaning towards the viewer."></p>
-<p>Hello! I’m Dr.&nbsp;<a href="www.philchodrow.com">Phil Chodrow</a>, and I’ll be your instructor for this course. My pronouns are <strong><em>he/him/his</em></strong>.</p>
-<p><a href="https://www.philchodrow.com/research">My research</a> focuses on <a href="https://en.wikipedia.org/wiki/Network_science">network science</a>, the study of connected systems in society and nature. I draw on methods from applied mathematics, machine learning, statistics, and physics. I also work on data science projects to promote equity and sustainability.</p>
-<p>I love ethical data science, effective teaching, <em>Star Trek: Deep Space 9</em>, cool math, cooking, tea, traditional martial arts, and Studio Ghibli movies.</p>
+<section id="guided-discovery" class="level2">
+<h2 class="anchored" data-anchor-id="guided-discovery">Guided Discovery</h2>
+<div id="listing-discovery" class="quarto-listing quarto-listing-container-table">
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Title
+</th>
+<th>
+summary
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1659904289234" data-listing-reading-time-sort="0.025" data-listing-title-sort="Strings" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./guided-discovery/strings-1/index.html" class="title">Strings</a>
+</td>
+<td class="listing-summary">
+</td>
+</tr>
+<tr data-index="1" data-listing-file-modified-sort="1659904397726" data-listing-reading-time-sort="0.005" data-listing-title-sort="Guided Discovery: Practice With Functions" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./guided-discovery/functions/index.html" class="title">Guided Discovery: Practice With Functions</a>
+</td>
+<td class="listing-summary">
+</td>
+</tr>
+</tbody>
+
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="homework-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="homework-exercises">Homework Exercises</h2>
 
 
+
+</section>
 </section>
 
 </main> <!-- /main -->

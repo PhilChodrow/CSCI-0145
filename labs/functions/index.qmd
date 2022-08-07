@@ -1,0 +1,8 @@
+---
+title: "Functions" 
+author: Phil Chodrow
+summary: "We work with functions!"
+order: 2
+---
+
+There is some stuff in here! 

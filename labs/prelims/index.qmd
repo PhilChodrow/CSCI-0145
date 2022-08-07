@@ -1,0 +1,12 @@
+---
+title: "Designing Simple Programs" 
+summary: ""
+order: 1
+objectives: |
+    <ul>
+        <li> first </li>
+        <li> second </li>
+    </ul>
+---
+
+There is some stuff in here! 

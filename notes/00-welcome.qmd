@@ -1,0 +1,6 @@
+---
+title: Welcome to CSCI 0145!
+toc: true
+---
+
+Read the syllabus, y'all! 

@@ -1,0 +1,33 @@
+---
+listing: 
+  - id: labs
+    contents: labs
+    sort-ui: false
+    filter-ui: false
+    type: table
+    fields: [title, summary]
+    sort: "order"
+  - id: discovery
+    contents: guided-discovery
+    sort-ui: false
+    filter-ui: false
+    type: table
+    fields: [title, summary]
+    sort: "order"
+---
+  
+
+
+# Index of Assignments {.unnumbered}
+
+## Labs
+
+:::{#labs}
+:::
+
+## Guided Discovery
+
+:::{#discovery}
+:::
+
+## Homework Exercises

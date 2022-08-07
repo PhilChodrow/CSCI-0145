@@ -1,72 +1,107 @@
 [
   {
+    "objectID": "labs/decision-making/index.html",
+    "href": "labs/decision-making/index.html",
+    "title": "Developers as Decision-Makers",
+    "section": "",
+    "text": "This lab is a modified version of an activity created by Evan Peck."
+  },
+  {
+    "objectID": "labs/prelims/index.html",
+    "href": "labs/prelims/index.html",
+    "title": "Designing Simple Programs",
+    "section": "",
+    "text": "There is some stuff in here!"
+  },
+  {
+    "objectID": "labs/functions/index.html",
+    "href": "labs/functions/index.html",
+    "title": "Functions",
+    "section": "",
+    "text": "There is some stuff in here!"
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "",
+    "section": "",
+    "text": "Title\n\n\nsummary\n\n\n\n\n\n\nDesigning Simple Programs\n\n\n\n\n\n\nFunctions\n\n\nWe work with functions!\n\n\n\n\nDevelopers as Decision-Makers\n\n\nSome stuff we do.\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n\n\n\n\n\n\nTitle\n\n\nsummary\n\n\n\n\n\n\nStrings\n\n\n\n\n\n\nGuided Discovery: Practice With Functions\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "acknowledgements.html",
+    "href": "acknowledgements.html",
+    "title": "",
+    "section": "",
+    "text": "The design of the course schedule page is heavily inspired by Dr. Nicole Eikmeier’s schedule for CS 151 at Grinnell College.\nThe due date adjustment policy and form is heavily inspired by a tweet from Dr. Drew Lewis."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Introduction to ComputingCSCI 0145",
+    "title": "",
     "section": "",
     "text": "CSCI 0145, “Introduction to Computing,” is an introductory course in computer science at Middlebury College. It is one of several ways in which you might begin a computer science major at Midd. It’s also a great way for you to develop your computational skills to support other majors.\nThe primary aim of CSCI 0145 is to help you build strong foundations in computational thinking and programming skills. We will cover a fair amount of the Python programming language. That said, our primary focus will be on reasoning, program design, and implementation principles rather than the details of Python programming."
   },
   {
     "objectID": "index.html#instructor",
     "href": "index.html#instructor",
-    "title": "Introduction to ComputingCSCI 0145",
+    "title": "",
     "section": "Instructor",
     "text": "Instructor\n\nHello! I’m Dr. Phil Chodrow, and I’ll be your instructor for this course. My pronouns are he/him/his.\nMy research focuses on network science, the study of connected systems in society and nature. I draw on methods from applied mathematics, machine learning, statistics, and physics. I also work on data science projects to promote equity and sustainability.\nI love ethical data science, effective teaching, Star Trek: Deep Space 9, cool math, cooking, tea, traditional martial arts, and Studio Ghibli movies."
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "notes/01-expressions-and-variables.html",
+    "href": "notes/01-expressions-and-variables.html",
+    "title": "Expressions and Variables",
+    "section": "",
+    "text": "Some good stuff will go here!"
+  },
+  {
+    "objectID": "notes/00-welcome.html",
+    "href": "notes/00-welcome.html",
+    "title": "Welcome to CSCI 0145!",
+    "section": "",
+    "text": "Read the syllabus, y’all!"
+  },
+  {
+    "objectID": "notes/preface.html",
+    "href": "notes/preface.html",
+    "title": "Lecture Notes",
+    "section": "",
+    "text": "These lecture notes draw heavily on notes produced by Philip Caplan and Andrea Vaccari at Middlebury."
+  },
+  {
+    "objectID": "notes/10-functions.html#second-part",
+    "href": "notes/10-functions.html#second-part",
+    "title": "Functions",
+    "section": "More Functions",
+    "text": "More Functions"
+  },
+  {
+    "objectID": "guided-discovery/strings-1/index.html",
+    "href": "guided-discovery/strings-1/index.html",
+    "title": "Strings",
+    "section": "",
+    "text": "here is some content?"
+  },
+  {
     "objectID": "syllabus.html",
     "href": "syllabus.html",
-    "title": "Syllabus",
+    "title": "",
     "section": "",
-    "text": "A learning objective is a primary goal for your achievement at the end of the course. By the end of this course,\nThe purpose of graded assignments is to help both you and me keep track of your progress toward these objectives. We have six learning objectives in CSCI 0145.\n\n\n\n\nComputational Thinking\n\n\n\nYou will describe and use computational tools including functions, iteration, data structures, control flow, recursion, and objects.\n\n\n\n\nProgramming\n\n\n\nYou will design, implement, document, and debug programs of medium complexity in the Python programming language.\n\n\n\n\n\nPositionality and Collaboration\n\n\n\nYou will reflect on your identity as a computer scientist and how it informs your strengths when collaborating with others.\n\n\n\n\n\nEthical Reasoning\n\n\n\nYou will describe, analyze, and critique arguments related to the impact of computing on society, especially as it relates to ongoing forms of oppression, inequity, and injustice.\n\n\n\n\nAnalysis\n\n\n\nYou will use informal mathematical arguments to demonstrate the correctness and characterize the runtime of programs that involve iteration and recursion.\n\n\n\n\nApplications\n\n\n\nYou will create complex programs to manipulate images and text."
-  },
-  {
-    "objectID": "syllabus.html#logistics-and-key",
-    "href": "syllabus.html#logistics-and-key",
-    "title": "Syllabus",
-    "section": "Logistics and Key",
-    "text": "Logistics and Key\n\n\n\n\n\nLecture Time and Location\n\n\n\nMondays, Wednesdays, and Fridays  75 Shannon Street, Room 224  Section A: 8:00am-8:50am  Section B: 9:05am-9:55am\n\n\n\n\n\nLab Time and Location\n\n\n\nThursdays  75 Shannon Street, Room 203  Section X: 8:00am - 9:15am  Section Y: 9:30am - 10:45am  Section Z: 11:00am - 12:15pm\n\n\n\n\n\nInstructor\n\n\n\nDr. Phil Chodrow \n\n\n\n\n\n\n\n\n\n75 Shannon Street, Room 218\n\n\n\n\n\n\n\n\n\npchodrow@middlebury.edu, though please see email policy below.\n\n\n\n\n\n\n\n\n\nStudent Hours\n\n\nMondays\n\n\nMondays\n\n\nMondays\n\n\n\n\n\n\n\n\n\n\n\n Important Policies \n\n\n\nIt’s fine to address me as Phil, Prof. Phil, Professor Phil, or Professor Chodrow.   Generally speaking, you should only email me if you need to talk about something personal or sensitive. Otherwise, please direct message me on Slack.   I expect you to prepare to ask for help when approaching me, your tutors, and your fellow students.   Requests for extensions should be submitted through the extension request form."
-  },
-  {
-    "objectID": "syllabus.html#assessments",
-    "href": "syllabus.html#assessments",
-    "title": "Syllabus",
-    "section": "Assessments",
-    "text": "Assessments\nThe purpose of assessments is for both you and I to understand your progress towards the course’s learning objectives."
-  },
-  {
-    "objectID": "syllabus.html#course-tools",
-    "href": "syllabus.html#course-tools",
-    "title": "Syllabus",
-    "section": "Course Tools",
-    "text": "Course Tools\n\nThonny\n\n\nSlack\n\n\nGradescope"
-  },
-  {
-    "objectID": "syllabus.html#help",
-    "href": "syllabus.html#help",
-    "title": "Syllabus",
-    "section": "Asking For Help",
-    "text": "Asking For Help\nBoth I and your tutors like talking with you about the course content. Here’s what you can do in order to make our conversations efficient and productive.\nWhen asking me a question, you should usually expect me to start with a question of my own:\n\nWhat have you tried so far?\n\nThis question has two functions. First, it helps me understand where you are and how I can most effectively help you. Second, it reminds you to take steps to support your own independent learning prior to approaching me. Here are the steps that I expect you to follow in some of the most common cases:\nFor conceptual questions:\n\nMake a reasonable effort to review relevant readings ahead of time.\nFormulate your question in as precise and specific a way as you are able.\nIf applicable, find an example that illustrates your question.\n\nFor programming questions:\n\nFormulate the task you are attempting to accomplish as precisely and specifically as possible.\nWrite down a few concepts, functions, data structures, or other ideas that seem like they might be relevant in this problem.\nGet as far as you can on the problem using the tools available to you. Make sure you can carefully describe what you did and why it seems like progress toward the goal.\nBe prepared to explain approaches what you have already tried when speaking with me or a tutor.\n\nIf you are debugging and encountering an error message:\n\nRead your error message and do your best to understand what it means.\nIf you’re not sure how to interpret your error message in the context of your task, try Googling the message and reading some of the resulting answers.\nIf you’re still stuck, you can bring your error message to tutoring or to Student Hours.\n\nIf you are debugging and not encountering an error message:\n\nMake use of Thonny’s debugger to step through your program.\nIdentify the first point at which something is clearly wrong.\nDevelop at least one hypothesis about the source of the error, and test that hypothesis.\nIf you’re still stuck, you can bring your code to tutoring or to Student Hours."
-  },
-  {
-    "objectID": "syllabus.html#beyond-csci-0145",
-    "href": "syllabus.html#beyond-csci-0145",
-    "title": "Syllabus",
-    "section": "Beyond CSCI 0145",
-    "text": "Beyond CSCI 0145\n\nAdvice and Letters of Recommendation\n\nAdvice\nI am always happy to talk with you about your future plans, including internships, research opportunities, and graduate school applications. Because I am a creature of the academy, I am less knowledgeable about industry jobs, although you are welcome to ask about those too.\n\n\nLetters of Recommendation\nIf you have completed a course with me or are currently enrolled, you are welcome to request a letter from me. If I feel that I am not able to write you a strong letter, I will tell you – but if you still want a letter from me, I will still write it.\nPlease keep in mind that I can write stronger letters for students whom I see more frequently, such as in lecture or office hours. If you’d like a letter, talking to me in these contexts, or scheduling another meeting time, is highly recommended.\nTo request a letter, fill out this request form! Please give me at least one month of advance notice when possible.\n\n\nWhen I Won’t Write a Letter\nAs a matter of moral principle, I will not write letters of recommendation for programs or jobs involving any of the following:\n\nPolicing (including but not limited to predictive policing, development of algorithms that predict recidivism, etc.);\nMilitary applications (such as internships at the Department of Defense or any of its international counterparts);\nWeapons manufacturing, broadly construed;\nIntelligence gathering (such as internships at the NSA, FBI, or any international counterpart).\n\nI am very happy to discuss this policy with any student who has questions. Conversations about when and how mathematics, data science, and programming should be used are lacking in our community. If you’d like to engage me in such a conversation, that would be great! However, this policy is non-negotiable. Therefore, if I refuse to write you a letter on these grounds, please know that it doesn’t reflect on your ability to succeed in PIC16B, your career potential, your worth as a person, or whether I like you.\nThe Just Mathematics Collective has compiled a list of resources for students on making ethical career decisions, which is available here. The text of this section is lightly modified from their suggested text on letter-writing."
+    "text": "A learning objective is a primary goal for your learning by the end of the course. You’re successful in CSCI 0145\nA learning objective is a primary goal for your achievement at the end of the course.\nThe purpose of graded assignments is to help both you and me keep track of your progress toward these objectives. We have six learning objectives in CSCI 0145.\n\n\n\n\nComputational Thinking\n\n\n\nYou will describe and use computational tools including functions, iteration, data structures, control flow, recursion, and objects.\n\n\n\n\nPython Programming\n\n\n\nYou will design, implement, document, and debug programs of medium complexity in the Python programming language.\n\n\n\n\n\nPositionality and Collaboration\n\n\n\nYou will reflect on your identity as a computer scientist and how it informs your strengths when collaborating with others.\n\n\n\n\n\nEthical Reasoning\n\n\n\nYou will describe, analyze, and critique arguments related to the impact of computing on society, especially as it relates to ongoing forms of oppression, inequity, and injustice.\n\n\n\n\nAnalysis\n\n\n\nYou will use informal mathematical arguments to demonstrate the correctness and characterize the runtime of programs that involve iteration and recursion.\n\n\n\n\nApplications\n\n\n\nYou will create complex programs to manipulate images and text.\n\n\n\n\n\n\n\n\n\n\n\n\nLecture Time and Location\n\n\n\nMondays, Wednesdays, and Fridays  75 Shannon Street, Room 224  Section A: 8:00am-8:50am  Section B: 9:05am-9:55am\n\n\n\n\n\nLab Time and Location\n\n\n\nThursdays  75 Shannon Street, Room 203  Section X: 8:00am - 9:15am  Section Y: 9:30am - 10:45am  Section Z: 11:00am - 12:15pm\n\n\n\n\n\nInstructor\n\n\n\nDr. Phil Chodrow \n\n\n\n\n\n\n\n\n\n75 Shannon Street, Room 218\n\n\n\n\n\n\n\n\n\npchodrow@middlebury.edu, though please see email policy below.\n\n\n\n\n\n\n\n\n\nStudent Hours\n\n\nMondays\n\n\nMondays\n\n\nMondays\n\n\n\n\n\n\n\n\n\n\n\n Important Policies \n\n\n\nIt’s fine to address me as Phil, Prof. Phil, Professor Phil, or Professor Chodrow.   Generally speaking, you should only email me if you need to talk about something personal or sensitive. Otherwise, please direct message me on Slack.   I expect you to prepare to ask for help when approaching me, your tutors, and your fellow students.   Requests for extensions should be submitted through the extension request form.\n\n\n\n\n\n\n\nThe purpose of assessments is for both you and I to understand your progress towards the course’s learning objectives.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoth I and your tutors like talking with you about the course content. Here’s what you can do in order to make our conversations efficient and productive.\nWhen asking me a question, you should usually expect me to start with a question of my own:\n\nWhat have you tried so far?\n\nThis question has two functions. First, it helps me understand where you are and how I can most effectively help you. Second, it reminds you to take steps to support your own independent learning prior to approaching me. Here are the steps that I expect you to follow in some of the most common cases:\nFor conceptual questions:\n\nMake a reasonable effort to review relevant readings ahead of time.\nFormulate your question in as precise and specific a way as you are able.\nIf applicable, find an example that illustrates your question.\n\nFor programming questions:\n\nFormulate the task you are attempting to accomplish as precisely and specifically as possible.\nWrite down a few concepts, functions, data structures, or other ideas that seem like they might be relevant in this problem.\nGet as far as you can on the problem using the tools available to you. Make sure you can carefully describe what you did and why it seems like progress toward the goal.\nBe prepared to explain approaches what you have already tried when speaking with me or a tutor.\n\nIf you are debugging and encountering an error message:\n\nRead your error message and do your best to understand what it means.\nIf you’re not sure how to interpret your error message in the context of your task, try Googling the message and reading some of the resulting answers.\nIf you’re still stuck, you can bring your error message to tutoring or to Student Hours.\n\nIf you are debugging and not encountering an error message:\n\nMake use of Thonny’s debugger to step through your program.\nIdentify the first point at which something is clearly wrong.\nDevelop at least one hypothesis about the source of the error, and test that hypothesis.\nIf you’re still stuck, you can bring your code to tutoring or to Student Hours.\n\n\n\n\n\n\n\n\nI am always happy to talk with you about your future plans, including internships, research opportunities, and graduate school applications. Because I am a creature of the academy, I am less knowledgeable about industry jobs, although you are welcome to ask about those too.\n\n\n\nIf you have completed a course with me or are currently enrolled, you are welcome to request a letter from me. If I feel that I am not able to write you a strong letter, I will tell you – but if you still want a letter from me, I will still write it.\nPlease keep in mind that I can write stronger letters for students whom I see more frequently, such as in lecture or office hours. If you’d like a letter, talking to me in these contexts, or scheduling another meeting time, is highly recommended.\nTo request a letter, fill out this request form! Please give me at least one month of advance notice when possible.\n\n\n\nAs a matter of moral principle, I will not write letters of recommendation for programs or jobs involving any of the following:\n\nPolicing (including but not limited to predictive policing, development of algorithms that predict recidivism, etc.);\nMilitary applications (such as internships at the Department of Defense or any of its international counterparts);\nWeapons manufacturing, broadly construed;\nIntelligence gathering (such as internships at the NSA, FBI, or any international counterpart).\n\nI am very happy to discuss this policy with any student who has questions. Conversations about when and how mathematics, data science, and programming should be used are lacking in our community. If you’d like to engage me in such a conversation, that would be great! However, this policy is non-negotiable. Therefore, if I refuse to write you a letter on these grounds, please know that it doesn’t reflect on your ability to succeed in PIC16B, your career potential, your worth as a person, or whether I like you.\nThe Just Mathematics Collective has compiled a list of resources for students on making ethical career decisions, which is available here. The text of this section is lightly modified from their suggested text on letter-writing."
   },
   {
     "objectID": "schedule.html",
     "href": "schedule.html",
-    "title": "Course Schedule",
+    "title": "",
     "section": "",
-    "text": "M\n                \n                Sep. 12 \n         Welcome to CSCI 0145!\n   \n    \n    \n         \n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis!   \n        \n    \n    \n        \n        \n                Learning Objectives\n                        Computational Thinking  \n                        Positionality and Collaboration  \n        \n        \n                Reading\n                        index  \n        \n        \n                Assigned\n                    Lab 1 \n        \n        \n                Due\n                        Lab 1 \n        \n    \n    \n        \n                W\n                \n                Sep. 14 \n         Thinking Algorithmically\n   \n    \n    \n         \n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! \n        \n    \n    \n        \n        \n        \n        \n                Reading\n                        different  \n                        different  \n                        different  \n        \n        \n        \n        \n                Due\n                        Lab 1 \n        \n    \n    \n        \n                T\n                \n                Sep. 15 \n         Exercise: Making Decisions\n   \n    \n    \n         \n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! \n        \n    \n    \n        \n        \n        \n        \n                Reading\n                        different  \n                        different  \n                        different  \n        \n        \n        \n        \n                Due\n                        Lab 1 \n        \n    \n    \n        \n                F\n                \n                Sep. 16 \n         Lab: Programming as Decision-Making \n   \n    \n    \n         \n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! \n        \n    \n    \n        \n        \n        \n        \n                Reading\n                        index  \n        \n        \n                Assigned\n                    Lab 1 \n        \n        \n                Due\n                        Lab 1 \n        \n    \n            \n        \n        \n    \n        \n                M\n                \n                Sep. 19 \n         Welcome to CSCI 0145!\n   \n    \n    \n         \n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! \n        \n    \n    \n        \n        \n        \n        \n                Reading\n                        index  \n        \n        \n                Assigned\n                    Lab 1 \n        \n        \n        \n    \n            \n        \n        \n    \n        \n                W\n                \n                Sep. 21 \n         Welcome to CSCI 0145!\n   \n    \n    \n         \n            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! \n        \n    \n    \n        \n        \n        \n        \n        \n        \n                Assigned\n                    Lab 1 \n        \n        \n                Due\n                        Lab 1 \n        \n    \n        \n\nNo matching items"
-  },
-  {
-    "objectID": "acknowledgements.html",
-    "href": "acknowledgements.html",
-    "title": "Acknowledgements",
-    "section": "",
-    "text": "The design of the course schedule page is heavily inspired by Dr. Nicole Eikmeier’s schedule for CS 151 at Grinnell College.\nThe due date adjustment policy and form is heavily inspired by a tweet from Dr. Drew Lewis."
+    "text": "Introduction \n            \n        \n            \n                    M\n                    \n                    Sep. 12 \n             Welcome to CSCI 0145!\n   \n        \n        \n             \n                We discuss the structure of the class and briefly introduce computational thinking. \n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Computational Thinking  \n                            Positionality and Collaboration  \n            \n            \n                    Reading\n                            Course Syllabus  \n                            What is this course about?  \n            \n            \n            \n            \n            \n        \n        \n            \n                    W\n                    \n                    Sep. 14 \n             Expressions and Variables\n   \n        \n        \n             \n                We discuss expressions -- the simplest recipes for computations -- and variables, which allow us to store the results of computations for later use. \n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Computational Thinking  \n                            Python Programming  \n            \n            \n                    Reading\n                            Expressions and Variables  \n            \n            \n            \n            \n            \n        \n        \n            \n                    T\n                    \n                    Sep. 15 \n             Guided Discovery: Indexing and String Manipulation\n   \n        \n        \n             \n                We learn some ways to manipulate text, save the results, and show them to the user. We'll come back to advanced text manipulation much later in the course. \n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Python Programming  \n                            Applications  \n            \n            \n                    Activity\n                            (link)  \n            \n            \n            \n            \n            \n        \n        \n            \n                    F\n                    \n                    Sep. 16 \n             Lab: Designing Simple Programs\n   \n        \n        \n             \n                We write simple programs to enable user interaction using our new programming skills. \n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Python Programming  \n            \n            \n                    Activity\n                             (link)   \n            \n            \n            \n            \n            \n        \n            \n             Fundamentals of Procedural Programming \n            \n        \n            \n                    M\n                    \n                    Sep. 19 \n             Functions\n   \n        \n        \n             \n                Functions are reusable computational recipes. We discuss the basic ingredients of a function and work through some simple examples. \n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Computational Thinking  \n                            Python Programming  \n            \n            \n                    Reading\n                            Functions  \n            \n            \n            \n            \n                    Due\n                            Lab 1 \n            \n        \n        \n            \n                    W\n                    \n                    Sep. 21 \n             More on Functions\n   \n        \n        \n             \n                We discuss some important considerations for writing functions and using functions that other people have written. Our two main topics are documentation and modules. \n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Computational Thinking  \n                            Python Programming  \n            \n            \n                    Reading\n                            More on Functions  \n            \n            \n            \n            \n            \n        \n        \n            \n                    T\n                    \n                    Sep. 22 \n             Guided Discovery: Practice With Functions\n   \n        \n        \n             \n                TBD\n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Computational Thinking  \n                            Python Programming  \n            \n            \n                    Activity\n                            (link)  \n            \n            \n            \n            \n            \n        \n        \n            \n                    F\n                    \n                    Sep. 23 \n             Lab: Writing (About) Functions \n   \n        \n        \n             \n                TBD\n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Python Programming  \n            \n            \n                    Activity\n                            (link)  \n            \n            \n            \n            \n            \n        \n        \n\nNo matching items"
   }
 ]

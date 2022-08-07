@@ -1,16 +1,17 @@
 # Syllabus {.unnumbered}
 
-
 ### Learning Objectives
 
-A learning objective is a primary goal for your achievement at the end of the course. By the end of this course, 
+A learning objective is a primary goal for your learning by the end of the course. You're successful in CSCI 0145
+
+A learning objective is a primary goal for your achievement at the end of the course. 
 
 The purpose of graded assignments is to help both you and me keep track of your progress toward these objectives. We have six learning objectives in CSCI 0145. 
 
 <table>
     <tr>
         <td class="syllabus-description-learning-objective">      
-            <b>Computational Thinking</b>
+            <b>Computational Thinking</b> 
         </td>
         <td class="syllabus-description-table-entry">
             You will describe and use computational tools including functions, iteration, data structures, control flow, recursion, and objects. 
@@ -18,7 +19,7 @@ The purpose of graded assignments is to help both you and me keep track of your 
     </tr>
     <tr>
         <td class="syllabus-description-learning-objective">
-            <b>Programming</b>
+            <b>Python Programming</b>
         </td>
         <td class="syllabus-description-table-entry">
             You will design, implement, document, and debug programs of medium complexity in the Python programming language.  

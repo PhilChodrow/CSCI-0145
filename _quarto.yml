@@ -1,15 +1,33 @@
 project:
-  type: book
+  type: website
   output-dir: docs
 
-book:
-  title: "<b>Introduction to Computing</b><br>CSCI 0145"
-  chapters:
-   - text: Welcome!
-     href: index.qmd 
-   - syllabus.qmd
-   - schedule.qmd
-   - acknowledgements.qmd
+website:
+  output-dir: docs
+  sidebar:
+    collapse-level: 1	
+    style: "docked"
+    title: "<b>Introduction to Computing</b><br>CSCI 0145"
+    contents:
+      - text: Welcome!
+        href: index.qmd 
+      - syllabus.qmd
+      - schedule.qmd
+      # - part: Lecture Notes
+      - section: 1. Introduction
+        contents: 
+          - notes/00-welcome.qmd
+          - notes/01-expressions-and-variables.qmd
+      - section: 2. Procedural Programming
+        contents: 
+          - notes/10-functions.qmd
+          - notes/11-conditionals.qmd
+          - notes/12-iteration.qmd
+      - text: Assignments
+        href: assignments.qmd
+      - acknowledgements.qmd
+
+     
   favicon: assets/img/icons/favicon.png
 
 

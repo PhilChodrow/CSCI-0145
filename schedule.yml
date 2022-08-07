@@ -3,75 +3,100 @@
   header: | 
     Welcome to CSCI 0145!
   summary: |
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis!   
+    We discuss the structure of the class and briefly introduce computational thinking. 
   objectives: 
     - Computational Thinking
     - Positionality and Collaboration
   reading:
-    - <a href="index.qmd">index</a>
+    - <a href="syllabus.qmd">Course Syllabus</a>
+    - <a href="notes/00-welcome.qmd">What is this course about?</a>
   module: Introduction
-  assigned: 
-    - <a href="index.qmd">Lab 1</a> 
-  due: 
-    - <a href="index.qmd">Lab 1</a> 
+  publish: true
 - date: 2022-09-14
   day: 2
   header: | 
-    Thinking Algorithmically
+    Expressions and Variables
   summary: |
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! 
+    We discuss <i>expressions</i> -- the simplest recipes for computations -- and <i>variables</i>, which allow us to store the results of computations for later use. 
+  objectives: 
+    - Computational Thinking
+    - Python Programming
   reading:
-    - <a href="index.qmd">different</a>
-    - <a href="index.qmd">different</a>
-    - <a href="index.qmd">different</a>
+    - <a href="notes/01-expressions-and-variables.qmd">Expressions and Variables</a>
   module: Introduction
   assigned: 
-  due: 
-    - <a href="index.qmd">Lab 1</a> 
+  publish: true
 - date: 2022-09-15
   header: | 
-    Exercise: Making Decisions
+    Guided Discovery: Indexing and String Manipulation
   summary: |
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! 
-  reading:
-    - <a href="index.qmd">different</a>
-    - <a href="index.qmd">different</a>
-    - <a href="index.qmd">different</a>
+    We learn some ways to manipulate text, save the results, and show them to the user. We'll come back to advanced text manipulation much later in the course. 
+  activity: 
+    - <a href="guided-discovery/strings">(link)</a>
   module: Introduction
+  objectives: 
+    - Python Programming
+    - Applications
   assigned: 
-  due: 
-    - <a href="index.qmd">Lab 1</a> 
+  publish: true
 - date: 2022-09-16
   header: | 
-    Lab: Programming as Decision-Making 
+    Lab: Designing Simple Programs
   summary: |
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! 
-  reading:
-    - <a href="index.qmd">index</a>
+    We write simple programs to enable user interaction using our new programming skills. 
+  activity: 
+    - <a href="labs/prelims/"> (link) </a>
   module: Introduction
-  assigned: 
-    - <a href="index.qmd">Lab 1</a> 
-  due: 
-    - <a href="index.qmd">Lab 1</a> 
+  objectives: 
+    - Python Programming
+  publish: true
 - date: 2022-09-19
-  day: 4
+  day: 1
   header: | 
-    Welcome to CSCI 0145!
+    Functions
   summary: |
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! 
+    Functions are reusable computational recipes. We discuss the basic ingredients of a function and work through some simple examples. 
+  objectives: 
+    - Computational Thinking
+    - Python Programming
   reading:
-    - <a href="index.qmd">index</a>
-  assigned: 
-    - <a href="index.qmd">Lab 1</a> 
-  module: Algorithmic Thinking 
-- date: 2022-09-21
-  day: 5
-  header: | 
-    Welcome to CSCI 0145!
-  summary: |
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ratione reiciendis ipsum vel culpa accusamus, animi laboriosam a illo dicta quo et? Tempora eaque iste dicta labore ipsam! Quas, facilis! 
-  module: Something Else
-  assigned: 
-    - <a href="index.qmd">Lab 1</a> 
+    - <a href="notes/10-functions.qmd#first-part">Functions</a>
+  module: Fundamentals of Procedural Programming
   due: 
     - <a href="index.qmd">Lab 1</a> 
+  publish: true
+- date: 2022-09-21
+  header: | 
+    More on Functions
+  summary: |
+    We discuss some important considerations for writing functions and using functions that other people have written. Our two main topics are <i>documentation</i> and <i>modules</i>. 
+  objectives: 
+    - Computational Thinking
+    - Python Programming
+  reading:
+    - <a href="notes/10-functions.qmd#second-part">More on Functions</a>
+  module: Fundamentals of Procedural Programming
+  publish: true
+- date: 2022-09-22
+  header: | 
+    Guided Discovery: Practice With Functions
+  summary: |
+    TBD
+  objectives: 
+    - Computational Thinking
+    - Python Programming
+  activity:
+    - <a href="guided-discovery/functions/">(link)</a>
+  module: Fundamentals of Procedural Programming
+  publish: true
+- date: 2022-09-23
+  header: | 
+    Lab: Writing (About) Functions 
+  summary: |
+    TBD
+  objectives: 
+    - Python Programming
+  activity:
+    - <a href="labs/functions/">(link)</a>
+  module: Fundamentals of Procedural Programming
+  publish: true

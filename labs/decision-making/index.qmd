@@ -1,0 +1,7 @@
+---
+title: Developers as Decision-Makers
+summary: Some stuff we do. 
+order: 3
+---
+
+*This lab is a modified version of an [activity](https://docs.google.com/document/d/1HsRSC3H_u6KcQhv2y9cWyrYV3xpvvBUcAvoaH-FsG0I/edit?usp=sharing) created by  Evan Peck.* 

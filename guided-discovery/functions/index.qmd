@@ -1,0 +1,4 @@
+---
+title: "Guided Discovery: Practice With Functions"
+order: 2
+---
