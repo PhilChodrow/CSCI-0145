@@ -49,6 +49,7 @@
   module: Introduction
   objectives: 
     - Python Programming
+    - Design and Collaboration
   publish: true
 - date: 2022-09-19
   day: 1
@@ -96,6 +97,7 @@
     TBD
   objectives: 
     - Python Programming
+    - Design and Collaboration
   activity:
     - <a href="labs/functions/">(link)</a>
   module: Fundamentals of Procedural Programming

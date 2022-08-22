@@ -3,4 +3,134 @@ title: Welcome to CSCI 0145!
 toc: true
 ---
 
-Read the syllabus, y'all! 
+## Learning Objectives
+
+- **Computational Thinking**: you will express algorithms for solving daily problems in terms of pseudocode. 
+- **Positionality and Collaboration**: you will reflect on how your personal identities and experiences inform your coding practice. 
+- **Python Programming**: you will run simple Python commands and programs. 
+
+### What Is Computer Science?
+
+Broadly speaking, 
+
+> Computer science is the scientific study of automated computation and its applications. 
+
+You are already great at solving problems that require computations. Here's one: 
+
+>  Zenith has 12 apples.
+>  She gives 3 apples to Manuel and buys 6 apples from Jiao.
+>  How many apples does Zenith now have?
+
+Zenith clearly has $12 - 3 + 6 = 15$ apples now.
+I don't know about you, but I'm really bad at arithmetic, so there's a good chance I'll make a mistake doing this simple calculation.
+Even worse, what if we change the numbers?
+What if on Monday Zenith starts with 17 apples, and on Tuesday she starts with 13 apples?
+This is where the computer comes in.
+It will allow us to *abstract* the apple calculation for the different scenarios we might expect.
+The term *abstraction* means that we will try to "compartmentalize" the different calculations, i.e. we will break up our bigger calculation into smaller pieces.
+
+### What's An Algorithm?
+
+But how can we get the computer to do these calculations?
+The first thing we need to do is come up with a **solution approach** to our problem.
+This will be the "idea" we have in our heads of how we will solve the problem.
+For example, we can calculate how many apples Zenith has by taking her starting apples, subtracting those she gives to Manuel, and then adding the ones she bought from Jiao.
+Notice how we can describe the *calculation* of the remaining number of apples without actually specifying any of the numbers. 
+As a result, this solution will always work.
+Unlike humans, **computers don't make mistakes**.
+They do exactly what you tell them to do.
+If you give the computer all the apple values, no matter what they are, and tell the computer to do the arithmetic, it will give you the right answer.
+
+We haven't introduced any Python programming yet, but perhaps you can already understand this simple program: 
+
+```{python}
+# define inputs: a user could change these to any numbers
+APPLES_START  = 5
+APPLES_GIVEN  = 3
+APPLES_BOUGHT = 5
+
+# this line describes the solution approach
+APPLES_FINAL = APPLES_START - APPLES_GIVEN + APPLES_BOUGHT
+
+# show the output
+APPLES_FINAL
+```
+
+This was our first example of an *algorithm*. 
+
+> An **algorithm** is a description of a procedure for solving a problem. 
+
+Well-designed algorithms have the following key characteristics: 
+
+- **Correctness**: the algorithm correctly (and demonstrably) gives a correct solution to the stated problem. 
+- **Halting**: the algorithm terminates with the solution after a finite number of steps---we don't have to wait forever for the answer! 
+- **Lack of ambiguity**: each step of the algorithm is so clearly described  that a mindless machine could follow it. 
+- **Generality**: the algorithm solves a range of problems, not just one or two specific ones. 
+
+#### The Eating "Algorithm"
+
+Let's say the problem is: you're hungry. 
+How do you solve this problem? 
+The short answer is: *eat some food*! 
+This is a good idea, but it's not yet an algorithm because it doesn't have the characteristics we described above: 
+
+- **Correctness**: this approach won't always give a correct solution to the problem, because it only tells you to eat *some* food. If you don't eat *enough* food you'll still be hungry. 
+- **Halting**: this approach will only terminate with the solution if you are in fact able to find some food. 
+- **Lack of ambiguity**: this approach isn't specific enough for a machine to follow. What does "go" mean? Which food should be sought out?
+- **Generality**: this approach *is* quite general as a solution to the hunger problem, so we can check that one off. 
+
+How could we make this procedure into a better algorithm? Here's one way: 
+
+1. Stand up.
+2. Walk to the cafeteria.
+3. Grab a bowl.
+4. Pour in some Cheerios.
+5. Pour some almond milk into the bowl.
+6. Eat Cheerios from bowl until no longer hungry.
+
+This is *closer* to being a good algorithm. [In fact, there's not really a clear line between what is and isn't an algorithm, or a good algorithm --- it's a matter of degree.]{.aside} 
+Let's check our criteria again: 
+
+- **Correctness**: the new approach specifies to continue eating until you are no longer hungry. This is an improvement, although the algorithm still isn't guaranteed to fully resolve your hunger. What if you're hungry for more than one bowl? What happens if there aren't any Cheerios in the cafeteria? 
+- **Halting**: the approach now terminates with a result (not necessarily one that fully resolves your hunger) after a finite number of steps, since the bowl contains a finite number of cheerios. 
+- **Lack of ambiguity**: we still have some problems here. For example, the approach never actually says to get a spoon...
+- **Generality**: this approach is now *less* general. It only really works for college students who are hungry for Cheerios. [This is a common pattern in the design of algorithms: improvements on some criteria come at the cost of other criteria.]
+
+## Bugs
+
+Because our procedure above isn't fully unambiguous, it's not ready for us to give to a mindless computer or robot. 
+What would happen if we did? 
+Remember, computers do exactly what we tell them to. 
+In step 4, did we say *where* to pour the Cheerios? Nope. 
+They would probably end up on the floor. 
+We also didn't say anything about how to eat the cereal in step 6! 
+Maybe the computer uses a fork to eat things by default. 
+The end result is that you would have a bowl full of almond milk with cereal on the floor, while trying to eat the cereal with a fork. 
+This kind of undesired result from an algorithm is called a **bug**.[The term *bug* originates from an actual moth that Grace Hopper found while she worked on the Harvard Mark II (an early kind of calculator). Read more about this [here](https://en.wikipedia.org/wiki/Software_bug).]{.aside}
+
+## Generalization
+
+Now, what if you felt like Cheerios today, but tomorrow you wanted Raisin Bran instead? There's no reason to re-write all these steps, since the only thing that changes is the type of cereal we want to eat. This is where abstraction comes to the rescue again. The right way to go about solving this problem would be to "abstract away" some of the details so that we can re-use parts of the algorithm. This will make more sense when we start developing code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

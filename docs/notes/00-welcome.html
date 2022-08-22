@@ -15,6 +15,69 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -55,11 +118,12 @@ ul.task-list{list-style: none;}
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -163,10 +227,22 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a>
+  <ul class="collapse">
+  <li><a href="#what-is-computer-science" id="toc-what-is-computer-science" class="nav-link" data-scroll-target="#what-is-computer-science">What Is Computer Science?</a></li>
+  <li><a href="#whats-an-algorithm" id="toc-whats-an-algorithm" class="nav-link" data-scroll-target="#whats-an-algorithm">What’s An Algorithm?</a></li>
+  </ul></li>
+  <li><a href="#bugs" id="toc-bugs" class="nav-link" data-scroll-target="#bugs">Bugs</a></li>
+  <li><a href="#generalization" id="toc-generalization" class="nav-link" data-scroll-target="#generalization">Generalization</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -184,11 +260,95 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>Read the syllabus, y’all!</p>
+<section id="learning-objectives" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<ul>
+<li><strong>Computational Thinking</strong>: you will express algorithms for solving daily problems in terms of pseudocode.</li>
+<li><strong>Positionality and Collaboration</strong>: you will reflect on how your personal identities and experiences inform your coding practice.</li>
+<li><strong>Python Programming</strong>: you will run simple Python commands and programs.</li>
+</ul>
+<section id="what-is-computer-science" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-computer-science">What Is Computer Science?</h3>
+<p>Broadly speaking,</p>
+<blockquote class="blockquote">
+<p>Computer science is the scientific study of automated computation and its applications.</p>
+</blockquote>
+<p>You are already great at solving problems that require computations. Here’s one:</p>
+<blockquote class="blockquote">
+<p>Zenith has 12 apples. She gives 3 apples to Manuel and buys 6 apples from Jiao. How many apples does Zenith now have?</p>
+</blockquote>
+<p>Zenith clearly has <span class="math inline">\(12 - 3 + 6 = 15\)</span> apples now. I don’t know about you, but I’m really bad at arithmetic, so there’s a good chance I’ll make a mistake doing this simple calculation. Even worse, what if we change the numbers? What if on Monday Zenith starts with 17 apples, and on Tuesday she starts with 13 apples? This is where the computer comes in. It will allow us to <em>abstract</em> the apple calculation for the different scenarios we might expect. The term <em>abstraction</em> means that we will try to “compartmentalize” the different calculations, i.e.&nbsp;we will break up our bigger calculation into smaller pieces.</p>
+</section>
+<section id="whats-an-algorithm" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="whats-an-algorithm">What’s An Algorithm?</h3>
+<p>But how can we get the computer to do these calculations? The first thing we need to do is come up with a <strong>solution approach</strong> to our problem. This will be the “idea” we have in our heads of how we will solve the problem. For example, we can calculate how many apples Zenith has by taking her starting apples, subtracting those she gives to Manuel, and then adding the ones she bought from Jiao. Notice how we can describe the <em>calculation</em> of the remaining number of apples without actually specifying any of the numbers. As a result, this solution will always work. Unlike humans, <strong>computers don’t make mistakes</strong>. They do exactly what you tell them to do. If you give the computer all the apple values, no matter what they are, and tell the computer to do the arithmetic, it will give you the right answer.</p>
+<p>We haven’t introduced any Python programming yet, but perhaps you can already understand this simple program:</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># define inputs: a user could change these to any numbers</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>APPLES_START  <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>APPLES_GIVEN  <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>APPLES_BOUGHT <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># this line describes the solution approach</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>APPLES_FINAL <span class="op">=</span> APPLES_START <span class="op">-</span> APPLES_GIVEN <span class="op">+</span> APPLES_BOUGHT</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># show the output</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>APPLES_FINAL</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>7</code></pre>
+</div>
+</div>
+<p>This was our first example of an <em>algorithm</em>.</p>
+<blockquote class="blockquote">
+<p>An <strong>algorithm</strong> is a description of a procedure for solving a problem.</p>
+</blockquote>
+<p>Well-designed algorithms have the following key characteristics:</p>
+<ul>
+<li><strong>Correctness</strong>: the algorithm correctly (and demonstrably) gives a correct solution to the stated problem.</li>
+<li><strong>Halting</strong>: the algorithm terminates with the solution after a finite number of steps—we don’t have to wait forever for the answer!</li>
+<li><strong>Lack of ambiguity</strong>: each step of the algorithm is so clearly described that a mindless machine could follow it.</li>
+<li><strong>Generality</strong>: the algorithm solves a range of problems, not just one or two specific ones.</li>
+</ul>
+<section id="the-eating-algorithm" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="the-eating-algorithm">The Eating “Algorithm”</h4>
+<p>Let’s say the problem is: you’re hungry. How do you solve this problem? The short answer is: <em>eat some food</em>! This is a good idea, but it’s not yet an algorithm because it doesn’t have the characteristics we described above:</p>
+<ul>
+<li><strong>Correctness</strong>: this approach won’t always give a correct solution to the problem, because it only tells you to eat <em>some</em> food. If you don’t eat <em>enough</em> food you’ll still be hungry.</li>
+<li><strong>Halting</strong>: this approach will only terminate with the solution if you are in fact able to find some food.</li>
+<li><strong>Lack of ambiguity</strong>: this approach isn’t specific enough for a machine to follow. What does “go” mean? Which food should be sought out?</li>
+<li><strong>Generality</strong>: this approach <em>is</em> quite general as a solution to the hunger problem, so we can check that one off.</li>
+</ul>
+<p>How could we make this procedure into a better algorithm? Here’s one way:</p>
+<ol type="1">
+<li>Stand up.</li>
+<li>Walk to the cafeteria.</li>
+<li>Grab a bowl.</li>
+<li>Pour in some Cheerios.</li>
+<li>Pour some almond milk into the bowl.</li>
+<li>Eat Cheerios from bowl until no longer hungry.</li>
+</ol>
+<div class="page-columns page-full"><p>This is <em>closer</em> to being a good algorithm.  Let’s check our criteria again:</p><div class="no-row-height column-margin column-container"><span class="aside">In fact, there’s not really a clear line between what is and isn’t an algorithm, or a good algorithm — it’s a matter of degree.</span></div></div>
+<ul>
+<li><strong>Correctness</strong>: the new approach specifies to continue eating until you are no longer hungry. This is an improvement, although the algorithm still isn’t guaranteed to fully resolve your hunger. What if you’re hungry for more than one bowl? What happens if there aren’t any Cheerios in the cafeteria?</li>
+<li><strong>Halting</strong>: the approach now terminates with a result (not necessarily one that fully resolves your hunger) after a finite number of steps, since the bowl contains a finite number of cheerios.</li>
+<li><strong>Lack of ambiguity</strong>: we still have some problems here. For example, the approach never actually says to get a spoon…</li>
+<li><strong>Generality</strong>: this approach is now <em>less</em> general. It only really works for college students who are hungry for Cheerios. [This is a common pattern in the design of algorithms: improvements on some criteria come at the cost of other criteria.]</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="bugs" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="bugs">Bugs</h2>
+<div class="page-columns page-full"><p>Because our procedure above isn’t fully unambiguous, it’s not ready for us to give to a mindless computer or robot. What would happen if we did? Remember, computers do exactly what we tell them to. In step 4, did we say <em>where</em> to pour the Cheerios? Nope. They would probably end up on the floor. We also didn’t say anything about how to eat the cereal in step 6! Maybe the computer uses a fork to eat things by default. The end result is that you would have a bowl full of almond milk with cereal on the floor, while trying to eat the cereal with a fork. This kind of undesired result from an algorithm is called a <strong>bug</strong>.</p><div class="no-row-height column-margin column-container"><span class="aside">The term <em>bug</em> originates from an actual moth that Grace Hopper found while she worked on the Harvard Mark II (an early kind of calculator). Read more about this <a href="https://en.wikipedia.org/wiki/Software_bug">here</a>.</span></div></div>
+</section>
+<section id="generalization" class="level2">
+<h2 class="anchored" data-anchor-id="generalization">Generalization</h2>
+<p>Now, what if you felt like Cheerios today, but tomorrow you wanted Raisin Bran instead? There’s no reason to re-write all these steps, since the only thing that changes is the type of cereal we want to eat. This is where abstraction comes to the rescue again. The right way to go about solving this problem would be to “abstract away” some of the details so that we can re-use parts of the algorithm. This will make more sense when we start developing code.</p>
 
 
+</section>
 
-</main> <!-- /main -->
+<p><br> <br> <span style="color:grey;">© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022</span></p></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

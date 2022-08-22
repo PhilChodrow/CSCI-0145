@@ -4,6 +4,8 @@ project:
 
 website:
   output-dir: docs
+  body-footer: |
+    <br> <br> <span style="color:grey;">&#169; Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022</span>
   sidebar:
     collapse-level: 1	
     style: "docked"
