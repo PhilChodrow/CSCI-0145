@@ -6,10 +6,10 @@
     We discuss the structure of the class and briefly introduce computational thinking. 
   objectives: 
     - Computational Thinking
-    - Positionality and Collaboration
   reading:
-    - <a href="syllabus.qmd">Course Syllabus</a>
+    - <a href="syllabus.qmd">Course syllabus</a>
     - <a href="notes/00-welcome.qmd">What is this course about?</a>
+    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/algorithms_bugs.html">Algorithms and bugs</a>
   module: Introduction
   publish: true
 - date: 2022-09-14
@@ -22,17 +22,18 @@
     - Computational Thinking
     - Python Programming
   reading:
-    - <a href="notes/01-expressions-and-variables.qmd">Expressions and Variables</a>
+    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/expressions.html">Expressions</a>
+    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/variables.html">Variables</a>
   module: Introduction
   assigned: 
   publish: true
 - date: 2022-09-15
   header: | 
-    Guided Discovery: Indexing and String Manipulation
+    Guided Discovery: Introduction to Strings
   summary: |
     We learn some ways to manipulate text, save the results, and show them to the user. We'll come back to advanced text manipulation much later in the course. 
   activity: 
-    - <a href="guided-discovery/strings">(link)</a>
+    - <a href="guided-discovery/strings-1">GD1</a>
   module: Introduction
   objectives: 
     - Python Programming
@@ -45,7 +46,7 @@
   summary: |
     We write simple programs to enable user interaction using our new programming skills. 
   activity: 
-    - <a href="labs/prelims/"> (link) </a>
+    - <a href="labs/prelims/"> L1 </a>
   module: Introduction
   objectives: 
     - Python Programming
@@ -61,7 +62,9 @@
     - Computational Thinking
     - Python Programming
   reading:
-    - <a href="notes/10-functions.qmd#first-part">Functions</a>
+    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/functions.html">Functions</a>
+  optional:
+    - <a href="https://middlebury.instructure.com/courses/9972/files/1677127?wrap=1"> More reading </a> 
   module: Fundamentals of Procedural Programming
   due: 
     - <a href="index.qmd">Lab 1</a> 

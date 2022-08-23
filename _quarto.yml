@@ -16,17 +16,17 @@ website:
       - syllabus.qmd
       - schedule.qmd
       # - part: Lecture Notes
-      - section: 1. Introduction
-        contents: 
-          - notes/00-welcome.qmd
-          - notes/01-expressions-and-variables.qmd
-      - section: 2. Procedural Programming
-        contents: 
-          - notes/10-functions.qmd
-          - notes/11-conditionals.qmd
-          - notes/12-iteration.qmd
-      - text: Assignments
-        href: assignments.qmd
+      # - section: 1. Introduction
+      #   contents: 
+      #     - notes/00-welcome.qmd
+      #     - notes/01-expressions-and-variables.qmd
+      # - section: 2. Procedural Programming
+      #   contents: 
+      #     - notes/10-functions.qmd
+      #     - notes/11-conditionals.qmd
+      #     - notes/12-iteration.qmd
+      # - text: Assignments
+      #   href: assignments.qmd
       - acknowledgements.qmd
 
      

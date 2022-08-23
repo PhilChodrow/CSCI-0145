@@ -1,4 +1,5 @@
 ---
+title: Index of Assignments
 listing: 
   - id: labs
     contents: labs
@@ -12,13 +13,10 @@ listing:
     sort-ui: false
     filter-ui: false
     type: table
-    fields: [title, summary]
+    fields: [title, summary, file] 
     sort: "order"
 ---
   
-
-
-# Index of Assignments {.unnumbered}
 
 ## Labs
 

@@ -54,6 +54,11 @@
                             <%= read %> <br> 
                     <% } %>  
                 <% } %>
+                <% if (currentItem.optional) { %>
+                    <% for (read of currentItem.optional) { %>
+                            <span class="supporting-reading"><%= read %></span> <br> 
+                    <% } %>  
+                <% } %>
                 <% if (currentItem.activity) { %>
                     <b>Activity</b><br>
                     <% for (act of currentItem.activity) { %>

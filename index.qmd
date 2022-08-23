@@ -1,9 +1,10 @@
 ---
 toc: true
 numbered: false
+title: Welcome! 
 ---
 
-## Welcome! {.unnumbered .unlisted}
+<!-- ## Welcome! {.unnumbered .unlisted} -->
 
 CSCI 0145, "Introduction to Computing," is an introductory course in computer science at Middlebury College. It is one of several ways in which you might begin a computer science major at Midd. It's also a great way for you to develop your computational skills to support other majors. 
 

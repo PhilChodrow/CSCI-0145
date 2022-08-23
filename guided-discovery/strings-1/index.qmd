@@ -1,6 +1,7 @@
 ---
 title: Strings
 order: 1
+file: <a href="assignment-files/gd-strings.py">Assignment file</a>
 ---
 
-here is some content? 
+In this assignment, you'll explore some of the ways in which we can use Python to create and manipulate string variables. We'll also 
