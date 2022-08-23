@@ -14,6 +14,7 @@ website:
       - text: Welcome!
         href: index.qmd 
       - syllabus.qmd
+      # - collaboration.qmd
       - schedule.qmd
       # - part: Lecture Notes
       # - section: 1. Introduction
@@ -39,3 +40,4 @@ format:
     css: styles.css
     toc: true
     number-depth: 0
+    reference-location: margin
