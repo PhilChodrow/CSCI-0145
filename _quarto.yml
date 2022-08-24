@@ -41,3 +41,4 @@ format:
     toc: true
     number-depth: 0
     reference-location: margin
+    callout-icon: false;

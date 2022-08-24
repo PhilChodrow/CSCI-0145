@@ -2,6 +2,254 @@
 title: Developers as Decision-Makers
 summary: Some stuff we do. 
 order: 3
+callout-icon: false
+callout-appearance: simple
 ---
 
-*This lab is a modified version of an [activity](https://docs.google.com/document/d/1HsRSC3H_u6KcQhv2y9cWyrYV3xpvvBUcAvoaH-FsG0I/edit?usp=sharing) created by  Evan Peck.* 
+*This lab is adapted from an [activity](https://docs.google.com/document/d/1HsRSC3H_u6KcQhv2y9cWyrYV3xpvvBUcAvoaH-FsG0I/edit?usp=sharing) created by [Evan Peck](https://evanpeck.github.io) (Bucknell University).* 
+
+
+
+
+
+<!-- ::: {.column-screen} -->
+
+![](https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/styles/832x468/public/2021-03/HousingOverview.jpg?fv=2qDcAvv_&itok=vy0yCyye)
+
+<!-- ::: -->
+
+[For example, [this article](https://knowledge.wharton.upenn.edu/article/algorithms-decision-making/) in Knowledge at Wharton.]{.aside} 
+
+It's common for us to talk about algorithms as "making decisions." But algorithms don't really have judgment or the ability to reason about the pros and cons of a specific case. As you know, algorithms do nothing more or less than *exactly what we, the programmers, tell them to do*. It is our responsibility to decide what rules and mechanisms the algorithm will use in its decision process. 
+
+> When we talk about an algorithm making decisions, we are really talking about **writers of software** making decisions. 
+
+[You may wish to pause and ask yourself whether the criterion of "is it cost-efficient to house this human being" is a moral or fair one.]{.aside} 
+
+The decisions we make in code impact the lives of real people. For example, the [Silicon Valley Triage Tool](https://economicrt.org/publication/silicon-valley-triage-tool/) is an algorithm that identifies homeless people for whom giving them housing would cost the public less than keeping them homeless. So even as we learn the simple structures of code, we need to think about *how can we make* ***good*** *decisions* as program designers? When the livelihood of people depend on us, *how can we be fair*?
+
+We're going to explore this idea in a context that might be more familiar to you -- **college housing**. Colleges like Middlebury select methods that determine the order in which students can choose their housing. You might not think of it this way, but this is an automated, systematic method for solving a problem: an algorithm. In this lab, you'll have the opportunity to design your *own* algorithm. We're also going to briefly explore the [human-centered design process](http://www.designkit.org/human-centered-design) to ensure that **the decisions we make as algorithm designers are never untethered from the people we impact**. 
+
+In this lab, you'll practice: 
+
+1. Writing English descriptions of decision-making procedures and translating them into code. 
+2. Soliciting text input from users. 
+3. Applying conditionals (`if`, `elif`, and `else`) to control program execution. 
+4. Using accumulation variables to keep track of information inside a program. 
+5. Testing your algorithm and seeking feedback from the people whom it will impact. 
+
+## Who Chooses Housing First?
+
+Every year, Middlebury students select their housing for the following year. Your job is to build an algorithm that will help determine the order in which students get to select their housing. To keep things manageable, we're going to use a *point system*: 
+
+- Students are awarded a number of points based on a variety of factors. 
+- Students with the most points get the first choice of housing. 
+
+This is a **real approach** used by many colleges and universities. For example, the following is a *real point system* used by another liberal arts college in the US: 
+
+- *Current Freshman*: 1 point
+- *Current Sophomore*: 2 points
+- *Current Junior*: 3 points
+- *Current Senior*: 4 points
+- *23+ Years of Age*: 1 point
+- *Full-time, Off-Campus Program credit (e.g. student teaching)*: 1 point
+- *Academic Probation*: -1 point
+- *Academic Suspension*: -2 points
+- *On Disciplinary Probation at Any Time During the Academic Year*: -3 points
+
+For example, a junior (3 points) who ise 23 years old (1 point) would have priority over a senior (4 points) who has on academic probation (-1 point). 
+
+**Your goal**: Create a program that assigns points to students in order to prioritize them in housing selection. 
+
+But wait! Don't start yet. First...
+
+# Before You Code, Assess the Needs of Your Users
+
+That list up there was *one* college's approach to prioritizing students for housing. But there are **many more** aspects to consider if you want your algorithm to be fair and equitable for the diverse needs of students at Middlebury. So, you need to learn more about what those needs are. This is an illustration of a fundamental principle: 
+
+> Never create a program that serves people without **listening to those people** about what they need. 
+
+This principle is part of a broad design philosophy called **human-centered design**. 
+
+![](https://dalberg.com/wp-content/uploads/2020/05/ScreenShot2020-04-22at8.51.05AM.png)
+
+::: {.callout-note}
+
+## Activity 1: Learn From Your Users
+
+First, stand up, walk around, and talk to other students in the class about their needs. Share some of your ideas, and jot down some notes with ideas from others. Get creative! You're welcome to consider factors like: previous housing, graduation year, number of credits, whether or not a student holds a campus job, etc. etc. etc. 
+
+Return to your group and discuss with your partner. 
+
+Open the lab template file (link on Canvas), create a group for you and your partner, and ensure that both of you are looking at the same file. In the `ACTIVITY 1` area, include a long-form comment with a bullet-point list with **at least 5 items** not included in the list above that you feel should impact prioritization. Give them numeric point values. For example: 
+
+
+```python
+"""
+ACTIVITY 1: 
+
+- Wins campus-wide meme contest: 1 point
+- Dislikes *Star Trek: Deep Space 9*: -3 points
+- Has a cute pet at home: 1 point
+- ...
+"""
+```
+
+:::
+
+# Design and Plan Your Algorithm
+
+Now it's time to take the needs of your users (other students) and translate them into a concrete algorithm. You should choose **at least 5 factors**, of which at **least three must be from your discussion with other students** in the previous activity. That is, you shouldn't just use factors from the example from the other liberal arts college. You don't have to use *all* the ideas from the previous part. 
+
+Your algorithm will: 
+
+1. Ask questions of the user (e.g. *What class year are you?*)
+2. Assign points based on their answers (e.g. *4 points if user answered "rising senior"*)
+4. Accumulate their total points across all answers and display the result (like: *You have 23 housing points*)
+
+**Specifications**: We are exercising our ability to write code in addition to designing high-level algorithms, so we're going to put some constraints to make sure you get practice with the different ways in which conditionals can be used.
+
+- You must have at least one question that *only* appears if the previous question is answered in a specific way. 
+    - *For example*:  if someone says they are a 4th year student, you may ask the question “Are you about to graduate?” If they say yes, they receive no points. ONLY a 4th year student would receive this question. 
+    - ***Hint***: Nested `if` statements. 
+- You must have at least one question that makes use of a simple mathematical calculation to determine the number of points awarded. 
+    - For example: Rather than ask people to enter their status as a 1st, 2nd, 3rd, 4th year, you ask them for the number of credits they have received so far at Bucknell. Then they might receive `credits/8` points. 
+- You must have at least one question that use an `if`-`elif`-`else` structure.
+
+
+::: {.callout-note}
+
+## Activity 2: Create Your Algorithm
+
+Discussing in your group,  create a bulleted list in your template file that describes the factors you want to consider and how you are going to map those factors into points, taking into account the constraints above. You can do this by revising your list from the previous activity.  The result is your **proposed algorithm**, your current idea for how to unambiguously assign priority points to students. Write down your algorithm in the `ACTIVITY 2` area of the template file as a long-form comment. **Do not write any code yet**.
+
+:::
+
+# Before You Code, Make Sure It Works: User Testing
+
+**Do not create a program that serves people without testing it on people**. 
+
+::: {.callout-note}
+
+## Activity 3: Real-World Test Cases
+
+Pair up with another group. You are now a super-group of 4 people with 2 proposed algorithms. Compute the scores of each of the four people using each of your two algorithms. In the `ACTIVITY 3` area of the template file, write down all 4 of your names and the scores you would have received under each of the 2 algorithms. Then, write a brief reflection of 2-3 sentences on whether you feel that the way each algorithm ranked the 4 super-group members was fair. Finally, thank the other group and return to your group of 2. 
+
+::: 
+
+::: {.callout-note}
+
+## Activity 4: Hypothetical Test Cases
+
+Come up with 3 **hypothetical** test cases for your program, and check their scores. The purpose of these hypothetical test cases is for you to understand cases that may not have been illustrated by anyone in your super-group. Make an effort to think of hypothetical students who might be in very different situations from the students you've encountered so far. Describe these cases and their scores under your proposed algorithm in the `ACTIVITY 4` comment area. 
+
+::: 
+
+# Automate Your Decision-Making Process
+
+**Ok, finally time to code**. 
+
+Below, I've included a program (unmodified from the original version by [Evan Peck](https://evanpeck.github.io) at Bucknell) that illustrates some useful coding patterns. It implements part of the example point system shown earlier. You are welcome to use this program as a base for your own, or start from scratch. 
+
+[You may be able to find some ways to improve this code to make it shorter and simpler. If so, great! Discuss your proposed improvements with your partner and incorporate them into your own calculator.]{.aside}
+
+```python
+# Created by: Evan Peck (Bucknell University)
+# - Contact: evan.peck@bucknell.edu
+# - Last Modified: April 6, 2019
+
+# Keeps track of the point total during questions
+current_score = 0
+
+# A header to start the program
+print("-------------------------------")
+print("   HOUSING SCORE CALCULATOR")
+print("-------------------------------")
+print()
+
+# Assign points based on class year
+print("QUESTION 1")
+year_ans = input("What year are you? (1, 2, 3, 4): ")
+
+if year_ans == "1":
+    current_score += 1
+elif year_ans == "2":
+    current_score += 2
+elif year_ans == "3":
+    current_score += 3
+elif year_ans == "4":
+    current_score += 4
+
+# If the student is >= 23 years old, give them another point
+years_old = input("How old are you?: ")
+
+if int(years_old) >= 23:
+    current_score += 1
+
+# At the end of the program, tell the user their score
+print()
+print("------YOUR HOUSING SCORE----------")
+print("Your housing points score is", current_score)
+print("----------------------------------")
+```
+
+::: {.callout-note}
+
+## Activity 5: Write Your Program
+
+Modify the program above (or start from scratch, if you both agree) to match *your* algorithm from Activities 2-4. Write your program under the `ACTIVITY 5` heading. Your program should not be commented; i.e. running the file should run your program. 
+
+While writing your program, please: 
+
+- Use comments to describe what is happening in the program. 
+- Choose variable names that clearly describe what data they hold. 
+- Use spacing to group related lines of code into small, coherent blocks. 
+
+:::
+
+::: {.callout-note}
+
+## Activity 6: Check for Correctness
+
+Once you've written your program, **test it** by running it, giving the hypothetical test cases that you wrote down in Activity 4. Does your program give the correct answers in those cases? Briefly write down what happened in the `ACTIVITY 6` comment area. 
+
+:::
+
+# Your Code Works...But Is It Fair?
+
+You should **never** deploy real code without checking your assumptions. Your test cases tested your *technical* assumptions, but not your *social* assumptions: 
+
+::: {.callout-note}
+
+## Activity 7: Test Your Social Assumptions
+
+1. Outside the lab period, **find at least three different students** and run your program with them. 
+2. For each student you talk to, **get feedback** on their experience of using your program. 
+    - You may find it helpful to show them the hypothetical test cases so that they can understand how their score compares to the scores of other possible students. 
+3. Take careful notes on their answers to the program prompts and the score that your program gave them. Write these notes in the `ACTIVITY 7` area of the template file. 
+
+:::
+
+
+[![](https://images-na.ssl-images-amazon.com/images/I/81oLjDkLx4L._AC_UL600_SR600,600_.jpg)]{.aside}
+
+::: {.callout-note}
+
+## Activity 8: Reflect On Your Findings
+
+Read [this short article](https://www.theguardian.com/commentisfree/2018/may/13/we-created-poverty-algorithms-wont-make-that-go-away) by Virginia Eubanks, author of the book *Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor*. In this article, Eubanks discusses a more complex scoring system for prioritizing housing for unhoused people in Los Angeles. 
+
+Then, with your partner, **write a reflection of at least three short paragraphs** in the `ACTIVITY 8` area of the lab file. In your reflection, please address the following questions: 
+
+- Which students are most likely to **benefit** from your algorithm?
+- Which students are most likely to be **disadvantaged** by your algorithm?
+- Based on your answers to these questions, in what ways is your algorithm **fair** or **unfair**?
+- What are at least three ways in which you would consider **revising** your program? Give at least two ways in which you would consider revising the point assignment system and at least one way in which you would consider revising the way the user interacts with the program. 
+- In her article, Eubanks points out that the problems for which we deploy automated decision systems are not inevitable, but reflect social and political choices. What choices do colleges make that make it necessary for us to prioritize students in their opportunities to choose housing? 
+    - You are not required to express opinions about whether Middlebury or any other school has made **good** or **fair** choices, you just need to identify what some of those choices are. It's fine if you also want to express an opinion, but this isn't part of what we'll grade you on. 
+
+:::
+
+# Submit Your Work
+
+Finally, **one** group member should download the lab file and submit it on Gradescope, making sure to add both of you to the submission file to ensure that you both receive credit for your work. 

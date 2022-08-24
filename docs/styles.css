@@ -73,6 +73,11 @@ td {
   color: #003F84;
 }
 
+.assignment-goal {
+  font-weight: bold;
+  color: #c66600;
+}
+
 .supporting-reading {
   font-style: italic;
   color: #444444;

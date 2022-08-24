@@ -4,7 +4,14 @@
     "href": "labs/decision-making/index.html",
     "title": "Developers as Decision-Makers",
     "section": "",
-    "text": "© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+    "text": "This lab is adapted from an activity created by Evan Peck (Bucknell University).\nIt’s common for us to talk about algorithms as “making decisions.” But algorithms don’t really have judgment or the ability to reason about the pros and cons of a specific case. As you know, algorithms do nothing more or less than exactly what we, the programmers, tell them to do. It is our responsibility to decide what rules and mechanisms the algorithm will use in its decision process.\nThe decisions we make in code impact the lives of real people. For example, the Silicon Valley Triage Tool is an algorithm that identifies homeless people for whom giving them housing would cost the public less than keeping them homeless. So even as we learn the simple structures of code, we need to think about how can we make good decisions as program designers? When the livelihood of people depend on us, how can we be fair?\nWe’re going to explore this idea in a context that might be more familiar to you – college housing. Colleges like Middlebury select methods that determine the order in which students can choose their housing. You might not think of it this way, but this is an automated, systematic method for solving a problem: an algorithm. In this lab, you’ll have the opportunity to design your own algorithm. We’re also going to briefly explore the human-centered design process to ensure that the decisions we make as algorithm designers are never untethered from the people we impact.\nIn this lab, you’ll practice:\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "labs/decision-making/index.html#who-chooses-housing-first",
+    "href": "labs/decision-making/index.html#who-chooses-housing-first",
+    "title": "Developers as Decision-Makers",
+    "section": "Who Chooses Housing First?",
+    "text": "Who Chooses Housing First?\nEvery year, Middlebury students select their housing for the following year. Your job is to build an algorithm that will help determine the order in which students get to select their housing. To keep things manageable, we’re going to use a point system:\n\nStudents are awarded a number of points based on a variety of factors.\nStudents with the most points get the first choice of housing.\n\nThis is a real approach used by many colleges and universities. For example, the following is a real point system used by another liberal arts college in the US:\n\nCurrent Freshman: 1 point\nCurrent Sophomore: 2 points\nCurrent Junior: 3 points\nCurrent Senior: 4 points\n23+ Years of Age: 1 point\nFull-time, Off-Campus Program credit (e.g. student teaching): 1 point\nAcademic Probation: -1 point\nAcademic Suspension: -2 points\nOn Disciplinary Probation at Any Time During the Academic Year: -3 points\n\nFor example, a junior (3 points) who ise 23 years old (1 point) would have priority over a senior (4 points) who has on academic probation (-1 point).\nYour goal: Create a program that assigns points to students in order to prioritize them in housing selection.\nBut wait! Don’t start yet. First…"
   },
   {
     "objectID": "labs/prelims/index.html",
@@ -193,7 +200,7 @@
     "href": "syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "CSCI 0145, Introduction to Computing, is an introductory course in computer science at Middlebury College. It is one of several ways in which you might begin a computer science major at Midd. It’s also a great way for you to develop your computational skills to support other majors.\nThe primary aim of CSCI 0145 is to help you build strong foundations in computational thinking and programming skills. We will cover a fair amount of the Python programming language. That said, our primary focus will be on reasoning, program design, and implementation principles rather than the details of Python programming.\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+    "text": "CSCI 0145, Introduction to Computing, is an introductory course in computer science at Middlebury College. It is one of several ways in which you might begin a computer science major at Midd. It’s also a great way for you to develop your computational skills to support other majors.\nThe primary aim of CSCI 0145 is to help you build strong foundations in computational thinking and programming skills. We will cover a fair amount of the Python programming language. That said, our primary focus will be on reasoning, program design, and implementation principles rather than the details of Python programming.\nLearning computing for the first time can be a challenging experience. In a nutshell, my teaching philosophy is:\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
   },
   {
     "objectID": "syllabus.html#books",
