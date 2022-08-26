@@ -8,21 +8,14 @@ CSCI 0145, Introduction to Computing, is an introductory course in computer scie
 
 The primary aim of CSCI 0145 is to help you build strong foundations in computational thinking and programming skills. We will cover a fair amount of the Python programming language. That said, our primary focus will be on reasoning, program design, and implementation principles rather than the details of Python programming. 
 
+[![Calligraphy with the sentence "I am here for you" surrounded by a circle."](https://images.squarespace-cdn.com/content/v1/563ce107e4b088e6d742e65d/1584467902419-9WTUGOMH8YJGGEP4ORHQ/image-asset.jpeg) Calligraphy by Thich Nhat Hanh.]{.aside}
+
 Learning computing for the first time can be a challenging experience. In a nutshell, my teaching philosophy is: 
 
-1. Your wellbeing as a human person is more important than any grades. 
-2. It is my job to help you learn and grow, as a computer scientist, scholar, and public citizen. 
-3. You can count on me to do my job to the best of my ability. 
-
-[Calligraphy by Thich Nhat Hanh.]{.aside}
-
-![](https://images.squarespace-cdn.com/content/v1/563ce107e4b088e6d742e65d/1584467902419-9WTUGOMH8YJGGEP4ORHQ/image-asset.jpeg)
-
-
-
-
-
-
+1. Your flourishing as an entire human person is more important than any grades. 
+2. It is my job to help you learn and grow, as a scientist, scholar, and public citizen. 
+3. You can count on me to interact with you in a way that furthers your learning and growth. 
+4. In particular, you can count on me to care about you as a person and ensure that you can get help when you need it. 
 
 
 # Learning Objectives
