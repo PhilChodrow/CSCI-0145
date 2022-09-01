@@ -1,0 +1,184 @@
+[
+  {
+    "objectID": "labs/decision-making/index.html",
+    "href": "labs/decision-making/index.html",
+    "title": "Developers as Decision-Makers",
+    "section": "",
+    "text": "This lab is adapted from an activity created by Evan Peck (Bucknell University).\nIt’s common for us to talk about algorithms as “making decisions.” But algorithms don’t really have judgment or the ability to reason about the pros and cons of a specific case. As you know, algorithms do nothing more or less than exactly what we, the programmers, tell them to do. It is our responsibility to decide what rules and mechanisms the algorithm will use in its decision process.\nThe decisions we make in code impact the lives of real people. For example, the Silicon Valley Triage Tool is an algorithm that identifies homeless people for whom giving them housing would cost the public less than keeping them homeless. So even as we learn the simple structures of code, we need to think about how can we make good decisions as program designers? When the livelihood of people depend on us, how can we be fair?\nWe’re going to explore this idea in a context that might be more familiar to you – college housing. Colleges like Middlebury select methods that determine the order in which students can choose their housing. You might not think of it this way, but this is an automated, systematic method for solving a problem: an algorithm. In this lab, you’ll have the opportunity to design your own algorithm. We’re also going to briefly explore the human-centered design process to ensure that the decisions we make as algorithm designers are never untethered from the people we impact.\nIn this lab, you’ll practice:\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "labs/decision-making/index.html#who-chooses-housing-first",
+    "href": "labs/decision-making/index.html#who-chooses-housing-first",
+    "title": "Developers as Decision-Makers",
+    "section": "Who Chooses Housing First?",
+    "text": "Who Chooses Housing First?\nEvery year, Middlebury students select their housing for the following year. Your job is to build an algorithm that will help determine the order in which students get to select their housing. To keep things manageable, we’re going to use a point system:\n\nStudents are awarded a number of points based on a variety of factors.\nStudents with the most points get the first choice of housing.\n\nThis is a real approach used by many colleges and universities. For example, the following is a real point system used by another liberal arts college in the US:\n\nCurrent Freshman: 1 point\nCurrent Sophomore: 2 points\nCurrent Junior: 3 points\nCurrent Senior: 4 points\n23+ Years of Age: 1 point\nFull-time, Off-Campus Program credit (e.g. student teaching): 1 point\nAcademic Probation: -1 point\nAcademic Suspension: -2 points\nOn Disciplinary Probation at Any Time During the Academic Year: -3 points\n\nFor example, a junior (3 points) who ise 23 years old (1 point) would have priority over a senior (4 points) who has on academic probation (-1 point).\nYour goal: Create a program that assigns points to students in order to prioritize them in housing selection.\nBut wait! Don’t start yet. First…"
+  },
+  {
+    "objectID": "labs/prelims/index.html",
+    "href": "labs/prelims/index.html",
+    "title": "Designing Simple Programs",
+    "section": "",
+    "text": "© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "labs/functions/index.html",
+    "href": "labs/functions/index.html",
+    "title": "Functions",
+    "section": "",
+    "text": "© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Index of Assignments",
+    "section": "",
+    "text": "Title\n\n\nsummary\n\n\n\n\n\n\nDesigning Simple Programs\n\n\n\n\n\n\nFunctions\n\n\nWe work with functions!\n\n\n\n\nDevelopers as Decision-Makers\n\n\nSome stuff we do.\n\n\n\n\n\n\nNo matching items\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "assignments.html#guided-discovery",
+    "href": "assignments.html#guided-discovery",
+    "title": "Index of Assignments",
+    "section": "Guided Discovery",
+    "text": "Guided Discovery\n\n\n\n\n\n\nTitle\n\n\nsummary\n\n\nfile\n\n\n\n\n\n\nStrings\n\n\n\n\nAssignment file\n\n\n\n\nGuided Discovery: Practice With Functions\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "assignments.html#homework-exercises",
+    "href": "assignments.html#homework-exercises",
+    "title": "Index of Assignments",
+    "section": "Homework Exercises",
+    "text": "Homework Exercises"
+  },
+  {
+    "objectID": "philosophy.html",
+    "href": "philosophy.html",
+    "title": "",
+    "section": "",
+    "text": "© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "tools.html",
+    "href": "tools.html",
+    "title": "",
+    "section": "",
+    "text": "© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "acknowledgements.html",
+    "href": "acknowledgements.html",
+    "title": "Acknowledgements",
+    "section": "",
+    "text": "© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome!",
+    "section": "",
+    "text": "CSCI 0145, “Introduction to Computing,” is an introductory course in computer science at Middlebury College. It is one of several ways in which you might begin a computer science major at Midd. It’s also a great way for you to develop your computational skills to support other majors.\nThe primary aim of CSCI 0145 is to help you build strong foundations in computational thinking and programming skills. We will cover a fair amount of the Python programming language. That said, our primary focus will be on reasoning, program design, and implementation principles rather than the details of Python programming.\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "Welcome!",
+    "section": "Instructor",
+    "text": "Instructor\n\nHello! I’m Dr. Phil Chodrow, and I’ll be your instructor for this course. My pronouns are he/him/his.\nMy research focuses on network science, the study of connected systems in society and nature. I draw on methods from applied mathematics, machine learning, statistics, and physics. I also work on data science projects to promote equity and sustainability.\nI love ethical data science, effective teaching, Star Trek: Deep Space 9, cool math, cooking, tea, traditional martial arts, and Studio Ghibli movies."
+  },
+  {
+    "objectID": "collaboration.html",
+    "href": "collaboration.html",
+    "title": "Collaboration And Academic Honesty",
+    "section": "",
+    "text": "This is a page of general principles and guidelines that apply in courses I (Phil Chodrow) teach at Middlebury College. It is lightly adapted from the handout “Collaborating on Mathematics” by the Harvey Mudd Department of Mathematics, which I discovered in a Tweet by Francis Su.\nIn any case in which the guidelines and principles on this page conflict with the policies of a specific course, the policies of the specific course should be followed. For example, if the course syllabus says that collaboration is not permitted on homeworks, then collaboration is not permitted on homeworks, regardless of anything written here.\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "collaboration.html#why-collaborate",
+    "href": "collaboration.html#why-collaborate",
+    "title": "Collaboration And Academic Honesty",
+    "section": "Why Collaborate?",
+    "text": "Why Collaborate?\nMost scientists and engineers don’t work on their own; they work with colleagues and students while doing and publishing research. Increasingly, open problems in science and engineering require multiple skill sets and areas of expertise. Because of this, the need to collaborate will only increase in the future. This is why several of CS@Midd’s learning goals are explicitly focused on communication and collaboration. We want our students to have strong professional and communication skills, to be able to function well as part of a team, and to be able to work and communicate with diverse groups of people."
+  },
+  {
+    "objectID": "collaboration.html#collaborating-on-homework-and-other-individually-assessed-assignments",
+    "href": "collaboration.html#collaborating-on-homework-and-other-individually-assessed-assignments",
+    "title": "Collaboration And Academic Honesty",
+    "section": "Collaborating on Homework and Other Individually-Assessed Assignments",
+    "text": "Collaborating on Homework and Other Individually-Assessed Assignments\n\n(COLLABORATION IS A LIFE SKILL) Understand that working with others and asking for assistance are not signs of weakness or deficiency; rather, they are essential life skills important for making progress in any discipline, including computer science. Our department wants you to develop these skills. If you’re too shy to come to my office hours or to join a group of people working on their homework, ask a friend to come with you.\n(COLLABORATIONS BENEFIT FROM DIVERSITY) Open yourself up to working with people whom you don’t know (yet). You might find someone you work really well with and who doesn’t think exactly like you do. A wide range of experiecnes and backgrounds is beneficial in problem solving, although it may be helpful to find folks who can work on assignments during the same time of day and at roughly the same pace. If you’re having trouble finding people to work with, I can help!\n(COLLABORATIONS ARE INCLUSIVE) Believe that everyone has something meaningful to contribute (you included), and that you have something to learn from each person. This can be a difficult state of mind to achieve, but critical for healthy, effective collaboration. Here are some practical consequences:\n\nIn any group setting, listen carefully for everyone’s contributions. Don’t dismiss or ignore what someone says, and don’t move on until you’ve considered it carefully. If what is said doesn’t make sense to you, that doesn’t necessarily mean it’s incorrect–the person might just have a way of approaching the problem that is different and not yet clear to you. Furthermore, even ideas that ultimately turn out to be incomplete or incorrect are often still useful building blocks towards a successful approach.\nFind ways to verbally validate the ideas of others. For example: “One really neat feature of Zenith’s approach to part (b) is that it also works with a small modification for part (c).”\nIf someone in the group hasn’t spoken for a while, ask for their ideas or opinions. Conversely, if you find yourself talking a lot, take a step back and allow someone else to contribute to the discussion.\n\n(COLLABORATIONS REQUIRE PREPARATION) Don’t seek help from others on a probem before you’ve had time to think about it yourself, try at least one approach, and formulate the obstacle as clearly as you can. But at the same time, if you find yourself frustrated with a problem and you’re not making progress, don’t wait too long before you look for help from your classmates, your tutors, or me.\n(COLLABORATIONS GENERATE DEEPER UNDERSTANDING) Don’t be satisfied with only producing the correct final result; use your collaboration to push each other to understand:\n\nWhy does this approach work?\nWhat alternative approaches would also have worked?\nWhat are some of the merits and drawbacks of these different approaches?\n\n(COLLABORATIONS ARE EMPOWERING) Good collaborations empower people towards further growth.\n\nWhen you’re working on a problem with others and you find a path before everyone else, avoid ruining the experience of discovery for others. Conversely, if you haven’t figured out something yet and want to enjoy the discovery for yourself, don’t let someone else ruin your joy.\nIf someone asks you for help, don’t just tell them the answer or start showing them a solution method. Listen carefully to their question. Ask for more information if they aren’t being specific enough. If they say “I don’t know where to start,” ask them to tell you about their understanding of what the question is asking and which parts of it seem most puzzling. Ask guiding questions to help them discover ideas for themselves. In these situations, you have the opportunity to learn how to help others learn – this is an invaluable life skill.\n\n(COLLABORATIONS ACKNOWLEDGE CONTRIBUTORS) Whenever you’ve received help on a homework assignment from a classmate, a friend, a tutor, or me, acknowledge the support and briefly describe how it helped you in your assignment.\n\nThe reason I ask you to acknowledge tutors and myself is actually different from the reason I ask you to acknowledge classmates and friends. For classmates and friends, it’s about cultivating transparency and integrity. The primary reason I want you to acknowledge tutors and myself is that the exercise of explicitly remembering and reflecting on your learning journey is part of metacognition, a valuable set of practices that will help you succeed in this class, in college, and in your long-term career."
+  },
+  {
+    "objectID": "collaboration.html#collaborating-on-group-projects",
+    "href": "collaboration.html#collaborating-on-group-projects",
+    "title": "Collaboration And Academic Honesty",
+    "section": "Collaborating on Group Projects",
+    "text": "Collaborating on Group Projects\n\n(COLLABORATIONS SET GOOD EXPECTATIONS) Establish clear expectations and ways of communicating with each other to avoid misunderstandings. When, where, and how often will you meet? How can you reach each other in case of an emergency?\n(COLLABORATION IS NOT DIVISION OF LABOR) Collaboration is not the same as splitting up a problem into pieces and then slapping the completed pieces together.\n\nIdentify the parts of the problem that need to be completed together and the parts that can be completed individually.\nWork toward a final product that everyone is happy with and that represents the contributions of everyone on the group.\nDon’t just divide up the work based on who might have the most experience or skill with each part of the problem. Let those who want to develop their skills also have a chance to work on pieces that are unfamiliar to them\n\n(COLLABORATIONS ARE EQUITABLE) Aim for each person to contribute a fair and equitable amount of effort and/or time to the group’s deliverables.\n(COLLABORATIONS RESOLVE CONFLICT QUICKLY) Resolve any misunderstands between the team members quickly. Don’t let those misunderstandings fester into distrust, resentment, or anger. Don’t be afraid to ask your professor for help in resolving interpersonal conflict in your team. While this can feel uncomfortable, often these kinds of situations are important opportunities for everyone to learn more about how to coexist as collaborative, whole humans."
+  },
+  {
+    "objectID": "collaboration.html#collaboration-is-a-skill",
+    "href": "collaboration.html#collaboration-is-a-skill",
+    "title": "Collaboration And Academic Honesty",
+    "section": "Collaboration is a Skill",
+    "text": "Collaboration is a Skill\nYou might imagine that you already know whether you need to collaborate and how to do it. And indeed, there’s a lot you know already! But collaboration is a skill, and like other skills it rewards practice and growth. Effective collaboration involves perspective-taking, empathy, respect, and clear communication. We hope that you will find that the benefits of collaboration far outweigh its challenges."
+  },
+  {
+    "objectID": "collaboration.html#collaboration-and-the-middlebury-honor-code",
+    "href": "collaboration.html#collaboration-and-the-middlebury-honor-code",
+    "title": "Collaboration And Academic Honesty",
+    "section": "Collaboration and the Middlebury Honor Code",
+    "text": "Collaboration and the Middlebury Honor Code\nThe Middlebury Honor Code’s preamble states that:\n\nThe students of Middlebury College believe that individual undergraduates must assume responsibility for their own integrity on all assigned academic work…The Middlebury student body, then, declares its commitment to an honor system that fosters moral growth and to a code that will not tolerate academic dishonesty in the College community.\n\nIn any assignment in which you receive a grade individually (homeworks, exams), the purpose of the grade is to measure your learning and achievement. When you turn in such an assignment, you implicitly represent that work as work that you are able to complete yourself under the stated conditions (which may include getting help or working with others). If you cannot complete some work under the stated collaboration conditions, it is dishonest to turn in that work.\nWhen working individually, it is your responsibility to uphold the Code’s standards of integrity and academic honesty. When working in a group, it is additionally your responsibility to ensure that your group as a whole upholds these standards.\nIf you have a question about whether some form of collaboration is permitted, just ask!\n\nWhat Happens if I Observe an Honor Violation?\nAn important part of my teaching philosophy is: “no cop shit.” From this blog post by Jeffrey Moro\nWe all fail to uphold our highest moral aspirations at times. If you show lack of integrity or academic honesty, that doesn’t mean you’re a bad person. It means that you’re under pressure and chose the course of action that looked like the most workable one to you at the time.\nThat said, if you show lack of integrity or academic honesty, that’s an indicator that you have an opportunity for some very important growth.\nIt is part of my job to help you achieve that growth. I will take this job very seriously.\nConcretely, if I observe an honor violation, the first thing that is likely to happen is something resembling the episode described in this Twitter thread by Dr. Spencer Bagley. What happens next depends on how the first thing goes. It will be awkward and uncomfortable for both of us. You don’t want this."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "guided-discovery/strings-1/index.html",
+    "href": "guided-discovery/strings-1/index.html",
+    "title": "Strings",
+    "section": "",
+    "text": "You can access our Replit project for this assignment here.\n\n\n\n  © Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "guided-discovery/functions/index.html",
+    "href": "guided-discovery/functions/index.html",
+    "title": "Guided Discovery: Practice With Functions",
+    "section": "",
+    "text": "© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "CSCI 0145, Introduction to Computing, is an introductory course in computer science at Middlebury College. It is one of several ways in which you might begin a computer science major at Midd. It’s also a great way for you to develop your computational skills to support other majors.\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "syllabus.html#general-advice",
+    "href": "syllabus.html#general-advice",
+    "title": "Syllabus",
+    "section": "General Advice",
+    "text": "General Advice\nI am always happy to talk with you about your future plans, including internships, research opportunities, and graduate school applications. Because I am a creature of the academy, I am less knowledgeable about industry jobs, although you are welcome to ask about those too. You can drop in during Student Hours or email me to make an appointment."
+  },
+  {
+    "objectID": "syllabus.html#letters-of-recommendation",
+    "href": "syllabus.html#letters-of-recommendation",
+    "title": "Syllabus",
+    "section": "Letters of Recommendation",
+    "text": "Letters of Recommendation\nWriting letters of recommendation for students is a fundamental part of my job and something that I am usually very happy to do. Here’s how to ask me for a letter."
+  },
+  {
+    "objectID": "help.html",
+    "href": "help.html",
+    "title": "",
+    "section": "",
+    "text": "© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "Introduction \n            \n        \n            \n                    M\n                    \n                    Sep. 12 \n             Welcome to CSCI 0145!\n   \n        \n        \n             \n                We discuss the structure of the class and briefly introduce computational thinking. \n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Computational Thinking  \n            \n            \n                    Reading\n                            Course syllabus  \n                            What is this course about?  \n                            Algorithms and bugs  \n            \n            \n            \n            \n            \n        \n        \n            \n                    W\n                    \n                    Sep. 14 \n             Expressions and Variables\n   \n        \n        \n             \n                We discuss expressions -- the simplest recipes for computations -- and variables, which allow us to store the results of computations for later use. \n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Computational Thinking  \n                            Python Programming  \n            \n            \n                    Reading\n                            Expressions  \n                            Variables  \n            \n            \n            \n            \n            \n        \n        \n            \n                    T\n                    \n                    Sep. 15 \n             Guided Discovery: Introduction to Strings\n   \n        \n        \n             \n                We learn some ways to manipulate text, save the results, and show them to the user. We'll come back to advanced text manipulation much later in the course. \n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Python Programming  \n                            Applications  \n            \n            \n                    Activity\n                            GD1  \n            \n            \n            \n            \n            \n        \n            \n             Fundamentals of Procedural Programming \n            \n        \n            \n                    F\n                    \n                    Sep. 16 \n             Functions\n   \n        \n        \n             \n                Functions are reusable computational recipes. We discuss the basic ingredients of a function and work through some simple examples. \n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Computational Thinking  \n                            Python Programming  \n            \n            \n                    Reading\n                             Functions (1-3)  \n                             ThinkPython 3.1-3.7  \n            \n            \n            \n            \n            \n        \n        \n            \n                    M\n                    \n                    Sep. 19 \n             More on Functions\n   \n        \n        \n             \n                We discuss some important considerations for writing functions and using functions that other people have written. Our main topics are variable scope, documentation, and modules. \n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Computational Thinking  \n                            Python Programming  \n            \n            \n                    Reading\n                             Functions (4-5)  \n                             ThinkPython 3.8-3.14  \n            \n            \n                    Assigned\n                        HW1 \n            \n            \n            \n        \n        \n            \n                    W\n                    \n                    Sep. 21 \n             Control Flow\n   \n        \n        \n             \n                We discuss how to make decisions when executing a program. \n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Computational Thinking  \n                            Python Programming  \n            \n            \n                    Reading\n                            Conditionals  \n                            How Pair Programming Really Works by Stuart Wray  \n                             Think Like a Computer Scientist, Chapter 7   \n            \n            \n            \n            \n            \n        \n        \n            \n                    T\n                    \n                    Sep. 22 \n             Guided Discovery: Practice With Functions and Control Flow\n   \n        \n        \n             \n                We practice writing functions that make simple decisions in response to user input. \n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Computational Thinking  \n                            Python Programming  \n            \n            \n                    Activity\n                            (link)  \n            \n            \n            \n            \n            \n        \n        \n            \n                    F\n                    \n                    Sep. 23 \n             Lab: Developers as Decision-Makers\n   \n        \n        \n             \n                We use our skills with gathering user input, writing functions, and making simple decisions that prioritize some users over others. We also practice the human-centered design process. \n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Python Programming  \n                            Design and Collaboration  \n            \n            \n                    Activity\n                            (link)  \n            \n            \n            \n            \n            \n        \n            \n             Recursion \n            \n        \n            \n                    M\n                    \n                    Sep. 26 \n             Recursion\n   \n        \n        \n             \n                We study recursion, a powerful tool for writing simple solutions to complex problems by breaking them down into smaller problems. \n            \n        \n        \n            \n            \n                    Learning Objectives\n                            Computational Thinking  \n            \n            \n                    Reading\n                            Recursion  \n                             ThinkPython 5.8-5.14  \n            \n            \n            \n            \n                    Due\n                            HW1 \n            \n        \n        \n\nNo matching items\n\n  © Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  }
+]

@@ -13,9 +13,15 @@ website:
     contents:
       - text: Welcome!
         href: index.qmd 
-      - syllabus.qmd
+      - section: syllabus.qmd
+        contents: 
+          - collaboration.qmd
+          - tools.qmd
+          - help.qmd
+          - schedule.qmd
+          - philosophy.qmd
       # - collaboration.qmd
-      - schedule.qmd
+      # - schedule.qmd
       # - part: Lecture Notes
       # - section: 1. Introduction
       #   contents: 
@@ -42,3 +48,5 @@ format:
     number-depth: 0
     reference-location: margin
     callout-icon: false;
+    filters:
+      - nutshell

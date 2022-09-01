@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>tools</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./assets/img/icons/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/nutshell-1.0.0/nutshell.min.js"></script>
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">(Untitled)</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./"><b>Introduction to Computing</b><br>CSCI 0145</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome!</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./collaboration.html" class="sidebar-item-text sidebar-link">Collaboration And Academic Honesty</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tools.html" class="sidebar-item-text sidebar-link active">Course Resources</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./help.html" class="sidebar-item-text sidebar-link">Asking For Help</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./schedule.html" class="sidebar-item-text sidebar-link">Course Schedule</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./philosophy.html" class="sidebar-item-text sidebar-link">Some Teaching Philosophies</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#course-resources" id="toc-course-resources" class="nav-link active" data-scroll-target="#course-resources">Course Resources</a>
+  <ul class="collapse">
+  <li><a href="#books" id="toc-books" class="nav-link" data-scroll-target="#books">Books</a></li>
+  <li><a href="#python-thonny" id="toc-python-thonny" class="nav-link" data-scroll-target="#python-thonny">Python: Thonny</a></li>
+  <li><a href="#collaborative-python-replit" id="toc-collaborative-python-replit" class="nav-link" data-scroll-target="#collaborative-python-replit">Collaborative Python: replit</a></li>
+  <li><a href="#help-forum-campuswire" id="toc-help-forum-campuswire" class="nav-link" data-scroll-target="#help-forum-campuswire">Help Forum: Campuswire</a></li>
+  <li><a href="#assignments-gradescope-and-canvas" id="toc-assignments-gradescope-and-canvas" class="nav-link" data-scroll-target="#assignments-gradescope-and-canvas">Assignments: Gradescope and Canvas</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+
+
+<section id="course-resources" class="level1 page-columns page-full">
+<h1>Course Resources</h1>
+<section id="books" class="level2">
+<h2 class="anchored" data-anchor-id="books">Books</h2>
+<p>There are no required books to purchase in this course. Required and optional readings will come from free online sources, especially including:</p>
+<ul>
+<li><a href="https://runestone.academy/ns/books/published/thinkcspy/index.html">How to Think like a Computer Scientist</a>: an interactive book with many embedded activities.</li>
+<li><a href="https://runestone.academy/ns/books/published//fopp/index.html#">Foundation of Python programming</a>: another interactive book with a fair amount of overlapping with “How to think like a Computer Scientist”</li>
+<li><a href="https://greenteapress.com/wp/think-python-2e/">ThinkPython</a>: please note that despite providing a good introduction to Python, the language and examples used in this book are not the most inclusive. Most of the examples are drawn from the comedy routines of the British surrealist comedians “Monty Python (Links to an external site.)” which, to someone who has never seen any of their material, will not be particularly helpful.</li>
+<li><a href="https://avaccari.gitlab.io/csci-0145/sp22/index.html">Course notes</a>: together with other members of the CS Department, we are putting together our own interactive notes for the intro courses. This is still a work in progress and they are constantly edited so, go back often to check since there might be new goodies appearing over time.</li>
+<li><a href="https://docs.python.org/3.7/">Python 3.7 Documentation</a>: This is the official documentation for the Python programming language. Following along with the <a href="https://docs.python.org/3.7/tutorial/index.html">Tutorial</a> is an excellent way to develop your skills, and the <a href="https://docs.python.org/3.7/reference/index.html">Language Reference</a> is also extremely helpful. Note that this is the documentation for Python 3.7, rather than the most current Python 3.10. This is because Python 3.7 is the version that comes bundled with Thonny, and is therefore the version we will use in this class. The differences between 3.7 and 3.10 are minimal and unlikely to ever come up in CSCI 0145.</li>
+</ul>
+</section>
+<section id="python-thonny" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="python-thonny">Python: Thonny</h2>
+<p>We’ll write most of our Python code in Thonny. Thonny is a simple integrated development environment (IDE): a place to write, run, and troubleshoot code. It can be installed on Windows, Mac and Linux. Please see the <a href="https://thonny.org">Thonny website</a> for installation instructions. Thonny comes bundled with Python version 3.7, which is the version that we will use throughout CSCI 0145.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://thonny.org/img/screenshot.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">A screenshot of the Thonny Python IDE, showing some sample code and some pop-out windows for debugging.</figcaption><p></p>
+</figure>
+</div>
+<p>The Thonny IDE.</p>
+</div></div><p>You may already be familiar with a different IDE, and may prefer it to Thonny. While you are welcome to use your IDE of choice on your own time, <strong>we expect you to use Thonny</strong> during class time and when working with partners on labs. This is to ensure that we don’t have to spend precious group time with one partner getting used to another partner’s IDE.</p>
+</section>
+<section id="collaborative-python-replit" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="collaborative-python-replit">Collaborative Python: replit</h2>
+<p>We’ll have regular group assignments that will ask you to collaborate on coding projects. In general, the expectation is that only one person will be coding at a time. However, in order to ensure that you don’t need to do things like swap laptops when it comes time to change roles, we’ll complete these assignments in an online collaborative coding environment called <a href="https://replit.com">replit</a>. You’ll sign up for our CSCI 0145 team on replit using an invite link posted in Canvas. You’ll then be able to work with partners on guided discovery and lab assignments in the replit interface. It’s a bit more complex than Thonny, but has the same core functionality.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://cms.replit.com/assets/workspace.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">A screenshot of replit, showing a file browser, source code, and output in a terminal.</figcaption><p></p>
+</figure>
+</div>
+<p>The replit online IDE.</p>
+</div></div></section>
+<section id="help-forum-campuswire" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="help-forum-campuswire">Help Forum: Campuswire</h2>
+<p>We will use Campuswire as a question-and-answer forum related to course content. You’ll join Campuswire by clicking on a link provided on Canvas. A few basic policies:</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://static.campuswire.com/images/platform-banner.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">A screenshot of Campuswire, showing a menu sidebar, a list of recent posts, and a question/answer exchange involving a mathematical formula.</figcaption><p></p>
+</figure>
+</div>
+<p>Campuswire, our Q&amp;A forum.</p>
+</div></div><ol type="1">
+<li>Questions should usually be posted publicly. I reserve the right to make private questions public.</li>
+<li>Please ask questions using your name (i.e.&nbsp;not anonymously). Use of names helps us establish a healthy and respectful learning community.</li>
+<li>Before posting your question, please follow the steps outlined in <a href="#help">Asking for Help</a>.</li>
+<li>Conceptual questions are always fine.</li>
+<li>Code that is directly related to lab or homework solutions should never be posted on Campuswire.</li>
+<li>If you are having trouble with code in a lab or homework assignment, you should create a <em><a href="https://stackoverflow.com/help/minimal-reproducible-example">minimal reproducible example</a></em> of your issue. A minimal <strong>repr</strong>oducible <strong>ex</strong>ample is sometimes called a <em>reprex</em>.</li>
+</ol>
+<p>Campuswire isn’t here just for me to help you – it’s also for you to help each other. Both excellent, thoughtful <em>questions</em> and</p>
+</section>
+<section id="assignments-gradescope-and-canvas" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="assignments-gradescope-and-canvas">Assignments: Gradescope and Canvas</h2>
+<p>Gradescope is one of the places in which you’ll submit graded assignments for this course. Most assignments, including homework assignments, labs, and guided discovery activities will be submitted to Gradescope. Homework assignments and labs will be assessed for correctness, while guided discovery activities will simply be assessed for completion.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://files.helpdocs.io/u7xiir5ze4/articles/ujutnle52h/1592933285693/programming-assignments-manual-gradi.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">A screenshot of Gradescope, showing a coding submission and a grading rubric with some items marked.</figcaption><p></p>
+</figure>
+</div>
+<p>Gradescope, our primary tool for submitting graded work.</p>
+</div></div><p>We’ll also submit some assignments through Canvas. Canvas is also where we’ll keep things like lecture recordings, grades, and other non-public content.</p>
+
+
+</section>
+</section>
+
+<p><br> <br> <span style="color:grey;">© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022</span></p></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

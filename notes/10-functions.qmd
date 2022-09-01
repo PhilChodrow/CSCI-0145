@@ -1,7 +1,0 @@
----
-title: Functions
----
-
-## Functions {#first-part}
-
-## More Functions {#second-part}

@@ -33,7 +33,7 @@
   summary: |
     We learn some ways to manipulate text, save the results, and show them to the user. We'll come back to advanced text manipulation much later in the course. 
   activity: 
-    - <a href="guided-discovery/strings-1">GD1</a>
+    - <a href="https://replit.com/team/csci-0145/Guided-Discovery-String-Indexing-and-Manipulation">GD1</a>
   module: Introduction
   objectives: 
     - Python Programming
@@ -42,50 +42,54 @@
   publish: true
 - date: 2022-09-16
   header: | 
-    Lab: Designing Simple Programs
-  summary: |
-    We write simple programs to enable user interaction using our new programming skills. 
-  activity: 
-    - <a href="labs/prelims/"> L1 </a>
-  module: Introduction
-  objectives: 
-    - Python Programming
-    - Design and Collaboration
-  publish: true
-- date: 2022-09-19
-  day: 1
-  header: | 
     Functions
   summary: |
-    Functions are reusable computational recipes. We discuss the basic ingredients of a function and work through some simple examples. 
+        Functions are reusable computational recipes. We discuss the basic ingredients of a function and work through some simple examples. 
+  reading: 
+    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/functions.html"> Functions</a> (1-3)
+  optional: 
+    - <a href="https://greenteapress.com/thinkpython2/thinkpython2.pdf"> ThinkPython</a> 3.1-3.7 
+  module: Fundamentals of Procedural Programming
   objectives: 
     - Computational Thinking
     - Python Programming
-  reading:
-    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/functions.html">Functions</a>
-  optional:
-    - <a href="https://middlebury.instructure.com/courses/9972/files/1677127?wrap=1"> More reading </a> 
-  module: Fundamentals of Procedural Programming
-  due: 
-    - <a href="index.qmd">Lab 1</a> 
   publish: true
-- date: 2022-09-21
+- date: 2022-09-19
   header: | 
     More on Functions
   summary: |
-    We discuss some important considerations for writing functions and using functions that other people have written. Our two main topics are <i>documentation</i> and <i>modules</i>. 
+    We discuss some important considerations for writing functions and using functions that other people have written. Our main topics are <i>variable scope</i>, <i>documentation</i>, and <i>modules</i>. 
   objectives: 
     - Computational Thinking
     - Python Programming
-  reading:
-    - <a href="notes/10-functions.qmd#second-part">More on Functions</a>
+  reading: 
+    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/functions.html"> Functions</a> (4-5)
+  optional: 
+    - <a href="https://greenteapress.com/thinkpython2/thinkpython2.pdf"> ThinkPython</a> 3.8-3.14 
+  module: Fundamentals of Procedural Programming
+  publish: true
+  assigned: 
+    - <a href="assignments/HW/HW1.py">HW1</a>
+- date: 2022-09-21
+  header: | 
+    Control Flow
+  summary: |
+    We discuss how to make decisions when executing a program. 
+  objectives: 
+    - Computational Thinking
+    - Python Programming
+  reading: 
+    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/conditionals.html">Conditionals</a>
+    - <a href="assets/pdf/PairProgramming.pdf">How Pair Programming Really Works</a> by Stuart Wray
+  optional: 
+    - <a href="https://runestone.academy/ns/books/published/thinkcspy/Selection/toctree.html#selection"> Think Like a Computer Scientist, Chapter 7 </a> 
   module: Fundamentals of Procedural Programming
   publish: true
 - date: 2022-09-22
   header: | 
-    Guided Discovery: Practice With Functions
+    Guided Discovery: Practice With Functions and Control Flow
   summary: |
-    TBD
+    We practice writing functions that make simple decisions in response to user input. 
   objectives: 
     - Computational Thinking
     - Python Programming
@@ -95,13 +99,29 @@
   publish: true
 - date: 2022-09-23
   header: | 
-    Lab: Writing (About) Functions 
+    Lab: Developers as Decision-Makers
   summary: |
-    TBD
+    We use our skills with gathering user input, writing functions, and making simple decisions that prioritize some users over others. We also practice the human-centered design process. 
   objectives: 
     - Python Programming
     - Design and Collaboration
   activity:
-    - <a href="labs/functions/">(link)</a>
+    - <a href="labs/decision-making/">(link)</a>
   module: Fundamentals of Procedural Programming
   publish: true
+- date: 2022-09-26
+  header: |
+    Recursion
+  summary: | 
+    We study recursion, a powerful tool for writing simple solutions to complex problems by breaking them down into smaller problems. 
+  objectives: 
+    - Computational Thinking
+  reading: 
+    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/recursion.html">Recursion</a>
+  optional: 
+    - <a href="https://greenteapress.com/thinkpython2/thinkpython2.pdf"> ThinkPython</a> 5.8-5.14 
+  module: Recursion
+  publish: true
+  due: 
+    - HW1
+

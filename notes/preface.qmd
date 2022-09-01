@@ -1,6 +1,0 @@
----
-title: Lecture Notes
-toc: true
----
-
-These lecture notes draw heavily on notes produced by Philip Caplan and Andrea Vaccari at Middlebury. 

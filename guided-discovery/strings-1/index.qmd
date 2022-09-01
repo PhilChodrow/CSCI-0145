@@ -4,4 +4,6 @@ order: 1
 file: <a href="assignment-files/gd-strings.py">Assignment file</a>
 ---
 
-In this assignment, you'll explore some of the ways in which we can use Python to create and manipulate string variables. We'll also 
+In this assignment, you'll explore some of the ways in which we can use Python to create and manipulate string variables. 
+
+You can access our Replit project for this assignment [here](https://replit.com/team/csci-0145/Guided-Discovery-String-Indexing-and-Manipulation). 

@@ -6,23 +6,11 @@ title: Syllabus
 
 CSCI 0145, Introduction to Computing, is an introductory course in computer science at Middlebury College. It is one of several ways in which you might begin a computer science major at Midd. It's also a great way for you to develop your computational skills to support other majors. 
 
-The primary aim of CSCI 0145 is to help you build strong foundations in computational thinking and programming skills. We will cover a fair amount of the Python programming language. That said, our primary focus will be on reasoning, program design, and implementation principles rather than the details of Python programming. 
-
-[![Calligraphy with the sentence "I am here for you" surrounded by a circle."](https://images.squarespace-cdn.com/content/v1/563ce107e4b088e6d742e65d/1584467902419-9WTUGOMH8YJGGEP4ORHQ/image-asset.jpeg) Calligraphy by Thich Nhat Hanh.]{.aside}
-
-Learning computing for the first time can be a challenging experience. In a nutshell, my teaching philosophy is: 
-
-1. Your flourishing as an entire human person is more important than any grades. 
-2. It is my job to help you learn and grow, as a scientist, scholar, and public citizen. 
-3. You can count on me to interact with you in a way that furthers your learning and growth. 
-4. In particular, you can count on me to care about you as a person and ensure that you can get help when you need it. 
-
-
 # Learning Objectives
 
-A learning objective is a primary goal for your learning by the end of the course. You're successful in CSCI 0145 when you achieve excellence against these learning objectives. We have six learning objectives in CSCI 0145. 
+A learning objective is a primary goal for your learning by the end of the course. You're successful in CSCI 0145 when you achieve excellence against these learning objectives. We have six learning objectives in CSCI 0145.  
 
-[![A portrait of Dr. Ian Malcolm  played by Jeff Goldblum in the movie Jurassic Park. Overlaid text reads "Your scientists were so preoccupied with whether they could that they didn't stop to think if they should."](https://i.kym-cdn.com/photos/images/facebook/000/877/596/f66.jpg) Social responsibility in a nutshell.]{.aside}
+<!-- [![A portrait of Dr. Ian Malcolm  played by Jeff Goldblum in the movie Jurassic Park. Overlaid text reads "Your scientists were so preoccupied with whether they could that they didn't stop to think if they should."](https://i.kym-cdn.com/photos/images/facebook/000/877/596/f66.jpg) Social responsibility in a nutshell.]{.aside} -->
 
 <table>
     <tr>
@@ -74,9 +62,6 @@ A learning objective is a primary goal for your learning by the end of the cours
         </td>
     </tr>
 </table>
-
-
-
 
 # Logistics and Key Policies
 
@@ -141,9 +126,7 @@ A learning objective is a primary goal for your learning by the end of the cours
                     <td>
                         Student Hours 
                         <ul style="margin-bottom:0;">
-                            <li> Mondays </li>
-                            <li> Mondays </li>
-                            <li> Mondays </li>
+                            <li> TBD </li>
                         </ul>
                     </td>
                 </tr>   
@@ -155,10 +138,7 @@ A learning objective is a primary goal for your learning by the end of the cours
             <b> Tutors </b>
         </td>
         <td>
-            Sundays, TBD <br> 
-            Mondays, TBD <br>
-            Tuesdays, TBD <br>
-            Wednesday, TBD 
+            TBD
         </td>
     </tr>
     <tr>
@@ -179,24 +159,23 @@ A learning objective is a primary goal for your learning by the end of the cours
     </tr>
 </table>
 
-# A Week In The Life
+# Rough Schedule Of Topics
 
-CSCI 0145 has a lot of moving parts. I'd like to give you a quick overview of the kind of activities assignments that you might expect to do in a typical week. I'll explain each of these components in later sections. 
+See the [complete schedule](schedule.qmd) for more details! 
 
-[![An short GIF of a grey cat wearing clothes and typing frantically on a laptop.](https://c.tenor.com/jNgKSlUpmkEAAAAM/typing-laptop.gif)]{.aside}
-
-| Mon.           | Tues.           | Wed.           | Thu.               | Fri.         |
-|:------------|:------------|:------------|:-----------------|:----------|
-| Lecture     |             | Lecture     | Guided discovery | Start lab in class  | 
-| Finish lab with partner   | Tutoring    | Tutoring    | Tutoring        | Tutoring
-| | Start new HW | Continue HW |  Continue HW | Finish HW |
-|             |             | Quiz        |
-
-
-
-This course has 4 hours of class time per week. My expectation is that most students will spend **6-10 additional hours** outside of class on assignments, readings, tutoring sessions, and review. 
-
-If you find yourself needing to spend much more than 8 hours to keep up with the course, please let me know. It may be that other approaches or ways of using support resources can help. 
+- **Week 1**: Intro, algorithms, variables, expressions
+- **Week 2**: Functions, documentation, control flow. Ethics of decision-making. 
+- **Week 3**: Recursion and applications
+- **Week 4**: Iteration, lists, ethics of algorithmic selection
+- **Week 5**: Data structures: sets, tuples, maps, more lists
+- **Week 6**: Data representation, midterm review
+- **Week 7**: Midterm exam, complex iteration. Application: image processing 
+- **Week 8**: Object-oriented programming
+- **Week 9**: Modules, documentation, and errors
+- **Week 10**: Unit testing
+- **Week 11**: Thanksgiving recess
+- **Week 12**: Application: text analysis and generation
+- **Week 13**: Algorithms and complexity
 
 # Assessments and Grades
 
@@ -221,46 +200,56 @@ Weights for computing your final grade in CSCI 0145.
 - **Formative assessments** include labs and homework. Their primary purpose is to give you regular practice that will help you meet the course learning objectives. They also give you an opportunity to get *feedback* on your strengths and opportunities for improvement 
 - **Summative assessments** include our midterm and final exam. Their primary purpose is to give an overall measurement of your cumulative learning throughout the course. 
 
-You might look at these three different purposes and say: 
-
-> "Hey Phil, isn't it weird to combine points from three totally different purposes into a single grade?" 
-
-If you did, I would say: yes, it is! More generally, **grading is broken**. This is especially true of summative assessments. Instructors struggle to design assessments that equitably measure meaningful competency, and the results are rarely predictive of future success. [Professor Amy J. Ko at the University of Washington has a [reflection](https://medium.com/bits-and-behavior/grading-is-ineffective-harmful-and-unjust-lets-stop-doing-it-52d2ef8ffc47) on the deep flaws of grading, which you might wish to read.]{.aside}
-
-The grading system for this course is not perfect! My promise to you is that I will be as transparent as I can about how I assess you, where you can improve, and how you can achieve your goals in the course. 
-
 ### Reading Quizzes
 
-The purpose of reading quizzes is to ensure that you are prepared to learn from the Guided Discovery (participation) and Lab activities. 
-[Reading quizzes are here to help **incentivize positive learning behavior**, to ensure you're ready to learn from in-class activities.]{.aside}
+Reading quizzes ensure that you have learned from the lecture and readings and are ready for in-class activities. There is a reading quiz every week on Wednesday. 
+[Reading quizzes are a **incentivize positive learning behavior**.]{.aside} 
 
-If you have followed lecture on Monday and Wednesday and learned from the required reading, then you are ready for the week's reading quiz. You might find it useful to review the posted lecture notes in order to prepare for the reading quiz. 
+[:Details.](#x-reading-quiz-details)
 
-Reading quizzes are automated through Canvas. In most cases, the quiz will have a time limit and you'll be permitted one attempt. Generally, the time limit is intended to be much longer than is required to complete the quiz. In a few exceptional quizzes, there may be no time limit or there may be multiple attempts. 
+#### :x Reading Quiz Details
+
+Reading quizzes are automated through Canvas. In most cases, the quiz will have a time limit and you'll be permitted one attempt. Generally, the time limit is intended to be much longer than is required to complete the quiz. In a few exceptional quizzes, there may be no time limit or there may be multiple attempts. You're welcome to consult notes and other resoures as you complete the quiz. 
+
+**Your lowest score on a reading quiz will be dropped.**
 
 ### Labs
 
-Lab assignments are small projects that synthesize concepts and programming techniques from recent lectures. 
+Lab assignments are small projects that synthesize concepts and programming techniques from recent lectures. There is a lab almost every week. You'll start lab in class and finish it with your partner outside of class. 
 [Labs assignments are **formative assessments**, here to help you practice, get feedback, and improve.]{.aside}
-Labs are completed in **pairs** that rotate each week. Labs are therefore always about our <span class="learning-objective"> programming</span> and <span class="learning-objective">design/collaboration</span> learning objectives. Many labs will also raise reflection questions related to <span class="learning-objective">social responsibility</span> in the context of <span class="learning-objective">applications</span> of computing. 
+
+[:Details](#x-lab-details)
+
+#### :x Lab Details
+
+In the first week, we'll do labs individually. After that, we'll do labs in **pairs** that rotate every two weeks. Labs are therefore always about our <span class="learning-objective"> programming</span> and <span class="learning-objective">design/collaboration</span> learning objectives. Many labs will also raise reflection questions related to <span class="learning-objective">social responsibility</span> in the context of <span class="learning-objective">applications</span> of computing. 
 
 Friday's scheduled lecture period is time for you to begin the assignment with your partner. Most labs are intended to require more than a single lecture period. You and your partner should find time later in the week to complete the assignment. 
 
 **I recommend that you plan to meet during one or more tutoring sessions!**
 
-I expect most labs to require approximately three hours in total to complete -- one in class and two outside.
+I expect most labs to require approximately 3-4 hours in total to complete -- one in class and two or three outside of class.
+
+**Your lowest score on a lab assignment will be dropped.**
 
 ### Homework Exercises
 
-Homework assignments are the primary way in which you will practice working through challenging problems on your own. They primarily help you make progress against our <span class="learning-objective">programming</span> and <span class="learning-objective">computational thinking</span> learning objectives. Some homework problems will also ask you to write <span class="learning-objective">analysis</span> of simple programs or to <span class="learning-objective">apply</span> your skills to solve complex problems. They are completed independently. Unlike labs and guided discovery activities, you should not collaborate with your classmates on homework exercises. You can still get help though! Your resources are: [Homework assignments are **formative assessments**, here to help you practice, get feedback, and improve.]{.aside}
+Homework assignments give you practice writing code to solve relatively simple problems. They primarily help you make progress against our <span class="learning-objective">programming</span> and <span class="learning-objective">computational thinking</span> learning objectives. Some homework problems will also ask you to write <span class="learning-objective">analysis</span> of simple programs or to <span class="learning-objective">apply</span> your skills to solve complex problems. There's a homework due most weeks. I expect homework assignments to require, on average, 3-4 hours in total to complete. 
+
+You are welcome to collaborate on homeworks, but **you should not share code** with your classmates. It's great to talk over strategies and concepts with anyone you like -- just make sure you give them credit according to our [collaboration policies](collaboration.qmd). You have great resources to help you on homeworks, including: 
+
+[Homework assignments are **formative assessments**, here to help you practice, get feedback, and improve.]{.aside}
 
 - Public questions on Campuswire 
 - Tutoring sessions
-- Office hours
+- Student hours
+
+**Your lowest score on a homework assignment will be dropped.**
 
 ### Exams
 
-There will be one midterm and one final exam. Both will be held in-person outside class hours. I will schedule a 3-hour period for each exam. 
+There will be one midterm and one final exam. The midterm exam will take place at the beginning of Week 7. The midterm will be scheduled outside class hours. I intend for both exams to require approximately 3 hours of effort. 
+
 [Exams are our primary **summative assessment**. They help me better understand your learning achievements over the course of the semester.]{.aside}
 
 ### Participation
@@ -268,79 +257,85 @@ There will be one midterm and one final exam. Both will be held in-person outsid
 Your participation grade is primarily based on your completion of Guided Discovery exercises during the Thursday class period. You'll complete these exercises, again with a partner (note: your Thursday partner will in general be different from your Friday partner). Guided Discovery exercises are almost entirely about <span class="learning-objective">Python programming</span> objective: they are a great place for you to learn tools, syntax, and common programming patterns that will support you in labs and homework. 
 [Guided Discovery activities and other participation incentives are partially **formative assessments** and partially **positive learning behavior incentives**.]{.aside}
 
-### Extra Credit
+**Your lowest score on a Guided Activity will be dropped.** In practice, you will usually receive full credit for an activity if you participated that day, so you can also think of this as an excused absence. 
 
-At the moment there are no extra credit opportunities planned in CSCI 0145, but I may add some as the semester progresses. 
+# Course Policies
 
-# Course Resources
+### Laptops
 
-## Books
+Please bring a laptop, and make sure that it has at least 75 minutes of charge. 
 
-There are no required books to purchase in this course. Required and optional readings will come from free online sources, especially including: 
+[:We can help you borrow a laptop if you need it](#x-borrowing-a-laptop)
 
-- [How to Think like a Computer Scientist](https://runestone.academy/ns/books/published/thinkcspy/index.html): an interactive book with many embedded activities.
-- [Foundation of Python programming](https://runestone.academy/ns/books/published//fopp/index.html#): another interactive book with a fair amount of overlapping with "How to think like a Computer Scientist"
-- [ThinkPython](https://greenteapress.com/wp/think-python-2e/): please note that despite providing a good introduction to Python, the language and examples used in this book are not the most inclusive. Most of the examples are drawn from the comedy routines of the British surrealist comedians "Monty Python (Links to an external site.)" which, to someone who has never seen any of their material, will not be particularly helpful.
-- [Course notes](https://avaccari.gitlab.io/csci-0145/sp22/index.html): together with other members of the CS Department, we are putting together our own interactive notes for the intro courses. This is still a work in progress and they are constantly edited so, go back often to check since there might be new goodies appearing over time. 
-- [Python 3.7 Documentation](https://docs.python.org/3.7/): This is the official documentation for the Python programming language. Following along with the [Tutorial](https://docs.python.org/3.7/tutorial/index.html) is an excellent way to develop your skills, and the [Language Reference](https://docs.python.org/3.7/reference/index.html) is also extremely helpful. Note that this is the documentation for Python 3.7, rather than the most current Python 3.10. This is because Python 3.7 is the version that comes bundled with Thonny, and is therefore the version we will use in this class. The differences between 3.7 and 3.10 are minimal and unlikely to ever come up in CSCI 0145. 
+#### :x Borrowing a Laptop
 
-## Python: Thonny
+If you ever find yourself temporarily in need of a laptop, the Computer Science department has 10 rotating Dell laptops available to our students. These come pre-installed with software for most of the courses in the major. They are available to be loaned out short-term or long-term based on your need (as determined by you). To request a laptop for **short-term use** (like a single class period), email me ahead of time. 
 
-We'll write most of our Python code in Thonny. Thonny is a simple integrated development environment (IDE): a place to write, run, and troubleshoot code. It can be installed on Windows, Mac and Linux.
-Please see the [Thonny website](https://thonny.org) for installation instructions. Thonny comes bundled with Python version 3.7, which is the version that we will use throughout CSCI 0145. 
+**On Long-Term Use**: College policy has changed recently to include the expectation that every student have a laptop available. The college provides laptops to those who need them where “need” is based on Student Financial Services calculations. If you anticipate needing a laptop for the whole term, we encourage you to inquire with Student Financial Services and the library first due to our smaller pool of equipment. However, our department commits to meeting the needs of every student, so do not be afraid to reach out if you believe you need one of our laptops for any length of time.
 
-::: {.column-margin}
+### Missing Class
 
-![A screenshot of the Thonny Python IDE, showing some sample code and some pop-out windows for debugging.](https://thonny.org/img/screenshot.png)
+Unfortunately, we are *still* in a pandemic. My assumption is that there will be positive COVID tests on campus, and that some of them may occur in our class. If you are feeling ill or test positive for COVID: 
 
-The Thonny IDE. 
-:::
-
-You may already be familiar with a different IDE, and may prefer it to Thonny. While you are welcome to use your IDE of choice on your own time, **we expect you to use Thonny** during class time and when working with partners on labs. This is to ensure that we don't have to spend precious group time with one partner getting used to another partner's IDE. 
-
-## Collaborative Python: replit
-
-We'll have regular group assignments that will ask you to collaborate on coding projects. In general, the expectation is that only one person will be coding at a time. However, in order to ensure that you don't need to do things like swap laptops when it comes time to change roles, we'll complete these assignments in an online collaborative coding environment called [replit](https://replit.com). You'll sign up for our CSCI 0145 team on replit using an invite link posted in Canvas. You'll then be able to work with partners on guided discovery and lab assignments in the replit interface. It's a bit more complex than Thonny, but has the same core functionality. 
-
-::: {.column-margin}
-
-![A screenshot of replit, showing a file browser, source code, and output in a terminal.](https://cms.replit.com/assets/workspace.png)
-
-The replit online IDE. 
-:::
-
-## Help Forum: Campuswire
-
-We will use Campuswire as a question-and-answer forum related to course content. You'll join Campuswire by clicking on a link provided on Canvas. A few basic policies: 
-
-::: {.column-margin}
-
-![A screenshot of Campuswire, showing a menu sidebar, a list of recent posts, and a question/answer exchange involving a mathematical formula.](https://static.campuswire.com/images/platform-banner.png)
-
-Campuswire, our Q&A forum. 
-:::
-
-1. Questions should usually be posted publicly. I reserve the right to make private questions public. 
-3. Please ask questions using your name (i.e. not anonymously). Use of names helps us establish a healthy and respectful learning community. 
-2. Before posting your question, please follow the steps outlined in [Asking for Help](#help). 
-1. Conceptual questions are always fine. 
-2. Code that is directly related to lab or homework solutions should never be posted on Campuswire. 
-3. If you are having trouble with code in a lab or homework assignment, you should create a *[minimal reproducible example](https://stackoverflow.com/help/minimal-reproducible-example)* of your issue. A minimal **repr**oducible **ex**ample is sometimes called a *reprex*.
+1. **Do not attend class in person**. Isolate per College [policies](https://www.middlebury.edu/office/covid-19-updates/middlebury-college-main-campus/campus-guide/essential-health-and-safety-measures-8). We have relatively detailed lecture notes and other resources that will help you catch up with lecture content. 
+2. **When you are feeling up to it**, contact me about how to make up work for the course. 
 
 
-Campuswire isn't here just for me to help you -- it's also for you to help each other. Both excellent, thoughtful *questions* and 
+### Due Date Adjustments
 
-## Assignments: Gradescope and Canvas
+In general, late work is not accepted in this course. However, **you can request adjustments to due dates**. To do so, fill out [this form](https://forms.gle/pmF7mtA637uXpUs77). I usually grant adjustment requests of up to 3 days, provided that they are submitted before the deadline. I consider larger adjustments on a case-by-case basis, keeping in mind both your needs and the needs of our student graders. 
 
-Gradescope is one of the places in which you'll submit graded assignments for this course. Most assignments, including homework assignments, labs, and guided discovery activities will be submitted to Gradescope. Homework assignments and labs will be assessed for correctness, while guided discovery activities will simply be assessed for completion. 
+[:Details](#x-due-date-adjustment-details)
 
-::: {.column-margin}
-![A screenshot of Gradescope, showing a coding submission and a grading rubric with some items marked.](https://files.helpdocs.io/u7xiir5ze4/articles/ujutnle52h/1592933285693/programming-assignments-manual-gradi.png)
+#### :x Due Date Adjustment Details
 
-Gradescope, our primary tool for submitting graded work. 
-:::
+You'll be asked to tell me about the assignment, your current due date, and your proposed modified due date. You'll also be asked to briefly reflect on what you need from yourself (and from me) to complete the assignment. 
 
-We'll also submit some assignments through Canvas. Canvas is also where we'll keep things like lecture recordings, grades, and other non-public content. 
+Policies: 
+
+- I almost always grant adjustments of up to 3 days for requests received **at least 24 hours ahead of the original due date.** Be prepared for the possibility that I will adjust your due date, but with a smaller adjustment than you originally requested. In this case, I'll notify you. 
+- Requests received **within 24 hours of the original due date** are subject to my discretion. 
+- I almost always deny requests received **after the original due date**. I may offer a chance to turn in the assignment with a penalty. 
+
+<!-- [![An image of four of the Pokemon Squirtle welcoming a fifth Squirtle. The original four Squirtles are labeled "unfinished assignment #1" through #4. The fifth Squirtle is labeled "new assignment."](assets/img/memes/unfinished-assignments.jpg) *Image credit: [Dr. Spencer Bagley](https://twitter.com/sbagley/status/1437833176311762946?s=20&t=xPhXuSfOqxBvezv2HG2xyg)*]{.aside} -->
+
+<!-- In general, I'm not offended when your work comes in late, provided that it doesn't become a problem for our graders (who, like you, are students here!). However, please make sure that you plan your time and prevent your work from piling up. I don't really have any way to help you if you have too much to do at the end of the semester after requesting many due date adjustments.  -->
+
+# A Week In The Life
+
+CSCI 0145 has a lot of moving parts. I'd like to give you a quick overview of the kind of activities assignments that you might expect to do in a typical week. 
+
+**Bold** activities happen during scheduled class time. *Italic* activities happen on your own schedule. Tutoring sessions will be held at fixed times TBD.  
+
+[![An short GIF of a grey cat wearing clothes and typing frantically on a laptop.](https://c.tenor.com/jNgKSlUpmkEAAAAM/typing-laptop.gif)]{.aside}
+
+| Mon.           | Tues.           | Wed.           | Thu.               | Fri.         |
+|:------------|:------------|:------------|:-----------------|:----------|
+| **Lecture**     |             | **Lecture**     | **Guided discovery** | **Start lab in class**  | 
+|   | Tutoring    | Tutoring    | Tutoring        | Tutoring
+| *Finish lab with partner*  | *Start new HW* | *Continue HW* |  *Continue HW* | *Finish HW* |
+|             |             | *Quiz*        |
+
+
+
+This course has 4 hours of class time per week. My expectation is that most students will spend **6-10 additional hours** outside of class on assignments, readings, tutoring sessions, and review. 
+
+If you find yourself needing to spend much more than 10 hours outside class to keep up with the course, please let me know. It may be that other approaches or ways of using support resources can help. 
+
+
+### Collaboration Policy and the Honor Code
+
+Please take a moment to review our general [guidelines and principles](collaboration.qmd) on collaboration. This document also includes how I think about group work, academic integrity, and related topics. 
+
+Specifics for this course: 
+
+- **Group activities** (labs and guided discovery activities) should be entirely the work of you and your partner(s), without help from other groups. The group can submit a single file representing everyone's work. In the case of labs, you'll be asked to write a short group contribution statement describing who made which contributions to the submitted product. 
+- **Quizzes** should be completed by you, without consulting any other human beings for help. You are welcome to use any written or online resources you can find (the course readings will usually be the most useful).  
+- **Homework exercises** should be completed by you. You are welcome to collaborate with other students, but **do not share solution code.** That is, you may discuss strategies and approaches, but not code details. You are permitted to share solution code with the tutors. You can share [minimal reproducible examples](https://stackoverflow.com/help/minimal-reproducible-example) with anyone, in-person or on Campuswire. You are also free to use any written or online resources you can find. Whenever you get help from or collaborate with a person, or whenever you use a resource not presented in class, **you must acknowledge this help and describe how it contributed to your submitted work**. For example, if you got the idea for a short code block from a StackExchange post, indicate this in a comment above the block. You should acknowledge all help from humans you received, including classmates, tutors, and myself.
+- **Exams** should be completed by you, with no resources other than those specified by the exam conditions. 
+
+If you're ever unsure about how the Honor Code applies to a specific situation or what kinds of collaboration is permitted in this course, please just ask!
+
 
 # Course Environment
 
@@ -351,107 +346,6 @@ You deserve a learning environment free from gender-based discrimination, sexual
 You deserve to fully and equitably participate in our learning environment. I am actively putting effort into ensuring that course materials are screen-reader accessible, and welcome feedback on where I can do better. Middlebury's [Disability Resource Center](https://www.middlebury.edu/office/disability-resource-center) can help you remove barriers to learning in this and other courses. 
 
 You deserve to be addressed in the manner that reflects who you are. I welcome to tell me your pronouns and/or preferred name at any time, either in person or via email. Conversely, please address your classmates according to their expressed preferences. 
-
-# Course Policies
-
-### Laptops
-
-You are expected to bring a laptop computer to most class sessions.  If you ever find yourself temporarily in need of a laptop, the Computer Science department has 10 rotating Dell laptops available to our students. These come pre-installed with software for most of the courses in the major. They are available to be loaned out short-term or long-term based on your need (as determined by you). To request a laptop for **short-term use** (like a single class period), email me ahead of time. 
-
-**On Long-Term Use**: College policy has changed recently to include the expectation that every student have a laptop available. The college provides laptops to those who need them where “need” is based on Student Financial Services calculations. If you anticipate needing a laptop for the whole term, we encourage you to inquire with Student Financial Services and the library first due to our smaller pool of equipment. However, our department commits to meeting the needs of every student, so do not be afraid to reach out if you believe you need one of our laptops for any length of time.
-
-### Missing Class
-
-Unfortunately, we are *still* in a pandemic. My assumption is that there will be positive COVID tests on campus, and that some of them may occur in our class. If you are feeling ill or test positive for COVID: 
-
-1. **Do not attend class in person**. Isolate per College [policies](https://www.middlebury.edu/office/covid-19-updates/middlebury-college-main-campus/campus-guide/essential-health-and-safety-measures-8). 
-2. **When you are feeling up to it**, contact me about how to make up work for the course. 
-
-Most lectures will be recorded. I'll share the recordings with students who contact me to ensure that everyone has a chance to learn from lecture. I'll create opportunities for you to make up graded in-class assignments on a case-by-case basis. 
-
-### Asking For Help {#help}
-
-First of all, **ask for help often**. Asking for help is a fundamental part of how you will learn in CSCI 0145. Here is some wisdom on this topic from the Best Cat On the Internet: 
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">It’s hard to ask a question if it seems like other people already know stuff. Ask loudly, in case those other people are faking it and need to hear the answer too <a href="https://t.co/DOjSZ4g7jy">pic.twitter.com/DOjSZ4g7jy</a></p>&mdash; Jorts (and Jean) (@JortsTheCat) <a href="https://twitter.com/JortsTheCat/status/1484557774918803456?ref_src=twsrc%5Etfw">January 21, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-#### In Class
-
-**In lecture**, please ask questions freely. Just raise your hand and I'll find a good place to pause for you. 
-
-**On activity days**, start by asking your group members. If you're all stuck, then go ahead and raise your hand for a tutor or me. We'll be right with you! 
-
-#### Outside Class
-
-For questions on Campuswire, in tutoring, and in Student Hours, our expectations are that you will **prepare to ask for help**. This has two purposes: 
-
-1. The very process of preparation will help you learn. You might even find that in the course of the preparation process you were actually able to resolve your question. 
-2. When you're prepared, our conversations can be efficient and productive. 
-
-
-When asking questions to me or the tutors,  you should usually expect us to start with a question of our own: 
-
-> What have you tried so far? 
-
-This question has two functions. First, it helps me understand where you are and how I can most effectively help you. Second, it reminds you to take steps to support your own independent learning prior to approaching me. Here are the steps that I expect you to follow in some of the most common cases: 
-
-**For conceptual questions**: 
-
-- Make a reasonable effort to review relevant readings ahead of time. 
-- Formulate your question in as precise and specific a way as you are able. 
-- If applicable, find an example that illustrates your question. 
-
-**For programming questions**: 
-
-- Formulate the task you are attempting to accomplish as precisely and specifically as possible. 
-- Write down a few concepts, functions, data structures, or other ideas that seem like they might be relevant in this problem. 
-- Get as far as you can on the problem using the tools available to you. Make sure you can carefully describe what you did and why it seems like progress toward the goal. 
-- Be prepared to explain approaches what you have already tried when speaking with me or a tutor. 
-
-[![A meme showing Gru smiling evilly while revealing a plan, in four panels. In the first panel, he shows a card reading "We identify the bug in our code." Second panel, the card reads "We change our code to fix the bug." Third panel: "Now we have two bugs." Final panel: "Now we have two bugs," as Gru looks at the card in dismay.](assets/img/memes/gru-bugs.jpeg)]{.aside}
-
-**If you are debugging and encountering an error message**: 
-
-- ***Read your error message*** and do your best to understand what it means. 
-- If you're not sure how to interpret your error message in the context of your task, try Googling the message and reading some of the resulting answers. 
-- If you're still stuck, try to construct a [minimal reproducible example](https://stackoverflow.com/help/minimal-reproducible-example) or *reprex*. Sometimes, just the activity of creating a reprex will help you solve your problem. However, if you've created your reprex and you're still stuck...
-- Bring your error message and reprex to tutoring or to Student Hours, or post it on Campuswire.  
-
-**If you are debugging and not encountering an error message**: 
-
-- Make use of Thonny's debugger to step through your program. 
-- Identify the first point at which something is clearly wrong.
-- Develop at least one hypothesis about the source of the error, and test that hypothesis. 
-- If you're still stuck, try to construct a [minimal reproducible example](https://stackoverflow.com/help/minimal-reproducible-example) or *reprex*. Sometimes, just the activity of creating a reprex will help you solve your problem. However, if you've created your reprex and you're still stuck...
-- Bring your reprex to tutoring or Student Hours, or post it on Campuswire. Make sure to clearly state both the *expected behavior* and the *actual behavior* of your program. 
-
-### Due Date Adjustments
-
-In general, late work is not accepted in this course. However, **you can request adjustments to due dates**. To do so, fill out [this form](https://forms.gle/pmF7mtA637uXpUs77). You'll be asked to tell me about the assignment, your current due date, and your proposed modified due date. You'll also be asked to briefly reflect on what you need from yourself (and from me) to complete the assignment. 
-
-Policies: 
-
-- I almost always grant requests received **at least 24 hours ahead of the original due date.** Be prepared for the possibility that I will adjust your due date, but with a smaller adjustment than you originally requested. In this case, I'll notify you. 
-- Requests received **within 24 hours of the original due date** are subject to my discretion. 
-- I almost always deny requests received **after the original due date**. I may offer a chance to turn in the assignment with a penalty. 
-
-[![An image of four of the Pokemon Squirtle welcoming a fifth Squirtle. The original four Squirtles are labeled "unfinished assignment #1" through #4. The fifth Squirtle is labeled "new assignment."](assets/img/memes/unfinished-assignments.jpg) *Image credit: [Dr. Spencer Bagley](https://twitter.com/sbagley/status/1437833176311762946?s=20&t=xPhXuSfOqxBvezv2HG2xyg)*]{.aside}
-
-In general, I'm not offended when your work comes in late, provided that it doesn't become a problem for our graders (who, like you, are students here!). However, please make sure that you plan your time and prevent your work from piling up. I don't really have any way to help you if you have too much to do at the end of the semester after requesting many due date adjustments. 
-
-
-### Collaboration Policy and the Honor Code
-
-Please take a moment to review our general [guidelines and principles](collaboration.qmd) on collaboration. This document also includes how I think about group work, academic dishonesty, and related topics. 
-
-Specifics for this course: 
-
-- **Group activities** (labs and guided discovery activities) should be entirely the work of you and your partner(s), without help from other groups. The group can submit a single file representing everyone's work. In the case of labs, you'll be asked to write a short group contribution statement describing who made which contributions to the submitted product. 
-- **Quizzes** should be completed by you, without consulting any other human beings for help. You are welcome to use any written or online resources you can find (the course readings will usually be the most useful).  
-- **Homework exercises** should be completed by you. You are welcome to collaborate with other students, but **do not share solution code.** That is, you may discuss strategies and approaches, but not code details. You are permitted to share solution code with the tutors. You can share [minimal reproducible examples](https://stackoverflow.com/help/minimal-reproducible-example) with anyone, in-person or on Campuswire. You are also free to use any written or online resources you can find. Whenever you get help from or collaborate with a person, or whenever you use a resource not presented in class, **you must acknowledge this help and describe how it contributed to your submitted work**. For example, if you got the idea for a short code block from a StackExchange post, indicate this in a comment above the block. You should acknowledge all help from humans you received, including classmates, tutors, and myself.
-- **Exams** should be completed by you, with no resources other than those specified by the exam conditions. 
-
-If you're ever unsure about how the Honor Code applies to a specific situation or what kinds of collaboration is permitted in this course, please just ask!
 
 # Beyond CSCI 0145
 

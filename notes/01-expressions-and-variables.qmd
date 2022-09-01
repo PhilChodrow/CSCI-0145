@@ -1,5 +1,0 @@
----
-title: Expressions and Variables
----
-
-Some good stuff will go here!     
