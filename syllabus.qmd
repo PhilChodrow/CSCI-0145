@@ -1,6 +1,7 @@
 ---
 tbl-cap-location: margin
 title: Syllabus
+callout-icon: false
 ---
 
 
@@ -161,7 +162,7 @@ A learning objective is a primary goal for your learning by the end of the cours
 
 # Rough Schedule Of Topics
 
-See the [complete schedule](schedule.qmd) for more details! 
+See the [complete schedule](schedule.qmd) for more details! I am still working on populating this schedule, and will try to have it set up at least two weeks in advance at all times. 
 
 - **Week 1**: Intro, algorithms, variables, expressions
 - **Week 2**: Functions, documentation, control flow. Ethics of decision-making. 
@@ -205,22 +206,25 @@ Weights for computing your final grade in CSCI 0145.
 Reading quizzes ensure that you have learned from the lecture and readings and are ready for in-class activities. There is a reading quiz every week on Wednesday. 
 [Reading quizzes are a **incentivize positive learning behavior**.]{.aside} 
 
-[:Details.](#x-reading-quiz-details)
 
-#### :x Reading Quiz Details
+:::{.callout-note collapse="true"}
+
+## More Details On Reading Quizzes
 
 Reading quizzes are automated through Canvas. In most cases, the quiz will have a time limit and you'll be permitted one attempt. Generally, the time limit is intended to be much longer than is required to complete the quiz. In a few exceptional quizzes, there may be no time limit or there may be multiple attempts. You're welcome to consult notes and other resoures as you complete the quiz. 
 
 **Your lowest score on a reading quiz will be dropped.**
+
+:::
 
 ### Labs
 
 Lab assignments are small projects that synthesize concepts and programming techniques from recent lectures. There is a lab almost every week. You'll start lab in class and finish it with your partner outside of class. 
 [Labs assignments are **formative assessments**, here to help you practice, get feedback, and improve.]{.aside}
 
-[:Details](#x-lab-details)
+:::{.callout-note collapse="true"}
 
-#### :x Lab Details
+## More Details on Lab Assignments
 
 In the first week, we'll do labs individually. After that, we'll do labs in **pairs** that rotate every two weeks. Labs are therefore always about our <span class="learning-objective"> programming</span> and <span class="learning-objective">design/collaboration</span> learning objectives. Many labs will also raise reflection questions related to <span class="learning-objective">social responsibility</span> in the context of <span class="learning-objective">applications</span> of computing. 
 
@@ -231,6 +235,8 @@ Friday's scheduled lecture period is time for you to begin the assignment with y
 I expect most labs to require approximately 3-4 hours in total to complete -- one in class and two or three outside of class.
 
 **Your lowest score on a lab assignment will be dropped.**
+
+:::
 
 ### Homework Exercises
 
@@ -265,13 +271,15 @@ Your participation grade is primarily based on your completion of Guided Discove
 
 Please bring a laptop, and make sure that it has at least 75 minutes of charge. 
 
-[:We can help you borrow a laptop if you need it](#x-borrowing-a-laptop)
+:::{.callout-note collapse="true"}
 
-#### :x Borrowing a Laptop
+## We Can Help You Borrow a Laptop
 
 If you ever find yourself temporarily in need of a laptop, the Computer Science department has 10 rotating Dell laptops available to our students. These come pre-installed with software for most of the courses in the major. They are available to be loaned out short-term or long-term based on your need (as determined by you). To request a laptop for **short-term use** (like a single class period), email me ahead of time. 
 
 **On Long-Term Use**: College policy has changed recently to include the expectation that every student have a laptop available. The college provides laptops to those who need them where “need” is based on Student Financial Services calculations. If you anticipate needing a laptop for the whole term, we encourage you to inquire with Student Financial Services and the library first due to our smaller pool of equipment. However, our department commits to meeting the needs of every student, so do not be afraid to reach out if you believe you need one of our laptops for any length of time.
+
+:::
 
 ### Missing Class
 
@@ -285,9 +293,11 @@ Unfortunately, we are *still* in a pandemic. My assumption is that there will be
 
 In general, late work is not accepted in this course. However, **you can request adjustments to due dates**. To do so, fill out [this form](https://forms.gle/pmF7mtA637uXpUs77). I usually grant adjustment requests of up to 3 days, provided that they are submitted before the deadline. I consider larger adjustments on a case-by-case basis, keeping in mind both your needs and the needs of our student graders. 
 
-[:Details](#x-due-date-adjustment-details)
 
-#### :x Due Date Adjustment Details
+
+:::{.callout-note collapse="true"}
+
+## More On Due Date Adjustments
 
 You'll be asked to tell me about the assignment, your current due date, and your proposed modified due date. You'll also be asked to briefly reflect on what you need from yourself (and from me) to complete the assignment. 
 
@@ -296,6 +306,8 @@ Policies:
 - I almost always grant adjustments of up to 3 days for requests received **at least 24 hours ahead of the original due date.** Be prepared for the possibility that I will adjust your due date, but with a smaller adjustment than you originally requested. In this case, I'll notify you. 
 - Requests received **within 24 hours of the original due date** are subject to my discretion. 
 - I almost always deny requests received **after the original due date**. I may offer a chance to turn in the assignment with a penalty. 
+
+:::
 
 <!-- [![An image of four of the Pokemon Squirtle welcoming a fifth Squirtle. The original four Squirtles are labeled "unfinished assignment #1" through #4. The fifth Squirtle is labeled "new assignment."](assets/img/memes/unfinished-assignments.jpg) *Image credit: [Dr. Spencer Bagley](https://twitter.com/sbagley/status/1437833176311762946?s=20&t=xPhXuSfOqxBvezv2HG2xyg)*]{.aside} -->
 
