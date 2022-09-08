@@ -1,6 +1,6 @@
-### Asking For Help {#help}
+# Asking For Help 
 
-First of all, **ask for help often**. Asking for help is a fundamental part of how you will learn in CSCI 0145. Here is some wisdom on this topic from the Best Cat On the Internet: 
+Asking for help is a fundamental part of how you will learn in CSCI 0145. **Do it often**. Here is some wisdom on this topic from the Best Cat On the Internet: 
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">It’s hard to ask a question if it seems like other people already know stuff. Ask loudly, in case those other people are faking it and need to hear the answer too <a href="https://t.co/DOjSZ4g7jy">pic.twitter.com/DOjSZ4g7jy</a></p>&mdash; Jorts (and Jean) (@JortsTheCat) <a href="https://twitter.com/JortsTheCat/status/1484557774918803456?ref_src=twsrc%5Etfw">January 21, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 

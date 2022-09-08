@@ -8,7 +8,9 @@
     - Computational Thinking
   reading:
     - <a href="syllabus.qmd">Course syllabus</a>
-    - <a href="notes/00-welcome.qmd">What is this course about?</a>
+    - <a href="collaboration.qmd">Collaboration and academic honesty</a>
+    - <a href="tools.qmd">Course resources</a>
+    - <a href="help.qmd">Asking for help</a>
     - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/algorithms_bugs.html">Algorithms and bugs</a>
   module: Introduction
   publish: true
