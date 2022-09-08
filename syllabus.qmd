@@ -156,9 +156,7 @@ A learning objective is a primary goal for your learning by the end of the cours
             <br> <br> 
             Generally speaking, you should only email me if you need to talk about something personal or sensitive. Questions about course content should usually be asked on [Campuswire](tools.qmd#help-forum-campuswire). 
             <br> <br> 
-            Student Hours are *your time* to come chat with me about course content. **I want to see you in Student Hours**. Yes, **you**. 
-            <br> <br> 
-            Peer help sessions (also often called tutoring) are time for you to work with your classmates with help and support from experienced CS students. There are help sessions in the evenings, four days a week. **Help sessions are recommended for everyone**. 
+            Student Hours are *your time* to come chat with me about course content. **I want to see you in Student Hours**.
             <br> <br> 
             I expect you to [prepare to ask for help](help.qmd) when approaching me, your tutors, and your fellow students. 
             <br> <br> 
@@ -274,7 +272,7 @@ Your participation grade is primarily based on your completion of Guided Discove
 
 **Your lowest score on a Guided Activity will be dropped.** In practice, you will usually receive full credit for an activity if you participated that day, so you can also think of this as an excused absence. 
 
-# Course Policies
+# Course Policies 
 
 ### Laptops
 
@@ -313,7 +311,7 @@ Policies:
 
 <!-- In general, I'm not offended when your work comes in late, provided that it doesn't become a problem for our graders (who, like you, are students here!). However, please make sure that you plan your time and prevent your work from piling up. I don't really have any way to help you if you have too much to do at the end of the semester after requesting many due date adjustments.  -->
 
-## COVID-19 Policies
+## COVID-19 Considerations
 
 ### Masks Are Expected in CSCI 0145 {#masks}
 
@@ -329,23 +327,29 @@ If you arrive in class without a mask, I will offer you one. I will expect you t
 
 Unfortunately, we are *still* in a pandemic. My assumption is that there will be positive COVID tests on campus, and that some of them may occur in our class. If you are feeling ill or test positive for COVID: 
 
-1. **Do not attend class in person**. Isolate per College [policies](https://www.middlebury.edu/office/covid-19-updates/middlebury-college-main-campus/campus-guide/essential-health-and-safety-measures-8). We have relatively detailed lecture notes and other resources that will help you catch up with lecture content. Lecture periods will be partially recorded (I have limited ability to have the camera capture writing on the board). 
+1. **Do not attend class in person**. Isolate per College [policies](https://www.middlebury.edu/office/covid-19-updates/middlebury-college-main-campus/campus-guide/essential-health-and-safety-measures-8). We have relatively detailed lecture notes and other resources that will help you catch up with lecture content. 
 2. **When you are feeling up to it**, contact me about how to make up work for the course. 
 
+# Getting Help
 
-### Collaboration Policy and the Honor Code
+There are a lot of ways to get help on homework assignments:
 
-Please take a moment to review our general [guidelines and principles](collaboration.qmd) on collaboration. This document also includes how I think about group work, academic integrity, and related topics. 
+1. Form a study group and work together on the assignments! Remember, it's ok to share ideas but not solution code. 
+3. Attend evening Peer Help sessions, which take place four nights a week in 75 SHS. 
+2. Post questions on Campuswire. You'll get help from your classmates, a tutor, or me. As above, you shouldn't post solution code. 
+4. Come to Student Hours to chat with me directly! 
 
-Specifics for this course: 
+Generally speaking, items towards the top of this list are likely to be faster ways for you to get help than items towards the bottom. 
 
-- **Group activities** (labs and guided discovery activities) should be entirely the work of you and your partner(s), without help from other groups. The group can submit a single file representing everyone's work. In the case of labs, you'll be asked to write a short group contribution statement describing who made which contributions to the submitted product. 
-- **Quizzes** should be completed by you, without consulting any other human beings for help. You are welcome to use any written or online resources you can find (the course readings will usually be the most useful).  
-- **Homework exercises** should be completed by you. You are welcome to collaborate with other students, but **do not share solution code.** That is, you may discuss strategies and approaches, but not code details. You are permitted to share solution code with the tutors. You can share [minimal reproducible examples](https://stackoverflow.com/help/minimal-reproducible-example) with anyone, in-person or on Campuswire. You are also free to use any written or online resources you can find. Whenever you get help from or collaborate with a person, or whenever you use a resource not presented in class, **you must acknowledge this help and describe how it contributed to your submitted work**. For example, if you got the idea for a short code block from a StackExchange post, indicate this in a comment above the block. You should acknowledge all help from humans you received, including classmates, tutors, and myself.
-- **Exams** should be completed by you, with no resources other than those specified by the exam conditions. 
+You are don't forget to  [prepare to ask for help](help.qmd) when posting on Campuswire and attending Student Hours.  
 
-If you're ever unsure about how the Honor Code applies to a specific situation or what kinds of collaboration is permitted in this course, please just ask!
+**Help resources are for all students.** Using a help resource isn't a sign that you're struggling or that you're not good at computer science; it's a sign that you're using your resources effectively. I expect that many of the students who learn the most and earn the highest grades in CSCI 0145 will be the students who regularly attending Peer Help and Student Hours. 
 
+**You can (and should!) come to Peer Help and Student Hours even if you don't yet have a question.** Come hang out, take in the conversation, start your homework, whatever works for you. 
+
+## Help on Lab Assignments
+
+Lab assignments are completed with a partner. You're very welcome to get help on your lab assignment by attending Peer Help sessions and Student Hours **with your partner**. If there's not a Peer Help or Student Hours session in which you and your partner can both attend, you're welcome to email me about finding other ways to get help. 
 
 # A Week In The Life
 
@@ -369,6 +373,18 @@ This course has 4 hours of class time per week. My expectation is that most stud
 If you find yourself needing to spend much more than 10 hours outside class to keep up with the course, please let me know. It may be that other approaches or ways of using support resources can help. 
 
 
+### Collaboration Policy and the Honor Code
+
+Please take a moment to review our general [guidelines and principles](collaboration.qmd) on collaboration. This document also includes how I think about group work, academic integrity, and related topics. 
+
+Specifics for this course: 
+
+- **Group activities** (labs and guided discovery activities) should be entirely the work of you and your partner(s), without help from other groups. The group can submit a single file representing everyone's work. In the case of labs, you'll be asked to write a short group contribution statement describing who made which contributions to the submitted product. 
+- **Quizzes** should be completed by you, without consulting any other human beings for help. You are welcome to use any written or online resources you can find (the course readings will usually be the most useful).  
+- **Homework exercises** should be completed by you. You are welcome to collaborate with other students, but **do not share solution code.** That is, you may discuss strategies and approaches, but not code details. You are permitted to share solution code with the tutors. You can share [minimal reproducible examples](https://stackoverflow.com/help/minimal-reproducible-example) with anyone, in-person or on Campuswire. You are also free to use any written or online resources you can find. Whenever you get help from or collaborate with a person, or whenever you use a resource not presented in class, **you must acknowledge this help and describe how it contributed to your submitted work**. For example, if you got the idea for a short code block from a StackExchange post, indicate this in a comment above the block. You should acknowledge all help from humans you received, including classmates, tutors, and myself.
+- **Exams** should be completed by you, with no resources other than those specified by the exam conditions. 
+
+If you're ever unsure about how the Honor Code applies to a specific situation or what kinds of collaboration is permitted in this course, please just ask!
 
 
 # Course Environment

@@ -1,4 +1,7 @@
-# Course Resources
+---
+title: Course Resources
+tbl-cap-location: margin
+---
 
 ## Books
 

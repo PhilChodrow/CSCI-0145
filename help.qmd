@@ -1,4 +1,6 @@
-# Asking For Help 
+---
+title: Asking for Help
+---
 
 Asking for help is a fundamental part of how you will learn in CSCI 0145. **Do it often**. Here is some wisdom on this topic from the Best Cat On the Internet: 
 
@@ -53,3 +55,7 @@ This question has two functions. First, it helps me understand where you are and
 - Develop at least one hypothesis about the source of the error, and test that hypothesis. 
 - If you're still stuck, try to construct a [minimal reproducible example](https://stackoverflow.com/help/minimal-reproducible-example) or *reprex*. Sometimes, just the activity of creating a reprex will help you solve your problem. However, if you've created your reprex and you're still stuck...
 - Bring your reprex to tutoring or Student Hours, or post it on Campuswire. Make sure to clearly state both the *expected behavior* and the *actual behavior* of your program. 
+
+## If You're *Really* Stuck
+
+Maybe you're working on an assignment, you're stuck, and you don't have time to get help before you turn it in. This isn't a great scenario, but it happens to all of us every now and then. If you find yourself in this situation, please include some comments in your assignment describing where you got stuck, what you tried, and what you would have done if you had more time. We'll take your comments into consideration when assessing your work. 

@@ -58,9 +58,37 @@
   {
     "objectID": "tools.html",
     "href": "tools.html",
-    "title": "",
+    "title": "Course Resources",
     "section": "",
-    "text": "© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+    "text": "There are no required books to purchase in this course. Required and optional readings will come from free online sources, especially including:\n\nHow to Think like a Computer Scientist: an interactive book with many embedded activities.\nFoundation of Python programming: another interactive book with a fair amount of overlapping with “How to think like a Computer Scientist”\nThinkPython: please note that despite providing a good introduction to Python, the language and examples used in this book are not the most inclusive. Most of the examples are drawn from the comedy routines of the British surrealist comedians “Monty Python (Links to an external site.)” which, to someone who has never seen any of their material, will not be particularly helpful.\nCourse notes: together with other members of the CS Department, we are putting together our own interactive notes for the intro courses. This is still a work in progress and they are constantly edited so, go back often to check since there might be new goodies appearing over time.\nPython 3.7 Documentation: This is the official documentation for the Python programming language. Following along with the Tutorial is an excellent way to develop your skills, and the Language Reference is also extremely helpful. Note that this is the documentation for Python 3.7, rather than the most current Python 3.10. This is because Python 3.7 is the version that comes bundled with Thonny, and is therefore the version we will use in this class. The differences between 3.7 and 3.10 are minimal and unlikely to ever come up in CSCI 0145.\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "tools.html#python-thonny",
+    "href": "tools.html#python-thonny",
+    "title": "Course Resources",
+    "section": "Python: Thonny",
+    "text": "Python: Thonny\nWe’ll write most of our Python code in Thonny. Thonny is a simple integrated development environment (IDE): a place to write, run, and troubleshoot code. It can be installed on Windows, Mac and Linux. Please see the Thonny website for installation instructions. Thonny comes bundled with Python version 3.7, which is the version that we will use throughout CSCI 0145.\n\n\n\n\n\nA screenshot of the Thonny Python IDE, showing some sample code and some pop-out windows for debugging.\n\n\nThe Thonny IDE.\nYou may already be familiar with a different IDE, and may prefer it to Thonny. While you are welcome to use your IDE of choice on your own time, we expect you to use Thonny during class time and when working with partners on labs. This is to ensure that we don’t have to spend precious group time with one partner getting used to another partner’s IDE."
+  },
+  {
+    "objectID": "tools.html#collaborative-python-replit",
+    "href": "tools.html#collaborative-python-replit",
+    "title": "Course Resources",
+    "section": "Collaborative Python: replit",
+    "text": "Collaborative Python: replit\nWe’ll have regular group assignments that will ask you to collaborate on coding projects. In general, the expectation is that only one person will be coding at a time. However, in order to ensure that you don’t need to do things like swap laptops when it comes time to change roles, we’ll complete these assignments in an online collaborative coding environment called replit. You’ll sign up for our CSCI 0145 team on replit using an invite link posted in Canvas. You’ll then be able to work with partners on guided discovery and lab assignments in the replit interface. It’s a bit more complex than Thonny, but has the same core functionality.\n\n\n\n\n\nA screenshot of replit, showing a file browser, source code, and output in a terminal.\n\n\nThe replit online IDE."
+  },
+  {
+    "objectID": "tools.html#help-forum-campuswire",
+    "href": "tools.html#help-forum-campuswire",
+    "title": "Course Resources",
+    "section": "Help Forum: Campuswire",
+    "text": "Help Forum: Campuswire\nWe will use Campuswire as a question-and-answer forum related to course content. You’ll join Campuswire by clicking on a link provided on Canvas. A few basic policies:\n\n\n\n\n\nA screenshot of Campuswire, showing a menu sidebar, a list of recent posts, and a question/answer exchange involving a mathematical formula.\n\n\nCampuswire, our Q&A forum.\n\nQuestions should usually be posted publicly. I reserve the right to make private questions public.\nPlease ask questions using your name (i.e. not anonymously). Use of names helps us establish a healthy and respectful learning community.\nBefore posting your question, please follow the steps outlined in Asking for Help.\nConceptual questions are always fine.\nCode that is directly related to lab or homework solutions should never be posted on Campuswire.\nIf you are having trouble with code in a lab or homework assignment, you should create a minimal reproducible example of your issue. A minimal reproducible example is sometimes called a reprex.\n\nCampuswire isn’t here just for me to help you – it’s also for you to help each other. Both excellent, thoughtful questions and"
+  },
+  {
+    "objectID": "tools.html#assignments-gradescope-and-canvas",
+    "href": "tools.html#assignments-gradescope-and-canvas",
+    "title": "Course Resources",
+    "section": "Assignments: Gradescope and Canvas",
+    "text": "Assignments: Gradescope and Canvas\nGradescope is one of the places in which you’ll submit graded assignments for this course. Most assignments, including homework assignments, labs, and guided discovery activities will be submitted to Gradescope. Homework assignments and labs will be assessed for correctness, while guided discovery activities will simply be assessed for completion.\n\n\n\n\n\nA screenshot of Gradescope, showing a coding submission and a grading rubric with some items marked.\n\n\nGradescope, our primary tool for submitting graded work.\nWe’ll also submit some assignments through Canvas. Canvas is also where we’ll keep things like lecture recordings, grades, and other non-public content."
   },
   {
     "objectID": "acknowledgements.html",
@@ -154,11 +182,18 @@
     "text": "CSCI 0145, Introduction to Computing, is an introductory course in computer science at Middlebury College. It is one of several ways in which you might begin a computer science major at Midd. It’s also a great way for you to develop your computational skills to support other majors.\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
   },
   {
-    "objectID": "syllabus.html#covid-19-policies",
-    "href": "syllabus.html#covid-19-policies",
+    "objectID": "syllabus.html#covid-19-considerations",
+    "href": "syllabus.html#covid-19-considerations",
     "title": "Syllabus",
-    "section": "COVID-19 Policies",
-    "text": "COVID-19 Policies\n\nMasks Are Expected in CSCI 0145\nThe Computer Science Department policy states that:\n\nWe in the Computer Science department value a safe learning and working environment for all. While we can’t eliminate the risks associated with COVID-19, evidence suggests that widespread masking can significantly reduce the transmission and severity of disease. In order to protect the health of our community, the CS department recommends that students and faculty wear masks in CS learning spaces, including classrooms, office hours, and public areas. We acknowledge the College policy gives instructors the final say over classroom masking requirements, and expect all students to respect instructors’ stated policies in each course.\n\nIn alignment with this policy, I expect you to wear masks in class and office hours. I encourage you to wear masks during help sessions and at all other times when you are inside 75 Shannon Street.\nIf you arrive in class without a mask, I will offer you one. I will expect you to either wear it or excuse yourself from class that day.\n\n\nMissing Class\nUnfortunately, we are still in a pandemic. My assumption is that there will be positive COVID tests on campus, and that some of them may occur in our class. If you are feeling ill or test positive for COVID:\n\nDo not attend class in person. Isolate per College policies. We have relatively detailed lecture notes and other resources that will help you catch up with lecture content. Lecture periods will be partially recorded (I have limited ability to have the camera capture writing on the board).\nWhen you are feeling up to it, contact me about how to make up work for the course.\n\n\n\nCollaboration Policy and the Honor Code\nPlease take a moment to review our general guidelines and principles on collaboration. This document also includes how I think about group work, academic integrity, and related topics.\nSpecifics for this course:\n\nGroup activities (labs and guided discovery activities) should be entirely the work of you and your partner(s), without help from other groups. The group can submit a single file representing everyone’s work. In the case of labs, you’ll be asked to write a short group contribution statement describing who made which contributions to the submitted product.\nQuizzes should be completed by you, without consulting any other human beings for help. You are welcome to use any written or online resources you can find (the course readings will usually be the most useful).\n\nHomework exercises should be completed by you. You are welcome to collaborate with other students, but do not share solution code. That is, you may discuss strategies and approaches, but not code details. You are permitted to share solution code with the tutors. You can share minimal reproducible examples with anyone, in-person or on Campuswire. You are also free to use any written or online resources you can find. Whenever you get help from or collaborate with a person, or whenever you use a resource not presented in class, you must acknowledge this help and describe how it contributed to your submitted work. For example, if you got the idea for a short code block from a StackExchange post, indicate this in a comment above the block. You should acknowledge all help from humans you received, including classmates, tutors, and myself.\nExams should be completed by you, with no resources other than those specified by the exam conditions.\n\nIf you’re ever unsure about how the Honor Code applies to a specific situation or what kinds of collaboration is permitted in this course, please just ask!"
+    "section": "COVID-19 Considerations",
+    "text": "COVID-19 Considerations\n\nMasks Are Expected in CSCI 0145\nThe Computer Science Department policy states that:\n\nWe in the Computer Science department value a safe learning and working environment for all. While we can’t eliminate the risks associated with COVID-19, evidence suggests that widespread masking can significantly reduce the transmission and severity of disease. In order to protect the health of our community, the CS department recommends that students and faculty wear masks in CS learning spaces, including classrooms, office hours, and public areas. We acknowledge the College policy gives instructors the final say over classroom masking requirements, and expect all students to respect instructors’ stated policies in each course.\n\nIn alignment with this policy, I expect you to wear masks in class and office hours. I encourage you to wear masks during help sessions and at all other times when you are inside 75 Shannon Street.\nIf you arrive in class without a mask, I will offer you one. I will expect you to either wear it or excuse yourself from class that day.\n\n\nMissing Class\nUnfortunately, we are still in a pandemic. My assumption is that there will be positive COVID tests on campus, and that some of them may occur in our class. If you are feeling ill or test positive for COVID:\n\nDo not attend class in person. Isolate per College policies. We have relatively detailed lecture notes and other resources that will help you catch up with lecture content.\nWhen you are feeling up to it, contact me about how to make up work for the course."
+  },
+  {
+    "objectID": "syllabus.html#help-on-lab-assignments",
+    "href": "syllabus.html#help-on-lab-assignments",
+    "title": "Syllabus",
+    "section": "Help on Lab Assignments",
+    "text": "Help on Lab Assignments\nLab assignments are completed with a partner. You’re very welcome to get help on your lab assignment by attending Peer Help sessions and Student Hours with your partner. If there’s not a Peer Help or Student Hours session in which you and your partner can both attend, you’re welcome to email me about finding other ways to get help."
   },
   {
     "objectID": "syllabus.html#general-advice",
@@ -177,9 +212,16 @@
   {
     "objectID": "help.html",
     "href": "help.html",
-    "title": "",
+    "title": "Asking for Help",
     "section": "",
-    "text": "© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+    "text": "Asking for help is a fundamental part of how you will learn in CSCI 0145. Do it often. Here is some wisdom on this topic from the Best Cat On the Internet:\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "help.html#if-youre-really-stuck",
+    "href": "help.html#if-youre-really-stuck",
+    "title": "Asking for Help",
+    "section": "If You’re Really Stuck",
+    "text": "If You’re Really Stuck\nMaybe you’re working on an assignment, you’re stuck, and you don’t have time to get help before you turn it in. This isn’t a great scenario, but it happens to all of us every now and then. If you find yourself in this situation, please include some comments in your assignment describing where you got stuck, what you tried, and what you would have done if you had more time. We’ll take your comments into consideration when assessing your work."
   },
   {
     "objectID": "schedule.html",
