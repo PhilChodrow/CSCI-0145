@@ -136,10 +136,13 @@ A learning objective is a primary goal for your learning by the end of the cours
     </tr>
     <tr>
         <td class="syllabus-description-table-header">
-            <b> Tutors </b>
+            <b> Peer Help Sessions </b>
         </td>
         <td>
-            TBD
+            Tuesdays, time TBD <br>
+            Wednesdays, time TBD <br>
+            Thursdays, time TBD <br>
+            Sundays, time TBD
         </td>
     </tr>
     <tr>
@@ -149,13 +152,17 @@ A learning objective is a primary goal for your learning by the end of the cours
         <td class="syllabus-description-table-entry">
             It's fine to address me as Phil, Prof. Phil, Professor Phil, or Professor Chodrow. I sign emails as "Phil."
             <br> <br> 
-            Generally speaking, you should only email me if you need to talk about something personal or sensitive. Questions about course content should usually be asked on [Campuswire](#campuswire). 
+            You need a laptop and an internet connection for this course, but you don't need to buy any books or other supplies. 
+            <br> <br> 
+            Generally speaking, you should only email me if you need to talk about something personal or sensitive. Questions about course content should usually be asked on [Campuswire](tools.qmd#help-forum-campuswire). 
             <br> <br> 
             Student Hours are *your time* to come chat with me about course content. **I want to see you in Student Hours**.
             <br> <br> 
-            I expect you to [prepare to ask for help](#help) when approaching me, your tutors, and your fellow students. 
+            I expect you to [prepare to ask for help](help.qmd) when approaching me, your tutors, and your fellow students. 
             <br> <br> 
             Late work is not accepted, but requests for extensions are usually granted and can be submitted through the [extension request form](https://forms.gle/VXJjYHMZ4U4EePEf7). 
+            <br> <br> 
+            [You are expected to wear a mask](#masks) during class time and student hours. 
         </td>
     </tr>
 </table>
@@ -265,7 +272,7 @@ Your participation grade is primarily based on your completion of Guided Discove
 
 **Your lowest score on a Guided Activity will be dropped.** In practice, you will usually receive full credit for an activity if you participated that day, so you can also think of this as an excused absence. 
 
-# Course Policies
+# Course Policies 
 
 ### Laptops
 
@@ -281,19 +288,10 @@ If you ever find yourself temporarily in need of a laptop, the Computer Science 
 
 :::
 
-### Missing Class
-
-Unfortunately, we are *still* in a pandemic. My assumption is that there will be positive COVID tests on campus, and that some of them may occur in our class. If you are feeling ill or test positive for COVID: 
-
-1. **Do not attend class in person**. Isolate per College [policies](https://www.middlebury.edu/office/covid-19-updates/middlebury-college-main-campus/campus-guide/essential-health-and-safety-measures-8). We have relatively detailed lecture notes and other resources that will help you catch up with lecture content. 
-2. **When you are feeling up to it**, contact me about how to make up work for the course. 
-
 
 ### Due Date Adjustments
 
 In general, late work is not accepted in this course. However, **you can request adjustments to due dates**. To do so, fill out [this form](https://forms.gle/pmF7mtA637uXpUs77). I usually grant adjustment requests of up to 3 days, provided that they are submitted before the deadline. I consider larger adjustments on a case-by-case basis, keeping in mind both your needs and the needs of our student graders. 
-
-
 
 :::{.callout-note collapse="true"}
 
@@ -312,6 +310,46 @@ Policies:
 <!-- [![An image of four of the Pokemon Squirtle welcoming a fifth Squirtle. The original four Squirtles are labeled "unfinished assignment #1" through #4. The fifth Squirtle is labeled "new assignment."](assets/img/memes/unfinished-assignments.jpg) *Image credit: [Dr. Spencer Bagley](https://twitter.com/sbagley/status/1437833176311762946?s=20&t=xPhXuSfOqxBvezv2HG2xyg)*]{.aside} -->
 
 <!-- In general, I'm not offended when your work comes in late, provided that it doesn't become a problem for our graders (who, like you, are students here!). However, please make sure that you plan your time and prevent your work from piling up. I don't really have any way to help you if you have too much to do at the end of the semester after requesting many due date adjustments.  -->
+
+## COVID-19 Considerations
+
+### Masks Are Expected in CSCI 0145 {#masks}
+
+The Computer Science Department policy states that: 
+
+> We in the Computer Science department value a safe learning and working environment for all. While we can't eliminate the risks associated with COVID-19, [evidence suggests](https://www.pnas.org/doi/full/10.1073/pnas.2014564118) that widespread masking can significantly reduce the transmission and severity of disease. In order to protect the health of our community, the CS department recommends that students and faculty wear masks in CS learning spaces, including classrooms, office hours, and public areas. We acknowledge the College policy gives instructors the final say over classroom masking requirements, and expect all students to respect instructors' stated policies in each course.
+
+In alignment with this policy, **I expect you to wear masks in class and office hours.** I encourage you to wear masks during help sessions and at all other times when you are inside 75 Shannon Street. 
+
+If you arrive in class without a mask, I will offer you one. I will expect you to either wear it or excuse yourself from class that day. 
+
+### Missing Class
+
+Unfortunately, we are *still* in a pandemic. My assumption is that there will be positive COVID tests on campus, and that some of them may occur in our class. If you are feeling ill or test positive for COVID: 
+
+1. **Do not attend class in person**. Isolate per College [policies](https://www.middlebury.edu/office/covid-19-updates/middlebury-college-main-campus/campus-guide/essential-health-and-safety-measures-8). We have relatively detailed lecture notes and other resources that will help you catch up with lecture content. 
+2. **When you are feeling up to it**, contact me about how to make up work for the course. 
+
+# Getting Help
+
+There are a lot of ways to get help on homework assignments:
+
+1. Form a study group and work together on the assignments! Remember, it's ok to share ideas but not solution code. 
+3. Attend evening Peer Help sessions, which take place four nights a week in 75 SHS. 
+2. Post questions on Campuswire. You'll get help from your classmates, a tutor, or me. As above, you shouldn't post solution code. 
+4. Come to Student Hours to chat with me directly! 
+
+Generally speaking, items towards the top of this list are likely to be faster ways for you to get help than items towards the bottom. 
+
+You are don't forget to  [prepare to ask for help](help.qmd) when posting on Campuswire and attending Student Hours.  
+
+**Help resources are for all students.** Using a help resource isn't a sign that you're struggling or that you're not good at computer science; it's a sign that you're using your resources effectively. I expect that many of the students who learn the most and earn the highest grades in CSCI 0145 will be the students who regularly attending Peer Help and Student Hours. 
+
+**You can (and should!) come to Peer Help and Student Hours even if you don't yet have a question.** Come hang out, take in the conversation, start your homework, whatever works for you. 
+
+## Help on Lab Assignments
+
+Lab assignments are completed with a partner. You're very welcome to get help on your lab assignment by attending Peer Help sessions and Student Hours **with your partner**. If there's not a Peer Help or Student Hours session in which you and your partner can both attend, you're welcome to email me about finding other ways to get help. 
 
 # A Week In The Life
 
@@ -353,7 +391,7 @@ If you're ever unsure about how the Honor Code applies to a specific situation o
 
 You deserve to be welcomed and celebrated by our community. We embrace diversity of age, background, beliefs, ethnicity, gender, gender identity, gender expression, national origin, religious affiliation, sexual orientation, and other visible and non-visible categories. *Discrimination is not tolerated in my classroom*.
 
-You deserve a learning environment free from gender-based discrimination, sexual harassment, sexual assault, domestic violence, dating violence, and stalking. If you experience these behaviors or otherwise know of a Title IX violation, you have many options for support and/or reporting. Middlebury's [Civil Rights and Title IX Office](https://www.middlebury.edu/office/title-IX) (CRTIX) can help you navigate your options.  Please be aware that I am a Responsible Employee, which means that I am required by the College to report incidents of sexual harassment or sexual violence to CRTIX. There are  resources for emotional and mental health care, advocacy, and academic support listed [here](https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/2021-09/bathroom_poster_2021_proofed(1).pdf?fv=DlkQYWaU), some of which are confidential. 
+You deserve a learning environment free from gender-based discrimination, sexual harassment, sexual assault, domestic violence, dating violence, and stalking. If you experience these behaviors or otherwise know of a Title IX violation, you have many options for support and/or reporting. Middlebury's [Civil Rights and Title IX Office](https://www.middlebury.edu/office/title-IX) (CRTIX) can help you navigate your options.  Please be aware that I am a Responsible Employee, which means that **I am required by the College to report incidents of sexual harassment or sexual violence to CRTIX**. There are  resources for emotional and mental health care, advocacy, and academic support listed [here](https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/2021-09/bathroom_poster_2021_proofed(1).pdf?fv=DlkQYWaU), some of which are confidential. 
 
 You deserve to fully and equitably participate in our learning environment. I am actively putting effort into ensuring that course materials are screen-reader accessible, and welcome feedback on where I can do better. Middlebury's [Disability Resource Center](https://www.middlebury.edu/office/disability-resource-center) can help you remove barriers to learning in this and other courses. 
 

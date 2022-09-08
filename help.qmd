@@ -1,6 +1,8 @@
-### Asking For Help {#help}
+---
+title: Asking for Help
+---
 
-First of all, **ask for help often**. Asking for help is a fundamental part of how you will learn in CSCI 0145. Here is some wisdom on this topic from the Best Cat On the Internet: 
+Asking for help is a fundamental part of how you will learn in CSCI 0145. **Do it often**. Here is some wisdom on this topic from the Best Cat On the Internet: 
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">It’s hard to ask a question if it seems like other people already know stuff. Ask loudly, in case those other people are faking it and need to hear the answer too <a href="https://t.co/DOjSZ4g7jy">pic.twitter.com/DOjSZ4g7jy</a></p>&mdash; Jorts (and Jean) (@JortsTheCat) <a href="https://twitter.com/JortsTheCat/status/1484557774918803456?ref_src=twsrc%5Etfw">January 21, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -53,3 +55,7 @@ This question has two functions. First, it helps me understand where you are and
 - Develop at least one hypothesis about the source of the error, and test that hypothesis. 
 - If you're still stuck, try to construct a [minimal reproducible example](https://stackoverflow.com/help/minimal-reproducible-example) or *reprex*. Sometimes, just the activity of creating a reprex will help you solve your problem. However, if you've created your reprex and you're still stuck...
 - Bring your reprex to tutoring or Student Hours, or post it on Campuswire. Make sure to clearly state both the *expected behavior* and the *actual behavior* of your program. 
+
+## If You're *Really* Stuck
+
+Maybe you're working on an assignment, you're stuck, and you don't have time to get help before you turn it in. This isn't a great scenario, but it happens to all of us every now and then. If you find yourself in this situation, please include some comments in your assignment describing where you got stuck, what you tried, and what you would have done if you had more time. We'll take your comments into consideration when assessing your work. 
