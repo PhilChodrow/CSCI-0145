@@ -38,6 +38,10 @@ In this lab, you'll practice:
 4. Using accumulation variables to keep track of information inside a program. 
 5. Testing your algorithm and seeking feedback from the people whom it will impact. 
 
+## Lab Template File
+
+Here is the [Replit project](https://replit.com/team/csci-0145/Lab-2-Programmers-as-Decision-Makers) containing the template file for this lab. 
+
 ## Who Chooses Housing First?
 
 Every year, Middlebury students select their housing for the following year. Your job is to build an algorithm that will help determine the order in which students get to select their housing. To keep things manageable, we're going to use a *point system*: 

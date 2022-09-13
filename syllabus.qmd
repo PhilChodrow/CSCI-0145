@@ -69,7 +69,7 @@ A learning objective is a primary goal for your learning by the end of the cours
 <table>
     <tr>
         <td class="syllabus-description-table-header"> 
-            <b>Lecture Time and Location</b> 
+            <b>Lecture</b> 
         </td> 
         <td class="syllabus-description-table-entry"> 
             Mondays, Wednesdays, and Fridays
@@ -83,7 +83,7 @@ A learning objective is a primary goal for your learning by the end of the cours
     </tr>
     <tr>
         <td class="syllabus-description-table-header">
-             <b>Lab Time and Location</b> 
+             <b>Lab</b> 
         </td> 
         <td class="syllabus-description-table-entry"> 
             Thursdays 
@@ -138,11 +138,11 @@ A learning objective is a primary goal for your learning by the end of the cours
         <td class="syllabus-description-table-header">
             <b> Peer Help Sessions </b>
         </td>
-        <td>
+        <td class="syllabus-description-table-entry">
             Tuesdays, time TBD <br>
             Wednesdays, time TBD <br>
             Thursdays, time TBD <br>
-            Sundays, time TBD
+            Sundays, time TBD 
         </td>
     </tr>
     <tr>
@@ -176,14 +176,14 @@ See the [complete schedule](schedule.qmd) for more details! I am still working o
 - **Week 3**: Recursion and applications
 - **Week 4**: Iteration, lists, ethics of algorithmic selection
 - **Week 5**: Data structures: sets, tuples, maps, more lists
-- **Week 6**: Data representation, midterm review
-- **Week 7**: Midterm exam, complex iteration. Application: image processing 
-- **Week 8**: Object-oriented programming
+- **Week 6**: Data representation, midterm exam.
+- **Week 7**:  Complex iteration. Application: image processing 
+- **Week 8**: Object-oriented programming, ethics of algorithmic prioritization
 - **Week 9**: Modules, documentation, and errors
 - **Week 10**: Unit testing
 - **Week 11**: Thanksgiving recess
 - **Week 12**: Application: text analysis and generation
-- **Week 13**: Algorithms and complexity
+- **Week 13**: Algorithms and complexity, final exam review
 
 # Assessments and Grades
 

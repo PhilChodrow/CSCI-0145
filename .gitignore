@@ -1,2 +1,12 @@
 /.quarto/
 .DS_Store
+old-course
+*tests.py
+*submission.py
+*.zip
+*.pyc
+
+*result.json
+*run_autograder
+*setup.sh
+*requirements.txt

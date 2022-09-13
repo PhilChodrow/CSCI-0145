@@ -59,3 +59,5 @@ This question has two functions. First, it helps me understand where you are and
 ## If You're *Really* Stuck
 
 Maybe you're working on an assignment, you're stuck, and you don't have time to get help before you turn it in. This isn't a great scenario, but it happens to all of us every now and then. If you find yourself in this situation, please include some comments in your assignment describing where you got stuck, what you tried, and what you would have done if you had more time. We'll take your comments into consideration when assessing your work. 
+
+

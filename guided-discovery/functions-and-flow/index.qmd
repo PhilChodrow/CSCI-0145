@@ -1,0 +1,149 @@
+---
+title: "Guided Discovery: Functions"
+---
+
+# Introduction
+
+In this Guided Discovery activity, you'll continue to solve problems with strings, while practicing your skills writing functions. This assignment will help us practice **computational thinking** and **Python programming.**
+
+A new idea we're practicing here is **progressive development**. This refers to making small, frequent checks to test the correct functioning of your code. We'll be making small tests throughout this assignment in order to see whether our code is doing what's expected. 
+
+*This activity is adapted from Prof. Andrea Vaccari.* 
+
+## You Are Done When...
+
+- Either you and your partner have completed the entire activity, including a tested and finished function under "Towards Inclusive Design" or...
+- ...50 minutes have passed.
+
+Once you're done, download your `main.py` file and submit it under Guided Discovery 2 on Gradescope. Make sure to add both partners to the submission!
+
+As usual, you're welcome to use the space for up to 75 minutes if you'd like to keep working on the assignment. This is great for your learning, but not required! 
+
+## Replit
+
+Here is the [Replit project for this activity](https://replit.com/team/csci-0145/Guided-Discovery-2-Functions-and-Control-Flow). 
+
+
+# Username Generator
+
+Do you remember your Middlebury username? Mine is pchodrow. The "p" comes from my given name (Philip), and the rest comes from my family name. In this assignment, we are going to write a function that will generate usernames like this from input data. So, for example, 
+
+```python
+username_generator("Philip Chodrow") # function call
+pchodrow                           # expected output
+```
+
+## Assumptions
+
+At this stage, we are going to proceed under the following assumptions: 
+
+1. The user has one given name and one family name, separated by spaces. 
+2. The user types their given name first, followed by a space, followed by their family name.
+
+## Technical Specifications
+
+1. You may assume that the user will always enter a string, and that they will not make typos (e.g. they will always remember to type the space).
+2. Your output should include the first letter of the user's given name, followed by the user's family name.
+3. Your output should not exceed 8 characters. If the username would be longer than 8 characters, return only the first 8. 
+4. Your output should be entirely in lowercase characters.
+
+## Pair Programming
+
+The member of the pair whose birthday is closest to the current date starts as the **Navigator**. The Navigator's job is to read the directions carefully and make suggestions to the Driver about what code to write next. The Navigator also suggests what tests to run of the current code.  ***The Navigator does not write code.***
+
+The other member of the pair is the **Driver**. The Driver's job is to write code in response to the Navigator's suggestions. ***The Driver only writes code when directed by the Navigator.***
+
+We'll switch roles approximately halfway through the activity. 
+
+
+# Initial Version
+
+## 1. Reflect on the assumptions and specifications
+
+Before you start coding, take a moment to discuss with your partner: 
+
+1. Do these assumptions work for everyone? Who may be left out? 
+2. Who could be advantaged or disadvantaged by the technical specification that only 8 characters of the family name are used? 
+
+After we implement the first version of this function, we'll come back the function and 
+
+
+## 2. Write your function header and docstring
+
+In the file `main.py`, write the header (the part that begins with `def`) and a docstring for your function. Your docstring should describe what the function does, the expected types of its input(s), its return value, and its assumptions/specifications. 
+
+## 3. Find the space
+
+Remember, we've assumed that the user has a given name and a family name, separated by a space. Let's find it! 
+
+Strings have *methods*: functions that can be called using the syntax `string.function()`. The method `string.find(char)` will return the first index on which the character `char` appears. Use this method to find the location of the first space and save it to a variable called `space_location`. You should do this **within the body of your function**, like this: 
+
+```python
+def some_function():
+  # code in here is in the body of the function
+```
+
+## 4. Find the user's family name
+
+Using string slicing and the `space_location` variable, **find and return** the user's family name. Hint: `s[5:]` is everything including and after index `5` in the string `s`.  
+
+## 5. Test family name extraction
+
+At this stage, if you run the file `main.py`, you should expect that the generated username is just the family name of the user. Please **check this**, and make adjustments as necessary.  
+
+**Note**: It's ok that this isn't actually the long-term result we want! It's just an intermediate step to make sure that we understand what our function is doing so far. 
+
+## 5.5 Switch roles
+
+Please swap! The previous Navigator is now the Driver, and the previous Driver is now the Navigator. 
+
+## 6. Form the (long) username
+
+Now create a variable inside your function called `long_username` that holds the long username, which is the first letter of the given name followed by the entire family name. 
+
+## 7. Test long username 
+
+Again run `main.py` and check that you are getting the result you would expect. 
+
+## 8. Convert to lowercase 
+
+The returned username is expected to be in lowercase. Create a new variable called `long_username_lower` that holds the string in lowercase. 
+
+**Hint**: `my_string.lower()` 
+
+## 9. Limit to 8 characters
+
+Create a variable called `username` which holds the final username to be returned. You can create it just by using a string slice to ensure that the final output is no more than 8 characters. Return the result. 
+
+## 10. Test
+
+Test your function with both partners to ensure that you obtain the results you expect. 
+
+# Towards Inclusive Design
+
+It's often appropriate to begin with simplifying assumptions in order to help us get started on a project. You have to start *somewhere*, right? 
+
+## Make a Plan
+
+Recall your discussion with your partner from the beginning of this assignment about who is **not** served well by the assumptions and specifications we made previously. 
+
+Then, modify your function to make it more inclusive! When planning your function, please make use of at least one `if-else` code block. 
+
+You should switch Driver and Navigator at least one more time during this part of the activity. Work with your partner to find the right time. 
+
+## If You Need Ideas
+
+1. Add an argument to your function called `family_name_is_first`. If this argument is passed with value `True`, the first name in the string is interpreted as the family name. For example: 
+```python
+username_generator("Ai Weiwei", family_name_is_first = True) 
+wai                                                          
+```
+2. Many people born in Spanish-speaking countries have two family names. Children of heterosexual marriages often have a first surname corresponding to their father's family line, and a second surname corresponding to their mother's. For example, the author Gabriel García Márquez has a given name (Gabriel), a paternal family name (García), and a maternal family surname (Márquez). Add an argument to your function called `which_surname` that allows the user to specify which surname will be used to generate the username. You should accept options `"first"`, `"last"`, or "`both`". For example:
+```python
+username_generator(Gabriel García Márquez, which_surname = "first")
+ggarcía
+username_generator(Gabriel García Márquez, which_surname = "last")
+gmárquez
+username_generator(Gabriel García Márquez, which_surname = "both")
+ggarcíam
+```

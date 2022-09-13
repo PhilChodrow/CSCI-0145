@@ -95,8 +95,8 @@
   objectives: 
     - Computational Thinking
     - Python Programming
-  activity:
-    - <a href="guided-discovery/functions/">(link)</a>
+  activity: 
+    - <a href="https://replit.com/team/csci-0145/Guided-Discovery-2-Functions-and-Control-Flow">GD2</a>
   module: Fundamentals of Procedural Programming
   publish: true
 - date: 2022-09-23

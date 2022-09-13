@@ -1,14 +1,13 @@
 """
-In this assignment, you'll hone skills like writing functions, manipulating strings, and performing conditional execution. You'll also practice using the Thonny debugger. 
+In this assignment, you'll hone skills like writing functions, manipulating strings, and performing conditional execution. You'll also practice using the Thonny debugger and reflecting on your experience with automated decision systems. 
 """
 
 """
-Q1: Expressions (11 points)
+Q1: Expressions
 In this question, you'll do a series of short exercises to practice evaluating Python expressions. 
 """
 
 """
-(7 points)
 First, please describe both the *value* and *type* of the output for each of the expressions below. For example, the expression 5*1 has value 5 and a type of int.  
 
 1. 12 / 3
@@ -34,8 +33,7 @@ Returned value and type:
 """
 
 """
-(4 points)
-What is the value stored in each of the variables x and y once the lines of code have been evaluated? Beside each line, write a comment describing the value of both x and y. You will learn the most if you try to do this *without* evaluating the code in Thonny. You can use Thonny to check once you're done. 
+Next, what is the value stored in each of the variables x and y once the lines of code have been evaluated? Beside each line, write a comment describing the value of both x and y. You will learn the most if you try to do this *without* evaluating the code in Thonny. You can use Thonny to check once you're done. 
 """
 
 x = 3
@@ -45,11 +43,11 @@ y = y - 5
 
 
 """
-Q2: Unit Displays (15 points)
+Q2: Unit Displays
 
 In this problem, you will write a function called convert_height that displays a height supplied in inches into a pleasantly readable string. Here's an example of what we're going for: 
 
-convert_height(73)
+convert_height(73) # someone is 73 inches tall
 > "6 feet and 1 inch"
 
 In case you're not familiar with feet-inch measurement, an inch is equal to 2.54cm. A foot is equal to 12 inches. 
@@ -71,22 +69,48 @@ convert_height(60)
 convert_height(5)
 > "5 inches"
 
-Your function should also include a simple docstring describing its inputs, outputs, and assumptions. 
+Please include correct English pluralization of feet and inches. In particular:
+1 foot, not 1 feet. 
+1 inch, not 1 inches. 
+2 feet, not 2 foot. 
+2 inches, not 2 inch. 
 
-HINT: Consult the Python documentation on numbers (https://docs.python.org/3/tutorial/introduction.html#numbers) for the // and % operators. Can you use them to design your solution? 
+
+CODE REQUIREMENTS: 
+
+Your function should include a simple docstring describing its inputs, outputs, and assumptions. 
+
+Your solution should demonstrate: 
+
+- At least one use of if-else. 
+- At least one use of a boolean operation: and, or, or not. 
+
+DOCUMENTATION REQUIREMENTS: 
+
+Please include a helpful docstring that describes the overall purpose, input, output, and assumptions of the function. 
+
+Please include a few comments that help make clear the purpose of each block of code. You should have a comment roughly every 3-5 lines of code. 
+
+ASSUMPTIONS: 
+
+You may assume that the user will always input an integer (whole number) that is not negative. 
+
+HINT: 
+Consult the Python documentation on numbers (https://docs.python.org/3/tutorial/introduction.html#numbers) for the // and % operators. Can you use them to design your solution? 
 
 """
 
-my_height = 0
 
-def convert_height(my_height):
+def convert_height(height_in_inches):
     """
     [REPLACE WITH YOUR DOCSTRING]
     """
-    pass # REPLACE WITH YOUR FUNCTION DEFINITION
+    pass # replace with your solution
+    
+    
 
 """
-Q3: Debugging Practice (15 points)
+Q3: Debugging Practice
 
 Your friend has written a function to compute the distance between two two-dimensional points. Each point is specified by an x-coordinate and a y-coordinate. 
 
@@ -115,46 +139,16 @@ def distance(x1, y1, x2, y2):
     deltaY = y2 - x1
     distance_squared = deltaX^2 + deltaY^2
     distance = distance_squared**(0.5)
+    print(dist)
 
 """
 Q4: Automated Decision Systems
 
 We are surrounded by automated decision systems. Just at Midd, your housing, your eligibility for financial aid, and even your ability to enroll in this course were partially controlled by algorithms. 
 
-- Think of a time when an automated decision system made a decision that you felt was *fair*. It should be a decision that relates to you or someone you know. It can also be one you read about, although not in this article. What are your reasons for thinking this decision was fair? Write a few sentences answering these questions and save them in the string variable fair below. 
-- Now, try to think of a time when an automated decision system made a decision that you felt was *unfair*. Repeat the above prompt, saving your response in the string variable unfair below. 
+- Think of a time when an automated decision system made a decision that you felt was *fair*. It should be a decision that relates to you or someone you know. It can also be one you read about, although not in this article. What are your reasons for thinking this decision was fair? Write at least *three* complete sentences answering these questions and save them in the string variable FAIR below. 
+- Now, try to think of a time when an automated decision system made a decision that you felt was *unfair*. Repeat the above prompt, saving your response in the string variable UNFAIR below. 
 """
 
-fair = ""
-unfair = "" 
-
-
-"""
-GRADING SCRIPT
-You should uncomment the lines below after you're done and before you submit on Gradescope. You should not modify the code below in any other way. 
-"""
-
-# if __name__ == "__main__":
-    
-    # print("Q2")
-    # print("------")
-    # print(convert_height(73))
-    # print(convert_height(60))
-    # print(convert_height(5))
-    
-    # print("\n\nQ3")
-    # print("------")
-    # print(distance(1, 2, 3, 4)) 
-    
-    # print("\n\nQ4")
-    # print("------")
-    # print(fair) 
-    # print("")
-    # print()
-    
-    
-
-
-    
-
-
+FAIR = ""
+UNFAIR = "" 
