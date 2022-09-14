@@ -134,19 +134,21 @@ Variables pane, you might need to add it under the View menu.
 
 ACTIVITY: Variable Naming
 
-Here is a program that calculates the distance that a bicyclist travels:
+Here is a program that calculates...something. 
 
 x = 10
 y = 2
-
 z = x*y
 
-Let's modify this program to:
-- Give descriptive variable names for x and y
-- save the result to a variable
+Modify this program to give each of the variables x, y, and z descriptive names.
+You can choose what x, y, and z should mean. Here's one example:
 
-It's good to have your variable names record the *units*. You can pick any units
-that make sense. 
+value_of_a_us_dime = 10
+number_of_dimes    = 2
+total_value        = 20
+
+If you use units (for quantities like distance, speed, or time), then please
+include these units in your variable names. 
 
 ACTIVITY: Temperature Conversion
 
