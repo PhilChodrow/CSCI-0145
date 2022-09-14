@@ -27,7 +27,7 @@ We'll get lots of practice working with each of these components very soon.
 # Expressions
 
 An *expression* is a computational recipe. You've seen expressions in math
-class. Expressions are *evaluated* to give an answer. For example, "2+2" is an
+class. Expressions are *evaluated* to give an answer. For example, 2+2 is an
 expression, and it *evaluates* to the answer 4. We can literally type this into
 the Python shell and check the result.
 
@@ -45,7 +45,8 @@ wrong with our *types*. So, what's a type?
 ## Types
 
 A *type* is a description of the kind of thing that an object is. For example,
-2 and 145 are both *integers*, which is shortened to int.
+2 and 145 are both *integers*, which is shortened to int. We can find the type
+of any object using the type() function. For example, type(2). 
 
 QUICK ACTIVITY: Check the types of the following:
 
@@ -104,7 +105,7 @@ x = 2
 x
 
 You can think of the variable x as a "box" that holds the value 2. Because x is
-a box, we can take things out of it and put other things in.
+a box, we can take things out of it and put other things in. 
 
 x = "CS@Midd"
 x
@@ -119,13 +120,17 @@ print("You have been at Midd for " + str(year_entered - 2022) + " years.")
 
 year_entered  = 2020
 current_year  = 2022
-years_at_midd = 2022 - 2020
+years_at_midd = current_year - year_entered
 print("You have been at Midd for " + str(years_at_midd) + " years.")
 
 Notice that we gave our variables descriptive names that describe the meaning
 or purpose of the values that they hold. This is good convention. We've also
 allowed our variable names to contain multiple words, separated by _. This is
 the approach that you are expected to use throughout CSCI 0145. 
+
+Thonny helps you keep track of your variables in the Variables pane, which
+displays the name and value of each variable. If you don't currently see the
+Variables pane, you might need to add it under the View menu. 
 
 ACTIVITY: Variable Naming
 
@@ -134,7 +139,7 @@ Here is a program that calculates the distance that a bicyclist travels:
 x = 10
 y = 2
 
-x*y
+z = x*y
 
 Let's modify this program to:
 - Give descriptive variable names for x and y
@@ -146,7 +151,7 @@ that make sense.
 ACTIVITY: Temperature Conversion
 
 Let's write our first Python *script*. Create a new file. Then, working with the
-person next to you, write a program that converts 72 degrees degrees Fahrenheit
+person next to you, write a program that converts 72 degrees Fahrenheit
 into degrees Celsius.
 
 - Please include descriptive variable names.
@@ -158,6 +163,8 @@ You can go to this url to review the formula and check your work:
 
 https://www.metric-conversions.org/temperature/fahrenheit-to-celsius.htm
 
+Once you've written your entire script, including the print() statement, you can
+use the green play button in Thonny to run your script and view the result. 
 
 ## NOTE: Assignment and Equality
 
