@@ -35,7 +35,7 @@
   summary: |
     We learn some ways to manipulate text, save the results, and show them to the user. We'll come back to advanced text manipulation much later in the course. 
   activity: 
-    - <a href="https://replit.com/team/csci-0145/Guided-Discovery-String-Indexing-and-Manipulation">GD1</a>
+    - <a href="assignments/guided-discovery/strings/gd-strings.py">GD1</a>
   module: Introduction
   objectives: 
     - Python Programming
