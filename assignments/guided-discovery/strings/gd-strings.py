@@ -36,13 +36,15 @@ print("--------------------")
 
 # What character was printed? Was it the one you expected?
 
-# ACTIVITY: Use this pattern to extract the following characters from the quote variable:
+# ACTIVITY: Use this pattern to extract the following characters from the quote 
+# variable:
 # - "I"
 # - "i"
 # - " "
 # - "."
 
-# ACTIVITY: Python uses "0-based indexing." In a sentence or two, describe what this means based on your experiments above. Print your sentence.
+# ACTIVITY: Python uses "0-based indexing." In a sentence or two, describe what
+# this means based on your experiments above. Print your sentence.
 
 # uncomment the two lines below
 # response = "[REPLACE WITH YOUR SENTENCE(S)]"
@@ -52,7 +54,9 @@ print("--------------------")
 
 # print(quote[-1]) # this is called *negative indexing*
 
-# ACTIVITY: What is your hypothesis about what happened? Test your hypothesis by running a few more examples, predicting the results, and checking your predictions.
+# ACTIVITY: What is your hypothesis about what happened? Test your hypothesis 
+# by running a few more examples, predicting the results, and checking your 
+# predictions.
 
 # ACTIVITY: What happens when you try to extract quote[-0]?
 
@@ -180,7 +184,9 @@ temperature = "hot"
 # BASE TEXT
 # Python is a [NOUN1] that was [VERB1] by a [ADJECTIVE1] [NOUN2] in [YEAR].
 
-# If a user selected "sandwich," "stolen," "sentient," "raccoon," "1832", the result would be "Python is a sandwich that was stolen by a sentient raccoon in 1832."
+# If a user selected "sandwich," "stolen," "sentient," "raccoon," "1832", the 
+# result would be "Python is a sandwich that was stolen by a sentient raccoon 
+# in 1832."
 
 # Choose a sentence, and implement a simple Mad Libs game based on your 
 # sentence. You should assign variables for each of the user choices, and then 
