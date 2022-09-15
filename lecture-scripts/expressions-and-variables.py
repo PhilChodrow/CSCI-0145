@@ -115,7 +115,7 @@ easier to understand. For example, consider the following simple program that
 accepts some input about your time at Middlebury and creates a summary string. 
 
 year_entered = 2020
-print("You have been at Midd for " + str(year_entered - 2022) + " years.")
+print("You have been at Midd for " + str(2022 - year_entered) + " years.")
 
 
 year_entered  = 2020
