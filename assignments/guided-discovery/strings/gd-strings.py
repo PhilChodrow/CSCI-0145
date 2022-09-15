@@ -125,36 +125,14 @@ print("\n(d): Gathering User Input")
 print("---------------------------")
 
 # The input() function allows you to interactively prompt the user to supply a 
-# string. Uncomment the following three lines of code and run your script. 
+# string. The user is expected to type their response in the shell. Uncomment the following three lines of code and run your script. 
 
 # vegetable = input("If you were a vegetable, which vegetable would you be?")
 # why = input("Why would you be that vegetable?")
 # print("If I were a vegetable, I would be a " + vegetable + ", because " + why)
 
-# ACTIVITY: uncomment the code below and run it. What happens?
 
-# print(3*quote[0:11])
 
-# ACTIVITY: Do a few more experiments if you need to. Then, write a sentence 
-# describing what the output is of i*s, if i is an integer and s is a string.
-
-# uncomment and run
-# response = "[REPLACE WITH YOUR SENTENCE]"
-# print(response)
-
-# ACTIVITY: Try the following, one at a time
-# 1. quote[1]*quote[0:11]
-# 2. 0.99*quote[0:11]
-# 3. 1.0*quote[0:11]
-# 4. quote[0:11]*1.0
-
-# Now, uncomment the below and fill in some hypothesized explanations about why 
-# the Python implementers made the decisions they did with these operations.
-
-# print("In example 1., [YOUR RESPONSE HERE]")
-# print("In example 2., [YOUR RESPONSE HERE]")
-# print("In example 3., [YOUR RESPONSE HERE]")
-# print("In example 4., [YOUR RESPONSE HERE]")
 
 print("\n\nPART III: If you have time")
 print("\n(e): String Interpolation")
