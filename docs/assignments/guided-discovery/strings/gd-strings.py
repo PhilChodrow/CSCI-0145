@@ -36,13 +36,15 @@ print("--------------------")
 
 # What character was printed? Was it the one you expected?
 
-# ACTIVITY: Use this pattern to extract the following characters from the quote variable:
+# ACTIVITY: Use this pattern to extract the following characters from the quote 
+# variable:
 # - "I"
 # - "i"
 # - " "
 # - "."
 
-# ACTIVITY: Python uses "0-based indexing." In a sentence or two, describe what this means based on your experiments above. Print your sentence.
+# ACTIVITY: Python uses "0-based indexing." In a sentence or two, describe what
+# this means based on your experiments above. Print your sentence.
 
 # uncomment the two lines below
 # response = "[REPLACE WITH YOUR SENTENCE(S)]"
@@ -52,7 +54,9 @@ print("--------------------")
 
 # print(quote[-1]) # this is called *negative indexing*
 
-# ACTIVITY: What is your hypothesis about what happened? Test your hypothesis by running a few more examples, predicting the results, and checking your predictions.
+# ACTIVITY: What is your hypothesis about what happened? Test your hypothesis 
+# by running a few more examples, predicting the results, and checking your 
+# predictions.
 
 # ACTIVITY: What happens when you try to extract quote[-0]?
 
@@ -121,36 +125,14 @@ print("\n(d): Gathering User Input")
 print("---------------------------")
 
 # The input() function allows you to interactively prompt the user to supply a 
-# string. Uncomment the following three lines of code and run your script. 
+# string. The user is expected to type their response in the shell. Uncomment the following three lines of code and run your script. 
 
 # vegetable = input("If you were a vegetable, which vegetable would you be?")
 # why = input("Why would you be that vegetable?")
 # print("If I were a vegetable, I would be a " + vegetable + ", because " + why)
 
-# ACTIVITY: uncomment the code below and run it. What happens?
 
-# print(3*quote[0:11])
 
-# ACTIVITY: Do a few more experiments if you need to. Then, write a sentence 
-# describing what the output is of i*s, if i is an integer and s is a string.
-
-# uncomment and run
-# response = "[REPLACE WITH YOUR SENTENCE]"
-# print(response)
-
-# ACTIVITY: Try the following, one at a time
-# 1. quote[1]*quote[0:11]
-# 2. 0.99*quote[0:11]
-# 3. 1.0*quote[0:11]
-# 4. quote[0:11]*1.0
-
-# Now, uncomment the below and fill in some hypothesized explanations about why 
-# the Python implementers made the decisions they did with these operations.
-
-# print("In example 1., [YOUR RESPONSE HERE]")
-# print("In example 2., [YOUR RESPONSE HERE]")
-# print("In example 3., [YOUR RESPONSE HERE]")
-# print("In example 4., [YOUR RESPONSE HERE]")
 
 print("\n\nPART III: If you have time")
 print("\n(e): String Interpolation")
@@ -180,7 +162,9 @@ temperature = "hot"
 # BASE TEXT
 # Python is a [NOUN1] that was [VERB1] by a [ADJECTIVE1] [NOUN2] in [YEAR].
 
-# If a user selected "sandwich," "stolen," "sentient," "raccoon," "1832", the result would be "Python is a sandwich that was stolen by a sentient raccoon in 1832."
+# If a user selected "sandwich," "stolen," "sentient," "raccoon," "1832", the 
+# result would be "Python is a sandwich that was stolen by a sentient raccoon 
+# in 1832."
 
 # Choose a sentence, and implement a simple Mad Libs game based on your 
 # sentence. You should assign variables for each of the user choices, and then 

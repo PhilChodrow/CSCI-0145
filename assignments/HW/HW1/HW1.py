@@ -98,6 +98,9 @@ You may assume that the user will always input an integer (whole number) that is
 HINT: 
 Consult the Python documentation on numbers (https://docs.python.org/3/tutorial/introduction.html#numbers) for the // and % operators. Can you use them to design your solution? 
 
+HINT: 
+You will find it useful to write some lines of code in which you *call* your function in order to check for expected behavior. 
+
 """
 
 
