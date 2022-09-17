@@ -218,16 +218,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul></li>
   <li><a href="#initial-version" id="toc-initial-version" class="nav-link" data-scroll-target="#initial-version">Initial Version</a>
   <ul class="collapse">
-  <li><a href="#reflect-on-the-assumptions-and-specifications" id="toc-reflect-on-the-assumptions-and-specifications" class="nav-link" data-scroll-target="#reflect-on-the-assumptions-and-specifications">1. Reflect on the assumptions and specifications</a></li>
-  <li><a href="#write-your-function-header-and-docstring" id="toc-write-your-function-header-and-docstring" class="nav-link" data-scroll-target="#write-your-function-header-and-docstring">2. Write your function header and docstring</a></li>
-  <li><a href="#find-the-space" id="toc-find-the-space" class="nav-link" data-scroll-target="#find-the-space">3. Find the space</a></li>
-  <li><a href="#find-the-users-family-name" id="toc-find-the-users-family-name" class="nav-link" data-scroll-target="#find-the-users-family-name">4. Find the user’s family name</a></li>
-  <li><a href="#test-family-name-extraction" id="toc-test-family-name-extraction" class="nav-link" data-scroll-target="#test-family-name-extraction">5. Test family name extraction</a></li>
-  <li><a href="#switch-roles" id="toc-switch-roles" class="nav-link" data-scroll-target="#switch-roles">5.5 Switch roles</a></li>
-  <li><a href="#form-the-long-username" id="toc-form-the-long-username" class="nav-link" data-scroll-target="#form-the-long-username">6. Form the (long) username</a></li>
-  <li><a href="#test-long-username" id="toc-test-long-username" class="nav-link" data-scroll-target="#test-long-username">7. Test long username</a></li>
-  <li><a href="#convert-to-lowercase" id="toc-convert-to-lowercase" class="nav-link" data-scroll-target="#convert-to-lowercase">8. Convert to lowercase</a></li>
-  <li><a href="#limit-to-8-characters" id="toc-limit-to-8-characters" class="nav-link" data-scroll-target="#limit-to-8-characters">9. Limit to 8 characters</a></li>
+  <li><a href="#reflect-on-the-assumptions-and-specifications" id="toc-reflect-on-the-assumptions-and-specifications" class="nav-link" data-scroll-target="#reflect-on-the-assumptions-and-specifications">1. Reflect On The Assumptions And Specifications</a></li>
+  <li><a href="#write-your-function-header-and-docstring" id="toc-write-your-function-header-and-docstring" class="nav-link" data-scroll-target="#write-your-function-header-and-docstring">2. Write Your Function Header And Docstring</a></li>
+  <li><a href="#find-the-space" id="toc-find-the-space" class="nav-link" data-scroll-target="#find-the-space">3. Find The Space</a></li>
+  <li><a href="#find-the-users-family-name" id="toc-find-the-users-family-name" class="nav-link" data-scroll-target="#find-the-users-family-name">4. Find The User’s Family Name</a></li>
+  <li><a href="#test-family-name-extraction" id="toc-test-family-name-extraction" class="nav-link" data-scroll-target="#test-family-name-extraction">5. Test Family Name Extraction</a></li>
+  <li><a href="#switch-roles" id="toc-switch-roles" class="nav-link" data-scroll-target="#switch-roles">5.5 Switch Roles</a></li>
+  <li><a href="#form-the-long-username" id="toc-form-the-long-username" class="nav-link" data-scroll-target="#form-the-long-username">6. Form The (Long) Username</a></li>
+  <li><a href="#test-long-username" id="toc-test-long-username" class="nav-link" data-scroll-target="#test-long-username">7. Test Long Username</a></li>
+  <li><a href="#convert-to-lowercase" id="toc-convert-to-lowercase" class="nav-link" data-scroll-target="#convert-to-lowercase">8. Convert To Lowercase</a></li>
+  <li><a href="#limit-to-8-characters" id="toc-limit-to-8-characters" class="nav-link" data-scroll-target="#limit-to-8-characters">9. Limit to 8 Characters</a></li>
   <li><a href="#test" id="toc-test" class="nav-link" data-scroll-target="#test">10. Test</a></li>
   </ul></li>
   <li><a href="#towards-inclusive-design" id="toc-towards-inclusive-design" class="nav-link" data-scroll-target="#towards-inclusive-design">Towards Inclusive Design</a>
@@ -278,9 +278,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="username-generator" class="level1">
 <h1>Username Generator</h1>
-<p>Do you remember your Middlebury username? Mine is pchodrow. The “p” comes from my given name (Philip), and the rest comes from my family name. In this assignment, we are going to write a function that will generate usernames like this from input data. So, for example,</p>
+<p>Do you remember your Middlebury username? Mine is <code>pchodrow</code>. The “p” comes from my given name (Philip), and the rest comes from my family name. In this assignment, we are going to write a function that will generate usernames like this from input data. So, for example,</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>username_generator(<span class="st">"Philip Chodrow"</span>) <span class="co"># function call</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pchodrow                           <span class="co"># expected output</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pchodrow                             <span class="co"># expected output</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
 <p>At this stage, we are going to proceed under the following assumptions:</p>
@@ -300,6 +300,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="pair-programming" class="level2">
 <h2 class="anchored" data-anchor-id="pair-programming">Pair Programming</h2>
+<p>This Guided Discovery activity is our first experience with <em>pair programming</em>. You’ll read more about <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.1067.7379&amp;rep=rep1&amp;type=pdf">How Pair Programming Really Works</a> in preparation for our nex quiz.</p>
 <p>The member of the pair whose birthday is closest to the current date starts as the <strong>Navigator</strong>. The Navigator’s job is to read the directions carefully and make suggestions to the Driver about what code to write next. The Navigator also suggests what tests to run of the current code. <strong><em>The Navigator does not write code.</em></strong></p>
 <p>The other member of the pair is the <strong>Driver</strong>. The Driver’s job is to write code in response to the Navigator’s suggestions. <strong><em>The Driver only writes code when directed by the Navigator.</em></strong></p>
 <p>We’ll switch roles approximately halfway through the activity.</p>
@@ -308,7 +309,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="initial-version" class="level1">
 <h1>Initial Version</h1>
 <section id="reflect-on-the-assumptions-and-specifications" class="level2">
-<h2 class="anchored" data-anchor-id="reflect-on-the-assumptions-and-specifications">1. Reflect on the assumptions and specifications</h2>
+<h2 class="anchored" data-anchor-id="reflect-on-the-assumptions-and-specifications">1. Reflect On The Assumptions And Specifications</h2>
 <p>Before you start coding, take a moment to discuss with your partner:</p>
 <ol type="1">
 <li>Do these assumptions work for everyone? Who may be left out?</li>
@@ -317,44 +318,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>After we implement the first version of this function, we’ll come back the function and</p>
 </section>
 <section id="write-your-function-header-and-docstring" class="level2">
-<h2 class="anchored" data-anchor-id="write-your-function-header-and-docstring">2. Write your function header and docstring</h2>
+<h2 class="anchored" data-anchor-id="write-your-function-header-and-docstring">2. Write Your Function Header And Docstring</h2>
 <p>In the file <code>main.py</code>, write the header (the part that begins with <code>def</code>) and a docstring for your function. Your docstring should describe what the function does, the expected types of its input(s), its return value, and its assumptions/specifications.</p>
 </section>
 <section id="find-the-space" class="level2">
-<h2 class="anchored" data-anchor-id="find-the-space">3. Find the space</h2>
+<h2 class="anchored" data-anchor-id="find-the-space">3. Find The Space</h2>
 <p>Remember, we’ve assumed that the user has a given name and a family name, separated by a space. Let’s find it!</p>
 <p>Strings have <em>methods</em>: functions that can be called using the syntax <code>string.function()</code>. The method <code>string.find(char)</code> will return the first index on which the character <code>char</code> appears. Use this method to find the location of the first space and save it to a variable called <code>space_location</code>. You should do this <strong>within the body of your function</strong>, like this:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> some_function():</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># code in here is in the body of the function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="find-the-users-family-name" class="level2">
-<h2 class="anchored" data-anchor-id="find-the-users-family-name">4. Find the user’s family name</h2>
+<h2 class="anchored" data-anchor-id="find-the-users-family-name">4. Find The User’s Family Name</h2>
 <p>Using string slicing and the <code>space_location</code> variable, <strong>find and return</strong> the user’s family name. Hint: <code>s[5:]</code> is everything including and after index <code>5</code> in the string <code>s</code>.</p>
 </section>
 <section id="test-family-name-extraction" class="level2">
-<h2 class="anchored" data-anchor-id="test-family-name-extraction">5. Test family name extraction</h2>
+<h2 class="anchored" data-anchor-id="test-family-name-extraction">5. Test Family Name Extraction</h2>
 <p>At this stage, if you run the file <code>main.py</code>, you should expect that the generated username is just the family name of the user. Please <strong>check this</strong>, and make adjustments as necessary.</p>
 <p><strong>Note</strong>: It’s ok that this isn’t actually the long-term result we want! It’s just an intermediate step to make sure that we understand what our function is doing so far.</p>
 </section>
 <section id="switch-roles" class="level2">
-<h2 class="anchored" data-anchor-id="switch-roles">5.5 Switch roles</h2>
+<h2 class="anchored" data-anchor-id="switch-roles">5.5 Switch Roles</h2>
 <p>Please swap! The previous Navigator is now the Driver, and the previous Driver is now the Navigator.</p>
 </section>
 <section id="form-the-long-username" class="level2">
-<h2 class="anchored" data-anchor-id="form-the-long-username">6. Form the (long) username</h2>
+<h2 class="anchored" data-anchor-id="form-the-long-username">6. Form The (Long) Username</h2>
 <p>Now create a variable inside your function called <code>long_username</code> that holds the long username, which is the first letter of the given name followed by the entire family name.</p>
 </section>
 <section id="test-long-username" class="level2">
-<h2 class="anchored" data-anchor-id="test-long-username">7. Test long username</h2>
+<h2 class="anchored" data-anchor-id="test-long-username">7. Test Long Username</h2>
 <p>Again run <code>main.py</code> and check that you are getting the result you would expect.</p>
 </section>
 <section id="convert-to-lowercase" class="level2">
-<h2 class="anchored" data-anchor-id="convert-to-lowercase">8. Convert to lowercase</h2>
+<h2 class="anchored" data-anchor-id="convert-to-lowercase">8. Convert To Lowercase</h2>
 <p>The returned username is expected to be in lowercase. Create a new variable called <code>long_username_lower</code> that holds the string in lowercase.</p>
 <p><strong>Hint</strong>: <code>my_string.lower()</code></p>
 </section>
 <section id="limit-to-8-characters" class="level2">
-<h2 class="anchored" data-anchor-id="limit-to-8-characters">9. Limit to 8 characters</h2>
+<h2 class="anchored" data-anchor-id="limit-to-8-characters">9. Limit to 8 Characters</h2>
 <p>Create a variable called <code>username</code> which holds the final username to be returned. You can create it just by using a string slice to ensure that the final output is no more than 8 characters. Return the result.</p>
 </section>
 <section id="test" class="level2">
@@ -364,7 +365,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="towards-inclusive-design" class="level1">
 <h1>Towards Inclusive Design</h1>
-<p>It’s often appropriate to begin with simplifying assumptions in order to help us get started on a project. You have to start <em>somewhere</em>, right?</p>
+<p>It’s often appropriate to begin with simplifying assumptions in order to help us get started on a project. You have to start <em>somewhere</em>, right? But then, it’s our responsibility to take further steps to ensure that our product is equitable, accessible, and non-harmful.</p>
 <section id="make-a-plan" class="level2">
 <h2 class="anchored" data-anchor-id="make-a-plan">Make a Plan</h2>
 <p>Recall your discussion with your partner from the beginning of this assignment about who is <strong>not</strong> served well by the assumptions and specifications we made previously.</p>
@@ -374,7 +375,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="if-you-need-ideas" class="level2">
 <h2 class="anchored" data-anchor-id="if-you-need-ideas">If You Need Ideas</h2>
 <ol type="1">
-<li>Add an argument to your function called <code>family_name_is_first</code>. If this argument is passed with value <code>True</code>, the first name in the string is interpreted as the family name. For example:</li>
+<li>In many nations and language communities, the family name of an individual is actually <em>first</em>, with the given name second. Add an argument to your function called <code>family_name_is_first</code>. If this argument is passed with value <code>True</code>, the first name in the string is interpreted as the family name. For example:</li>
 </ol>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>username_generator(<span class="st">"Ai Weiwei"</span>, family_name_is_first <span class="op">=</span> <span class="va">True</span>) </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>wai                                                          </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
