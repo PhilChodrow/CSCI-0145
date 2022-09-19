@@ -3,6 +3,7 @@ project:
   output-dir: docs
   resources:
     - "lecture-scripts/*"
+    - "assignments"
 
 website:
   output-dir: docs
