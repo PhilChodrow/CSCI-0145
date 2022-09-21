@@ -1,0 +1,139 @@
+---
+title: "Guided Discovery: Fractal Trees With Turtle"
+---
+
+## 0. Introduction
+
+[![](https://blog.ploeh.dk/content/binary/symmetric-fractal-tree.png)
+An example of a fractal tree, very similar to the one we will make today with Turtle. <br> 
+[*Image source*](https://blog.ploeh.dk/2017/06/06/fractal-trees-with-purescript/)
+]{.aside}
+
+In this assignment, you'll use the Turtle graphics system that we introduced in class, along with your powerful new recursion techniques, to create **fractal trees**. A fractal tree is a graphic in which a single line divides into two or more lines at an angle, repeatedly. The result is an elegant tree-like structure.   
+
+[Assignment file on Replit](https://replit.com/team/csci-0145/Guided-Discovery-3-Recursion-and-Turtle-Graphics). 
+
+## 1. Draw a Vertical Line
+
+Like last time, we're going to practice *incremental development*. We'll start with a very simple function. Then, at each stage, we'll add just a bit of complexity until we achieve the behavior that we are looking for. 
+
+Here's the first step: 
+
+1. Define a function called `draw_tree()` that accepts a single argument called `length`. 
+2. This function should cause the turtle to move forward by `length`, and then backwards by the same `length`. So, the turtle ends where it started. 
+
+Call your function like this: 
+
+```python
+draw_tree(100)
+```
+
+At this stage, the expected result is that your turtle moves up and then down, tracing a single vertical line. 
+
+**Hint**: Remember that you can move the turtle forward with the command `turtle.forward(length)`. 
+
+## 2. Pause to Look Around
+
+Next, make your turtle *look around* after the forward step and before the backward step. 
+
+1. Add an argument to `draw_tree()` called `angle`. 
+2. After the forward step, make the turtle turn `angle` degrees to the right. 
+3. Then, make the turtle turn `2*angle` degrees to the left. 
+4. Make the turtle turn `angle` degrees to the right again. 
+5. Then finish with the backward step. 
+
+Call your function like this: 
+
+```python
+draw_tree(100, angle = 90)
+```
+
+The end result is *still* a simple vertical line. When you run the file, you should still see your turtle move straight up and down. After it moves up, though, you should see it "look around" to both the right and the left before returning to the starting point. 
+
+**Hint**: Remember that you can make the turtle turn left with `turtle.left(angle)`. 
+
+## 3. Establish the Base Case
+
+We are going to use recursion to draw the tree. Modify your function in the following ways: 
+
+1. Add an argument to your function called `level`. 
+2. Add an `if`-statement to your function. Check if `level == 0`. If so, do nothing! You can do nothing by simply writing `pass` inside the body of the `if`-statement. This is our base case. 
+3. In the `else` clause, place the code you've written previously. 
+
+Call your function twice: 
+
+```python
+draw_tree(100, angle = 90, level = 0) # should do nothing
+draw_tree(100, angle = 90, level = 1) # should do same thing as in Part 2
+```
+
+## 4. Implement the Recursive Step
+
+This is where the magic happens! Add two recursive function calls, one immediately after the turtle turns right and another immediately after the turtle turns left. 
+
+Each call should decrease the `length` and the `level`. 
+
+- Decrease `length` by a multiple. For example, the new `length` is 75% of the old `length`. 
+- Decrease `level` by 1. For example, if the previous `level` was 5, the new `level` is 4. 
+
+The purpose of decreasing the `level` is to ensure that your function will eventually stop. 
+
+
+
+Here's a sample function call and result: 
+
+[![](/assets/img/turtle-example-1.png)
+Example output for a tree with 3 levels.]{.aside}
+
+```python
+draw_tree(100, angle = 45, level = 3)
+```
+
+
+Your result might be a little different, depending on exactly how you chose to reduce the length in each step. In any case, however, you should see a "tree" with two large branches and four smaller branches. 
+
+
+Here's another one. The first command makes the turtle move more quickly, which is helpful when the figure gets more complex. 
+
+[![](/assets/img/turtle-example-2.png)
+Example output for a tree with 7 levels]{.aside}
+
+```python
+turtle.speed(.1)
+draw_tree(100, angle = 15, level = 7)
+```
+
+
+
+
+## 5. Make Some Pretty Pictures!
+
+Play a little with all three arguments of the `draw_tree()` function in order to produce some attractive trees. 
+
+## 6. If You Have Time
+
+If you were able to draw several trees, then great job! You've done enough to earn full participation credit in this Guided Discovery activity. You're ready to submit your assignment under Guided Discovery 3 on Gradescope. 
+
+If you've gotten that far and want to do more, I have some challenges for you!
+
+### Leaves
+
+[![](/assets/img/turtle-example-3.png)
+Example output for the "Leaves" challenge problem.]{.aside}
+
+The commands `turtle.color("green")` and `turtle.color("brown")` will change the color of the line drawn by the turtle. The command `turtle.circle(4)` will draw a circle. Using these new commands, add color and leaves to your tree. 
+
+
+
+If your implementation results in each branch having two green circular leaves (like mine does above), explain this: why are there two circles on each branch?
+
+
+### Ternary Trees
+
+The fractal trees we just made are *binary trees*. This means that each branch splits into two more branches. Modify your code so that each branch instead splits into *three* more branches. 
+
+**Hint**: You can do this by adding a single recursive function call. 
+
+### Challenge: `n`-ary trees
+
+Add an argument to your function that allows the user to specify `n`, the number of new branches into which each branch splits. The main activity corresponded to the case `n = 2`, and the option directly above corresponded to `n = 3`. For this challenge activity, your code should accept any integer `n` larger than 0.
