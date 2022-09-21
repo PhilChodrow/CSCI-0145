@@ -10,3 +10,5 @@ old-course
 *run_autograder
 *setup.sh
 *requirements.txt
+
+*.icloud
