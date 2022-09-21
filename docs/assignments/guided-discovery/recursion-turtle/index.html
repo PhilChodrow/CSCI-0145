@@ -213,9 +213,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#make-some-pretty-pictures" id="toc-make-some-pretty-pictures" class="nav-link" data-scroll-target="#make-some-pretty-pictures">5. Make Some Pretty Pictures!</a></li>
   <li><a href="#if-you-have-time" id="toc-if-you-have-time" class="nav-link" data-scroll-target="#if-you-have-time">6. If You Have Time</a>
   <ul class="collapse">
+  <li><a href="#leaves" id="toc-leaves" class="nav-link" data-scroll-target="#leaves">Leaves</a></li>
   <li><a href="#ternary-trees" id="toc-ternary-trees" class="nav-link" data-scroll-target="#ternary-trees">Ternary Trees</a></li>
   <li><a href="#challenge-n-ary-trees" id="toc-challenge-n-ary-trees" class="nav-link" data-scroll-target="#challenge-n-ary-trees">Challenge: <code>n</code>-ary trees</a></li>
-  <li><a href="#add-gradient-color" id="toc-add-gradient-color" class="nav-link" data-scroll-target="#add-gradient-color">Add Gradient Color</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -285,7 +285,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>draw_tree(<span class="dv">100</span>, angle <span class="op">=</span> <span class="dv">90</span>, level <span class="op">=</span> <span class="dv">0</span>) <span class="co"># should do nothing</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>draw_tree(<span class="dv">100</span>, angle <span class="op">=</span> <span class="dv">90</span>, level <span class="op">=</span> <span class="dv">1</span>) <span class="co"># should do same thing as in Part 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="implement-the-recursive-step" class="level2">
+<section id="implement-the-recursive-step" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="implement-the-recursive-step">4. Implement the Recursive Step</h2>
 <p>This is where the magic happens! Add two recursive function calls, one immediately after the turtle turns right and another immediately after the turtle turns left.</p>
 <p>Each call should decrease the <code>length</code> and the <code>level</code>.</p>
@@ -295,21 +295,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>The purpose of decreasing the <code>level</code> is to ensure that your function will eventually stop.</p>
 <p>Here’s a sample function call and result:</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><img src="../../../assets/img/turtle-example-1.png" class="img-fluid"> Example output for a tree with 3 levels.</span></div></div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>draw_tree(<span class="dv">100</span>, angle <span class="op">=</span> <span class="dv">45</span>, level <span class="op">=</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img src="../../../assets/img/turtle-example-1.png" class="img-fluid"></p>
 <p>Your result might be a little different, depending on exactly how you chose to reduce the length in each step. In any case, however, you should see a “tree” with two large branches and four smaller branches.</p>
-<p>Here’s another one. The first command makes the turtle move more quickly.</p>
+<p>Here’s another one. The first command makes the turtle move more quickly, which is helpful when the figure gets more complex.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><img src="../../../assets/img/turtle-example-2.png" class="img-fluid"> Example output for a tree with 7 levels</span></div></div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>turtle.speed(<span class="fl">.1</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>draw_tree(<span class="dv">100</span>, angle <span class="op">=</span> <span class="dv">15</span>, level <span class="op">=</span> <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Here’s my output from this command: <img src="../../../assets/img/turtle-example-2.png" class="img-fluid"></p>
 </section>
 <section id="make-some-pretty-pictures" class="level2">
 <h2 class="anchored" data-anchor-id="make-some-pretty-pictures">5. Make Some Pretty Pictures!</h2>
 <p>Play a little with all three arguments of the <code>draw_tree()</code> function in order to produce some attractive trees.</p>
 </section>
-<section id="if-you-have-time" class="level2">
+<section id="if-you-have-time" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="if-you-have-time">6. If You Have Time</h2>
-<p>If you were able to draw several trees, then great job! You’ve done enough to earn full participation credit in this Guided Discovery activity. If you’ve gotten that far and want to do more, I have some challenges for you!</p>
+<p>If you were able to draw several trees, then great job! You’ve done enough to earn full participation credit in this Guided Discovery activity. You’re ready to submit your assignment under Guided Discovery 3 on Gradescope.</p>
+<p>If you’ve gotten that far and want to do more, I have some challenges for you!</p>
+<section id="leaves" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="leaves">Leaves</h3>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><img src="../../../assets/img/turtle-example-3.png" class="img-fluid"> Example output for the “Leaves” challenge problem.</span></div></div>
+<p>The commands <code>turtle.color("green")</code> and <code>turtle.color("brown")</code> will change the color of the line drawn by the turtle. The command <code>turtle.circle(4)</code> will draw a circle. Using these new commands, add color and leaves to your tree.</p>
+<p>If your implementation results in each branch having two green circular leaves (like mine does above), explain this: why are there two circles on each branch?</p>
+</section>
 <section id="ternary-trees" class="level3">
 <h3 class="anchored" data-anchor-id="ternary-trees">Ternary Trees</h3>
 <p>The fractal trees we just made are <em>binary trees</em>. This means that each branch splits into two more branches. Modify your code so that each branch instead splits into <em>three</em> more branches.</p>
@@ -318,9 +325,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="challenge-n-ary-trees" class="level3">
 <h3 class="anchored" data-anchor-id="challenge-n-ary-trees">Challenge: <code>n</code>-ary trees</h3>
 <p>Add an argument to your function that allows the user to specify <code>n</code>, the number of new branches into which each branch splits. The main activity corresponded to the case <code>n = 2</code>, and the option directly above corresponded to <code>n = 3</code>. For this challenge activity, your code should accept any integer <code>n</code> larger than 0.</p>
-</section>
-<section id="add-gradient-color" class="level3">
-<h3 class="anchored" data-anchor-id="add-gradient-color">Add Gradient Color</h3>
 
 
 </section>

@@ -71,7 +71,7 @@
   module: Fundamentals of Procedural Programming
   publish: true
   assigned: 
-    - <a href="assignments/HW/HW1.py">HW1</a>
+    - <a href="assignments/HW/HW1/HW1.py">HW1</a>
 - date: 2022-09-21
   header: | 
     Control Flow
@@ -95,6 +95,7 @@
   objectives: 
     - Computational Thinking
     - Python Programming
+    - Social Responsibility
   activity: 
     - <a href="https://replit.com/team/csci-0145/Guided-Discovery-2-Functions-and-Control-Flow">GD2</a>
   module: Fundamentals of Procedural Programming
@@ -107,14 +108,17 @@
   objectives: 
     - Python Programming
     - Design and Collaboration
+    - Social Responsibility
   activity:
-    - <a href="labs/decision-making/">(link)</a>
+    - <a href="labs/decision-making/">Lab 1</a>
   module: Fundamentals of Procedural Programming
   publish: true
+  assigned: 
+    - Lab 1
 - date: 2022-09-26
   header: |
     Recursion
-  summary: | 
+  summary: |
     We study recursion, a powerful tool for writing simple solutions to complex problems by breaking them down into smaller problems. 
   objectives: 
     - Computational Thinking
@@ -124,6 +128,48 @@
     - <a href="https://greenteapress.com/thinkpython2/thinkpython2.pdf"> ThinkPython</a> 5.8-5.14 
   module: Recursion
   publish: true
+  assigned: 
+    - HW2
   due: 
     - HW1
+- date: 2022-09-28
+  header: |
+    Recursion and Recursive Graphics
+  summary: |
+    We continue our study of recursion while creating simple recursive graphics. 
+  objectives: 
+    - Computational Thinking
+  reading: 
+    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/turtle.html">Turtle Graphics</a>
+  module: Recursion
+  publish: true
+  due: 
+    - Lab 1
+- date: 2022-09-29
+  header: |
+    Guided Discovery: Practice With Recursive Graphics
+  summary: |
+    We practice writing functions to produce recursive graphics with the turtle module. 
+  objectives: 
+    - Computational Thinking
+    - Python Programming
+  activity: 
+    - <a href="assignments/guided-discovery/recursion-turtle">GD3</a>
+  module: Recursion
+  publish: true
+- date: 2022-09-30
+  header: |
+    Lab: Recursion and Performance
+  summary: |
+    We learn some ways to measure and analyze the performance of functions, and use these techniques to study the performance implications of recursive techniques. 
+  objectives: 
+    - Computational Thinking
+    - Python Programming
+  activity: 
+    - Lab 2
+  assigned: 
+    - Lab 2
+  module: Recursion
+  publish: true
+
 
