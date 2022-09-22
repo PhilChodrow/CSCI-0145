@@ -35,11 +35,95 @@
     "text": "© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
   },
   {
+    "objectID": "labs/recursion-turtle/index.html",
+    "href": "labs/recursion-turtle/index.html",
+    "title": "Lab Activity: Fractals with Turtle",
+    "section": "",
+    "text": "In this assignment, you’ll use the Turtle graphics system that we introduced in class, along with your powerful new recursion techniques, to create fractals. A fractal is a simple pattern that repeats itself on smaller scales, resulting in attractive pictures.\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "labs/recursion-turtle/index.html#part-1-fractal-tree",
+    "href": "labs/recursion-turtle/index.html#part-1-fractal-tree",
+    "title": "Lab Activity: Fractals with Turtle",
+    "section": "Part 1: Fractal Tree",
+    "text": "Part 1: Fractal Tree\n An example of a fractal tree, very similar to the one we will make today with Turtle.  Image source\nWe’re going to start with fractal trees. A fractal tree is a graphic in which a single line divides into two or more lines at an angle, repeatedly. The result is an elegant tree-like structure.\n\n0. Create Your Script\nMake a new file called fractal-tree.py and save it somewhere you’ll be able to find it.\n\n\n1. Draw a Vertical Line\nLike last time, we’re going to practice incremental development. We’ll start with a very simple function. Then, at each stage, we’ll add just a bit of complexity until we achieve the behavior that we are looking for.\nHere’s the first step:\n\nDefine a function called draw_tree() that accepts a single argument called length.\nThis function should cause the turtle to move forward by length, and then backwards by the same length. So, the turtle ends where it started.\n\nCall your function like this:\ndraw_tree(100)\nAt this stage, the expected result is that your turtle moves up and then down, tracing a single vertical line.\nHint: Remember that you can move the turtle forward with the command turtle.forward(length).\n\n\n2. Pause to Look Around\nNext, make your turtle look around after the forward step and before the backward step.\n\nAdd an argument to draw_tree() called angle.\nAfter the forward step, make the turtle turn angle degrees to the right.\nThen, make the turtle turn 2*angle degrees to the left.\nMake the turtle turn angle degrees to the right again.\nThen finish with the backward step.\n\nCall your function like this:\ndraw_tree(100, angle = 90)\nThe end result is still a simple vertical line. When you run the file, you should still see your turtle move straight up and down. After it moves up, though, you should see it “look around” to both the right and the left before returning to the starting point.\nHint: Remember that you can make the turtle turn left with turtle.left(angle).\n\n\n3. Establish the Base Case\nWe are going to use recursion to draw the tree. Modify your function in the following ways:\n\nAdd an argument to your function called level.\nAdd an if-statement to your function. Check if level == 0. If so, do nothing! You can do nothing by simply writing pass inside the body of the if-statement. This is our base case.\nIn the else clause, place the code you’ve written previously.\n\nCall your function twice:\ndraw_tree(100, angle = 90, level = 0) # should do nothing\ndraw_tree(100, angle = 90, level = 1) # should do same thing as in Part 2\n\n\n4. Implement the Recursive Step\nThis is where the magic happens! Add two recursive function calls, one immediately after the turtle turns right and another immediately after the turtle turns left.\nEach call should decrease the length and the level.\n\nDecrease length by a multiple. For example, the new length is 75% of the old length.\nDecrease level by 1. For example, if the previous level was 5, the new level is 4.\n\nThe purpose of decreasing the level is to ensure that your function will eventually stop.\nHere’s a sample function call and result:\n Example output for a tree with 3 levels.\ndraw_tree(100, angle = 45, level = 3)\nYour result might be a little different, depending on exactly how you chose to reduce the length in each step. In any case, however, you should see a “tree” with two large branches and four smaller branches.\nHere’s another one. The first command makes the turtle move more quickly, which is helpful when the figure gets more complex.\n Example output for a tree with 7 levels\nturtle.speed(.1)\ndraw_tree(100, angle = 15, level = 7)\n\n\n5. Make Some Pretty Pictures!\nPlay a little with all three arguments of the draw_tree() function in order to produce some attractive trees.\n\n\n6. Leaves\n Example output for the “Leaves” problem.\nThe commands turtle.color(\"green\") and turtle.color(\"brown\") will change the color of the line drawn by the turtle. The command turtle.circle(4) will draw a circle. Using these new commands, add color and leaves to your tree.\nIf your implementation results in each branch having two green circular leaves (like mine does above), explain this: why are there two circles on each branch?"
+  },
+  {
+    "objectID": "labs/recursion-turtle/index.html#create-your-script-1",
+    "href": "labs/recursion-turtle/index.html#create-your-script-1",
+    "title": "Lab Activity: Fractals with Turtle",
+    "section": "0. Create your script",
+    "text": "0. Create your script\nCreate a new Python file called koch-curve.py and save it somewhere where you’ll be able to find it."
+  },
+  {
+    "objectID": "labs/recursion-turtle/index.html#add-some-boilerplate",
+    "href": "labs/recursion-turtle/index.html#add-some-boilerplate",
+    "title": "Lab Activity: Fractals with Turtle",
+    "section": "1. Add Some Boilerplate",
+    "text": "1. Add Some Boilerplate\ndef draw_scene():\n    \"\"\"Setup the canvas for drawing the curve and draw it.\"\"\"\n\n    # pick up the pen and move the turtle so it starts at the \n    # left edge of the canvas (don't worry about this yet)\n    turtle.up()\n    turtle.goto(-turtle.window_width()/2 + 20, 0)\n    turtle.down()\n\n    # draw the curve by calling your function\n    draw_koch(200, 0)\n    \n    # finished\n    turtle.done()\n    \ndraw_scene()\nCopy and paste the code above into your script file. This code is primarily just here to make the drawing look a bit nicer. Your job is to implement the function draw_koch()."
+  },
+  {
+    "objectID": "labs/recursion-turtle/index.html#define-draw_koch",
+    "href": "labs/recursion-turtle/index.html#define-draw_koch",
+    "title": "Lab Activity: Fractals with Turtle",
+    "section": "2. Define draw_koch()",
+    "text": "2. Define draw_koch()\nDeclare the function draw_koch() so that it takes two arguments, called length and levels. We are going to implement this function in a recursive fashion."
+  },
+  {
+    "objectID": "labs/recursion-turtle/index.html#write-the-base-case",
+    "href": "labs/recursion-turtle/index.html#write-the-base-case",
+    "title": "Lab Activity: Fractals with Turtle",
+    "section": "3. Write the Base Case",
+    "text": "3. Write the Base Case\nStart by writing an if-statement, with the if clause corresponding to the base case:\n\nWhen levels is 0, draw a straight line of length length, using the turtle.forward(length) command.\n\nYou might find it useful to refer to some of the examples from our lecture notes on recursion in order to structure this code. The power example might be especially useful."
+  },
+  {
+    "objectID": "labs/recursion-turtle/index.html#run-your-script",
+    "href": "labs/recursion-turtle/index.html#run-your-script",
+    "title": "Lab Activity: Fractals with Turtle",
+    "section": "4. Run your script",
+    "text": "4. Run your script\nAt this point, running your script should cause the turtle to draw a line. That’s it!"
+  },
+  {
+    "objectID": "labs/recursion-turtle/index.html#begin-the-recursive-case",
+    "href": "labs/recursion-turtle/index.html#begin-the-recursive-case",
+    "title": "Lab Activity: Fractals with Turtle",
+    "section": "5. Begin the Recursive Case",
+    "text": "5. Begin the Recursive Case\nNow we are going to start working on the recursive case. Here’s how it should work:\nIf levels is greater than 0, draw a “first generation curve.” A first-generation curve is like the one at the very top of the diagram in this activity. To draw this curve:\n\nMove forward by distance length/3.\nTurn left by 60 degrees.\nMove forward by distance length/3.\nTurn right by 120 degrees.\nMove forward by distance length/3.\nTurn left by 60 degrees.\nMove forward by distance length/3."
+  },
+  {
+    "objectID": "labs/recursion-turtle/index.html#test",
+    "href": "labs/recursion-turtle/index.html#test",
+    "title": "Lab Activity: Fractals with Turtle",
+    "section": "6. Test",
+    "text": "6. Test\nModify the function draw_scene by replacing draw_koch(200, 0) with draw_koch(200, 1). Check that the output resembles the shape at the top of this section."
+  },
+  {
+    "objectID": "labs/recursion-turtle/index.html#implement-recursion",
+    "href": "labs/recursion-turtle/index.html#implement-recursion",
+    "title": "Lab Activity: Fractals with Turtle",
+    "section": "7. Implement Recursion",
+    "text": "7. Implement Recursion\nOk, time for some recursion! In your draw_koch() function, in the recursive case, replace all four calls to go forward with calls to draw_koch(). The arguments to draw_koch() should be length/3 and levels  - 1."
+  },
+  {
+    "objectID": "labs/recursion-turtle/index.html#test-1",
+    "href": "labs/recursion-turtle/index.html#test-1",
+    "title": "Lab Activity: Fractals with Turtle",
+    "section": "8. Test!",
+    "text": "8. Test!\nModify draw_scene() so that we draw a koch curve with 6 levels. You should see a shape resembling the bottom one in our introductory diagram. I would suggest adding the line turtle.tracer(False) before you actually call draw_scene(). This will skip the animation, showing you only the final product. You might also want to increase the length: 1000 worked pretty well for me."
+  },
+  {
+    "objectID": "labs/recursion-turtle/index.html#a-special-snowflake",
+    "href": "labs/recursion-turtle/index.html#a-special-snowflake",
+    "title": "Lab Activity: Fractals with Turtle",
+    "section": "9. A Special Snowflake",
+    "text": "9. A Special Snowflake\nWrite and call a function called draw_snowflake(length, levels). Your function should:\n\nCall draw_koch(length, levels).\nTurn to the right by 120 degrees.\nRepeat the above commands two more times.\n\nThen, write a function called draw_scene2(). You can start by copying draw_scene(). Then, within draw_scene2(), draw at least three snowflakes. Your snowflakes should not overlap (use turtle.up() and turtle.down() to move the turtle without drawing a line). Each of the different snowflakes should have different values of length and levels. If you’d like, you can also use commands like turtle.color(\"red\") to change the color of the turtle for each snowflake."
+  },
+  {
     "objectID": "assignments.html",
     "href": "assignments.html",
     "title": "Index of Assignments",
     "section": "",
-    "text": "Title\n\n\nsummary\n\n\n\n\n\n\nDesigning Simple Programs\n\n\n\n\n\n\nFunctions\n\n\nWe work with functions!\n\n\n\n\nDevelopers as Decision-Makers\n\n\nSome stuff we do.\n\n\n\n\n\n\nNo matching items\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+    "text": "Title\n\n\nsummary\n\n\n\n\n\n\nDesigning Simple Programs\n\n\n\n\n\n\nFunctions\n\n\nWe work with functions!\n\n\n\n\nDevelopers as Decision-Makers\n\n\nSome stuff we do.\n\n\n\n\nLab Activity: Fractals with Turtle\n\n\n\n\n\n\n\n\nNo matching items\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
   },
   {
     "objectID": "assignments.html#guided-discovery",
@@ -180,55 +264,6 @@
     "title": "Guided Discovery: Functions",
     "section": "If You Need Ideas",
     "text": "If You Need Ideas\n\nIn many nations and language communities, the family name of an individual is actually first, with the given name second. Add an argument to your function called family_name_is_first. If this argument is passed with value True, the first name in the string is interpreted as the family name. For example:\n\nusername_generator(\"Ai Weiwei\", family_name_is_first = True) \nwai                                                          \n\nMany people born in Spanish-speaking countries have two family names. Children of heterosexual marriages often have a first surname corresponding to their father’s family line, and a second surname corresponding to their mother’s. For example, the author Gabriel García Márquez has a given name (Gabriel), a paternal family name (García), and a maternal family surname (Márquez). Add an argument to your function called which_surname that allows the user to specify which surname will be used to generate the username. You should accept options \"first\", \"last\", or “both”. For example:\n\nusername_generator(Gabriel García Márquez, which_surname = \"first\")\nggarcía\nusername_generator(Gabriel García Márquez, which_surname = \"last\")\ngmárquez\nusername_generator(Gabriel García Márquez, which_surname = \"both\")\nggarcíam"
-  },
-  {
-    "objectID": "assignments/guided-discovery/recursion-turtle/index.html",
-    "href": "assignments/guided-discovery/recursion-turtle/index.html",
-    "title": "Guided Discovery: Fractal Trees With Turtle",
-    "section": "",
-    "text": "An example of a fractal tree, very similar to the one we will make today with Turtle.  Image source\nIn this assignment, you’ll use the Turtle graphics system that we introduced in class, along with your powerful new recursion techniques, to create fractal trees. A fractal tree is a graphic in which a single line divides into two or more lines at an angle, repeatedly. The result is an elegant tree-like structure.\nAssignment file on Replit.\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
-  },
-  {
-    "objectID": "assignments/guided-discovery/recursion-turtle/index.html#draw-a-vertical-line",
-    "href": "assignments/guided-discovery/recursion-turtle/index.html#draw-a-vertical-line",
-    "title": "Guided Discovery: Fractal Trees With Turtle",
-    "section": "1. Draw a Vertical Line",
-    "text": "1. Draw a Vertical Line\nLike last time, we’re going to practice incremental development. We’ll start with a very simple function. Then, at each stage, we’ll add just a bit of complexity until we achieve the behavior that we are looking for.\nHere’s the first step:\n\nDefine a function called draw_tree() that accepts a single argument called length.\nThis function should cause the turtle to move forward by length, and then backwards by the same length. So, the turtle ends where it started.\n\nCall your function like this:\ndraw_tree(100)\nAt this stage, the expected result is that your turtle moves up and then down, tracing a single vertical line.\nHint: Remember that you can move the turtle forward with the command turtle.forward(length)."
-  },
-  {
-    "objectID": "assignments/guided-discovery/recursion-turtle/index.html#pause-to-look-around",
-    "href": "assignments/guided-discovery/recursion-turtle/index.html#pause-to-look-around",
-    "title": "Guided Discovery: Fractal Trees With Turtle",
-    "section": "2. Pause to Look Around",
-    "text": "2. Pause to Look Around\nNext, make your turtle look around after the forward step and before the backward step.\n\nAdd an argument to draw_tree() called angle.\nAfter the forward step, make the turtle turn angle degrees to the right.\nThen, make the turtle turn 2*angle degrees to the left.\nMake the turtle turn angle degrees to the right again.\nThen finish with the backward step.\n\nCall your function like this:\ndraw_tree(100, angle = 90)\nThe end result is still a simple vertical line. When you run the file, you should still see your turtle move straight up and down. After it moves up, though, you should see it “look around” to both the right and the left before returning to the starting point.\nHint: Remember that you can make the turtle turn left with turtle.left(angle)."
-  },
-  {
-    "objectID": "assignments/guided-discovery/recursion-turtle/index.html#establish-the-base-case",
-    "href": "assignments/guided-discovery/recursion-turtle/index.html#establish-the-base-case",
-    "title": "Guided Discovery: Fractal Trees With Turtle",
-    "section": "3. Establish the Base Case",
-    "text": "3. Establish the Base Case\nWe are going to use recursion to draw the tree. Modify your function in the following ways:\n\nAdd an argument to your function called level.\nAdd an if-statement to your function. Check if level == 0. If so, do nothing! You can do nothing by simply writing pass inside the body of the if-statement. This is our base case.\nIn the else clause, place the code you’ve written previously.\n\nCall your function twice:\ndraw_tree(100, angle = 90, level = 0) # should do nothing\ndraw_tree(100, angle = 90, level = 1) # should do same thing as in Part 2"
-  },
-  {
-    "objectID": "assignments/guided-discovery/recursion-turtle/index.html#implement-the-recursive-step",
-    "href": "assignments/guided-discovery/recursion-turtle/index.html#implement-the-recursive-step",
-    "title": "Guided Discovery: Fractal Trees With Turtle",
-    "section": "4. Implement the Recursive Step",
-    "text": "4. Implement the Recursive Step\nThis is where the magic happens! Add two recursive function calls, one immediately after the turtle turns right and another immediately after the turtle turns left.\nEach call should decrease the length and the level.\n\nDecrease length by a multiple. For example, the new length is 75% of the old length.\nDecrease level by 1. For example, if the previous level was 5, the new level is 4.\n\nThe purpose of decreasing the level is to ensure that your function will eventually stop.\nHere’s a sample function call and result:\n Example output for a tree with 3 levels.\ndraw_tree(100, angle = 45, level = 3)\nYour result might be a little different, depending on exactly how you chose to reduce the length in each step. In any case, however, you should see a “tree” with two large branches and four smaller branches.\nHere’s another one. The first command makes the turtle move more quickly, which is helpful when the figure gets more complex.\n Example output for a tree with 7 levels\nturtle.speed(.1)\ndraw_tree(100, angle = 15, level = 7)"
-  },
-  {
-    "objectID": "assignments/guided-discovery/recursion-turtle/index.html#make-some-pretty-pictures",
-    "href": "assignments/guided-discovery/recursion-turtle/index.html#make-some-pretty-pictures",
-    "title": "Guided Discovery: Fractal Trees With Turtle",
-    "section": "5. Make Some Pretty Pictures!",
-    "text": "5. Make Some Pretty Pictures!\nPlay a little with all three arguments of the draw_tree() function in order to produce some attractive trees."
-  },
-  {
-    "objectID": "assignments/guided-discovery/recursion-turtle/index.html#if-you-have-time",
-    "href": "assignments/guided-discovery/recursion-turtle/index.html#if-you-have-time",
-    "title": "Guided Discovery: Fractal Trees With Turtle",
-    "section": "6. If You Have Time",
-    "text": "6. If You Have Time\nIf you were able to draw several trees, then great job! You’ve done enough to earn full participation credit in this Guided Discovery activity. You’re ready to submit your assignment under Guided Discovery 3 on Gradescope.\nIf you’ve gotten that far and want to do more, I have some challenges for you!\n\nLeaves\n Example output for the “Leaves” challenge problem.\nThe commands turtle.color(\"green\") and turtle.color(\"brown\") will change the color of the line drawn by the turtle. The command turtle.circle(4) will draw a circle. Using these new commands, add color and leaves to your tree.\nIf your implementation results in each branch having two green circular leaves (like mine does above), explain this: why are there two circles on each branch?\n\n\nTernary Trees\nThe fractal trees we just made are binary trees. This means that each branch splits into two more branches. Modify your code so that each branch instead splits into three more branches.\nHint: You can do this by adding a single recursive function call.\n\n\nChallenge: n-ary trees\nAdd an argument to your function that allows the user to specify n, the number of new branches into which each branch splits. The main activity corresponded to the case n = 2, and the option directly above corresponded to n = 3. For this challenge activity, your code should accept any integer n larger than 0."
   },
   {
     "objectID": "tools.html",

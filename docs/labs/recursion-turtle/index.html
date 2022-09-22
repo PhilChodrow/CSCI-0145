@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Guided Discovery: Fractal Trees With Turtle</title>
+<title>Lab Activity: Fractals with Turtle</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,23 +81,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../../assets/img/icons/favicon.png" rel="icon" type="image/png">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/img/icons/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -119,7 +119,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }</script>
 
 
-<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked slimcontent">
@@ -128,7 +128,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Guided Discovery: Fractal Trees With Turtle</h1>
+      <h1 class="quarto-secondary-nav-title">Lab Activity: Fractals with Turtle</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -141,7 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../../"><b>Introduction to Computing</b><br>CSCI 0145</a> 
+      <a href="../../"><b>Introduction to Computing</b><br>CSCI 0145</a> 
     </div>
       </div>
       <div class="mt-2 flex-shrink-0 align-items-center">
@@ -153,12 +153,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../index.html" class="sidebar-item-text sidebar-link">Welcome!</a>
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">Welcome!</a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+            <a href="../../syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -166,34 +166,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../collaboration.html" class="sidebar-item-text sidebar-link">Collaboration And Academic Honesty</a>
+  <a href="../../collaboration.html" class="sidebar-item-text sidebar-link">Collaboration And Academic Honesty</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../tools.html" class="sidebar-item-text sidebar-link">Course Resources</a>
+  <a href="../../tools.html" class="sidebar-item-text sidebar-link">Course Resources</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../help.html" class="sidebar-item-text sidebar-link">Asking for Help</a>
+  <a href="../../help.html" class="sidebar-item-text sidebar-link">Asking for Help</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../schedule.html" class="sidebar-item-text sidebar-link">Course Schedule</a>
+  <a href="../../schedule.html" class="sidebar-item-text sidebar-link">Course Schedule</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../philosophy.html" class="sidebar-item-text sidebar-link">Some Teaching Philosophies</a>
+  <a href="../../philosophy.html" class="sidebar-item-text sidebar-link">Some Teaching Philosophies</a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  <a href="../../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
   </div>
 </li>
     </ul>
@@ -205,18 +205,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">0. Introduction</a></li>
+  <li><a href="#part-1-fractal-tree" id="toc-part-1-fractal-tree" class="nav-link active" data-scroll-target="#part-1-fractal-tree">Part 1: Fractal Tree</a>
+  <ul class="collapse">
+  <li><a href="#create-your-script" id="toc-create-your-script" class="nav-link" data-scroll-target="#create-your-script">0. Create Your Script</a></li>
   <li><a href="#draw-a-vertical-line" id="toc-draw-a-vertical-line" class="nav-link" data-scroll-target="#draw-a-vertical-line">1. Draw a Vertical Line</a></li>
   <li><a href="#pause-to-look-around" id="toc-pause-to-look-around" class="nav-link" data-scroll-target="#pause-to-look-around">2. Pause to Look Around</a></li>
   <li><a href="#establish-the-base-case" id="toc-establish-the-base-case" class="nav-link" data-scroll-target="#establish-the-base-case">3. Establish the Base Case</a></li>
   <li><a href="#implement-the-recursive-step" id="toc-implement-the-recursive-step" class="nav-link" data-scroll-target="#implement-the-recursive-step">4. Implement the Recursive Step</a></li>
   <li><a href="#make-some-pretty-pictures" id="toc-make-some-pretty-pictures" class="nav-link" data-scroll-target="#make-some-pretty-pictures">5. Make Some Pretty Pictures!</a></li>
-  <li><a href="#if-you-have-time" id="toc-if-you-have-time" class="nav-link" data-scroll-target="#if-you-have-time">6. If You Have Time</a>
-  <ul class="collapse">
-  <li><a href="#leaves" id="toc-leaves" class="nav-link" data-scroll-target="#leaves">Leaves</a></li>
-  <li><a href="#ternary-trees" id="toc-ternary-trees" class="nav-link" data-scroll-target="#ternary-trees">Ternary Trees</a></li>
-  <li><a href="#challenge-n-ary-trees" id="toc-challenge-n-ary-trees" class="nav-link" data-scroll-target="#challenge-n-ary-trees">Challenge: <code>n</code>-ary trees</a></li>
+  <li><a href="#leaves" id="toc-leaves" class="nav-link" data-scroll-target="#leaves">6. Leaves</a></li>
   </ul></li>
+  <li><a href="#part-2-koch-curve" id="toc-part-2-koch-curve" class="nav-link" data-scroll-target="#part-2-koch-curve">Part 2: Koch Curve</a>
+  <ul class="collapse">
+  <li><a href="#create-your-script-1" id="toc-create-your-script-1" class="nav-link" data-scroll-target="#create-your-script-1">0. Create your script</a></li>
+  <li><a href="#add-some-boilerplate" id="toc-add-some-boilerplate" class="nav-link" data-scroll-target="#add-some-boilerplate">1. Add Some Boilerplate</a></li>
+  <li><a href="#define-draw_koch" id="toc-define-draw_koch" class="nav-link" data-scroll-target="#define-draw_koch">2. Define <code>draw_koch()</code></a></li>
+  <li><a href="#write-the-base-case" id="toc-write-the-base-case" class="nav-link" data-scroll-target="#write-the-base-case">3. Write the Base Case</a></li>
+  <li><a href="#run-your-script" id="toc-run-your-script" class="nav-link" data-scroll-target="#run-your-script">4. Run your script</a></li>
+  <li><a href="#begin-the-recursive-case" id="toc-begin-the-recursive-case" class="nav-link" data-scroll-target="#begin-the-recursive-case">5. Begin the Recursive Case</a></li>
+  <li><a href="#test" id="toc-test" class="nav-link" data-scroll-target="#test">6. Test</a></li>
+  <li><a href="#implement-recursion" id="toc-implement-recursion" class="nav-link" data-scroll-target="#implement-recursion">7. Implement Recursion</a></li>
+  <li><a href="#test-1" id="toc-test-1" class="nav-link" data-scroll-target="#test-1">8. Test!</a></li>
+  <li><a href="#a-special-snowflake" id="toc-a-special-snowflake" class="nav-link" data-scroll-target="#a-special-snowflake">9. A Special Snowflake</a></li>
+  </ul></li>
+  <li><a href="#submit-your-scripts" id="toc-submit-your-scripts" class="nav-link" data-scroll-target="#submit-your-scripts">Submit Your Scripts</a></li>
   </ul>
 </nav>
     </div>
@@ -225,7 +237,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Guided Discovery: Fractal Trees With Turtle</h1>
+<h1 class="title d-none d-lg-block">Lab Activity: Fractals with Turtle</h1>
 </div>
 
 
@@ -239,14 +251,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="introduction" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="introduction">0. Introduction</h2>
+<p>In this assignment, you’ll use the Turtle graphics system that we introduced in class, along with your powerful new recursion techniques, to create <strong>fractals</strong>. A fractal is a simple pattern that repeats itself on smaller scales, resulting in attractive pictures.</p>
+<section id="part-1-fractal-tree" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="part-1-fractal-tree">Part 1: Fractal Tree</h2>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><img src="https://blog.ploeh.dk/content/binary/symmetric-fractal-tree.png" class="img-fluid"> An example of a fractal tree, very similar to the one we will make today with Turtle. <br> <a href="https://blog.ploeh.dk/2017/06/06/fractal-trees-with-purescript/"><em>Image source</em></a></span></div></div>
-<p>In this assignment, you’ll use the Turtle graphics system that we introduced in class, along with your powerful new recursion techniques, to create <strong>fractal trees</strong>. A fractal tree is a graphic in which a single line divides into two or more lines at an angle, repeatedly. The result is an elegant tree-like structure.</p>
-<p><a href="https://replit.com/team/csci-0145/Guided-Discovery-3-Recursion-and-Turtle-Graphics">Assignment file on Replit</a>.</p>
+<p>We’re going to start with <em>fractal trees</em>. A fractal tree is a graphic in which a single line divides into two or more lines at an angle, repeatedly. The result is an elegant tree-like structure.</p>
+<section id="create-your-script" class="level3">
+<h3 class="anchored" data-anchor-id="create-your-script">0. Create Your Script</h3>
+<p>Make a new file called <code>fractal-tree.py</code> and save it somewhere you’ll be able to find it.</p>
 </section>
-<section id="draw-a-vertical-line" class="level2">
-<h2 class="anchored" data-anchor-id="draw-a-vertical-line">1. Draw a Vertical Line</h2>
+<section id="draw-a-vertical-line" class="level3">
+<h3 class="anchored" data-anchor-id="draw-a-vertical-line">1. Draw a Vertical Line</h3>
 <p>Like last time, we’re going to practice <em>incremental development</em>. We’ll start with a very simple function. Then, at each stage, we’ll add just a bit of complexity until we achieve the behavior that we are looking for.</p>
 <p>Here’s the first step:</p>
 <ol type="1">
@@ -258,8 +273,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>At this stage, the expected result is that your turtle moves up and then down, tracing a single vertical line.</p>
 <p><strong>Hint</strong>: Remember that you can move the turtle forward with the command <code>turtle.forward(length)</code>.</p>
 </section>
-<section id="pause-to-look-around" class="level2">
-<h2 class="anchored" data-anchor-id="pause-to-look-around">2. Pause to Look Around</h2>
+<section id="pause-to-look-around" class="level3">
+<h3 class="anchored" data-anchor-id="pause-to-look-around">2. Pause to Look Around</h3>
 <p>Next, make your turtle <em>look around</em> after the forward step and before the backward step.</p>
 <ol type="1">
 <li>Add an argument to <code>draw_tree()</code> called <code>angle</code>.</li>
@@ -273,8 +288,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The end result is <em>still</em> a simple vertical line. When you run the file, you should still see your turtle move straight up and down. After it moves up, though, you should see it “look around” to both the right and the left before returning to the starting point.</p>
 <p><strong>Hint</strong>: Remember that you can make the turtle turn left with <code>turtle.left(angle)</code>.</p>
 </section>
-<section id="establish-the-base-case" class="level2">
-<h2 class="anchored" data-anchor-id="establish-the-base-case">3. Establish the Base Case</h2>
+<section id="establish-the-base-case" class="level3">
+<h3 class="anchored" data-anchor-id="establish-the-base-case">3. Establish the Base Case</h3>
 <p>We are going to use recursion to draw the tree. Modify your function in the following ways:</p>
 <ol type="1">
 <li>Add an argument to your function called <code>level</code>.</li>
@@ -285,8 +300,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>draw_tree(<span class="dv">100</span>, angle <span class="op">=</span> <span class="dv">90</span>, level <span class="op">=</span> <span class="dv">0</span>) <span class="co"># should do nothing</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>draw_tree(<span class="dv">100</span>, angle <span class="op">=</span> <span class="dv">90</span>, level <span class="op">=</span> <span class="dv">1</span>) <span class="co"># should do same thing as in Part 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="implement-the-recursive-step" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="implement-the-recursive-step">4. Implement the Recursive Step</h2>
+<section id="implement-the-recursive-step" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="implement-the-recursive-step">4. Implement the Recursive Step</h3>
 <p>This is where the magic happens! Add two recursive function calls, one immediately after the turtle turns right and another immediately after the turtle turns left.</p>
 <p>Each call should decrease the <code>length</code> and the <code>level</code>.</p>
 <ul>
@@ -295,39 +310,123 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>The purpose of decreasing the <code>level</code> is to ensure that your function will eventually stop.</p>
 <p>Here’s a sample function call and result:</p>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><img src="../../../assets/img/turtle-example-1.png" class="img-fluid"> Example output for a tree with 3 levels.</span></div></div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><img src="../../assets/img/turtle-example-1.png" class="img-fluid"> Example output for a tree with 3 levels.</span></div></div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>draw_tree(<span class="dv">100</span>, angle <span class="op">=</span> <span class="dv">45</span>, level <span class="op">=</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Your result might be a little different, depending on exactly how you chose to reduce the length in each step. In any case, however, you should see a “tree” with two large branches and four smaller branches.</p>
 <p>Here’s another one. The first command makes the turtle move more quickly, which is helpful when the figure gets more complex.</p>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><img src="../../../assets/img/turtle-example-2.png" class="img-fluid"> Example output for a tree with 7 levels</span></div></div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><img src="../../assets/img/turtle-example-2.png" class="img-fluid"> Example output for a tree with 7 levels</span></div></div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>turtle.speed(<span class="fl">.1</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>draw_tree(<span class="dv">100</span>, angle <span class="op">=</span> <span class="dv">15</span>, level <span class="op">=</span> <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="make-some-pretty-pictures" class="level2">
-<h2 class="anchored" data-anchor-id="make-some-pretty-pictures">5. Make Some Pretty Pictures!</h2>
+<section id="make-some-pretty-pictures" class="level3">
+<h3 class="anchored" data-anchor-id="make-some-pretty-pictures">5. Make Some Pretty Pictures!</h3>
 <p>Play a little with all three arguments of the <code>draw_tree()</code> function in order to produce some attractive trees.</p>
 </section>
-<section id="if-you-have-time" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="if-you-have-time">6. If You Have Time</h2>
-<p>If you were able to draw several trees, then great job! You’ve done enough to earn full participation credit in this Guided Discovery activity. You’re ready to submit your assignment under Guided Discovery 3 on Gradescope.</p>
-<p>If you’ve gotten that far and want to do more, I have some challenges for you!</p>
 <section id="leaves" class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="leaves">Leaves</h3>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><img src="../../../assets/img/turtle-example-3.png" class="img-fluid"> Example output for the “Leaves” challenge problem.</span></div></div>
+<h3 class="anchored" data-anchor-id="leaves">6. Leaves</h3>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><img src="../../assets/img/turtle-example-3.png" class="img-fluid"> Example output for the “Leaves” problem.</span></div></div>
 <p>The commands <code>turtle.color("green")</code> and <code>turtle.color("brown")</code> will change the color of the line drawn by the turtle. The command <code>turtle.circle(4)</code> will draw a circle. Using these new commands, add color and leaves to your tree.</p>
 <p>If your implementation results in each branch having two green circular leaves (like mine does above), explain this: why are there two circles on each branch?</p>
+<!-- ### 7. Ternary Trees
+
+The fractal trees we just made are *binary trees*. This means that each branch splits into two more branches. Modify your code so that each branch instead splits into *three* more branches. 
+
+**Hint**: You can do this by adding a single recursive function call. 
+
+### Challenge: `n`-ary trees
+
+Add an argument to your function that allows the user to specify `n`, the number of new branches into which each branch splits. The main activity corresponded to the case `n = 2`, and the option directly above corresponded to `n = 3`. For this challenge activity, your code should accept any integer `n` larger than 0. -->
 </section>
-<section id="ternary-trees" class="level3">
-<h3 class="anchored" data-anchor-id="ternary-trees">Ternary Trees</h3>
-<p>The fractal trees we just made are <em>binary trees</em>. This means that each branch splits into two more branches. Modify your code so that each branch instead splits into <em>three</em> more branches.</p>
-<p><strong>Hint</strong>: You can do this by adding a single recursive function call.</p>
 </section>
-<section id="challenge-n-ary-trees" class="level3">
-<h3 class="anchored" data-anchor-id="challenge-n-ary-trees">Challenge: <code>n</code>-ary trees</h3>
-<p>Add an argument to your function that allows the user to specify <code>n</code>, the number of new branches into which each branch splits. The main activity corresponded to the case <code>n = 2</code>, and the option directly above corresponded to <code>n = 3</code>. For this challenge activity, your code should accept any integer <code>n</code> larger than 0.</p>
+<section id="part-2-koch-curve" class="level1 page-columns page-full">
+<h1>Part 2: Koch Curve</h1>
+<p>In the second part of this lab, we are going to draw a fractal called the Koch curve, again using recursive techniques and the <code>turtle</code> module.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><img src="https://fractalfoundation.org/wp-content/uploads/2010/05/kochprog440.jpg" class="img-fluid"> Five “generations” of the Koch curve.</span></div></div>
+<p>The Koch curve is defined by a sequence of <em>generations</em>. The zeroth generation is just a straight, horizontal line. In the <em>first</em> generation, we replace the middle third of that line with two sides of an equilateral triangle (see figure at left, first row). Then, we replace each middle third of each line in THAT shape with two sides of an equilateral triangle (second row). We continue this process, producing a complicated-looking snow-flake like structure like the one at the bottom of the figure on the right.</p>
+<p>Let’s create Koch curves using the <code>turtle</code> module.</p>
+<section id="create-your-script-1" class="level2">
+<h2 class="anchored" data-anchor-id="create-your-script-1">0. Create your script</h2>
+<p>Create a <em>new</em> Python file called <code>koch-curve.py</code> and save it somewhere where you’ll be able to find it.</p>
+</section>
+<section id="add-some-boilerplate" class="level2">
+<h2 class="anchored" data-anchor-id="add-some-boilerplate">1. Add Some Boilerplate</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> draw_scene():</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Setup the canvas for drawing the curve and draw it."""</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pick up the pen and move the turtle so it starts at the </span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># left edge of the canvas (don't worry about this yet)</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    turtle.up()</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    turtle.goto(<span class="op">-</span>turtle.window_width()<span class="op">/</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">20</span>, <span class="dv">0</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    turtle.down()</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># draw the curve by calling your function</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    draw_koch(<span class="dv">200</span>, <span class="dv">0</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># finished</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    turtle.done()</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>draw_scene()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Copy and paste the code above into your script file. This code is primarily just here to make the drawing look a bit nicer. Your job is to implement the function <code>draw_koch()</code>.</p>
+</section>
+<section id="define-draw_koch" class="level2">
+<h2 class="anchored" data-anchor-id="define-draw_koch">2. Define <code>draw_koch()</code></h2>
+<p>Declare the function <code>draw_koch()</code> so that it takes two arguments, called <code>length</code> and <code>levels</code>. We are going to implement this function in a recursive fashion.</p>
+</section>
+<section id="write-the-base-case" class="level2">
+<h2 class="anchored" data-anchor-id="write-the-base-case">3. Write the Base Case</h2>
+<p>Start by writing an <code>if</code>-statement, with the <code>if</code> clause corresponding to the base case:</p>
+<ul>
+<li>When <code>levels</code> is 0, draw a straight line of length <code>length</code>, using the <code>turtle.forward(length)</code> command.</li>
+</ul>
+<p>You might find it useful to refer to some of the examples from our <a href="https://github.com/PhilChodrow/CSCI-0145/blob/main/lecture-scripts/recursion-1.py">lecture notes on recursion</a> in order to structure this code. The <code>power</code> example might be especially useful.</p>
+</section>
+<section id="run-your-script" class="level2">
+<h2 class="anchored" data-anchor-id="run-your-script">4. Run your script</h2>
+<p>At this point, running your script should cause the turtle to draw a line. That’s it!</p>
+</section>
+<section id="begin-the-recursive-case" class="level2">
+<h2 class="anchored" data-anchor-id="begin-the-recursive-case">5. Begin the Recursive Case</h2>
+<p>Now we are going to start working on the recursive case. Here’s how it should work:</p>
+<p>If <code>levels</code> is greater than 0, draw a “first generation curve.” A first-generation curve is like the one at the very top of the diagram in this activity. To draw this curve:</p>
+<ul>
+<li>Move forward by distance <code>length/3</code>.</li>
+<li>Turn left by 60 degrees.</li>
+<li>Move forward by distance <code>length/3</code>.</li>
+<li>Turn right by 120 degrees.</li>
+<li>Move forward by distance <code>length/3</code>.</li>
+<li>Turn left by 60 degrees.</li>
+<li>Move forward by distance <code>length/3</code>.</li>
+</ul>
+</section>
+<section id="test" class="level2">
+<h2 class="anchored" data-anchor-id="test">6. Test</h2>
+<p>Modify the function <code>draw_scene</code> by replacing <code>draw_koch(200, 0)</code> with <code>draw_koch(200, 1)</code>. Check that the output resembles the shape at the top of this section.</p>
+</section>
+<section id="implement-recursion" class="level2">
+<h2 class="anchored" data-anchor-id="implement-recursion">7. Implement Recursion</h2>
+<p>Ok, time for some recursion! In your <code>draw_koch()</code> function, in the recursive case, replace all four calls to go forward with calls to <code>draw_koch()</code>. The arguments to <code>draw_koch()</code> should be <code>length/3</code> and <code>levels  - 1</code>.</p>
+</section>
+<section id="test-1" class="level2">
+<h2 class="anchored" data-anchor-id="test-1">8. Test!</h2>
+<p>Modify <code>draw_scene()</code> so that we draw a koch curve with 6 levels. You should see a shape resembling the bottom one in our introductory diagram. I would suggest adding the line <code>turtle.tracer(False)</code> before you actually call <code>draw_scene()</code>. This will skip the animation, showing you only the final product. You might also want to increase the <code>length</code>: <code>1000</code> worked pretty well for me.</p>
+</section>
+<section id="a-special-snowflake" class="level2">
+<h2 class="anchored" data-anchor-id="a-special-snowflake">9. A Special Snowflake</h2>
+<p>Write and call a function called <code>draw_snowflake(length, levels)</code>. Your function should:</p>
+<ol type="1">
+<li>Call <code>draw_koch(length, levels)</code>.</li>
+<li>Turn to the right by 120 degrees.</li>
+<li>Repeat the above commands two more times.</li>
+</ol>
+<p>Then, write a function called <code>draw_scene2()</code>. You can start by copying <code>draw_scene()</code>. Then, within <code>draw_scene2()</code>, <strong>draw at least three snowflakes</strong>. Your snowflakes should not overlap (use <code>turtle.up()</code> and <code>turtle.down()</code> to move the turtle without drawing a line). Each of the different snowflakes should have different values of <code>length</code> and <code>levels</code>. If you’d like, you can also use commands like <code>turtle.color("red")</code> to change the color of the turtle for each snowflake.</p>
+</section>
+</section>
+<section id="submit-your-scripts" class="level1">
+<h1>Submit Your Scripts</h1>
+<p>Please submit <strong>both</strong> the files <code>fractal-tree.py</code> and <code>koch-curve.py</code> on Gradescope, including the names of both you and your partner with your submission. <strong>We are not autograding this assignment</strong>, so you don’t need to worry about whether you have exactly the expected output when the functions are called. You just need to check that your functions work correctly and that you have followed the instructions throughout this assignment.</p>
+<p>Nice work!</p>
 
 
-</section>
 </section>
 
 <p><br> <br> <span style="color:grey;">© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022</span></p></main> <!-- /main -->
