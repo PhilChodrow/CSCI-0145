@@ -140,6 +140,7 @@ find_char("Middlebury", "z")
 
 REQUIREMENTS: 
 - Your function must be recursive. Other approaches won't receive full credit. 
+- You may remember the code construction "Middlebury".find("u"), which implements the same functionality. You should NOT use this construction in your solution -- I'm asking you to practice recursive problem-solving. 
 - Please add a docstring describing the expected input, output, and examples. 
 
 HINT: 
