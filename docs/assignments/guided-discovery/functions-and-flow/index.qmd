@@ -21,7 +21,7 @@ As usual, you're welcome to use the space for up to 75 minutes if you'd like to 
 
 ## Replit
 
-Here is the [Replit project for this activity](https://replit.com/team/csci-0145/Guided-Discovery-2-Functions-and-Control-Flow). 
+Here is the [code file for this activity](http://www.philchodrow.com/CSCI-0145/assignments/guided-discovery/functions-and-flow/gd2.py).
 
 # Username Generator
 
