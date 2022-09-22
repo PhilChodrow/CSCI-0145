@@ -166,7 +166,7 @@
     - Computational Thinking
     - Python Programming
   activity: 
-    - Lab 2
+    - <a href="labs/recursion-turtle/">Lab 2</a>
   assigned: 
     - Lab 2
   module: Recursion
