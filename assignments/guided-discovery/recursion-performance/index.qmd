@@ -1,0 +1,131 @@
+---
+title: "Guided Discovery: Recursion and Performance"
+---
+
+Recursion is a powerful tool for solving problems, but it can also have important drawbacks. In this Guided Discovery activity, you'll implement a simple recursive function for the Fibonacci numbers. You'll then practice some techniques for measuring the performance of functions in terms of how long it takes them execute. 
+
+As usual, you should work on this assignment in pairs, using Thonny. One of you should then submit on Gradescope, adding the other partner's name to the submission. 
+
+# The Fibonacci Numbers
+
+The Fibonacci sequence is a famous sequence of numbers $f_0, f_1, f_2, f_3 \ldots$ defined by a recursive relationship. We define $f_0 = 1$ and $f_1 = 1$. Then, to calculate the $n$th Fibonacci number, we use the recursive relationship 
+
+$$ 
+f_n = f_{n-1} + f_{n-2}\;.  
+$$ {#eq-fib}
+
+So, for example, suppose that we wanted to compute the 5th Fibonacci number $f_5$. We can do this by *first* computing $f_2$, $f_3$, and $f_4$. We would find: 
+$$
+\begin{aligned}
+f_2 &= f_1 + f_0 = 1 + 1 = 2 \\ 
+f_3 &= f_2 + f_1 = 2 + 1 = 3 \\ 
+f_4 &= f_3 + f_2 = 3 + 2 = 5 \\ 
+f_5 &= f_4 + f_3 = 5 + 3 = 8  
+\end{aligned}
+$$
+
+Through this sequence of calculations, we would find that $f_5 = 8$. 
+
+[![](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Fibonacci_Spiral.svg/300px-Fibonacci_Spiral.svg.png)
+An example of a *Fibonacci spiral* that is defined in part by the Fibonacci numbers.]{.aside}
+
+The Fibonacci numbers are associated with a wide range of very beautiful mathematical concepts, graphics, and theorems. 
+
+# 0. Create a Blank Script
+
+Create a blank Python script called `fibonacci.py`. Save it somewhere where you'll be able to find it and open it in Thonny. 
+
+# 1. Implement `fib(n)`
+
+Write a function called `fib()` such that, if `n` is an integer, `fib(n)` is the `n`th Fibonacci number. For example, `fib(5)` should return `8`. 
+
+Your function should be *recursive*. The base case is the specification for $f_0$ and $f_1$, while the recursive step can be performed using @eq-fib. 
+
+# 2. Timing `fib(n)`
+
+How long does it take `fib(n)` to run? We can check this using the `time` module. Add the following line to the top of your script: 
+
+```python
+import time
+```
+
+You can use the function `time.process_time()` to determine how long it takes a piece of code to run, like this: 
+
+```python
+begin = time.process_time()
+my_cool_function()
+end = time.process_time()
+time_elapsed = end - begin # measured in units of seconds
+```
+
+Using this approach, write a function called `time_fib(n)`. This function should both: 
+
+1. **Return** the `n`th Fibonacci number AND
+2. **Print** a message describing the time that elapsed while computing this number. 
+
+For example, after defining this function, you should be able to include the lines below with the following result: 
+
+```python
+f = time_fib(5)
+print(f)
+```
+```
+3.999e-06 seconds elapsed
+5
+```
+
+**HINTS**: 
+
+- You'll need to convert the time elapsed to a string using the `str(x)` pattern before including it in your printed message. 
+- Inside your function, you'll need to first save the result of `fib(n)` to a variable, then print your message, then return the saved variable. 
+
+# 3. Timing Experiments
+
+Take notes on how long it takes to compute `fib(n)` for several small values of `n`. For example, you could choose `n` ranging between `20` and `25`. You should take these notes as comments in your script file. 
+
+Do you notice any patterns? Approximately how much more time does it take to do `time_fib(25)` than it does to do `time_fib(24)`? 
+
+# 4. How Many Function Calls?
+
+Now that we've learned something about the time our function takes to execute, let's see if we can figure out these results. Why does computing just one Fibonacci number take so much longer than computing the one before it? 
+
+Suppose that I do `fib(1)`. How many times in total will the `fib()` function be called? What about if I do `fib(2)`? What about `fib(3)`? Write down your reasoning as comments in your Python file. 
+
+# 5. Counting Function Calls
+
+Add an argument to `fib` called `verbose`. That is, your function definition should now look like this: 
+
+```python
+def fib(n, verbose):
+    # your code here
+```
+
+If `verbose` is `True`, then print a simple message. Your message could just be a `"-"` or anything else. Make sure that you modify the recursive calls to your function so that they also accept the `verbose` argument. 
+
+Once you've done this, call `fib` a few times with *very small* values of `n` to see how many times the function gets called in total. Here's the code that I suggest you run: 
+
+```python
+n = 1
+print("n = " + str(n))
+print("-----")
+fib(n, True)
+n = 2
+print("n = " + str(n))
+print("-----")
+fib(n, True)
+n = 3
+print("n = " + str(n))
+print("-----")
+fib(n, True)
+n = 4
+print("n = " + str(n))
+print("-----")
+fib(n, True)
+```
+
+It's fine to copy and paste this code into Thonny if you want to. 
+
+By counting the number of messages printed, see if you can find the pattern in how many times the function is called. Can you relate this to your findings about the amount of time needed to execute the function? 
+
+
+

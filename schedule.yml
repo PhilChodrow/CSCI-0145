@@ -147,21 +147,21 @@
     - Lab 1
 - date: 2022-09-29
   header: |
-    Guided Discovery: Practice With Recursive Graphics
+    Guided Discovery: Recursion and Performance
   summary: |
-    We practice writing functions to produce recursive graphics with the turtle module. 
+    We learn some ways to measure and analyze the performance of functions, and use these techniques to study the performance implications of recursive techniques. 
   objectives: 
     - Computational Thinking
     - Python Programming
   activity: 
-    - <a href="assignments/guided-discovery/recursion-turtle">GD3</a>
+    - <a href="assignments/guided-discovery/recursion-performance">GD3</a>
   module: Recursion
   publish: true
 - date: 2022-09-30
   header: |
-    Lab: Recursion and Performance
+    Lab: Fractal Graphics with Recursion
   summary: |
-    We learn some ways to measure and analyze the performance of functions, and use these techniques to study the performance implications of recursive techniques. 
+    We practice writing functions to produce recursive graphics with the turtle module. 
   objectives: 
     - Computational Thinking
     - Python Programming
