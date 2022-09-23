@@ -40,7 +40,10 @@ In this lab, you'll practice:
 
 ## Lab Template File
 
-Here is the [Replit project](https://replit.com/team/csci-0145/Lab-2-Programmers-as-Decision-Makers) containing the template file for this lab. 
+[Here is the template file](template.py) you should download in order to complete this activity. You and your partner expected to (a) work together on the lab and (b) submit your own files individually on Gradescope, acknowledging each other's collaboration. 
+
+If you are having trouble accessing the template file, you can also try this link. 
+
 
 ## Who Chooses Housing First?
 
