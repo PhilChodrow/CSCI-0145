@@ -122,7 +122,7 @@ Your algorithm will:
     - *For example*:  if someone says they are a 4th year student, you may ask the question “Are you about to graduate?” If they say yes, they receive no points. ONLY a 4th year student would receive this question. 
     - ***Hint***: Nested `if` statements. 
 - You must have at least one question that makes use of a simple mathematical calculation to determine the number of points awarded. 
-    - For example: Rather than ask people to enter their status as a 1st, 2nd, 3rd, 4th year, you ask them for the number of credits they have received so far at Bucknell. Then they might receive `credits/8` points. 
+    - For example: Rather than ask people to enter their status as a 1st, 2nd, 3rd, 4th year, you ask them for the number of credits they have received so far at Middlebury. Then they might receive `credits/8` points. 
 - You must have at least one question that use an `if`-`elif`-`else` structure.
 
 
