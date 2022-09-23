@@ -42,7 +42,9 @@ In this lab, you'll practice:
 
 [Here is the template file](template.py) you should download in order to complete this activity. You and your partner expected to (a) work together on the lab and (b) submit your own files individually on Gradescope, acknowledging each other's collaboration. 
 
-If you are having trouble accessing the template file, you can also try this link. 
+If you are having trouble accessing the template file, you can also try [this link](https://raw.githubusercontent.com/PhilChodrow/CSCI-0145/main/labs/decision-making/template.py). 
+
+In either case, highlight all the text, copy it, and paste it into a blank Thonny file. 
 
 
 ## Who Chooses Housing First?
@@ -88,7 +90,7 @@ First, stand up, walk around, and talk to other students in the class about thei
 
 Return to your group and discuss with your partner. 
 
-Open the lab template file (link on Canvas), create a group for you and your partner, and ensure that both of you are looking at the same file. In the `ACTIVITY 1` area, include a long-form comment with a bullet-point list with **at least 5 items** not included in the list above that you feel should impact prioritization. Give them numeric point values. For example: 
+In the `ACTIVITY 1` area of your template file, include a long-form comment with a bullet-point list with **at least 5 items** not included in the list above that you feel should impact prioritization. Give them numeric point values. For example: 
 
 
 ```python
@@ -204,7 +206,7 @@ print("----------------------------------")
 
 ## Activity 5: Write Your Program
 
-Modify the program above (or start from scratch, if you both agree) to match *your* algorithm from Activities 2-4. Write your program under the `ACTIVITY 5` heading. Your program should not be commented; i.e. running the file should run your program. 
+Modify the program above (or start from scratch, if you both agree) to match *your* algorithm from Activities 2-4. Write your program under the `ACTIVITY 5` heading of the template file. Running the file should run your program. 
 
 While writing your program, please: 
 
