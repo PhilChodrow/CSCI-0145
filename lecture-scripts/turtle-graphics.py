@@ -27,20 +27,20 @@ turtle that we are done drawing. Here's an example that draws a simple
 horizontal line: 
 """
 
-# turtle.forward(100)
-# turtle.done()
+turtle.forward(100)
+turtle.done()
 
 """
 Here's an example that shows both turning and picking the turtle up and down. 
 """
 
-# turtle.forward(100)
-# turtle.up()
-# turtle.forward(50)
-# turtle.down()
-# turtle.left(90)
-# turtle.forward(100)
-# turtle.done()
+turtle.forward(100)
+turtle.up()
+turtle.forward(50)
+turtle.down()
+turtle.left(90)
+turtle.forward(100)
+turtle.done()
 
 """
 We can wrap turtle commands into functions. This lets us reuse them! 
@@ -51,10 +51,10 @@ def corner(length):
     turtle.left(90)
     turtle.forward(length)
     
-# corner(100)
-# turtle.color("red")
-# corner(50)
-# turtle.done()
+corner(100)
+turtle.color("red")
+corner(50)
+turtle.done()
 
 """
 Here's a function that draws a square:
@@ -70,23 +70,23 @@ def square(length):
     turtle.forward(length)
     turtle.left(90)
 
-# square(100)
-# turtle.done()
+square(100)
+turtle.done()
 
 """
 Suppose we'd like to draw some *nested squares*. Here's one way: 
 """
 
-# square(10)
-# turtle.up()
-# turtle.backward(5)
-# turtle.right(90)
-# turtle.forward(5)
-# turtle.left(90)
-# turtle.down()
-# turtle.color("red")
-# square(20)
-# turtle.done()
+square(10)
+turtle.up()
+turtle.backward(5)
+turtle.right(90)
+turtle.forward(5)
+turtle.left(90)
+turtle.down()
+turtle.color("red")
+square(20)
+turtle.done()
 
 """
 It's not much fun to write this all every time. We can use recursion instead! 
@@ -103,9 +103,9 @@ def nested_squares(length, level):
         turtle.forward(5)
         turtle.left(90)
         turtle.down()
-        recursive_square(length + 10, level-1)
+        nested_squares(length + 10, level-1)
 
-# nested_squares(10, 10)
+nested_squares(10, 10)
 
 """
 Here's another example: we'll use recursion to draw a fun spiral.
@@ -121,8 +121,8 @@ def spiral(length, angle, level):
         turtle.forward(length)
         spiral(length*0.99, angle, level - 1)
         
-# spiral(10, 10, 1000)
-# turtle.done()
+spiral(10, 10, 1000)
+turtle.done()
 
 """
 This works, but it's often more useful to return the turtle to its
