@@ -6,4 +6,4 @@ toc: false
 title: Course Schedule
 ---
 
-Readings in *italic* are optional recommendations for further background on the material.   
+Readings in *italic* are optional recommendations for further background on the material.    

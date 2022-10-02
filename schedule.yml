@@ -171,5 +171,26 @@
     - Lab 2
   module: Recursion
   publish: true
+- date: 2022-10-03
+  header: |
+    Iteration
+  summary: |
+    We introduce definite and indefinite iteration as a method for performing repeated tasks. 
+  objectives: 
+    - Computational Thinking
+    - Python Programming
+  reading: 
+    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/iteration.html">Iteration</a>
+    - <i><a href="https://runestone.academy/ns/books/published/thinkcspy/index.html#">Think Like a Computer Scientist</a> 8.1-8.9, 9.10-9.14</i>
+    - <i><a href="https://greenteapress.com/thinkpython2/thinkpython2.pdf">Think Python</a> Chapter 7</i>
+    - <i><a href="https://runestone.academy/ns/books/published//fopp/Iteration/toctree.html">Foundations of Python Programming</a> 7.1-7.4, 14</i>
+  assigned: 
+    - HW3
+  due: 
+    - HW2
+  module: Iteration and Data Structures
+  publish: true
+
+
 
 
