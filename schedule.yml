@@ -190,6 +190,23 @@
     - HW2
   module: Iteration and Data Structures
   publish: true
+- date: 2022-10-05
+  header: |
+    Iteration
+  summary: |
+    We introduce lists, data structures that can hold ordered sequences of arbitrary objects. We also begin to discuss some of the synergies between lists and iteration. 
+  objectives: 
+    - Computational Thinking
+    - Python Programming
+  reading: 
+    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/lists.html">Lists</a>
+    - <i><a href="https://runestone.academy/ns/books/published/thinkcspy/Lists/toctree.html">Think Like a Computer Scientist</a> 10.1-14</i>
+    - <i><a href="https://greenteapress.com/thinkpython2/thinkpython2.pdf">Think Python</a> Chapter 10</i>
+    - <i><a href="https://runestone.academy/ns/books/published//fopp/Sequences/toctree.html">Foundations of Python Programming</a> 6</i>
+  due: 
+    - Lab 2
+  module: Iteration and Data Structures
+  publish: true
 - date: 2022-10-06
   header: |
     Lab: Developers as Future-Makers
