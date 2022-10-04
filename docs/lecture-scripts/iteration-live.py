@@ -28,6 +28,8 @@ Let's start with an example that illustrates the main points.
 
 Definite iteration is performed using for-loops. A for-loop looks like this: 
 
+if
+def
 for index in iterable: 
     statement_1
     statement_2
@@ -49,6 +51,9 @@ Our ingredients:
 Let's see a simple example: 
 """
 
+# for name in ["Xenith", "Mahmoud", "Yiran"]:
+#     message = "Hello " + name + "!"
+#     print(message)
 
     
 """
@@ -59,6 +64,8 @@ Strings can also be used as the iterable. In this case, the index will loop
 through the individual characters. 
 """
 
+# for char in "CSCI 0145":
+#     print(char)
 
 """
 An especially common pattern is to loop through a *range* of numbers. The
@@ -66,12 +73,26 @@ following construction will loop through i in the values 0, 1, 2, 3, and 4 (but
 NOT 5)
 """
 
+# for num in range(5):
+#     # i = 0
+#     # i = 1
+#     # i = 2
+#     # i = 3
+#     # i = 4
+#     print(num*10)
+
+
 """
 As you remember, the characters in strings can also be accessed by indexing,
 like this: "CSCI 0145"[5]. This can also be a very useful way to iterate over
 the letters. When we do things this way, we need to also calculate the length of
 the string, which can be done using the len() function. 
 """
+
+# s = "Middlebury"
+# length = len(s)
+# for i in range(length):
+#     print("The character in index " + str(i) + " is " + s[i] + ".")
 
     
 """
@@ -81,15 +102,33 @@ some information built up across multiple loops.
 
 # sum of the numbers 0 through 10
 
+# total = 0
+# for i in range(101):
+#     total = total + i
+# print(total)
+
+
+
 """
 Loops and conditionals can be a very powerful combination. 
 
 ACTIVITY: Write a loop that prints the even numbers from 0 to 10. 
 
-HINT: An integer i is even if i % 2 is equal to 0. 
+HINT: An integer i is even if i % 2 is equal to 0.
+
+PRINTED OUTPUT:
+
+0
+2
+4
+6
+8
+10
 """
 
-
+# for i in range(11):
+#     if i % 2 == 0:
+#         print(i)
 
     
 """
@@ -111,6 +150,13 @@ It's very important that one of the statements will eventually turn the
 condition False, as otherwise the loop will execute forever! 
 """
 
+# i = 0
+# while i < 5:
+#     i = i + 1
+#     print(i)
+    
+# for i in range(5):
+#     print(i)
 
 
 """

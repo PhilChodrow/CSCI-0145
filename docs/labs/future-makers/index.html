@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Developers as Decision-Makers</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/img/icons/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Developers as Decision-Makers</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../"><b>Introduction to Computing</b><br>CSCI 0145</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">Welcome!</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../collaboration.html" class="sidebar-item-text sidebar-link">Collaboration And Academic Honesty</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tools.html" class="sidebar-item-text sidebar-link">Course Resources</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../help.html" class="sidebar-item-text sidebar-link">Asking for Help</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../schedule.html" class="sidebar-item-text sidebar-link">Course Schedule</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../philosophy.html" class="sidebar-item-text sidebar-link">Some Teaching Philosophies</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#whose-application-gets-read" id="toc-whose-application-gets-read" class="nav-link active" data-scroll-target="#whose-application-gets-read">Whose Application Gets Read?</a></li>
+  <li><a href="#applicant-grade-data" id="toc-applicant-grade-data" class="nav-link" data-scroll-target="#applicant-grade-data">Applicant Grade Data</a></li>
+  <li><a href="#analyze-applicants" id="toc-analyze-applicants" class="nav-link" data-scroll-target="#analyze-applicants">Analyze Applicants</a></li>
+  <li><a href="#create-your-own-recommender" id="toc-create-your-own-recommender" class="nav-link" data-scroll-target="#create-your-own-recommender">Create Your Own Recommender</a></li>
+  <li><a href="#implement" id="toc-implement" class="nav-link" data-scroll-target="#implement">Implement!!</a></li>
+  <li><a href="#test-at-scale" id="toc-test-at-scale" class="nav-link" data-scroll-target="#test-at-scale">Test At Scale</a></li>
+  <li><a href="#final-reflection" id="toc-final-reflection" class="nav-link" data-scroll-target="#final-reflection">Final Reflection</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Developers as Decision-Makers</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p><em>This lab is adapted from an <a href="https://drive.google.com/drive/folders/1_mLvJBKvRLN0KoBW8uIKAhHvBEGn6M2t?usp=sharing">activity</a> created by <a href="https://evanpeck.github.io">Evan Peck</a> (Bucknell University).</em></p>
+<p><img src="https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/styles/832x468/public/2021-03/HousingOverview.jpg?fv=2qDcAvv_&amp;itok=vy0yCyye" class="img-fluid"></p>
+<div class="callout-tip callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Reminder</strong>: you and your partner are a team! You should not move forward to one activity until you are both comfortable with the previous activity.</p>
+</div>
+</div>
+</div>
+<p>In a <a href="assignments/labs/decision-making">recent lab</a>, we studied the potential role of algorithms in prioritizing the needs of some people over others. Here, we’ll experiment with this same idea in another, <em>very real</em> context that may impact your future prospects for jobs and other opportunities.</p>
+<p><em>In this lab, you’ll practice:</em></p>
+<ul>
+<li>For-loops</li>
+<li>List operations</li>
+<li>Processing large quantities of data</li>
+</ul>
+<section id="whose-application-gets-read" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="whose-application-gets-read">Whose Application Gets Read?</h2>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">I should note that Middlebury Admissions states that they read every single application, and I have no reason to doubt this. I use the example of college admissions only because it’s one that’s perhaps fresh in many of your memories. However, this is a <a href="https://hiring.monster.com/resources/recruiting-strategies/workforce-planning/hiring-algorithms/"><strong><em>very real</em></strong> scenario</a> in job applications, and it is likely to have an impact on your own hiring someday.</span></div></div>
+<p>Imagine that you are consulting for Prestigious University (PU), a very famous university that receives tens of thousands of applications every year. Due to recent budget cuts, there aren’t enough staff to read every single application. PU has hired you to design a <em>filtering</em> algorithm for them that is designed to find a subset of applicants whose applications should be read more carefully. PU’s theory is that if an applicant has, say, consistently very poor grades, then their application may not even be worth reaading. So, another way of saying things is that your algorithm should screen out those applicants.</p>
+</section>
+<section id="applicant-grade-data" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="applicant-grade-data">Applicant Grade Data</h2>
+<p>Data on the applicants’ grades is <strong>supplied as a list</strong>. The list contains:</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">Of course, the fourth year data is partial.</span></div></div>
+<ul>
+<li>Overall GPA in the applicant’s first, second, third, and fourth years of high school.</li>
+<li>GPA in each of the following groups of courses in the applicant’s third and fourth years:
+<ul>
+<li>Literature</li>
+<li>Science</li>
+<li>Math</li>
+<li>Social studies</li>
+<li>Electives</li>
+</ul></li>
+</ul>
+<p>So, a complete set of data contains a total of 9 numbers, like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>EXAMPLE <span class="op">=</span> [<span class="fl">3.4</span>, <span class="fl">3.3</span>, <span class="fl">2.7</span>, <span class="fl">3.6</span>, <span class="fl">4.1</span>, <span class="fl">3.5</span>, <span class="fl">2.8</span>, <span class="fl">3.2</span>, <span class="fl">3.0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here are the positions of each of the scores:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>FIRST_YEAR      <span class="op">=</span> <span class="dv">0</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>SECOND_YEAR     <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>THIRD_YEAR      <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>FOURTH_YEAR     <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>LITERATURE      <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>SCIENCE         <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>MATH            <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>SOCIAL_STUDIES  <span class="op">=</span> <span class="dv">7</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>ELECTIVES       <span class="op">=</span> <span class="dv">8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For example, we can access the applicant’s third-year GPA like this:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>EXAMPLE[THIRD_YEAR]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create <strong>two</strong> new Python files in Thonny, and save them in the same location on your computer.</p>
+<ol type="1">
+<li><code>applications.py</code> is a file that you’ll need, but won’t modify. After creating the file, copy all the code <a href="https://raw.githubusercontent.com/PhilChodrow/CSCI-0145/main/labs/future-makers/applications.py">here</a> into <code>applications.py</code>. You should then make no further modifications.</li>
+<li><code>lab.py</code> is the primary file in which you’ll complete activities for this lab. After creating the file, copy all the code <a href="https://raw.githubusercontent.com/PhilChodrow/CSCI-0145/main/labs/future-makers/applications.py">here</a> into <code>lab.py</code>.</li>
+</ol>
+</div>
+</div>
+<p>In the <code>applications.py</code> file, I’ve written some functions to help you extract different parts of the data. Given a list of data like the example above, you can get the GPAs for the four years like this:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>get_year_scores(EXAMPLE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can get the GPAs for the five subjects like this:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>get_subject_scores(EXAMPLE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s see this running in code.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Copy and paste the following code into <code>lab.py</code>, under the <code>ACTIVITY 2</code> area of the file. Then, run the file.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># import the functions and variables from the applications file</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> applications <span class="im">import</span> <span class="op">*</span>         </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># the EXAMPLE variable is some example data</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"EXAMPLE DATA"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"------------"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(EXAMPLE)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">GPAs for 4 Years"</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"---------------"</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(get_year_scores(EXAMPLE))</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">GPAs for 5 Subjects"</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"------------------"</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(get_subject_scores(EXAMPLE))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Discuss with your partner and make sure you understand what <code>get_year_scores()</code> and <code>get_subject_scores()</code> are doing. These functions are documented: try doing <code>help(get_year_scores)</code> if you’d like to see the documentation.</p>
+</div>
+</div>
+</section>
+<section id="analyze-applicants" class="level1">
+<h1>Analyze Applicants</h1>
+<p>We’re now going to complete a series of functions that are going to analyze an applicant. Each of these functions returns a Boolean value (<code>True</code> or <code>False</code>) which determine whether the application is recommended to be read by a human reader for further review.</p>
+<p>Your long-term goal is to implement the following functions, and check that they work. We’re not going to implement all of them right now, though.</p>
+<ul>
+<li><code>analyze_applicant_1()</code>: recommends applicants that have an average of their five subject areas above 3.0. I’ve written this one for you, as well as an example, to help you get started.</li>
+<li><code>analyze_applicant_2()</code>: recommends applicants that achieved a GPA above 3.2 in at least three of their four years of secondary school.</li>
+<li><code>analyze_applicant_3()</code>: recommends applicants that have no GPA score below 2.5 in any of their five subject areas.</li>
+<li><code>analyze_applicant_4()</code>: recommends applicants that achieved a higher average GPA in their third and fourth years than in the first and second years.</li>
+</ul>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Copy and paste the following code into <code>lab.py</code>, under the <code>ACTIVITY 3</code> area of the file. Then, run the file. Talk through the code with your partner to ensure that you understand how it works.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_applicant_1(data):</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">    recommends an applicant if the average of their subject scores is larger than 3.0</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># get the subject scores</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    subject_scores <span class="op">=</span> get_subject_scores(data)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># compute the average (mean) of the subject scores</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># average is sum of all scores divided by number of scores</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(subject_scores)):</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> total <span class="op">+</span> subject_scores[i]</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    mean <span class="op">=</span> total <span class="op">/</span> <span class="bu">len</span>(subject_scores)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># return whether the mean is &gt; 3.0</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mean <span class="op">&gt;</span> <span class="fl">3.0</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>EXAMPLE_2 <span class="op">=</span> [<span class="fl">3.2</span>, <span class="fl">2.7</span>, <span class="fl">2.9</span>, <span class="fl">3.1</span>, <span class="fl">3.0</span>, <span class="fl">2.5</span>, <span class="fl">2.9</span>, <span class="fl">3.3</span>, <span class="fl">2.2</span>]</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>EXAMPLE_3 <span class="op">=</span> [<span class="fl">3.4</span>, <span class="fl">3.3</span>, <span class="fl">2.7</span>, <span class="fl">3.6</span>, <span class="fl">2.8</span>, <span class="fl">3.5</span>, <span class="fl">2.8</span>, <span class="fl">3.2</span>, <span class="fl">3.0</span>]</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(analyze_applicant_1(EXAMPLE_2))</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(analyze_applicant_1(EXAMPLE_3))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Now, implement the function <code>analyze_applicant_2()</code>. This function should return <code>True</code> if the applicant had a GPA of 3.2 or higher in at least three out of their four years. Write your function definition in the <code>ACTIVITY 4</code> area of <code>lab.py</code>.</p>
+<p>Once you’ve implemented your function, paste the following code below your function definition.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Examples for analyze_applicant_2()"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"----------------------------------"</span>)    </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(analyze_applicant_2(EXAMPLE_2))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(analyze_applicant_2(EXAMPLE_3))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Run the file. Do <code>analyze_applicant_1()</code> and <code>analyze_applicant_2()</code> agree or disagree on the two examples?</p>
+</div>
+</div>
+</section>
+<section id="create-your-own-recommender" class="level1">
+<h1>Create Your Own Recommender</h1>
+<p>Later in the assignment, we’ll implement <code>analyze_applicant_3()</code> and <code>analyze_applicant_4()</code>. For now, though, we’re going to focus on <strong>your</strong> creative ideas for making a recommender filter.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>In English, not code</strong>, write down a rule for recommending applicants. You are welcome to use ideas from the <code>analyze_applicant_*()</code> functions described above, but please make sure to include your own original spin. What do you think would be the most fair way to recommend applicants for further review?</p>
+<p><strong>Suggestion</strong>: use a rule that includes information from <em>both</em> the year scores and the subject-area scores.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Find another group that has also completed Activity 5. Ask them to describe THEIR answer, and write it down in the Activity 6 area.</p>
+</div>
+</div>
+</section>
+<section id="implement" class="level1">
+<h1>Implement!!</h1>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 7
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Implement <strong>four</strong> functions:</p>
+<ol type="1">
+<li><code>analyze_applicant_3()</code> from above.</li>
+<li><code>analyze_applicant_4()</code> from above.</li>
+<li><code>our_analyze_applicant()</code>, your idea from Activity 5.</li>
+<li><code>their_analyze_applicant()</code>, the idea of the other group from Activity 6.</li>
+</ol>
+<p>Write your function definitions in the Activity 7 area. You don’t need to demonstrate them on any examples, although you may wish to do so in order to check for errors.</p>
+</div>
+</div>
+</section>
+<section id="test-at-scale" class="level1">
+<h1>Test At Scale</h1>
+<p>If we only had to look at one or two applicants, we wouldn’t need a program for this at all – we’d just do it by hand. But what if we have 100,000 applicants?</p>
+<p>I’ve included some functions (which you imported from <code>applications.py</code>) to help you generate and view large numbers of random example apps:</p>
+<ol type="1">
+<li><code>create_app()</code> creates a single random application.</li>
+<li><code>create_apps(num_apps)</code> will create a list containing <code>num_apps</code> applications.</li>
+<li><code>print_apps(apps, first_n)</code> will print (not return) the first <code>first_n</code> apps in a list.</li>
+</ol>
+<p>So, for example:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>apps <span class="op">=</span> create_apps(<span class="dv">1000</span>)  <span class="co"># create 1000 apps</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>print_apps(apps, <span class="dv">5</span>)       <span class="co"># print the first 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s first write a function that will allow us to experiment with the behavior of one of your filtering functions. This is a complicated function – take your time and build it up slowly!</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 8
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Implement a function called <code>analyze_many_apps()</code> that will show an analysis of a large set of applications. <strong>This function should print several messages, but does not need to return anything.</strong></p>
+<p>Your function should take a list of applications, which you can assume was generated by <code>create_apps()</code>. It should:</p>
+<ol type="1">
+<li>Inside the function, create a list called <code>recommended</code> of apps that were recommended by <code>analyze_apps_1()</code>. Create another list called <code>not_recommended</code> of apps that were NOT recommended by <code>analyze_apps_1()</code>.
+<ul>
+<li><strong><em>HINT:</em></strong> Loop through the elements of <code>apps</code>. Use an <code>if</code>-statement to check whether an app was accepted. If it was accepted, <code>append()</code> it to the <code>recommended</code> list. Otherwise, <code>append()</code> it to the <code>not_recommended</code> list.</li>
+</ul></li>
+<li>Print <code>---SUCCESSFUL APPS---</code></li>
+<li>Print 5 examples of recommended apps.
+<ul>
+<li><strong>HINT:</strong> If you’ve constructed your lists correctly, all you need to do is call <code>print_apps(recommended, 5)</code>.</li>
+</ul></li>
+<li>Print <code>---UNSUCCESSFUL APPS---</code></li>
+<li>Print 5 examples of not-recommended apps. Same hint as Step 3.</li>
+<li>Print <code>---------------------</code></li>
+<li>Compute the <em>recommendation rate</em>. This is the percentage of applications that were recommended.
+<ul>
+<li><strong>HINT:</strong> If you constructed your lists correctly, the percentage is <code>len(recommended)/len(apps)</code>.</li>
+</ul></li>
+<li>Print the acceptance rate.</li>
+</ol>
+<p>Once you’ve implemented this function, run it like this:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>apps <span class="op">=</span> create_apps(<span class="dv">100000</span>) <span class="co"># 100000 apps</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>analyze_many_apps(apps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Place both your function definition and an example of calling the function in the <code>ACTIVITY 8</code> area of <code>lab.py</code>.</p>
+</div>
+</div>
+<p>Now we can use the function you just wrote to help us form an initial judgment about whether <code>analyze_applicant_1()</code> is a good method for filtering applicants:</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 9
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Record the approximate acceptance rate from your analysis. Then, write down whether you think <code>analyze_applicant_1()</code> is a <strong>fair</strong> way to filter applicants, and explain why. Do this in the <code>ANALYSIS COMPARISON</code> area of <code>lab.py</code>.</p>
+<p>You may want to run <code>analyze_many_apps()</code> several times in order to get a feel for things when composing your answer to this question.</p>
+</div>
+</div>
+<p>Now that we are able to analyze a single algorithm for filtering applicants, we can use it to analyze the other <code>analyze_applicant()</code> functions.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 10
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Modify your code from Activity 8 so that instead of <code>analyze_applicant_1()</code>, it uses <code>analyze_applicant_2()</code>, <code>analyze_applicant_3()</code>, <code>analyze_applicant_4()</code>, <code>our_analyze_applicant()</code>, and <code>their_analyze_applicant()</code>. Repeat Activity 9 for each of these different analysis methods. For each of these, you should record the acceptance rate, whether or not you think the filter method is fair, and why.</p>
+</div>
+</div>
+<p>We’ve done a lot of analysis now. Which of these algorithms do you think is the best one?</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 11
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Which of these algorithms do you think is the <strong>best</strong>? Keep in mind that we care both about <em>who</em> gets recommended by the algorithm, but also <em>how many</em>. Remember, recommending more applicants dramatically increases the human labor required for PU to read applications manually.</p>
+</div>
+</div>
+</section>
+<section id="final-reflection" class="level1">
+<h1>Final Reflection</h1>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 12
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>With your partner, read this article:</p>
+<p><a href="https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G">Amazon scraps secret AI recruiting tool that showed bias against women</a></p>
+<p>Can you think of any ways in which <em>your</em> recommended algorithm for filtering applicants could show unjust bias against certain groups of individuals? Write a few sentences about why or why not in the <code>ACTIVITY 12</code> area of <code>lab.py</code>.</p>
+</div>
+</div>
+<p>One member of your group should submit the file <code>lab.py</code> in the Lab 3 assignment on Gradescope. Make sure to add your partner to the submission! You don’t need to submit the <code>applications.py</code> file. You also don’t need to worry about anything with the autograder.</p>
+
+
+</section>
+
+<p><br> <br> <span style="color:grey;">© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022</span></p></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
