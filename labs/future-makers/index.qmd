@@ -78,7 +78,7 @@ EXAMPLE[THIRD_YEAR]
 Create **two** new Python files in Thonny, and save them in the same location on your computer. 
 
 1. `applications.py` is a file that you'll need, but won't modify. After creating the file, copy all the code [here](https://raw.githubusercontent.com/PhilChodrow/CSCI-0145/main/labs/future-makers/applications.py) into `applications.py`. You should then make no further modifications. 
-2. `lab.py` is the primary file in which you'll complete activities for this lab. After creating the file, copy all the code [here](https://raw.githubusercontent.com/PhilChodrow/CSCI-0145/main/labs/future-makers/applications.py) into `lab.py`. 
+2. `lab.py` is the primary file in which you'll complete activities for this lab. After creating the file, copy all the code [here](https://raw.githubusercontent.com/PhilChodrow/CSCI-0145/main/labs/future-makers/lab.py) into `lab.py`. 
 
 :::
 
