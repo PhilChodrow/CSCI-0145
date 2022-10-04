@@ -190,7 +190,21 @@
     - HW2
   module: Iteration and Data Structures
   publish: true
-
+- date: 2022-10-06
+  header: |
+    Lab: Developers as Future-Makers
+  summary: |
+    We write functions that filter applicants to an opportunity according to a set of numerical criteria, and reflect on the ethical challenges associated with such filters. Along the way, we practice iteration and working with lists. 
+  objectives: 
+    - Computational Thinking
+    - Python Programming
+    - Social Responsibility
+  activity: 
+    - <a href="labs/future-makers/">Lab 3</a>
+  assigned: 
+    - Lab 3
+  module: Iteration and Data Structures
+  publish: true
 
 
 

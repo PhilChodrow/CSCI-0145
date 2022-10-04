@@ -1,5 +1,5 @@
 ---
-title: Developers as Decision-Makers
+title: Developers as Future-Makers
 callout-icon: false
 callout-appearance: simple
 ---
