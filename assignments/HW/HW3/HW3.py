@@ -183,10 +183,12 @@ def find_inner(s):
     
     ARGUMENT: s, the string in which to seek the inner expression 
     
-    EXAMPLES: s = "((1+1)+((5+3)*2))" ix1, ix2 = find_inner(s) # ix1 is 2, ix2
-    is 5
+    EXAMPLES: 
+    s = "((1+1)+((5+3)*2))" 
+    ix1, ix2 = find_inner(s) # ix1 is 1, ix2 is 5
     
-    s = "(((3+13)*2)+5) ix1, ix2 = find_inner(s) # ix1 is 3, ix2 is 7
+    s = "(((3+13)*2)+5) 
+    ix1, ix2 = find_inner(s) # ix1 is 3, ix2 is 7
     """
     
     # let ix2 be the location of the first ")" you can find() 
