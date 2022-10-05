@@ -1,0 +1,186 @@
+---
+title: "Lab: International Standard Book Numbers"
+callout-icon: false
+callout-appearance: simple
+---
+
+*This lab is adapted from [an assignment](https://eikmeier.sites.grinnell.edu/csc-151-s221/assignments/project02.html) by Peter-Michael Osera, Samuel Rebelsky, and Nicole Eikmeier at Grinnell College.* 
+
+
+
+In this Lab activity, we'll build on our skills with strings and functions, and combine them with new skills related to loops and lists. Along the way, we'll introduce the map-filter-reduce paradigm for handling sets of data. 
+
+
+
+# International Standard Book Numbers
+
+Our problem this week is to determine the validity of an International Standard Book Number (ISBN). An ISBN is a unique number that identifies a book. You may have seen these numbers inside or on the back of many of the books you read. ISBNs often come with barcodes that make it easy for librarians to scan them. 
+
+::: {#fig-isbn .column-margin}
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/EAN-13-ISBN-13.svg/640px-EAN-13-ISBN-13.svg.png)
+
+
+An example of an ISBN and barcode on the back of a book. This ISBN has 13 digits. To keep things simple today, we are only going to work with the ISBN-10 format, which has only 10 digits. ISBN-10 was the standard until recently, when it was determined that we needed more numbers for more books! 
+:::
+
+## Anatomy of an ISBN
+
+A 10-digit ISBN number has two parts: 
+
+- 9 **identifier digits**, which are all digits from 0 to 9. 
+- 1 **check digit**. The purpose of the check digit is to confirm the accuracy of the identifier digits. If the check digit does not match the identifier digits, then this may identify a typo in the 9 identifier digits. The check digit can be **either** a digit between 0 and 9 **or** the letter X. 
+
+For example, consider the ISBN `1438946685`. In this ISBN, the first 9 digits `143894668` contain information about the book, while the last digit `5` is the check digit. Another possible ISBN is `486910583X`, since the last digit is allowed to be an `X`. 
+
+::: {.callout-note}
+
+## Activity 1
+
+Write a function called `well_formed()` to check whether an input string `s` has the structure of a well-formed ISBN. `well_formed(s)` should return `True` if and only if: 
+
+- `s` is a string with 10 characters. 
+- The first 9 characters of `s` are all digits between 0 and 9. 
+- The last character of `s` is EITHER a digit between 0 and 9 or the character `X`. 
+
+If any of these conditions are not met, `well_formed(s)` should return `False`.
+
+For example: 
+
+```python
+well_formed("1438946685") # True
+well_formed("486910583X") # True
+well_formed("1438945")    # False (wrong number of digits)
+well_formed("1434X88945") # False (only last digit can be X)
+well_formed("143418894H") # False (last digit must be integer or X)
+```
+
+:::
+
+## How 
+
+
+
+
+
+
+
+::: {#fig-sandwich .column-margin}
+![](https://miro.medium.com/max/1400/1*DreeF8a4h2pvxRly39HjAA.jpeg)
+
+The stages of map-filter-reduce, as a sandwich. 
+[Image source](https://towardsdatascience.com/accelerate-your-python-list-handling-with-map-filter-and-reduce-d70941b19e52)
+
+:::
+
+### Map
+
+A **mapping** operation consists in applying the same function to each entry of a list, resulting in a new list ***of the same length***. Here is an example of using a mapping operation to compute the length of each string in a list: 
+
+```python
+L = ["Introduction", "to", "Computing"]
+
+length_L = []
+for s in L:
+    length_L.append(len(s))
+
+# now length_L has value [12, 2, 9]
+```
+
+### Filter
+
+A **filtering** operation creates a smaller list by choosing only a certain number of items from that list. The easiest way to do this is with an `if` statement. For example, here is an example of *filtering* a list of integers to choose only the odd ones: 
+
+```python
+L = [45, 67, 32, 86, 90, 43]
+odd_L = []
+for i in L:
+    if i % 2 == 1:
+        odd_L.append(i)
+
+# now odd_L has value [45, 67, 43]
+```
+
+### Reduce
+
+A **reducing** operation takes a list of data and converts it into a single value. For example, the following code takes a list of numbers and computes their average (mean). We'll use the same list `L` as the previous example. 
+
+```python
+total = 0
+for i in L:
+    total = total + i # (or total += i)
+mean = total / len(L) 
+```
+
+In this lab assignment, you'll write some simple functions for mapping, filtering, and reducing operations. 
+
+
+
+
+
+
+# Part 1: Checking ISBNs
+
+## Check Digits
+
+```python
+def check_digit(first_9_digits):
+    total = 0
+    for i in range(9):
+        total = total + first_9_digits[i] * (10-i)
+    
+    modded = total % 11
+
+    if modded == 10:
+        return "X"
+    else:
+        return modded
+```
+
+## Check Well-Formed ISBN
+
+# Part 2: Checking Batches
+
+## Map
+
+## Filter
+
+## Reduce
+
+
+
+
+
+
+
+
+# Setup
+
+Create two new files and save them **in the same location**: 
+
+- `text.py`. In this file, copy and paste the entirety of [this code](https://raw.githubusercontent.com/PhilChodrow/CSCI-0145/main/labs/map-filter-reduce/text.py). You might find it helpful to open the window and use `cmd + a` (Mac) or `ctrl + a` (Windows) to select the entire file. 
+- `lab.py`. In this file, copy and paste the entirety of [this code](https://raw.githubusercontent.com/PhilChodrow/CSCI-0145/main/labs/map-filter-reduce/lab-template.py). 
+
+## Our Data
+
+Our data for this activity is the first ten chapters of the book *Emma* by Jane Austen. 
+
+The two lines at the top of `lab.py` are: 
+
+```python
+from text import emma
+words = emma.split(" ")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
