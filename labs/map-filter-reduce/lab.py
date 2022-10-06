@@ -16,6 +16,10 @@ ACTIVITY 1
 """
 
 def well_formed(s):
+    """
+    a function for checking whether an input string s is a well-formed ISBN 
+    according to the criteria outlined in the lab activity.
+    """
     
     # check if length is 10
     digits_10 = len(s) == 10
