@@ -20,10 +20,10 @@ def well_formed(s):
     digits_10 = len(s) == 10
     
     # check if all chars up to position 8 are digits
-    first_9_digits = True
+    first_digits = True
     for char in s[:-1]:
         if char not in "0123456789":
-            first_9_digits = False
+            first_digits = False
             
     # check if final char is a digit or X
     last_digit_ok = True
@@ -31,7 +31,7 @@ def well_formed(s):
         last_digit_ok = False
     
     # return True if all checks pass
-    return digits_10 and first_9_digits and last_digit_ok
+    return digits_10 and first_digits and last_digit_ok
 
 
 """
