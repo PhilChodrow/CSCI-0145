@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lab: International Standard Book Numbers</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/img/icons/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Lab: International Standard Book Numbers</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../"><b>Introduction to Computing</b><br>CSCI 0145</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">Welcome!</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../collaboration.html" class="sidebar-item-text sidebar-link">Collaboration And Academic Honesty</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tools.html" class="sidebar-item-text sidebar-link">Course Resources</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../help.html" class="sidebar-item-text sidebar-link">Asking for Help</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../schedule.html" class="sidebar-item-text sidebar-link">Course Schedule</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../philosophy.html" class="sidebar-item-text sidebar-link">Some Teaching Philosophies</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-and-setup" id="toc-introduction-and-setup" class="nav-link active" data-scroll-target="#introduction-and-setup">Introduction and Setup</a></li>
+  <li><a href="#international-standard-book-numbers" id="toc-international-standard-book-numbers" class="nav-link" data-scroll-target="#international-standard-book-numbers">International Standard Book Numbers</a>
+  <ul class="collapse">
+  <li><a href="#anatomy-of-an-isbn" id="toc-anatomy-of-an-isbn" class="nav-link" data-scroll-target="#anatomy-of-an-isbn">Anatomy of an ISBN</a></li>
+  <li><a href="#the-check-digit" id="toc-the-check-digit" class="nav-link" data-scroll-target="#the-check-digit">The Check Digit</a></li>
+  </ul></li>
+  <li><a href="#processing-batches-of-data" id="toc-processing-batches-of-data" class="nav-link" data-scroll-target="#processing-batches-of-data">Processing Batches of Data</a>
+  <ul class="collapse">
+  <li><a href="#map-operations" id="toc-map-operations" class="nav-link" data-scroll-target="#map-operations">Map Operations</a></li>
+  <li><a href="#filter-operations" id="toc-filter-operations" class="nav-link" data-scroll-target="#filter-operations">Filter Operations</a></li>
+  <li><a href="#reduce-operations" id="toc-reduce-operations" class="nav-link" data-scroll-target="#reduce-operations">Reduce Operations</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Lab: International Standard Book Numbers</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p><em>This lab is adapted from <a href="https://eikmeier.sites.grinnell.edu/csc-151-s221/assignments/project02.html">an assignment</a> by Peter-Michael Osera, Samuel Rebelsky, and Nicole Eikmeier at Grinnell College.</em></p>
+<p><strong>Reminder</strong>: you and your partner are a team! You should not move forward to one activity until you are both comfortable with the previous activity.</p>
+<section id="introduction-and-setup" class="level1">
+<h1>Introduction and Setup</h1>
+<p>In this lab activity, we’ll build on our skills with strings and functions, and combine them with new skills related to loops and lists. Along the way, we’ll introduce the map-filter-reduce paradigm for handling sets of data.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 0
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create <strong>two</strong> new files in Thonny.</p>
+<ul>
+<li><code>lab.py</code> is where you’ll write your code. Follow <a href="https://raw.githubusercontent.com/PhilChodrow/CSCI-0145/main/labs/map-filter-reduce/lab.py">this link</a>, select all the code, and paste it into your <code>lab.py</code> file.</li>
+<li><code>data.py</code> contains the data that you’ll use in the final part of this assignment. Follow <a href="https://raw.githubusercontent.com/PhilChodrow/CSCI-0145/main/labs/map-filter-reduce/data.py">this link</a>, select the entire contents of the page (try <code>cmd + a</code> on Mac or <code>ctrl + a</code> on Windows), and paste the result into the <code>data.py</code> file.</li>
+</ul>
+<p><strong>Please save both of these files in the same folder!</strong></p>
+<p>The <code>data</code> variable that we imported with this code is a list. In the <code>ACTIVITY 0</code> area, write code that:</p>
+<ul>
+<li><em>Prints</em> the first 10 elements of the <code>data</code> variable.</li>
+<li><em>Prints</em> the length of the <code>data</code> variable, optionally with a nice message.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="international-standard-book-numbers" class="level1 page-columns page-full">
+<h1>International Standard Book Numbers</h1>
+<p>Our task this week is to determine the validity of an International Standard Book Number (ISBN). An ISBN is a unique number that identifies a book. You may have seen these numbers inside or on the back of many of the books you read. ISBNs often come with barcodes that make it easy for librarians to scan them.</p>
+
+<div class="no-row-height column-margin column-container"><div id="fig-isbn" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/EAN-13-ISBN-13.svg/640px-EAN-13-ISBN-13.svg.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 1: An example of an ISBN and barcode on the back of a book. This ISBN has 13 digits. To keep things simple today, we are only going to work with the ISBN-10 format, which has only 10 digits. ISBN-10 was the standard until recently, when it was determined that we needed more numbers for more books!</figcaption><p></p>
+</figure>
+</div></div><section id="anatomy-of-an-isbn" class="level2">
+<h2 class="anchored" data-anchor-id="anatomy-of-an-isbn">Anatomy of an ISBN</h2>
+<p>A 10-digit ISBN number has two parts:</p>
+<ul>
+<li>9 <strong>identifier digits</strong>, which are all digits from 0 to 9.</li>
+<li>1 <strong>check digit</strong>. The purpose of the check digit is to confirm the accuracy of the identifier digits. If the check digit does not match the identifier digits, then this may identify a typo in the 9 identifier digits. The check digit can be <strong>either</strong> a digit between 0 and 9 <strong>or</strong> the letter X.</li>
+</ul>
+<p>For example, consider the ISBN <code>1438946685</code>. In this ISBN, the first 9 digits <code>143894668</code> contain information about the book, while the last digit <code>5</code> is the check digit. Another possible ISBN is <code>486910583X</code>, since the last digit is allowed to be an <code>X</code>.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a function called <code>well_formed()</code> to check whether an input string <code>s</code> has the structure of a well-formed ISBN. <code>well_formed(s)</code> should return <code>True</code> if and only if all of the following are true:</p>
+<ul>
+<li><code>s</code> is a string with 10 characters.</li>
+<li>The first 9 characters of <code>s</code> are all digits between 0 and 9.</li>
+<li>The last character of <code>s</code> is EITHER a digit between 0 and 9 or the character <code>X</code>.</li>
+</ul>
+<p>If any of these conditions are not met, <code>well_formed(s)</code> should return <code>False</code>.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>well_formed(<span class="st">"1438946686"</span>) <span class="co"># True</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>well_formed(<span class="st">"486910583X"</span>) <span class="co"># True</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>well_formed(<span class="st">"1438945"</span>)    <span class="co"># False (wrong number of digits)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>well_formed(<span class="st">"1434X88945"</span>) <span class="co"># False (only last digit can be X)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>well_formed(<span class="st">"143418894H"</span>) <span class="co"># False (last digit must be integer or X)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Hint</strong>: You can check of a character <code>char</code> is a digit by checking whether <code>char in "0123456789"</code>. Similarly, you can check whether <code>char</code> is a valid final digit of an ISBN by checking <code>char in "0123456789X"</code>.</p>
+</div>
+</div>
+</section>
+<section id="the-check-digit" class="level2">
+<h2 class="anchored" data-anchor-id="the-check-digit">The Check Digit</h2>
+<p>The final digit of the ISBN is the check digit. The check digit is calculated according to a specific algorithm, based on the first 9 digits. Its purpose is to guard against possible typos when recording ISBN numbers. If the check digit doesn’t match the first 9 numbers, then it’s very likely that someone made a typo when recording the ISBN. In this case, we say that the ISBN is <em>corrupted</em>. It is likely necessary to check and correct the ISBN.</p>
+<p>Here’s how check digits are calculated. Suppose that the first 9 digits of an ISBN are <code>143894668</code>.</p>
+<ol type="1">
+<li>In left-to-right order, multiply the first digit by 10, the second digit by 9, the third digit by 8, and so on. The rightmost-digit is multiplied by 2. We then add up those terms, obtaining a sum that I’ll call <code>s</code>. In our example, we would do:</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    s <span class="op">=</span> <span class="dv">10</span>×<span class="dv">1</span> <span class="op">+</span> <span class="dv">9</span>×<span class="dv">4</span> <span class="op">+</span> <span class="dv">8</span>×<span class="dv">3</span> <span class="op">+</span> <span class="dv">7</span>×<span class="dv">8</span> <span class="op">+</span> <span class="dv">6</span>×<span class="dv">9</span> <span class="op">+</span> <span class="dv">5</span>×<span class="dv">4</span> <span class="op">+</span> <span class="dv">4</span>×<span class="dv">6</span> <span class="op">+</span> <span class="dv">3</span>×<span class="dv">6</span> <span class="op">+</span> <span class="dv">2</span>×<span class="dv">8</span> <span class="op">=</span> <span class="dv">258</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Next, we take this sum (call it <code>s</code>) and compute <code>s</code> modulo <code>11</code>. Recall that <code>modulo</code> computes the <code>remainder</code> of the division of two numbers. You can compute <code>s</code> modulo <code>11</code> using the syntax <code>s % 11</code>. In our example, <code>258 % 11 = 5</code></li>
+<li>We then subtract this result from 11 to obtain a result <code>d</code>:</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    d <span class="op">=</span> <span class="dv">11</span> <span class="op">-</span> <span class="dv">5</span> <span class="op">=</span> <span class="dv">6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Almost there!
+<ul>
+<li>If <code>d == 11</code>, then the <code>check_digit</code> is <code>0</code>.</li>
+<li>If <code>d == 10</code>, then the <code>check_digit</code> is `X``.</li>
+<li>Otherwise, the <code>check_digit</code> is <code>d</code>.</li>
+</ul></li>
+</ol>
+<p>In our case, <code>d = 6</code>, and so <code>check_digit</code> has value <code>6</code>. So, the full ISBN would be <code>1438946686</code>, with <code>6</code> being the <code>check_digit</code>.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a function called <code>check_digit()</code> whose input is a string containing the first 9 digits of an ISBN. Its output should be the check digit, computed according to the algorithm above. The output should always be a string.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>check_digit(<span class="st">"143894668"</span>) <span class="co"># returns "6"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>check_digit(<span class="st">"563872373"</span>) <span class="co"># returns "0"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>check_digit(<span class="st">"203740588"</span>) <span class="co"># returns "X"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Check your function in these three cases, and include the checks in your code.</p>
+<p><strong>Hints</strong>:</p>
+<ul>
+<li>Convert an integer to a string like this: <code>str(6)</code>.</li>
+<li>Given a string <code>s = "143894668"</code>, the integer value of the <code>i</code>th digit of <code>s</code> is <code>int(s[i])</code>.</li>
+<li>To do the sum in Step 1, you can use the following pattern:</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">9</span>):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        total <span class="op">=</span> total <span class="op">+</span> <span class="bu">int</span>(first_9_digits[i]) <span class="op">*</span> (Y<span class="op">-</span>i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Here, <code>Y</code> is an integer that you will need think about and fill in.</li>
+</ul>
+</div>
+</div>
+<p>Suppose now that we’re given a string like <code>"203740588X"</code>. We’d like to figure out whether this string is a correct ISBN, a corrupted ISBN (check digit doesn’t match), or not an ISBN at all.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a function called <code>classify_single_input()</code>. This function should accept a single string as input. Its output is one of three strings: <code>"correct"</code>, <code>"corrupted"</code>, or <code>"not_ISBN"</code>.</p>
+<p>An input string <code>s</code> is <code>"not_ISBN"</code> if <code>well_formed(s)</code> is <code>False</code>. If <code>well_formed(s)</code> is <code>True</code>, AND if <code>s[9]</code> agrees with <code>check_digit(s[:9])</code>, then <code>s</code> is <code>"correct"</code>. Otherwise, <code>s</code> is <code>"corrupted"</code>. Check your function on the following test cases:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>classify_single_input(<span class="st">"1438946686"</span>) <span class="co"># "correct"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>classify_single_input(<span class="st">"2037405886"</span>) <span class="co"># "corrupted"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>classify_single_input(<span class="st">"ISB NUMBER"</span>) <span class="co"># "not_ISBN"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Include these checks in your code.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="processing-batches-of-data" class="level1 page-columns page-full">
+<h1>Processing Batches of Data</h1>
+<p>One of the main powers of computation is to process <em>batches</em> of data. In this part of the lab activity, we’ll practice using the map-filter-reduce paradigm to process data. Put simply:</p>
+
+<div class="no-row-height column-margin column-container"><div id="fig-sandwich" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://miro.medium.com/max/1400/1*DreeF8a4h2pvxRly39HjAA.jpeg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 2: The stages of map-filter-reduce, as a sandwich. <a href="https://towardsdatascience.com/accelerate-your-python-list-handling-with-map-filter-and-reduce-d70941b19e52">Image source</a></figcaption><p></p>
+</figure>
+</div></div><ul>
+<li>Map operations take lists of data and produce lists of the same length containing new information.</li>
+<li>Filter operations take lists of data and produce smaller lists, based on some criterion.</li>
+<li>Reduce operations summarize lists of data into a single value.</li>
+</ul>
+<p>Suppose now that you are librarian and you have received a large batch of ISBN numbers in a data file. However, you’re not sure which ones are valid! Some of the data are actually <em>not ISBNs at all</em>, while others are ISBNs that may be <em>corrupted</em> in some way. Here’s an example of your input data:</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">This is just a regular list; I’ve written it vertically to make it easier to see the individual entries. Python will process it normally!</span></div></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>[</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"1438946686"</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"5638723730"</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"203740588X"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2037405886"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"hello"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"563ZXY3730"</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ISB NUMBER"</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    .</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    .</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    .</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Some of these are valid ISBNs, some are corrupted ISBNs with incorrect check digits, and others are not ISBNs at all.</p>
+<section id="map-operations" class="level3">
+<h3 class="anchored" data-anchor-id="map-operations">Map Operations</h3>
+<p>A <strong>map</strong> operation consists in applying the same function to each entry of a list, resulting in a new list <strong><em>of the same length</em></strong>. Let’s write a map operation to classify each ISBN in a list.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a function called <code>classify_many_inputs()</code>. This function should accept a <strong>list of strings</strong> as input. Its output is a list of strings the same length. The entries of this list should state whether each entry of the input list is <code>"correct"</code>, <code>"corrupted"</code>, or <code>"not_ISBN"</code>.</p>
+<p>For example:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>input_nums <span class="op">=</span> [<span class="st">"1438946686"</span>, <span class="st">"2037405886"</span>, <span class="st">"ISB NUMBER"</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>classification <span class="op">=</span> classify_input(input_nums) </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classification)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> [<span class="st">"correct"</span>, <span class="st">"corrupted"</span>, <span class="st">"not_ISBN"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can test your function on the <code>data</code> variable that we imported at the top of <code>lab.py</code>. Here’s a sample function call and the expected output.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(classify_many_inputs(data[:<span class="dv">10</span>]))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> [<span class="st">'corrupted'</span>, <span class="st">'correct'</span>, <span class="st">'not_ISBN'</span>, <span class="st">'correct'</span>, <span class="st">'corrupted'</span>, </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>     <span class="st">'not_ISBN'</span>, <span class="st">'correct'</span>, <span class="st">'corrupted'</span>, <span class="st">'correct'</span>, <span class="st">'correct'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Perform this check and include it in your code.</p>
+</div>
+</div>
+</section>
+<section id="filter-operations" class="level3">
+<h3 class="anchored" data-anchor-id="filter-operations">Filter Operations</h3>
+<p>A <strong>filter</strong> operation takes a list as input and creates a new list by choosing some items from that list according to a criterion. The easiest way to do this is with an <code>if</code> statement. Filter operations almost always result in lists that are smaller than their original inputs.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write two functions: <code>filter_correct_ISBNs()</code> and <code>filter_corrupted_ISBNs()</code>. Each of these functions takes the same input as <code>classify_many_inputs()</code>: a list of strings.</p>
+<ul>
+<li><code>filter_correct_ISBNs()</code> should return a list containing <strong>only</strong> correct ISBNs (i.e.&nbsp;inputs <code>s</code> such that <code>classify_single_input(s)</code> is <code>"correct"</code>).</li>
+<li><code>filter_corrupted_ISBNs()</code> should return a list containing <strong>only</strong> corrupted ISBNs (i.e.&nbsp;inputs <code>s</code> such that <code>classify_single_input(s)</code> is <code>"corrupted"</code>).</li>
+</ul>
+<p>You don’t need to include any checks in this part – we’ll check in the next activity.</p>
+</div>
+</div>
+</section>
+<section id="reduce-operations" class="level3">
+<h3 class="anchored" data-anchor-id="reduce-operations">Reduce Operations</h3>
+<p>A reduce operation takes a list as input and produces a single value, such as a number or string. A simple example of a reduce operation is computing the length of a list.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a function called <code>summarize_ISBNs()</code>. This function should accept a list of strings as input. It should <strong>print</strong> a message describing the number of <code>"correct"</code>, <code>"corrupted"</code>, and <code>"not_ISBN"</code> entries in the input. Here’s the expected output for the <code>data</code> variable that we imported earlier.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>summarize_ISBNs(data)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> There are <span class="dv">678</span> correct ISBNs</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> There are <span class="dv">146</span> corrupted ISBNs</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> There are <span class="dv">176</span> entries which are <span class="kw">not</span> valid ISBNs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Include this check in your code file.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 7
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Great work! One member from your team should submit this file on Gradescope, adding the partner’s name to the submission upload.</p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+<p><br> <br> <span style="color:grey;">© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022</span></p></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

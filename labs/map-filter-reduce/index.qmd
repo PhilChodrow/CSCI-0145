@@ -6,16 +6,37 @@ callout-appearance: simple
 
 *This lab is adapted from [an assignment](https://eikmeier.sites.grinnell.edu/csc-151-s221/assignments/project02.html) by Peter-Michael Osera, Samuel Rebelsky, and Nicole Eikmeier at Grinnell College.* 
 
-In this Lab activity, we'll build on our skills with strings and functions, and combine them with new skills related to loops and lists. Along the way, we'll introduce the map-filter-reduce paradigm for handling sets of data. 
+**Reminder**: you and your partner are a team! You should not move forward to one activity until you are both comfortable with the previous activity. 
+
+# Introduction and Setup
+
+In this lab activity, we'll build on our skills with strings and functions, and combine them with new skills related to loops and lists. Along the way, we'll introduce the map-filter-reduce paradigm for handling sets of data. 
+
+::: {.callout-note}
+
+## Activity 0
+
+Create **two** new files in Thonny. 
+
+- `lab.py` is where you'll write your code. Follow [this link](https://raw.githubusercontent.com/PhilChodrow/CSCI-0145/main/labs/map-filter-reduce/lab.py), select all the code, and paste it into your `lab.py` file. 
+- `data.py` contains the data that you'll use in the final part of this assignment. Follow [this link](https://raw.githubusercontent.com/PhilChodrow/CSCI-0145/main/labs/map-filter-reduce/data.py), select the entire contents of the page (try `cmd + a` on Mac or `ctrl + a` on Windows), and paste the result into the `data.py` file. 
+
+**Please save both of these files in the same folder!** 
+
+The `data` variable that we imported with this code is a list. In the `ACTIVITY 0` area, write code that: 
+
+- *Prints* the first 10 elements of the `data` variable. 
+- *Prints* the length of the `data` variable, optionally with a nice message. 
+
+:::
 
 # International Standard Book Numbers
 
-Our problem this week is to determine the validity of an International Standard Book Number (ISBN). An ISBN is a unique number that identifies a book. You may have seen these numbers inside or on the back of many of the books you read. ISBNs often come with barcodes that make it easy for librarians to scan them. 
+Our task this week is to determine the validity of an International Standard Book Number (ISBN). An ISBN is a unique number that identifies a book. You may have seen these numbers inside or on the back of many of the books you read. ISBNs often come with barcodes that make it easy for librarians to scan them. 
 
 ::: {#fig-isbn .column-margin}
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/EAN-13-ISBN-13.svg/640px-EAN-13-ISBN-13.svg.png)
-
 
 An example of an ISBN and barcode on the back of a book. This ISBN has 13 digits. To keep things simple today, we are only going to work with the ISBN-10 format, which has only 10 digits. ISBN-10 was the standard until recently, when it was determined that we needed more numbers for more books! 
 :::
@@ -29,23 +50,14 @@ A 10-digit ISBN number has two parts:
 
 For example, consider the ISBN `1438946685`. In this ISBN, the first 9 digits `143894668` contain information about the book, while the last digit `5` is the check digit. Another possible ISBN is `486910583X`, since the last digit is allowed to be an `X`. 
 
-::: {.callout-note}
 
-## Activity 0
-
-Create **two** new files in Thonny. 
-
-- `lab.py` is where you'll write your code. 
-
-
-:::
 
 
 ::: {.callout-note}
 
 ## Activity 1
 
-Write a function called `well_formed()` to check whether an input string `s` has the structure of a well-formed ISBN. `well_formed(s)` should return `True` if and only if: 
+Write a function called `well_formed()` to check whether an input string `s` has the structure of a well-formed ISBN. `well_formed(s)` should return `True` if and only if all of the following are true: 
 
 - `s` is a string with 10 characters. 
 - The first 9 characters of `s` are all digits between 0 and 9. 
@@ -63,16 +75,16 @@ well_formed("1434X88945") # False (only last digit can be X)
 well_formed("143418894H") # False (last digit must be integer or X)
 ```
 
-**Hint**: You can check of a character `char` is a digit by checking whether `char in "0123456789"`. 
+**Hint**: You can check of a character `char` is a digit by checking whether `char in "0123456789"`. Similarly, you can check whether `char` is a valid final digit of an ISBN by checking `char in "0123456789X"`. 
 :::
 
 ## The Check Digit
 
-The final digit of the ISBN is the check digit. The check digit is calculated according to a specific algorithm, based on the first 9 digits. Its purpose is to guard against possible typos when recording ISBN numbers. If the check digit doesn't match the first 9 numbers, then it's very likely that a typo occurred and that it is necessary to check and correct the ISBN. 
+The final digit of the ISBN is the check digit. The check digit is calculated according to a specific algorithm, based on the first 9 digits. Its purpose is to guard against possible typos when recording ISBN numbers. If the check digit doesn't match the first 9 numbers, then it's very likely that someone made a typo when recording the ISBN. In this case, we say that the ISBN is *corrupted*. It is likely necessary to check and correct the ISBN. 
 
 Here's how check digits are calculated. Suppose that the first 9 digits of an ISBN are `143894668`.
 
-1. In left-to-right order, multiply the first digit by 10, the second digit by 9, the third digit by 8, and so on. The right-digit is multiplied by 2. We then add up those terms, obtaining a sum that I'll call `s`.  In our example, we would do: 
+1. In left-to-right order, multiply the first digit by 10, the second digit by 9, the third digit by 8, and so on. The rightmost-digit is multiplied by 2. We then add up those terms, obtaining a sum that I'll call `s`.  In our example, we would do: 
 ```python
     s = 10×1 + 9×4 + 8×3 + 7×8 + 6×9 + 5×4 + 4×6 + 3×6 + 2×8 = 258
 ```
@@ -102,6 +114,8 @@ check_digit("563872373") # returns "0"
 check_digit("203740588") # returns "X"
 ```
 
+Check  your function in these three cases, and include the checks in your code. 
+
 **Hints**: 
 
 - Convert an integer to a string like this: `str(6)`. 
@@ -116,7 +130,7 @@ check_digit("203740588") # returns "X"
 
 :::
 
-Suppose now that we're given a string like `"203740588X"`. We'd like to figure out whether this string is a correct ISBN, a corrupted ISBN, or not an ISBN at all. 
+Suppose now that we're given a string like `"203740588X"`. We'd like to figure out whether this string is a correct ISBN, a corrupted ISBN (check digit doesn't match), or not an ISBN at all. 
 
 ::: {.callout-note}
 
@@ -132,6 +146,7 @@ classify_single_input("2037405886") # "corrupted"
 classify_single_input("ISB NUMBER") # "not_ISBN"
 ```
 
+Include these checks in your code. 
 
 
 :::
@@ -196,6 +211,17 @@ print(classification)
 >>> ["correct", "corrupted", "not_ISBN"]
 ```
 
+You can test your function on the `data` variable that we imported at the top of `lab.py`. Here's a sample function call and the expected output. 
+
+```python
+print(classify_many_inputs(data[:10]))
+
+>>> ['corrupted', 'correct', 'not_ISBN', 'correct', 'corrupted', 
+     'not_ISBN', 'correct', 'corrupted', 'correct', 'correct']
+```
+
+Perform this check and include it in your code. 
+
 :::
 
 ### Filter Operations
@@ -211,6 +237,8 @@ Write two functions: `filter_correct_ISBNs()` and `filter_corrupted_ISBNs()`. Ea
 - `filter_correct_ISBNs()` should return a list containing **only** correct ISBNs (i.e. inputs `s` such that `classify_single_input(s)` is `"correct"`). 
 - `filter_corrupted_ISBNs()` should return a list containing **only** corrupted ISBNs (i.e. inputs `s` such that `classify_single_input(s)` is `"corrupted"`). 
 
+You don't need to include any checks in this part -- we'll check in the next activity. 
+
 :::
 
 ### Reduce Operations
@@ -221,7 +249,7 @@ A reduce operation takes a list as input and produces a single value, such as a 
 
 ## Activity 6
 
-Write a function called `summarize_ISBNs()`. This function should accept a list of strings as input. It should **print** a message describing the number of `"correct"`, `"corrupted"`, and `"not_ISBN"` entries in the input. For example:
+Write a function called `summarize_ISBNs()`. This function should accept a list of strings as input. It should **print** a message describing the number of `"correct"`, `"corrupted"`, and `"not_ISBN"` entries in the input. Here's the expected output for the `data` variable that we imported earlier. 
 
 ```python
 summarize_ISBNs(data)
@@ -230,8 +258,18 @@ summarize_ISBNs(data)
 >>> There are 176 entries which are not valid ISBNs
 ```
 
+Include this check in your code file. 
+
 :::
 
+
+::: {.callout-note}
+
+## Activity 7
+
+Great work! One member from your team should submit this file on Gradescope, adding the partner's name to the submission upload. 
+
+:::
 
 
 
