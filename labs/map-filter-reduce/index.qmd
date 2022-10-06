@@ -6,11 +6,7 @@ callout-appearance: simple
 
 *This lab is adapted from [an assignment](https://eikmeier.sites.grinnell.edu/csc-151-s221/assignments/project02.html) by Peter-Michael Osera, Samuel Rebelsky, and Nicole Eikmeier at Grinnell College.* 
 
-
-
 In this Lab activity, we'll build on our skills with strings and functions, and combine them with new skills related to loops and lists. Along the way, we'll introduce the map-filter-reduce paradigm for handling sets of data. 
-
-
 
 # International Standard Book Numbers
 
@@ -35,6 +31,18 @@ For example, consider the ISBN `1438946685`. In this ISBN, the first 9 digits `1
 
 ::: {.callout-note}
 
+## Activity 0
+
+Create **two** new files in Thonny. 
+
+- `lab.py` is where you'll write your code. 
+
+
+:::
+
+
+::: {.callout-note}
+
 ## Activity 1
 
 Write a function called `well_formed()` to check whether an input string `s` has the structure of a well-formed ISBN. `well_formed(s)` should return `True` if and only if: 
@@ -48,22 +56,90 @@ If any of these conditions are not met, `well_formed(s)` should return `False`.
 For example: 
 
 ```python
-well_formed("1438946685") # True
+well_formed("1438946686") # True
 well_formed("486910583X") # True
 well_formed("1438945")    # False (wrong number of digits)
 well_formed("1434X88945") # False (only last digit can be X)
 well_formed("143418894H") # False (last digit must be integer or X)
 ```
 
+**Hint**: You can check of a character `char` is a digit by checking whether `char in "0123456789"`. 
 :::
 
-## How 
+## The Check Digit
+
+The final digit of the ISBN is the check digit. The check digit is calculated according to a specific algorithm, based on the first 9 digits. Its purpose is to guard against possible typos when recording ISBN numbers. If the check digit doesn't match the first 9 numbers, then it's very likely that a typo occurred and that it is necessary to check and correct the ISBN. 
+
+Here's how check digits are calculated. Suppose that the first 9 digits of an ISBN are `143894668`.
+
+1. In left-to-right order, multiply the first digit by 10, the second digit by 9, the third digit by 8, and so on. The right-digit is multiplied by 2. We then add up those terms, obtaining a sum that I'll call `s`.  In our example, we would do: 
+```python
+    s = 10×1 + 9×4 + 8×3 + 7×8 + 6×9 + 5×4 + 4×6 + 3×6 + 2×8 = 258
+```
+2. Next, we take this sum (call it `s`) and compute `s` modulo `11`. Recall that `modulo` computes the `remainder` of the division of two numbers. You can compute `s` modulo `11` using the syntax `s % 11`. In our example, `258 % 11 = 5`
+3. We then subtract this result from 11 to obtain a result `d`: 
+```python
+    d = 11 - 5 = 6
+``` 
+4. Almost there! 
+    - If `d == 11`, then the `check_digit`  is `0`. 
+    - If `d == 10`, then the  `check_digit` is `X``. 
+    - Otherwise, the `check_digit` is  `d`. 
+
+In our case, `d = 6`, and so `check_digit` has value `6`. So, the full ISBN would be `1438946686`, with `6` being the `check_digit`. 
+
+::: {.callout-note}
+
+## Activity 2
+
+Write a function called `check_digit()` whose input is a string containing the first 9 digits of an ISBN. Its output should be the check digit, computed according to the algorithm above. The output should always be a string. 
+
+For example: 
+
+```python
+check_digit("143894668") # returns "6"
+check_digit("563872373") # returns "0"
+check_digit("203740588") # returns "X"
+```
+
+**Hints**: 
+
+- Convert an integer to a string like this: `str(6)`. 
+- Given a string `s = "143894668"`, the integer value of the `i`th digit of `s` is `int(s[i])`. 
+- To do the sum in Step 1, you can use the following pattern: 
+```python
+    total = 0
+    for i in range(9):
+        total = total + int(first_9_digits[i]) * (Y-i)
+```
+- Here, `Y` is an integer that you will need think about and fill in. 
+
+:::
+
+Suppose now that we're given a string like `"203740588X"`. We'd like to figure out whether this string is a correct ISBN, a corrupted ISBN, or not an ISBN at all. 
+
+::: {.callout-note}
+
+## Activity 3
+
+Write a function called `classify_single_input()`. This function should accept a single string as input. Its output is one of three strings: `"correct"`, `"corrupted"`, or `"not_ISBN"`. 
+
+An input string `s` is `"not_ISBN"` if `well_formed(s)` is `False`. If `well_formed(s)` is `True`, AND if `s[9]` agrees with `check_digit(s[:9])`, then `s` is `"correct"`. Otherwise, `s` is `"corrupted"`. Check your function on the following test cases: 
+
+```python
+classify_single_input("1438946686") # "correct"
+classify_single_input("2037405886") # "corrupted"
+classify_single_input("ISB NUMBER") # "not_ISBN"
+```
 
 
 
+:::
+
+# Processing Batches of Data
 
 
-
+One of the main powers of computation is to process *batches* of data. In this part of the lab activity, we'll practice using the map-filter-reduce paradigm to process data. Put simply: 
 
 ::: {#fig-sandwich .column-margin}
 ![](https://miro.medium.com/max/1400/1*DreeF8a4h2pvxRly39HjAA.jpeg)
@@ -73,113 +149,88 @@ The stages of map-filter-reduce, as a sandwich.
 
 :::
 
-### Map
 
-A **mapping** operation consists in applying the same function to each entry of a list, resulting in a new list ***of the same length***. Here is an example of using a mapping operation to compute the length of each string in a list: 
+- Map operations take lists of data and produce lists of the same length containing new information. 
+- Filter operations take lists of data and produce smaller lists, based on some criterion. 
+- Reduce operations summarize lists of data into a single value. 
 
-```python
-L = ["Introduction", "to", "Computing"]
 
-length_L = []
-for s in L:
-    length_L.append(len(s))
+Suppose now that you are librarian and you have received a large batch of ISBN numbers in a data file. However, you're not sure which ones are valid! Some of the data are actually *not ISBNs at all*, while others are ISBNs that may be *corrupted* in some way. Here's an example of your input data: 
 
-# now length_L has value [12, 2, 9]
-```
-
-### Filter
-
-A **filtering** operation creates a smaller list by choosing only a certain number of items from that list. The easiest way to do this is with an `if` statement. For example, here is an example of *filtering* a list of integers to choose only the odd ones: 
+[This is just a regular list; I've written it vertically to make it easier to see the individual entries. Python will process it normally!]{.aside}
 
 ```python
-L = [45, 67, 32, 86, 90, 43]
-odd_L = []
-for i in L:
-    if i % 2 == 1:
-        odd_L.append(i)
-
-# now odd_L has value [45, 67, 43]
+[
+    "1438946686",
+    "5638723730",
+    "203740588X",
+    "2037405886",
+    "hello",
+    "563ZXY3730",
+    "ISB NUMBER",
+    .
+    .
+    .
+]
 ```
+Some of these are valid ISBNs, some are corrupted ISBNs with incorrect check digits, and others are not ISBNs at all. 
 
-### Reduce
 
-A **reducing** operation takes a list of data and converts it into a single value. For example, the following code takes a list of numbers and computes their average (mean). We'll use the same list `L` as the previous example. 
+### Map Operations
+
+A **map** operation consists in applying the same function to each entry of a list, resulting in a new list ***of the same length***. Let's write a map operation to classify each ISBN in a list. 
+
+::: {.callout-note}
+
+## Activity 4
+
+Write a function called `classify_many_inputs()`. This function should accept a **list of strings** as input. Its output is a list of strings the same length. The entries of this list should state whether each entry of the input list is `"correct"`, `"corrupted"`, or `"not_ISBN"`. 
+
+For example: 
 
 ```python
-total = 0
-for i in L:
-    total = total + i # (or total += i)
-mean = total / len(L) 
+input_nums = ["1438946686", "2037405886", "ISB NUMBER"]
+classification = classify_input(input_nums) 
+print(classification)
+
+>>> ["correct", "corrupted", "not_ISBN"]
 ```
 
-In this lab assignment, you'll write some simple functions for mapping, filtering, and reducing operations. 
+:::
 
+### Filter Operations
 
+A **filter** operation takes a list as input and creates a new list by choosing some items from that list according to a criterion. The easiest way to do this is with an `if` statement. Filter operations almost always result in lists that are smaller than their original inputs. 
 
+::: {.callout-note}
 
+## Activity 5
 
+Write two functions: `filter_correct_ISBNs()` and `filter_corrupted_ISBNs()`. Each of these functions takes the same input as `classify_many_inputs()`: a list of strings. 
 
-# Part 1: Checking ISBNs
+- `filter_correct_ISBNs()` should return a list containing **only** correct ISBNs (i.e. inputs `s` such that `classify_single_input(s)` is `"correct"`). 
+- `filter_corrupted_ISBNs()` should return a list containing **only** corrupted ISBNs (i.e. inputs `s` such that `classify_single_input(s)` is `"corrupted"`). 
 
-## Check Digits
+:::
+
+### Reduce Operations
+
+A reduce operation takes a list as input and produces a single value, such as a number or string. A simple example of a reduce operation is computing the length of a list. 
+
+::: {.callout-note}
+
+## Activity 6
+
+Write a function called `summarize_ISBNs()`. This function should accept a list of strings as input. It should **print** a message describing the number of `"correct"`, `"corrupted"`, and `"not_ISBN"` entries in the input. For example:
 
 ```python
-def check_digit(first_9_digits):
-    total = 0
-    for i in range(9):
-        total = total + first_9_digits[i] * (10-i)
-    
-    modded = total % 11
-
-    if modded == 10:
-        return "X"
-    else:
-        return modded
+summarize_ISBNs(data)
+>>> There are 678 correct ISBNs
+>>> There are 146 corrupted ISBNs
+>>> There are 176 entries which are not valid ISBNs
 ```
 
-## Check Well-Formed ISBN
-
-# Part 2: Checking Batches
-
-## Map
-
-## Filter
-
-## Reduce
-
-
-
-
-
-
-
-
-# Setup
-
-Create two new files and save them **in the same location**: 
-
-- `text.py`. In this file, copy and paste the entirety of [this code](https://raw.githubusercontent.com/PhilChodrow/CSCI-0145/main/labs/map-filter-reduce/text.py). You might find it helpful to open the window and use `cmd + a` (Mac) or `ctrl + a` (Windows) to select the entire file. 
-- `lab.py`. In this file, copy and paste the entirety of [this code](https://raw.githubusercontent.com/PhilChodrow/CSCI-0145/main/labs/map-filter-reduce/lab-template.py). 
-
-## Our Data
-
-Our data for this activity is the first ten chapters of the book *Emma* by Jane Austen. 
-
-The two lines at the top of `lab.py` are: 
-
-```python
-from text import emma
-words = emma.split(" ")
-```
-
-
-
-
-
-
-
-
-
+:::
 
 
 
