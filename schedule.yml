@@ -192,7 +192,7 @@
   publish: true
 - date: 2022-10-05
   header: |
-    Iteration
+    Lists
   summary: |
     We introduce lists, data structures that can hold ordered sequences of arbitrary objects. We also begin to discuss some of the synergies between lists and iteration. 
   objectives: 
@@ -209,6 +209,21 @@
   publish: true
 - date: 2022-10-06
   header: |
+    Lab: Iteration and Lists
+  summary: |
+    We write functions that check the validity of International Standard Book Numbers (ISBNs). Along the way, we practice writing functions, iteration, and map-filter-reduce operations.  
+  objectives: 
+    - Computational Thinking
+    - Python Programming
+    - Applications
+  activity: 
+    - <a href="labs/map-filter-reduce/">Lab 3</a>
+  assigned: 
+    - Lab 3
+  module: Iteration and Data Structures
+  publish: true
+- date: 2022-10-13
+  header: |
     Lab: Developers as Future-Makers
   summary: |
     We write functions that filter applicants to an opportunity according to a set of numerical criteria, and reflect on the ethical challenges associated with such filters. Along the way, we practice iteration and working with lists. 
@@ -217,9 +232,9 @@
     - Python Programming
     - Social Responsibility
   activity: 
-    - <a href="labs/future-makers/">Lab 3</a>
+    - <a href="labs/future-makers/">Lab 4</a>
   assigned: 
-    - Lab 3
+    - Lab 4
   module: Iteration and Data Structures
   publish: true
 
