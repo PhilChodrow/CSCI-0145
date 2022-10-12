@@ -13,8 +13,9 @@ There are LOTS of other data structures, all of which are suited for
 representing different kinds of relationships between data. 
 
 In this lecture, we'll introduce a few more data structures. We'll focus on the
-most useful of these -- dictionaries. If you continue in computer science,
-you'll take an entire class on data structures in CSCI 0201. 
+most useful of these for everyday programming -- dictionaries. If you continue
+in computer science, you'll take an entire class on data structures in CSCI
+0201. 
 """
 
 """
@@ -218,7 +219,7 @@ def faster_fib(n):
     
     # check: have we previously computed this Fibonacci number?
     if n in already_computed:
-        return already_computed[n] # [] because this is dictionary indexing, not a funciton call
+        return already_computed[n] # [] because this is dictionary indexing, not a function call
     # if not, compute it and SAVE IT for future use
     else:
         new = faster_fib(n-1) + faster_fib(n-2) # compute the new value
