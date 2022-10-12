@@ -49,7 +49,7 @@ def quadratic_formula(a, b, c):
     """
     first  = (-b + (b**2 - 4*a*c)**(0.5))/2
     second = (-b - (b**2 - 4*a*c)**(0.5))/2
-    return (first, second)
+    return (first, second) # can also simply write return first, second 
 
 x_1, x_2 = quadratic_formula(4, 3, 2)
     
@@ -130,7 +130,7 @@ Unlike lists, DICTIONARIES DO NOT HAVE AN ORDER. There is no "first" element of
 a dictionary. 
 """
 
-# due_dates[0] # raises an error
+# due_dates[0] # raises an error unless 0 is a key in due_dates
 
 """
 A very important feature of dictionaries is that they are mutable: they can be

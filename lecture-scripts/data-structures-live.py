@@ -46,7 +46,7 @@ def quadratic_formula(a, b, c):
     return (first, second)
 
 x_1, x_2 = quadratic_formula(4, 3, 2)    
-print(x_1, x_2)
+# print(x_1, x_2)
 
 """
 ------------
@@ -195,7 +195,7 @@ def faster_fib(n):
         already_computed[n] = new               # store it so we can use it later
         return new
 
-print(faster_fib(100)) # this would have taken *days* at least with the recursive definition
+# print(faster_fib(100)) # this would have taken *days* at least with the recursive definition
 
 
 """
@@ -226,4 +226,4 @@ This gives a very handy way to count the number of *unique* elements in a list.
 def num_unique(L):
     return len(set(L))
 
-print(num_unique(L))
+# print(num_unique(L))
