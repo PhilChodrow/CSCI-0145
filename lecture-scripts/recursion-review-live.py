@@ -8,6 +8,22 @@ recursion.
 """
 
 """
+RECALL: contains_string()
+"""
+
+def contains_string(L):
+    for item in L:
+        if type(item) == str:
+            return True
+    return False
+
+"""
+Let's work together to implement this function using recursion instead of a for-loop. 
+"""
+
+
+
+"""
 WARMUP: Write a recursive function absolute value function. 
 
 This function should, given a list L of integers, return a version of that list
