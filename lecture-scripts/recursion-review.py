@@ -14,7 +14,9 @@ in which all negative numbers are replaced by their positive versions.
 
 For example: 
 
-L = [-5, 4, 3, -2, 8] abs(L) >>> [5, 4, 3, 2, 8] 
+L = [-5, 4, 3, -2, 8] 
+abs(L) 
+>>> [5, 4, 3, 2, 8] 
 """
 
 def abs(L):

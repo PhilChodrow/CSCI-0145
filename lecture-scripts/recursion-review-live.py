@@ -15,7 +15,9 @@ in which all negative numbers are replaced by their positive versions.
 
 For example: 
 
-L = [-5, 4, 3, -2, 8] abs(L) >>> [5, 4, 3, 2, 8] 
+L = [-5, 4, 3, -2, 8] 
+abs(L) 
+>>> [5, 4, 3, 2, 8] 
 """
 
 def abs(L):
@@ -35,7 +37,8 @@ It can be useful to write recursive functions with multiple arguments. Let's
 write a recursive implementation of the modulus operator %. Our function will be
 called mod(), and mod(x,y) will have the same value as x % y. For example, 
 
-mod(8, 3) >>> 2
+mod(8, 3) 
+>>> 2
 """
 
 def mod(x, y):
