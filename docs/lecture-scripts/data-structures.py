@@ -28,15 +28,14 @@ are *immutable*: once created, a tuple can't be changed. For example, you can't
 .append() anything to a tuple. 
 
 A tuple is denoted by parentheses: ()
-lists: []
 """
 
-example_list  = [1, 2, 3]
-example_tuple = (1, 2, 3)
-second_example = ("totoro", "howl", "kiki")
 
+example_tuple  = (1, 2, 3)
+second_example = ("Totoro", "Howl", "Kiki")
 
-
+print(example_tuple[1])
+print(second_example[2])
 
 """
 Tuples aren't really that useful most of the time, but there is one very
@@ -50,10 +49,11 @@ def quadratic_formula(a, b, c):
     """
     first  = (-b + (b**2 - 4*a*c)**(0.5))/2
     second = (-b - (b**2 - 4*a*c)**(0.5))/2
-    return (first, second)
+    return (first, second) # can also simply write return first, second 
 
-x_1, x_2 = quadratic_formula(4, 3, 2)    
-# print(x_1, x_2)
+x_1, x_2 = quadratic_formula(4, 3, 2)
+    
+print(x_1, x_2)
 
 """
 ------------
@@ -64,9 +64,6 @@ Unlike tuples, dictionaries are *extremely useful* for a wide range of
 programming tasks. A dictionary is a data structure that expresses a
 relationship between pairs of pieces of data. For example, suppose we want to
 represent the relationship between movie characters and their movies: 
-
-
-Char    --> Movie
 
 Howl    --> Howl's Moving Castle 
 Sophie  --> Howl's Moving Castle 
@@ -85,14 +82,14 @@ d = {"Howl"    : "Howl's Moving Castle",
      "Chihiro" : "Spirited Away", 
      "Kiki"    : "Kiki's Delivery Service"}
 
-d["Howl"]
-
 """
 In each pair, the first piece of data is called the *key* and the second piece
 of data is called the *value*. The keys and values of a dictionary can be
 extracted separately using d.keys() and d.values(): 
 """
 
+print(d.keys())
+print(d.values())
 
 """
 These objects aren't literally lists, but they behave in many of the same ways.
@@ -102,6 +99,7 @@ For example, you can iterate through them and convert them to lists:
 for key in d.keys():
     print(key)
 
+L = list(d.keys())
 
 """
 But of course the main thing we want to do is work with the *relationship*
@@ -109,8 +107,8 @@ between each pair. This is where dictionaries get special: you can index them
 *by their keys*. 
 """
 
-d["Howl"]
-d["Kiki"]
+print(d["Howl"])
+print(d["Kiki"])
 
 """
 This makes dictionaries very handy tools for "looking up" something in terms of
@@ -125,14 +123,14 @@ due_dates = {
     "Lab 2"      : "October 6th"
 }
 
-
+print(due_dates["Lab 1"])
 
 """
 Unlike lists, DICTIONARIES DO NOT HAVE AN ORDER. There is no "first" element of
 a dictionary. 
 """
 
-# due_dates[0] # raises an error
+# due_dates[0] # raises an error unless 0 is a key in due_dates
 
 """
 A very important feature of dictionaries is that they are mutable: they can be
@@ -140,10 +138,7 @@ modified, like lists. So, if you receive an extension...
 """
 
 due_dates["Lab 1"] = "October 2nd"
-
-
-
-
+print(due_dates)
 
 """
 Dictionaries have *unique keys*. If you try to add a second pair with the same
@@ -152,29 +147,21 @@ key, the pair will be overwritten.
 You can also add entirely new entries: 
 """
 
-due_dates["Lab 3"] = "October 13th"
-
-# what would have to happen first for this code to work
-# not give an error
-due_dates[2] = "FAKE ASSIGNMENT"
-due_dates[2]
-
-
+due_dates["Lab 3"] = "October 13th" # note: this is a totally made-up date
 
 """
 If a dictionary doesn't have the key you're looking for, you'll get a KeyError: 
 """
 
-# due_dates["Lab 4"]
+due_dates["Lab 4"]
 
 """
 One thing you can do is use the dict.get() method, which allows you to specify a
 value to return in case the key is not found: 
 """
 
-due_dates.get("Lab 3", "not found")
-due_dates.get("Lab 4", "not found")
-
+due_dates.get("Lab 3", "not found") # same as due_dates["Lab 3"]
+due_dates.get("Lab 4", "not found") # no error this time
  
 """
 It's easy to build up dictionaries one item at a time. This makes dictionaries
@@ -185,23 +172,22 @@ filter operations we've seen for working with lists: we start with an empty
 dictionary, and build it up one piece at a time. 
 """
 
-# "hello world"
-# counter = {"h" : 1, "e" : 1, "l" : 3, "o" : 2, ...}
-
 def character_counts(s):
     d = {}
-    for char in s:
+    for char in s: 
+        # if we're seeing that character for the first time: 
         if char not in d.keys():
             d[char] = 1
-        else:
-            d[char] = d[char] + 1
-        print(d)
+        # if we've already seen that character before
+        else: 
+            d[char] = d[char] + 1  
     return d
-
+    
 s = "Living simply makes loving simple." # -- bell hooks
+
 counts = character_counts(s)
-
-
+print(counts)
+print(counts[i]) # number of times that i appears in this string
 
 """
 Dictionaries are also very useful for *memoization*. Memoization refers to
@@ -218,12 +204,6 @@ def fib(n):
     else:
         return fib(n-1) + fib(n-2)
 
-# fib(20)
-# fib(30)
-# fib(40)
-# fib(60)
-
-
 """
 This is a totally fine definition, but as we saw in guided discovery, just
 computing fib(40) or so can take a noticeably long time on your computer. The
@@ -239,14 +219,14 @@ def faster_fib(n):
     
     # check: have we previously computed this Fibonacci number?
     if n in already_computed:
-        return already_computed[n] # [] because this is dictionary indexing, not a funciton call
+        return already_computed[n] # [] because this is dictionary indexing, not a function call
     # if not, compute it and SAVE IT for future use
     else:
         new = faster_fib(n-1) + faster_fib(n-2) # compute the new value
         already_computed[n] = new               # store it so we can use it later
         return new
 
-# print(faster_fib(100)) # this would have taken *days* at least with the recursive definition
+print(faster_fib(100)) # this would have taken *days* at least with the recursive definition
 
 
 """
@@ -277,4 +257,4 @@ This gives a very handy way to count the number of *unique* elements in a list.
 def num_unique(L):
     return len(set(L))
 
-# print(num_unique(L))
+print(num_unique(L))

@@ -1,7 +1,7 @@
 # install the pillow and numpy modules download middimage at
 # https://raw.githubusercontent.com/PhilChodrow/CSCI-0145/main/lecture-scripts/middimage.py
 
-import middimage as mi
+
 
 # ----------------
 # GREYSCALE IMAGES
@@ -9,11 +9,7 @@ import middimage as mi
 # A simple greyscale image can be represented by a list of lists of integers
 # between 0 (white) and 255 (black). 
 
-pixels = [[0, 127, 180],     # first row of pixels
-          [255, 255, 50]]   # second row of pixels
 
-im = mi.MiddImage(data = pixels)
-im.show()
 
 # --------
 # Activity
@@ -44,8 +40,6 @@ pixels = [[[150, 20, 180],   # first row
           [[40, 90, 120],    # second row
            [0, 0, 100]]]
 
-im = mi.MiddImage(data = pixels)
-im.show()
 
 # activity: modify the pixel values to be: your favorite color your partner's
 # favorite color
@@ -59,22 +53,17 @@ im.show()
 # save as jorts.jpeg
 
 # image from file: a beautiful orange boy
-im = mi.open("jorts.jpeg")
-im.show()
 
 # each pixel of im contains three values (RGB)
-im[100, 200]
+
+
 # special syntax for working with images: im[i,j] instead of im[i][j]
 
 # modifying an image: changing RGB values we replace the list representing the
 # pixel color with a new list. 
-for i in range(40, 70):
-    for j in range(800, 900):
-        im[i,j] = [40, 200, 17]
-        # special syntax: can also do im[i,j] instead of im[i][j] 
-        # ONLY works in middimage, not for general lists of lists
+        
 
-im.show()
+
 
 # --------
 # ACTIVITY
@@ -89,18 +78,4 @@ im.show()
 # new_im.show()
 
 def rectangle(im, xmin, xmax, ymin, ymax, color):
-    # best to make a copy instead of modifying the original image
-    im_copy = im.copy()
-    
-    # loop through the pixels remember that the FIRST index is the VERTICAL
-    # coordinate. 
-    for i in range(ymin, ymax):
-        for j in range(xmin, xmax):
-            im_copy[i,j] = color
-    return im_copy
-
-# example function call
-new_im = rectangle(im, 70, 90, 500, 600, [50, 10, 240])
-new_im.show()
-
-
+    pass 
