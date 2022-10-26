@@ -188,7 +188,7 @@ def find_inner(s):
     ix1, ix2 = find_inner(s) # ix1 is 1, ix2 is 5
     
     s = "(((3+13)*2)+5) 
-    ix1, ix2 = find_inner(s) # ix1 is 3, ix2 is 7
+    ix1, ix2 = find_inner(s) # ix1 is 2, ix2 is 6
     """
     
     # let ix2 be the location of the first ")" you can find() 
