@@ -13,3 +13,6 @@ old-course
 
 *.icloud
 *sol.py
+exams
+*student-exams
+*solution.py
