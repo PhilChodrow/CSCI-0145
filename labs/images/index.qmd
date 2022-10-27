@@ -227,7 +227,7 @@ grainyd.save("grainy.png")
 :::{#fig-grainy .column-margin}
 ![](img/grainy.png)
 
-The result of calling `contrast(im, 255)`. 
+The result of calling `grainy(im)`. 
 :::
 
 ::: {.callout-note}
