@@ -42,6 +42,20 @@
     "text": "Who Chooses Housing First?\nEvery year, Middlebury students select their housing for the following year. Your job is to build an algorithm that will help determine the order in which students get to select their housing. To keep things manageable, we’re going to use a point system:\n\nStudents are awarded a number of points based on a variety of factors.\nStudents with the most points get the first choice of housing.\n\nThis is a real approach used by many colleges and universities. For example, the following is a real point system used by another liberal arts college in the US:\n\nCurrent Freshman: 1 point\nCurrent Sophomore: 2 points\nCurrent Junior: 3 points\nCurrent Senior: 4 points\n23+ Years of Age: 1 point\nFull-time, Off-Campus Program credit (e.g. student teaching): 1 point\nAcademic Probation: -1 point\nAcademic Suspension: -2 points\nOn Disciplinary Probation at Any Time During the Academic Year: -3 points\n\nFor example, a junior (3 points) who ise 23 years old (1 point) would have priority over a senior (4 points) who has on academic probation (-1 point).\nYour goal: Create a program that assigns points to students in order to prioritize them in housing selection.\nBut wait! Don’t start yet. First…"
   },
   {
+    "objectID": "labs/images/index.html",
+    "href": "labs/images/index.html",
+    "title": "Image Manipulation",
+    "section": "",
+    "text": "This lab is partially adapted from an activity created by Evan Peck (Bucknell University).\nIn this lab, we’ll practice working with images using loops and the RGB color model. Throughout, we’ll be using the middimage module for manipulating image. To use middimage, you should install numpy and pillow through the package manager in Thonny.\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+  },
+  {
+    "objectID": "labs/images/index.html#what-were-doing",
+    "href": "labs/images/index.html#what-were-doing",
+    "title": "Image Manipulation",
+    "section": "What We’re Doing",
+    "text": "What We’re Doing\nToday’s lab is a series of exercises in which we’ll modify this image by writing Python functions that:\n\nMake a copy of the image.\nModify the pixels of the copy, usually in a for-loop.\nReturn the copy.\n\nHere’s an example. The boost_red() will return a copy of this picture that is…more red.\n\n\n\n\nFigure 2: The result of calling boost_red(im, 100).\n\ndef boost_red(im, level):\n    # make a copy of the image, so that we can still use the original one\n    im2 = im.copy()\n\n    # loop through all the pixels\n    for row in range(im2.height):     # im2.height is the number of rows\n        for col in range(im2.width):  # im2.width is the number of columns\n\n            # retrieve the current red level\n            # RGB means that red is index 0 of the pixel\n            red_level = im2[row, col, 0]\n\n            # add level to the current red level, resulting in a new value\n            new_red_level = red_level + level\n\n            # ensures that the red level is never larger than 255\n            if new_red_level > 255:\n                new_red_level = 255\n\n            # replace the old red level with the new level\n            im2[row, col, 0] = new_red_level\n    \n    # return the modified image\n    return im2\n\n\n\n\n\n\nActivity 1\n\n\n\nTake some time to ensure that you understand how this function works. Then, check that you are able to call boost_red(im, 100) and achieve the result shown in the margin.\n\nHow would you modify this function so that the user could also subtract red by entering a negative integer for level? Please consider what would happen if the new_red_level was less than 0, and how you would address this case. State in a sentence or two what your modification would be. You are not required to implement a function with your modification.\nHow would you modify this function to create a function boost_blue()? In the Activity 1 area, state in a sentence or two what change would be needed. You don’t have to implement the function."
+  },
+  {
     "objectID": "labs/map-filter-reduce/index.html",
     "href": "labs/map-filter-reduce/index.html",
     "title": "Lab: International Standard Book Numbers",
@@ -165,7 +179,7 @@
     "href": "assignments.html",
     "title": "Index of Assignments",
     "section": "",
-    "text": "Title\n\n\nsummary\n\n\n\n\n\n\nDesigning Simple Programs\n\n\n\n\n\n\nFunctions\n\n\nWe work with functions!\n\n\n\n\nDevelopers as Decision-Makers\n\n\nSome stuff we do.\n\n\n\n\nDevelopers as Future-Makers\n\n\n\n\n\n\nLab: International Standard Book Numbers\n\n\n\n\n\n\nLab Activity: Fractals with Turtle\n\n\n\n\n\n\n\n\nNo matching items\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
+    "text": "Title\n\n\nsummary\n\n\n\n\n\n\nDesigning Simple Programs\n\n\n\n\n\n\nFunctions\n\n\nWe work with functions!\n\n\n\n\nDevelopers as Decision-Makers\n\n\nSome stuff we do.\n\n\n\n\nDevelopers as Future-Makers\n\n\n\n\n\n\nImage Manipulation\n\n\n\n\n\n\nLab: International Standard Book Numbers\n\n\n\n\n\n\nLab Activity: Fractals with Turtle\n\n\n\n\n\n\n\n\nNo matching items\n© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022"
   },
   {
     "objectID": "assignments.html#guided-discovery",
