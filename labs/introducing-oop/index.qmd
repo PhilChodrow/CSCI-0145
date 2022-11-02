@@ -1,0 +1,461 @@
+---
+title: Practice with Object-Oriented Programming
+callout-icon: false
+callout-appearance: simple
+---
+
+![](https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/styles/832x468/public/2021-03/HousingOverview.jpg?fv=2qDcAvv_&itok=vy0yCyye)
+
+One of the true "superpowers" of object-oriented programming is when we design classes that are designed to work **with each other**. In this assignment, we'll work on designing several simple classes that together are able to realize some more complicated kinds of interaction and behavior. 
+
+:::{#fig-team .column-margin}
+![](https://pbs.twimg.com/media/De74siaX4AArpY1.jpg)
+
+Two classes, working together to achieve a useful outcome. 
+:::
+
+
+
+## Refresher: OOP Syntax
+
+Since OOP is pretty new for us, I'd like to offer you a quick refresher. The code below illustrates some standard syntax for defining a class:  
+
+```python
+
+# class declaration. Usually in CamelCase
+class MyClass:
+    """
+    docstring goes here
+    """
+    # __init__ method, needed to instantiate every class
+    # self is always the first argument, but we never use it when calling methods
+    def __init__(self, arg1, arg2):
+        """
+        and here
+        """
+        self.arg1 = arg1
+        self.arg2 = arg2
+        self.var  = var
+
+    def add_args(self):
+        """
+        also here
+        """
+        return self.arg1 + self.arg2
+
+    def set_arg1(self, new_arg1):
+        """
+        not here (just kidding, definitely here too)
+        """
+        self.arg1 = new_arg1
+
+# syntax for constructing an object
+mc = MyClass(1, 2) # arg1 = 1, arg2 = 2
+
+# add_args(self) becomes mc.add_args() when we call it
+print(mc.add_args()) # 3
+
+# set_arg1(self, 3) becomes mc.set_arg1(3) when we call it
+mc.set_arg1(3)
+
+# check the result
+print(mc.add_args()) # 5
+```
+
+## Setting Up
+
+
+::: {.callout-note}
+
+## Activity 0
+
+1. On your laptop, create a folder for this assignment. 
+2. Open Thonny. 
+3. Create and save **two** Python files: 
+    - `course.py`
+    - `tests.py`
+
+Add the following line at the top of `tests.py`:
+
+```python
+from course import *
+```
+:::
+
+In the past, we've most frequently written both our source code (like function definitions) and our tests in a single file. This time, we're going to move a little bit closer to a more common way of organizing our work. Our source code (today, our class definitions) will go in `course.py` and our tests will go in `tests.py`. In order to use the code in `course.py`, we are going to need to `import` it first; that's what the statement above is for. 
+
+::: {.callout-important}
+
+In this lab, you should always be running the file `tests.py`, never the file `course.py`. 
+
+:::
+
+
+## Modeling CS 0145
+
+We are going to define some very simple classes that model some of the behaviors and activities that we experience in this course--CS 0145. We are going to have simple models of: 
+
+1. CS programming assignments. 
+2. CS students (you!)
+3. The class as a whole. 
+
+### Modeling Assumptions
+
+We're going to be making some **modeling assumptions** throughout this lab. These are primarily for simplicity, to make your programming tasks manageable. 
+
+- There's only one kind of assignment, and every assignment is worth the same number of points. 
+- Every student does every assignment. 
+
+## CS Assignments
+
+::: {.callout-note}
+
+## Activity 1
+
+Write a simple class in `course.py` called `CSAssignment`. This class should have the following instance variables: 
+
+- `done`, a boolean that is initialized to `False`. 
+- `score`, an integer that is initialized to `0`. 
+- `due_date`, a positive integer input by the user. 
+
+You should write an `__init__()` method for this class that initializes these instance variables, plus one more method: 
+
+- `complete()`. When an assignment calls `complete()`: 
+    - If `done` is `True`, then `print` the string `"This assignment has already been completed."`. 
+    - If `done` is `False`, then: 
+        - Set `done` equal to `True`. 
+        - Set `score` equal to `80` plus a random integer between 0 and 20. 
+
+
+**Hints**: 
+
+- Since `done` and `score` are always initialized to the same value, you don't need to pass them as arguments to `__init__()`. So, your `__init__()` method should have declaration `def __init__(self, due_date)`. 
+- You can generate a random integer between 0 and 20 like this: 
+
+```python
+import random      # put this at the top of your course.py file
+random.randint(20) # random number between 0 and 20
+```
+:::
+
+::: {.callout-tip}
+
+## Activity 1 Tests
+
+Once you've written a first attempt at Activity 1, paste the following code into `tests.py`, and try running the file.  
+
+```python
+a = CSAssignment(due_date = 10)
+print(a.score) # should be 0
+a.complete()
+print(a.score) # should be a number between 80 and 100
+a.complete()   # should print "This assignment has already been completed."
+```
+
+Once you get that result, you're ready to move on! **Please comment out the test first.**
+
+:::
+
+
+## Assignment Dockets
+
+The `CSAssignment` class represents individual CS assignments. However, there are multiple assignments in the class. So, we should model a *collection* of assignments. We'll call this a `CSDocket`. 
+
+::: {.callout-note}
+
+## Activity 2
+
+Write a class called `CSDocket`. This class should have a single instance variable: 
+
+- `assignments`, a `list` of `CSAssignments`. 
+
+This class should have the following methods: 
+
+- `__init__(self)`, which should not take any other arguments, but should initialize the instance variable `assignments` as an empty list. 
+- `add_assignment(self, assignment)` should `append` a `CSAssignment` to `self.assignments`. 
+- `complete(self)` should find the `CSAssignment` in the list `assignments` that is (a) not yet `done` and (b) has the smallest `due_date`. Then, that assignment should call its `complete()` method. If there is no assignment that is not yet `done`, then instead do nothing. 
+- `average()` should return the mean of the `score`s of all assignments that are `done` so far. 
+    - As a reminder, you can compute the average of a set of numbers by adding them all up and dividing the result by the number of numbers you added. 
+
+**Hints**: 
+
+- `list.append()` will be useful for `add_assignment`. 
+- You can find the assignment due dates by checking `assignment.due_date`.
+- The following lines of code should likely be in your solution in some way: 
+
+```python
+for assignment in self.assignments:
+# ...
+assignment.complete()
+```
+
+
+:::
+
+::: {.callout-tip}
+
+## Activity 2 Tests
+
+Run the following code in your `test.py` file to test your work. 
+
+```python
+# generate 10 assignments with random due dates and add them to the docket
+docket = CSDocket()
+for in range(10):
+    due_date = random.randint(0, 50)
+    docket.add_assignment(assignment)
+
+docket.complete() # completes the not-done assignment with earliest due date
+docket.complete() # completes the not-done assignment with earliest due date
+
+av = docket.average()  # compute the average of scores of completed assignments
+print(av)              # should be a float between 80 and 100
+```
+
+Once your code has passed, **please comment out the test**. 
+
+:::
+
+
+## Students
+
+Of course, the soul of a class isn't the assignments -- it's the students! Now we'll write a `CSStudent` class that models how students interact with assignments. 
+
+::: {.callout-note} 
+
+## Activity 3
+
+Write a class called `CSStudent`. This class should have one instance variable. 
+
+- `docket`, an instance of the class `CSDocket`. 
+
+This class should have the following methods: 
+
+- `__init__(self)`, which should not take any other arguments, but *should* initialize the other argument. `self.docket` should be initialized as an empty `CSDocket`. 
+- `add_assignment(self, assignment)`. This method calls `self.docket.add_assignment(assignment)`, to add an assignment to `self.docket`. 
+- `complete_assignment(self)`. This calls `self.docket.complete()`. 
+- `average(self)`. This method calls `self.docket.average()` and returns the result. 
+
+:::
+
+::: {.callout-tip}
+
+## Activity 3 Tests
+
+Run the following code in your `test.py` file to test your work. 
+
+```python
+# generate 10 assignments with random due dates and add them to the docket
+student = CSStudent()
+for in range(10):
+    due_date = random.randint(0, 50)
+    student.add_assignment(assignment)
+
+student.complete() # completes the not-done assignment with earliest due date
+student.complete() # completes the not-done assignment with earliest due date
+
+av = student.average()  # compute the average of scores of completed assignments
+print(av)               # should be a float between 80 and 100
+```
+
+**Hint**: Yes, this code is very similar to the `docket` code. We'll do something more distinctive in the next activity. 
+
+Once your code has passed, **please comment out the test**. 
+:::
+
+
+## Let's Collaborate! 
+
+Now we're going to modify our code in order to model *collaboration* between students. Appropriate collaboration is healthy and leads to higher scores on assignments! 
+
+[***Note***: You may notice in the code below that we are not doing anything to ensure that when two students collaborate, they actually complete the *same* assignment. That's a somewhat harder problem that we won't worry about for the purposes of this lab.]{.aside} 
+
+
+::: {.callout-note}
+
+## Activity 4
+
+Modify the `complete(self)` method of `CSAssignment`. You should change it so that it accepts a single argument: `with_collaborator`, a Boolean. When an assignment is completed with a collaborator, instead of the score being `80` plus a random number between `0` and `20`, the score is instead `90` plus a random number between 0 and 10. The default value of `with_collaborator` should be `False`. 
+
+**Hint**: You can assign a *default* value to `with_collaborator` like this: `def complete(self, with_collaborator = False)`. This makes it so that `with_collaborator` is always `False` *unless the user specifies it*. 
+
+:::
+
+::: {.callout-tip}
+
+## Activity 4 Tests
+
+Run the following code in your `test.py` file to test your work. 
+
+```python
+due_date = 1
+
+# this still works because with_collaborator defaults to False
+assignment1 = CSAssignment(due_date)
+assignment1.complete()
+print(assignment2.score)
+
+# this works when we specify with_collaborator
+# *result will be the same as above*
+assignment2 = CSAssignment(due_date)
+assignment2.complete(with_collaborator = False)
+# could also have written assignment2.complete(False)
+print(assignment2.score)
+
+# this has a different outcome with a score that is likely higher 
+assignment3 = CSAssignment(due_date)
+assignment3.complete(with_collaborator = True)
+print(assignment3.score)
+
+Once your code has passed, **please comment out the test**. 
+
+```
+
+:::
+
+
+::: {.callout-note}
+
+## Activity 5
+
+Modify the `complete()` method of `CSDocket` to accept a boolean argument `with_collaborator`. When this argument is `True`, the earliest `CSAssignment` is `complete()`'d with `with_collaborator = True`. As before, this argument should default to `False`. 
+
+:::
+
+::: {.callout-tip}
+
+## Activity 5 Tests
+
+No tests for this one! We'll see our new method in action in the next activity. 
+
+:::
+
+
+
+::: {.callout-note}
+
+## Activity 6
+
+Now modify the `complete(self)` method of `CSStudent`. Give it a `collaborator` argument, which is intended to be another `CSStudent`. The `collaborator` argument should default to `None`. 
+
+When a `CSStudent` `completes()` an assignment with a collaborator, the `complete()` method of `CSDocket` should be called with `with_collaborator = True`. 
+
+:::
+
+::: {.callout-tip}
+
+## Activity 6 Tests
+
+Run the following code in your `test.py` file to test your work. 
+
+```python
+student1 = CSStudent()
+student2 = CSStudent()
+for in range(10):
+    due_date = random.randint(0, 50)
+    student1.add_assignment(assignment)
+    student2.add_assignment(assignment)
+
+student1.complete() # no collaborator
+student1.complete(collaborator = student2) # collaborated with student2
+av1 = student1.average()
+print(av1)
+```
+
+Once your code has passed, **please comment out the test**. 
+
+:::
+
+::: {.callout-note}
+
+## Activity 7
+
+Now modify the `complete()` method of `CSStudent` again. This time, if a collaborator is passed as an argument, that collaborator should *also* `complete()` the assignment. The best way to do this is to call 
+
+So, you should be able to use your code like this: 
+
+
+
+**Hints**
+
+- The best way to do this problem is likely to incorporate the following line of code at the right place in your implementation: 
+```python
+    collaborator.docket.complete(with_collaborator = True)
+```
+- Can you figure out why using this line instead would lead to problems? 
+```python
+    collaborator.complete(collaborator = self)
+```
+:::
+
+::: {.callout-tip}
+
+## Activity 7 Tests
+
+Run the following code in your `test.py` file to test your work. 
+
+```python
+student1 = CSStudent()
+student2 = CSStudent()
+for in range(10):
+    due_date = random.randint(0, 50)
+    student1.add_assignment(assignment)
+    student2.add_assignment(assignment)
+
+student1.complete(collaborator = student2) # collaborated with student2
+av2 = student2.average() 
+# has an average score because student2 also completed the assignment!
+print(av2)
+```
+
+Once your code has passed, **please comment out the test**. 
+:::
+
+
+## An Entire Course...
+
+Finally, let's model an entire course, composed of many students. Our `Course` implementation is going to be simple: all the `Course` needs to do is add assignments for students to complete. 
+
+::: {.callout-note}
+
+## Activity 8
+
+Write a `CSCourse` class. This class should have a single instance variable: a `list` called `roster` of `CSStudents`, which is initialized as empty. In addition to `__init__()`, this class should have the following methods: 
+
+- `add_student(self, student)` should append `student` to `self.roster`.
+- `add_assignment(self)` should result in all students in the class calling their `add_assignment()` method. 
+
+
+:::
+
+::: {.callout-tip}
+
+## Activity 8 Tests
+
+Run the following code in your `test.py` file to test your work. 
+
+```python
+CS145 = CSCourse()
+
+for i in range(36):
+    CS145.add_student(CSStudent()) 
+
+for i in range(10):
+    CS145.add_assignment()
+
+student0 = CS145.roster[0]
+student1 = CS145.roster[1]
+
+for i in range(5):
+    student0.complete(collaborator = student1)
+
+student0.average()
+student1.average()
+```
+
+Once your code has passed, **please comment out the test**. 
+:::
+
+## Submit Your Work
+
+On Gradescope, please submit **both** your `course.py` file with your class implementation **and** your `test.py` file with your commented out tests. Make sure to add your partner's name to the submission!
