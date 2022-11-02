@@ -29,7 +29,7 @@ Here's my suggestion:
 - Initialize an empty string to hold the final answer. 
 - Determine the largest power p of 2 that is not larger than the input. 
 - In a loop: 
-    - If 2**p is less than n, add "1" to the string and remove 2**p from n. 
+    - If 2**p is less than or equal to n, add "1" to the string and remove 2**p from n. 
     - Otherwise, add "0" to the string. 
     - Reduce p by 1. 
 
@@ -289,7 +289,7 @@ if __name__ == "__main__":
             if word in d:
                 found = True
         if not found: 
-            print("No stopwords detected in dictionary!")
+            print("Looks good! No stopwords detected in dictionary!")
         
     except NameError:
         print("remove_stopwords() not yet implemented")
