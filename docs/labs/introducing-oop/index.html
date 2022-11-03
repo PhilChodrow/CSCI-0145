@@ -358,25 +358,25 @@ Activity 1
 <div class="callout-body-container callout-body">
 <p>Write a simple class in <code>course.py</code> called <code>CSAssignment</code>. This class should have the following instance variables:</p>
 <ul>
-<li><code>done</code>, a boolean that is initialized to <code>False</code>.</li>
-<li><code>score</code>, an integer that is initialized to <code>0</code>.</li>
-<li><code>due_date</code>, a positive integer input by the user.</li>
+<li><code>self.done</code>, a boolean that is initialized to <code>False</code>.</li>
+<li><code>self.score</code>, an integer that is initialized to <code>0</code>.</li>
+<li><code>self.due_date</code>, a positive integer input by the user.</li>
 </ul>
 <p>You should write an <code>__init__()</code> method for this class that initializes these instance variables, plus one more method:</p>
 <ul>
 <li><code>complete()</code>. When an assignment calls <code>complete()</code>:
 <ul>
-<li>If <code>done</code> is <code>True</code>, then <code>print</code> the string <code>"This assignment has already been completed."</code>.</li>
-<li>If <code>done</code> is <code>False</code>, then:
+<li>If <code>self.done</code> is <code>True</code>, then <code>print</code> the string <code>"This assignment has already been completed."</code>.</li>
+<li>If <code>self.done</code> is <code>False</code>, then:
 <ul>
-<li>Set <code>done</code> equal to <code>True</code>.</li>
-<li>Set <code>score</code> equal to <code>80</code> plus a random integer between 0 and 20.</li>
+<li>Set <code>self.done</code> equal to <code>True</code>.</li>
+<li>Set <code>self.score</code> equal to <code>80</code> plus a random integer between 0 and 20.</li>
 </ul></li>
 </ul></li>
 </ul>
 <p><strong>Hints</strong>:</p>
 <ul>
-<li>Since <code>done</code> and <code>score</code> are always initialized to the same value, you don’t need to pass them as arguments to <code>__init__()</code>. So, your <code>__init__()</code> method should have declaration <code>def __init__(self, due_date)</code>.</li>
+<li>Since <code>self.done</code> and <code>self.score</code> are always initialized to the same value, you don’t need to pass them as arguments to <code>__init__()</code>. So, your <code>__init__()</code> method should have declaration <code>def __init__(self, due_date)</code>.</li>
 <li>You can generate a random integer between 0 and 20 like this:</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random      <span class="co"># put this at the top of your course.py file</span></span>
@@ -402,6 +402,19 @@ Activity 1 Tests
 <p>Once you get that result, you’re ready to move on! <strong>Please comment out the test first.</strong></p>
 </div>
 </div>
+<div class="callout-important callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+PLEASE INCLUDE DOCSTRINGS IN YOUR FINAL SUBMISSION!!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It’s likely a better use of your time to focus on writing code during the lab period, but please ensure that you have useful docstrings for your class and methods before your final submission.</p>
+</div>
+</div>
 </section>
 <section id="assignment-dockets" class="level2">
 <h2 class="anchored" data-anchor-id="assignment-dockets">Assignment Dockets</h2>
@@ -418,14 +431,14 @@ Activity 2
 <div class="callout-body-container callout-body">
 <p>Write a class called <code>CSDocket</code>. This class should have a single instance variable:</p>
 <ul>
-<li><code>assignments</code>, a <code>list</code> of <code>CSAssignments</code>.</li>
+<li><code>self.assignments</code>, a <code>list</code> of <code>CSAssignments</code>.</li>
 </ul>
 <p>This class should have the following methods:</p>
 <ul>
 <li><code>__init__(self)</code>, which should not take any other arguments, but should initialize the instance variable <code>assignments</code> as an empty list.</li>
-<li><code>add_assignment(self, assignment)</code> should <code>append</code> a <code>CSAssignment</code> to <code>self.assignments</code>.</li>
-<li><code>complete(self)</code> should find the <code>CSAssignment</code> in the list <code>assignments</code> that is (a) not yet <code>done</code> and (b) has the smallest <code>due_date</code>. Then, that assignment should call its <code>complete()</code> method. If there is no assignment that is not yet <code>done</code>, then instead do nothing.</li>
-<li><code>average()</code> should return the mean of the <code>score</code>s of all assignments that are <code>done</code> so far.
+<li><code>add_assignment(self, assignment)</code> should <code>append</code> a <code>CSAssignment</code> to <code>self.self.assignments</code>.</li>
+<li><code>complete(self)</code> should find the <code>CSAssignment</code> in the list <code>self.assignments</code> that is (a) not yet <code>done</code> and (b) has the smallest <code>due_date</code>. Then, that assignment should call its <code>complete()</code> method. If there is no assignment that is not yet <code>done</code>, then instead do nothing.</li>
+<li><code>average(self)</code> should return the mean of the <code>score</code>s of all assignments that are <code>done</code> so far.
 <ul>
 <li>As a reminder, you can compute the average of a set of numbers by adding them all up and dividing the result by the number of numbers you added.</li>
 </ul></li>
@@ -482,7 +495,7 @@ Activity 3
 <div class="callout-body-container callout-body">
 <p>Write a class called <code>CSStudent</code>. This class should have one instance variable.</p>
 <ul>
-<li><code>docket</code>, an instance of the class <code>CSDocket</code>.</li>
+<li><code>self.docket</code>, an instance of the class <code>CSDocket</code>.</li>
 </ul>
 <p>This class should have the following methods:</p>
 <ul>

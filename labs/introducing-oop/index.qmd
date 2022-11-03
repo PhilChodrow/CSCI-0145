@@ -106,6 +106,7 @@ We're going to be making some **modeling assumptions** throughout this lab. Thes
 - There's only one kind of assignment, and every assignment is worth the same number of points. 
 - Every student does every assignment. 
 
+
 ## CS Assignments
 
 ::: {.callout-note}
@@ -114,22 +115,22 @@ We're going to be making some **modeling assumptions** throughout this lab. Thes
 
 Write a simple class in `course.py` called `CSAssignment`. This class should have the following instance variables: 
 
-- `done`, a boolean that is initialized to `False`. 
-- `score`, an integer that is initialized to `0`. 
-- `due_date`, a positive integer input by the user. 
+- `self.done`, a boolean that is initialized to `False`. 
+- `self.score`, an integer that is initialized to `0`. 
+- `self.due_date`, a positive integer input by the user. 
 
 You should write an `__init__()` method for this class that initializes these instance variables, plus one more method: 
 
 - `complete()`. When an assignment calls `complete()`: 
-    - If `done` is `True`, then `print` the string `"This assignment has already been completed."`. 
-    - If `done` is `False`, then: 
-        - Set `done` equal to `True`. 
-        - Set `score` equal to `80` plus a random integer between 0 and 20. 
+    - If `self.done` is `True`, then `print` the string `"This assignment has already been completed."`. 
+    - If `self.done` is `False`, then: 
+        - Set `self.done` equal to `True`. 
+        - Set `self.score` equal to `80` plus a random integer between 0 and 20. 
 
 
 **Hints**: 
 
-- Since `done` and `score` are always initialized to the same value, you don't need to pass them as arguments to `__init__()`. So, your `__init__()` method should have declaration `def __init__(self, due_date)`. 
+- Since `self.done` and `self.score` are always initialized to the same value, you don't need to pass them as arguments to `__init__()`. So, your `__init__()` method should have declaration `def __init__(self, due_date)`. 
 - You can generate a random integer between 0 and 20 like this: 
 
 ```python
@@ -156,6 +157,14 @@ Once you get that result, you're ready to move on! **Please comment out the test
 
 :::
 
+::: {.callout-important}
+
+## PLEASE INCLUDE DOCSTRINGS IN YOUR FINAL SUBMISSION!!
+
+It's likely a better use of your time to focus on writing code during the lab period, but please ensure that you have useful docstrings for your class and methods before your final submission. 
+
+:::
+
 
 ## Assignment Dockets
 
@@ -167,14 +176,14 @@ The `CSAssignment` class represents individual CS assignments. However, there ar
 
 Write a class called `CSDocket`. This class should have a single instance variable: 
 
-- `assignments`, a `list` of `CSAssignments`. 
+- `self.assignments`, a `list` of `CSAssignments`. 
 
 This class should have the following methods: 
 
 - `__init__(self)`, which should not take any other arguments, but should initialize the instance variable `assignments` as an empty list. 
-- `add_assignment(self, assignment)` should `append` a `CSAssignment` to `self.assignments`. 
-- `complete(self)` should find the `CSAssignment` in the list `assignments` that is (a) not yet `done` and (b) has the smallest `due_date`. Then, that assignment should call its `complete()` method. If there is no assignment that is not yet `done`, then instead do nothing. 
-- `average()` should return the mean of the `score`s of all assignments that are `done` so far. 
+- `add_assignment(self, assignment)` should `append` a `CSAssignment` to `self.self.assignments`. 
+- `complete(self)` should find the `CSAssignment` in the list `self.assignments` that is (a) not yet `done` and (b) has the smallest `due_date`. Then, that assignment should call its `complete()` method. If there is no assignment that is not yet `done`, then instead do nothing. 
+- `average(self)` should return the mean of the `score`s of all assignments that are `done` so far. 
     - As a reminder, you can compute the average of a set of numbers by adding them all up and dividing the result by the number of numbers you added. 
 
 **Hints**: 
@@ -227,7 +236,7 @@ Of course, the soul of a class isn't the assignments -- it's the students! Now w
 
 Write a class called `CSStudent`. This class should have one instance variable. 
 
-- `docket`, an instance of the class `CSDocket`. 
+- `self.docket`, an instance of the class `CSDocket`. 
 
 This class should have the following methods: 
 
