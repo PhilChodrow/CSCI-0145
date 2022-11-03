@@ -243,7 +243,7 @@ This class should have the following methods:
 
 - `__init__(self)`, which should not take any other arguments, but *should* initialize the other argument. `self.docket` should be initialized as an empty `CSDocket`. 
 - `add_assignment(self, assignment)`. This method calls `self.docket.add_assignment(assignment)`, to add an assignment to `self.docket`. 
-- `complete_assignment(self)`. This calls `self.docket.complete()`. 
+- `complete(self)`. This calls `self.docket.complete()`. 
 - `average(self)`. This method calls `self.docket.average()` and returns the result. 
 
 :::
@@ -259,6 +259,7 @@ Run the following code in your `test.py` file to test your work.
 student = CSStudent()
 for i in range(10):
     due_date = random.randint(0, 50)
+    assignment = CSAssignment(due_date)
     student.add_assignment(assignment)
 
 student.complete() # completes the not-done assignment with earliest due date
@@ -363,6 +364,7 @@ student1 = CSStudent()
 student2 = CSStudent()
 for i in range(10):
     due_date = random.randint(0, 50)
+    assignment = CSAssignment(due_date)
     student1.add_assignment(assignment)
     student2.add_assignment(assignment)
 
@@ -405,6 +407,7 @@ student1 = CSStudent()
 student2 = CSStudent()
 for i in range(10):
     due_date = random.randint(0, 50)
+    assignment = CSAssignment(due_date)
     student1.add_assignment(assignment)
     student2.add_assignment(assignment)
 
@@ -447,6 +450,8 @@ for i in range(36):
     CS145.add_student(CSStudent()) 
 
 for i in range(10):
+    due_date = random.randint(0, 50)
+    assignment = CSAssignment(due_date)
     CS145.add_assignment()
 
 student0 = CS145.roster[0]
