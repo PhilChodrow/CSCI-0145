@@ -181,7 +181,7 @@ Write a class called `CSDocket`. This class should have a single instance variab
 This class should have the following methods: 
 
 - `__init__(self)`, which should not take any other arguments, but should initialize the instance variable `assignments` as an empty list. 
-- `add_assignment(self, assignment)` should `append` a `CSAssignment` to `self.self.assignments`. 
+- `add_assignment(self, assignment)` should `append` a `CSAssignment` to `self.assignments`. 
 - `complete(self)` should find the `CSAssignment` in the list `self.assignments` that is (a) not yet `done` and (b) has the smallest `due_date`. Then, that assignment should call its `complete()` method. If there is no assignment that is not yet `done`, then instead do nothing. 
 - `average(self)` should return the mean of the `score`s of all assignments that are `done` so far. 
     - As a reminder, you can compute the average of a set of numbers by adding them all up and dividing the result by the number of numbers you added. 
@@ -380,11 +380,7 @@ Once your code has passed, **please comment out the test**.
 
 ## Activity 7
 
-Now modify the `complete()` method of `CSStudent` again. This time, if a collaborator is passed as an argument, that collaborator should *also* `complete()` the assignment. The best way to do this is to call 
-
-So, you should be able to use your code like this: 
-
-
+Now modify the `complete()` method of `CSStudent` again. This time, if a collaborator is passed as an argument, that collaborator should *also* `complete()` the assignment, with the collaborator bonus. 
 
 **Hints**
 

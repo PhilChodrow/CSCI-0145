@@ -436,7 +436,7 @@ Activity 2
 <p>This class should have the following methods:</p>
 <ul>
 <li><code>__init__(self)</code>, which should not take any other arguments, but should initialize the instance variable <code>assignments</code> as an empty list.</li>
-<li><code>add_assignment(self, assignment)</code> should <code>append</code> a <code>CSAssignment</code> to <code>self.self.assignments</code>.</li>
+<li><code>add_assignment(self, assignment)</code> should <code>append</code> a <code>CSAssignment</code> to <code>self.assignments</code>.</li>
 <li><code>complete(self)</code> should find the <code>CSAssignment</code> in the list <code>self.assignments</code> that is (a) not yet <code>done</code> and (b) has the smallest <code>due_date</code>. Then, that assignment should call its <code>complete()</code> method. If there is no assignment that is not yet <code>done</code>, then instead do nothing.</li>
 <li><code>average(self)</code> should return the mean of the <code>score</code>s of all assignments that are <code>done</code> so far.
 <ul>
@@ -660,8 +660,7 @@ Activity 7
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Now modify the <code>complete()</code> method of <code>CSStudent</code> again. This time, if a collaborator is passed as an argument, that collaborator should <em>also</em> <code>complete()</code> the assignment. The best way to do this is to call</p>
-<p>So, you should be able to use your code like this:</p>
+<p>Now modify the <code>complete()</code> method of <code>CSStudent</code> again. This time, if a collaborator is passed as an argument, that collaborator should <em>also</em> <code>complete()</code> the assignment, with the collaborator bonus.</p>
 <p><strong>Hints</strong></p>
 <ul>
 <li>The best way to do this problem is likely to incorporate the following line of code at the right place in your implementation:</li>
