@@ -181,7 +181,9 @@ Write a class called `CSDocket`. This class should have a single instance variab
 This class should have the following methods: 
 
 - `__init__(self)`, which should not take any other arguments, but should initialize the instance variable `assignments` as an empty list. 
-- `add_assignment(self, assignment)` should `append` a `CSAssignment` to `self.assignments`. 
+- `add_assignment(self, assignment)` should `append` a `CSAssignment` to `self.assignments`. For technical reasons which we'll discuss later, it's necessary to **copy** the assignment when adding it. So, to do this part, you should: 
+    - Add the line `from copy import copy` to the top of your `course.py` file. 
+    - Append `copy(assignment)` to `self.assignments`. 
 - `complete(self)` should find the `CSAssignment` in the list `self.assignments` that is (a) not yet `done` and (b) has the smallest `due_date`. Then, that assignment should call its `complete()` method. If there is no assignment that is not yet `done`, then instead do nothing. 
 - `average(self)` should return the mean of the `score`s of all assignments that are `done` so far. 
     - As a reminder, you can compute the average of a set of numbers by adding them all up and dividing the result by the number of numbers you added. 

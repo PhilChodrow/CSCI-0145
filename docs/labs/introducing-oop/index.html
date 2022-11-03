@@ -436,7 +436,11 @@ Activity 2
 <p>This class should have the following methods:</p>
 <ul>
 <li><code>__init__(self)</code>, which should not take any other arguments, but should initialize the instance variable <code>assignments</code> as an empty list.</li>
-<li><code>add_assignment(self, assignment)</code> should <code>append</code> a <code>CSAssignment</code> to <code>self.assignments</code>.</li>
+<li><code>add_assignment(self, assignment)</code> should <code>append</code> a <code>CSAssignment</code> to <code>self.assignments</code>. For technical reasons which we’ll discuss later, it’s necessary to <strong>copy</strong> the assignment when adding it. So, to do this part, you should:
+<ul>
+<li>Add the line <code>from copy import copy</code> to the top of your <code>course.py</code> file.</li>
+<li>Append <code>copy(assignment)</code> to <code>self.assignments</code>.</li>
+</ul></li>
 <li><code>complete(self)</code> should find the <code>CSAssignment</code> in the list <code>self.assignments</code> that is (a) not yet <code>done</code> and (b) has the smallest <code>due_date</code>. Then, that assignment should call its <code>complete()</code> method. If there is no assignment that is not yet <code>done</code>, then instead do nothing.</li>
 <li><code>average(self)</code> should return the mean of the <code>score</code>s of all assignments that are <code>done</code> so far.
 <ul>
