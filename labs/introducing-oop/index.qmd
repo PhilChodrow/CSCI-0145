@@ -134,7 +134,7 @@ You should write an `__init__()` method for this class that initializes these in
 
 ```python
 import random      # put this at the top of your course.py file
-random.randint(20) # random number between 0 and 20
+random.randint(0, 20) # random number between 0 and 20
 ```
 :::
 
