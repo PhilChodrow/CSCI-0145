@@ -212,6 +212,7 @@ Run the following code in your `test.py` file to test your work.
 docket = CSDocket()
 for in range(10):
     due_date = random.randint(0, 50)
+    assignment = CSAssignment(due_date)
     docket.add_assignment(assignment)
 
 docket.complete() # completes the not-done assignment with earliest due date
