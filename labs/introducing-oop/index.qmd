@@ -210,7 +210,7 @@ Run the following code in your `test.py` file to test your work.
 ```python
 # generate 10 assignments with random due dates and add them to the docket
 docket = CSDocket()
-for in range(10):
+for i in range(10):
     due_date = random.randint(0, 50)
     assignment = CSAssignment(due_date)
     docket.add_assignment(assignment)
@@ -257,7 +257,7 @@ Run the following code in your `test.py` file to test your work.
 ```python
 # generate 10 assignments with random due dates and add them to the docket
 student = CSStudent()
-for in range(10):
+for i in range(10):
     due_date = random.randint(0, 50)
     student.add_assignment(assignment)
 
@@ -361,7 +361,7 @@ Run the following code in your `test.py` file to test your work.
 ```python
 student1 = CSStudent()
 student2 = CSStudent()
-for in range(10):
+for i in range(10):
     due_date = random.randint(0, 50)
     student1.add_assignment(assignment)
     student2.add_assignment(assignment)
@@ -407,7 +407,7 @@ Run the following code in your `test.py` file to test your work.
 ```python
 student1 = CSStudent()
 student2 = CSStudent()
-for in range(10):
+for i in range(10):
     due_date = random.randint(0, 50)
     student1.add_assignment(assignment)
     student2.add_assignment(assignment)
