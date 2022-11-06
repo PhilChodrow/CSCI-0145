@@ -63,6 +63,8 @@ This is why we refer to *unit tests* -- they are tests of *very small* pieces of
 
 Note that the docstring for the test method looks a little different. The docstring is actually printed when a test is failed, so the purpose of the docstring is to describe what is being tests. 
 
+Unit tests are almost always written in a SEPARATE Python file called tests.py or something similar. I'm keeping them in the same file this time just for the purposes of keeping these lecture notes simple. 
+
 Before we go back and update our code, let's add more tests. An *assertion* expressed our expectation that something is true. Two of the most useful assertions are: 
 
 - assertEqual(x, y) will cause a test to fail if x == y evaluates to False. 
