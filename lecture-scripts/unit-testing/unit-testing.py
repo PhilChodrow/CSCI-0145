@@ -107,10 +107,18 @@ assertions are:
 There are many other assertions available, but these are the most useful ones in
 most cases. Assertions are methods of unittest.TestCase, and are available for
 us to use because we designed TestVector to *inherit* all the methods of
-unittest.TestCase: 
+unittest.TestCase. 
+
+If we want to use variables in multiple tests, the special method setUp() is a great place for us to define these variables.  
 """
 
 class TestVector(unittest.TestCase):
+    
+    def setUp(self):
+        self.v1 = Vector(2, 3)
+        self.v2 = Vector(2, 4)
+        self.v3 = self.v1 + self.v2 
+    
     def test_init(self):
         """
         Check that a Vector can be initialized with user-specified x and y
@@ -122,23 +130,14 @@ class TestVector(unittest.TestCase):
         """
         Check that addition produces a new Vector
         """
-        v1 = Vector(2, 3)
-        v2 = Vector(2, 4)
-        
-        v3 = v1 + v2 
-        self.assertEqual(type(v3), Vector)
+        self.assertEqual(type(self.v3), Vector)
         
     def test_addition_arithmetic(self):
         """
         Coordinates of v1 + v2 are equal to the sum of coordinates of v1 and v2. 
         """
-        v1 = Vector(2, 3)
-        v2 = Vector(2, 4)
-        
-        v3 = v1 + v2 
-        
-        self.assertEqual(v3.x, v1.x + v2.x)
-        self.assertEqual(v3.y, v1.y + v2.y)
+        self.assertEqual(self.v3.x, self.v1.x + self.v2.x)
+        self.assertEqual(self.v3.y, self.v1.y + self.v2.y)
         
 """
 This is now a relatively comprehensive test suite. Note that the test suite is
@@ -182,6 +181,12 @@ Before implementing this function, let's write some new tests FIRST.
 
 
 class TestVector(unittest.TestCase):
+    
+    def setUp(self):
+        self.v1 = Vector(2, 3)
+        self.v2 = Vector(2, 4)
+        self.v3 = self.v1 + self.v2 
+    
     def test_init(self):
         """
         Check that a Vector can be initialized with user-specified x and y
@@ -193,35 +198,24 @@ class TestVector(unittest.TestCase):
         """
         Check that addition produces a new Vector
         """
-        v1 = Vector(2, 3)
-        v2 = Vector(2, 4)
-        
-        v3 = v1 + v2 
-        self.assertEqual(type(v3), Vector)
+        self.assertEqual(type(self.v3), Vector)
         
     def test_addition_arithmetic(self):
         """
         Coordinates of v1 + v2 are equal to the sum of coordinates of v1 and v2. 
         """
-        v1 = Vector(2, 3)
-        v2 = Vector(2, 4)
-        
-        v3 = v1 + v2 
-        
-        self.assertEqual(v3.x, v1.x + v2.x)
-        self.assertEqual(v3.y, v1.y + v2.y)
+        self.assertEqual(self.v3.x, self.v1.x + self.v2.x)
+        self.assertEqual(self.v3.y, self.v1.y + self.v2.y)
         
     def test_dot_product(self):
         """
         Check that the dot product of two vectors is a scalar (int or float) and
         has the correct value. 
         """
-        v1 = Vector(2, 3)
-        v2 = Vector(2, 4)
         
-        d = v1.dot(v2) # this is the code we haven't written yet
+        d = self.v1.dot(self.v2) # this is the code we haven't written yet
         self.assertTrue(type(d) in [int, float])   # check correct type
-        self.assertEqual(d, v1.x*v2.x + v1.y*v2.y) # check correct math
+        self.assertEqual(d, self.v1.x*self.v2.x + self.v1.y*self.v2.y) # check correct math
 
 """
 Now that we've implemented a test, let's add the functionality to our Vector
