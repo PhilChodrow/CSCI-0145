@@ -199,6 +199,10 @@ You should now implement `group_decision` in `engine.py`. Your function must con
 3. Test your decision algorithm on at least five simulations to ensure that it's behaving as you would expect. 
 :::
 
+# Submit Your Work
+
+To submit your work, please submit **both** `lab.py` and `engine.py` on Gradescope. 
+
 
 
 
