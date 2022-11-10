@@ -22,7 +22,7 @@ class CSAssignment:
         else:
             self.done = True 
             if not with_collaborator:
-                self.score = 80 + random.randint(0, 20) 
+                self.score = 80 + random.randint(0, 20)
             else:
                 self.score = 90 + random.randint(0, 10)
 

@@ -1,0 +1,207 @@
+---
+title: Developers as Prioritizers
+summary: Some stuff we do. 
+order: 3
+callout-icon: false
+callout-appearance: simple
+---
+
+*This lab is adapted from an [activity](https://ethicalcs.github.io/#prioritizers) created by [Evan Peck](https://evanpeck.github.io) (Bucknell University).* 
+
+<!-- ::: {.column-screen} -->
+
+![](https://www.middlebury.edu/office/sites/www.middlebury.edu.office/files/styles/832x468/public/2021-03/HousingOverview.jpg?fv=2qDcAvv_&itok=vy0yCyye)
+
+
+# Introduction: RescueBot
+
+In today's lab, we are going to address a situation that addresses similar moral concerns. You and your partner work for RescueLab, an emerging robotics company that aims to develop robots that provide aid in life-threatening disasters. The project on which you're both working is an autonomous robot, called RescueBot, that will rescue people who are caught in either wildfires or floods. 
+
+Engineers on other teams have already built a robot that is able to navigate unknown terrain and rescue people in need of help. However, for the RescueBot to act autonomously, it needs to be able to make hard decisions. If there are two groups of people in peril, RescueBot may need to decide which group to save first -- or to save at all. 
+
+Your job is to write a comparison algorithm for RescueBot. This algorithm must compare two groups of people and decide which group to prioritize for relief. 
+
+::: {.callout-note}
+
+## Activity 0
+
+PLACEHOLDER: download the activity files and save them in a place you'll be able to find them. 
+
+::: 
+
+## Exploring Our Intuitions
+
+To start, let's explore some of our intuitions about which groups should be prioritized in difficult, life-or-death situations. For this, we are going to use the [Moral Machine](https://www.moralmachine.net) tool from MIT. From their website: 
+
+> From self-driving cars on public roads to self-piloting reusable rockets landing on self-sailing ships, machine intelligence is supporting or entirely taking over ever more complex human activities at an ever increasing pace. The greater autonomy given machine intelligence in these roles can result in situations where they have to make autonomous choices involving human life and limb. This calls for not just a clearer understanding of how humans make such choices, but also a clearer understanding of how humans perceive machine intelligence making such choices.
+
+Briefly, the Moral Machine is an online simulator that lets you experiment with different scenarios in which it is necessary to how to prioritize two groups of people in a life-or-death situation. 
+
+::: {.callout-note}
+
+## Activity 1
+
+Navigate to the [Moral Machine](https://www.moralmachine.net). This website invites you to consider a scenario in which a self-driving car's brakes have failed. The car's automated system must choose to either proceed straight or change lanes (because the brakes have failed, slowing down is not an option). Your job is to express your feeling about which of the two scenarios is best from a moral point of view. 
+
+1. **With your partner**, make your vote in each of the two scenarios by clicking on the corresponding image. You can click "Show Description" in either case to see text descriptions of the consequences in either scenario. 
+2. **Review the Results summary page**. Did any of your results surprise you? Did your choices reflect any preferences you didn't expect, such as preferences related to gender, age, fitness, or social value? Write at least 3 sentences describing your summary and anything that surprised you. Place these sentences in the ACTIVITY 1 area of `lab.py`. 
+
+:::
+
+# From Values to Code
+
+Instead of deciding between people in a car vs. pedestrians in a crosswalk, your algorithm must decide between two groups of people at different locations who are stranded and need to be rescued (for example, two different locations in the city during a flash-flood). Who will your algorithm prioritize?
+
+**We’ve given you python code that replicates the random scenarios that are generated in the *Moral Machine***. The entities you must save may be people or animals. The people may be of various ages, genders, and professions. 
+
+To access all of this information and program the Robotoni Disaster-Relief Robot, you’ll use the Ethical Engine API (Application Programming Interface), which allows you to analyze details about scenarios using python code. Before we start writing code, let's make sure that we understand how the Ethical Engine API works. 
+
+::: {.callout-note}
+
+## Activity 2
+
+First, inspect the file `person.py` in the `rescue` package. Check that you understand the instance variables and methods of the `Person` class. Then: 
+
+1. In the ACTIVITY 2 area of `lab.py`, write code that creates a new `Person`, called `Jas`, who is an adult, nonbinary human who works as a doctor. 
+2. Also in the ACTIVITY 2 area of `lab.py`, use the `create_random_person()` function to create a random person, named `Zenith`. 
+3. Again using `create_random_person()`, create a random animal (nonhuman) person. Give this animal a name of your choosing (I suggest `Jorts`). 
+
+:::
+
+::: {.callout-note}
+
+## Activity 3
+
+Now, inspect the file `scenario.py` in the `rescue` package. Check that you understand the `Scenario` class, including its instance variables. Then: 
+
+1. In the ACTIVITY 3 area of `lab.py`, write code that produces a new `Scenario` containing three characters in the location `loc1` and four characters in the location `loc2`. You should create these characters using the `Person` class (it's ok to use `create_random_person()`). You are going to need to create two lists of characters, one for each location, to pass as arguments when creating the `Scenario`. You don't need to worry about specifying the `youInLoc1` argument or the `trespassing` argument this time. Save this scenario as `scene1` and print it. 
+2. In the same area, use the `create_random_scenario()` function to create a `Scenario` object with randomly filled information. Save this result as `scene2` and print it. 
+
+:::
+
+::: {.callout-note}
+
+## Activity 4
+
+The file `engine.py` in the `rescue` package is where you are going to be implementing your decision rules. Take a moment to inspect this file. Then, call `ruleset1()` on each of your two scenarios from Activity 3, and print the results. 
+
+:::
+
+# Making Decisions with Rulesets
+
+You may have noticed that the `ruleset1()` function in `engine.py` isn't really doing very much decision-making: it always saves the people in `loc1`, no matter what!  You may have also noticed that `ruleset1()` actually extracts the first `Person` in each location in its first two lines of code. This is because I would like you to modify `ruleset1()` so that it can make decisions for cases in which there is **only one person in each location**. 
+
+::: {.callout-note}
+
+## Activity 5
+
+Reimplement `ruleset1()` in the file `engine.py` so that it saves the person in `loc1` if and only if that person's job is `doctor`. Otherwise, save the person in `loc2`. 
+
+Then, write an informal test in the Activity 5 area in `lab.py` in which: 
+
+- You first create a `Scenario` such that the person in `loc1` has job `doctor`. Print the result of `ruleset1()` and check that you receive the expected answer. 
+- You next create a `Scenario` such that the person in `loc1` does NOT have job `doctor`. Print the result of `ruleset1()` and check that you receive the expected answer.  
+
+:::
+
+::: {.callout-note}
+
+## Activity 6
+
+Now, working with your partner, implement the following rulesets: 
+
+1. In `ruleset2()`, the robot always saves the person in `loc2` if they are NOT trespassing OR if they are a child OR if they are a baby.
+2. In `ruleset3()`, the robot uses the following prioritization: 
+    1. If exactly one of the people is a baby, save them. If there are no babies (or if both people are), move on to the next decision criterion. 
+    2. If exactly one person is either a doctor or CEO then save them. If either both or neither of the people are doctors or CEOs, move on to the next decision criterion.  
+    3. If exactly one person is either nonbinary or female, then save them. If either both or neither of the people are nonbinary or female, move on to the next decision criterion. 
+    4. Otherwise, if none of the other criteria lead to a decision, save the person in `loc1`. 
+
+:::
+
+
+::: {.callout-note}
+
+## Activity 7
+
+The `run_simulation()` function can be used to create a random scenario and observe the decision. You can hit the `Enter` key to keep creating scenarios and observing your ruleset's decision, and type `q` to quit. 
+
+You can run a simulation using your chosen ruleset like this: 
+
+```python
+run_simulation(ruleset=ruleset1)
+```
+
+Run at least five simulations for each of `ruleset1`, `ruleset2`, and `ruleset3`. For each simulation, before viewing the decision, make a prediction of the result. Then, view the decision and check that it matches your expectations.  
+
+:::
+
+## Your Own Ruleset
+
+Were the rulesets we implemented above fair or just? Now it's your turn to decide! 
+
+::: {.callout-note}
+
+## Activity 8
+
+1. First, write down (without coding) you and your partner's proposal for a more fair ruleset. 
+2. Then, implement `our_ruleset` to represent your logic. Test it in at least 5 cases to make sure that it's doing what you expect. 
+3. Describe how your ruleset works in the docstring. 
+
+:::
+
+
+::: {.callout-note}
+
+## Activity 9
+
+In the Activity 9 area, please respond briefly to the following questions. 
+
+1. Did you encounter any frustrations with the limited ways that people can be represented in the `Person` class? If anything, what didn’t seem to match with reality? Are there any other attributes (instance variables) that you would suggest adding to the `Person` class that would help you make more just decisions?
+2. Are there any discrepancies between your written description and the Python function you wrote?
+3. Why do you think that your algorithm is the right one? What are the tradeoffs?
+4. Suppose that your algorithm was used at scale (in every disaster relief scenario in the US, for example). Could this result in the amplification of any systemic biases? 
+
+:::
+
+## Group Decisions
+
+While you may be able to accomplish the previous sections with conditional statements, the problem gets a lot more complicated when you need to choose between *groups* of people. 
+
+We can use the `run_simulation()` method to create scenarios containing groups of people like this: 
+
+```python
+run_simulation(sameNum = False, min1 = 2, max1 = 4, min2 = 1, max2 = 3)
+```
+
+Here's an example scenario that could be produced by this simulation: 
+
+```
+People at Location 1: 
+- [adult female] job: unemployed
+- [adult female] job: unemployed
+
+People at Location 2: 
+- [elderly female]
+- [child male]
+- [adult nonbinary] job: CEO
+- This group is trespassing
+```
+
+You should now implement `group_decision` in `engine.py`. Your function must consider *all* people in the scenario when making its decision. One way to approach this task is to assign a point-value to each individual in the scene, and choose to save the people in the location with the highest total point value.  
+
+::: {.callout-note}
+
+## Activity 10
+
+1. Working with your partner, propose a scheme for prioritizing locations. You can use a points-based system or a different one -- it's up to you! 
+2. Implement `group_decision` in `engine.py` that implements your proposed scheme. 
+3. Test your decision algorithm on at least five simulations to ensure that it's behaving as you would expect. 
+:::
+
+
+
+
+
+
+
