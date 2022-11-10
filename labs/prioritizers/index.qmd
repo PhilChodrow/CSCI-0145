@@ -25,7 +25,7 @@ Your job is to write a comparison algorithm for RescueBot. This algorithm must c
 
 ## Activity 0
 
-PLACEHOLDER: download the activity files and save them in a place you'll be able to find them. 
+Download the activity files from Canvas, save them in a place you'll be able to find them. Then, unzip the files. Finally, from Thonny, open `lab.py`.  
 
 ::: 
 
