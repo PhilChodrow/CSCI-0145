@@ -1,0 +1,360 @@
+---
+title: "Homework Project: Markov Language Models"
+callout-icon: false
+callout-appearance: simple
+---
+
+This is a challenging homework assignment with multiple related parts. It's more of a mini-project than a homework, which is why I'm calling it a "homework project."
+
+You have extra time to complete this assignment. However, the assignment is worth as much as a normal homework assignment. This means that, if you're feeling overwhelmed and need a break, **this is a very good homework assignment to drop.** [Remember, your lowest homework score in this course is ignored when calculating your final grade.]{.aside}
+
+::: {.callout-important}
+
+**Docstrings are required** for all classes and methods in this assignment. 
+
+:::
+
+
+## Introduction: Language Models
+
+A *language model* is an algorithm that generates sequences of characters or words. Language models have a large number of applications. Most of us interact with language models every day. When you use auto-correct, mobile keyboards with word prediction, chatbots, automatic translation, or similar tools, you are using language models. 
+
+## The Random Word Model
+
+[This model is sometimes also called the *unigram* model.]{.aside}
+
+First, we're going to implement the *random word* model. In the random word model, we simply pick words at random from a given list. For example, suppose our list of possible words was `["to", "boldly", "go"]`. Then, a sequence of 5 random words from this list might be `"boldly to boldly go to"`. In the first part of this assignment, you'll implement the random word model. We're going to implement this model in a slightly complicated way, because that's going to eventually help us implement more interesting models in effective ways. 
+
+
+### The Sampler Class
+
+::: {.callout-note}
+
+## Problem 1
+
+Implement a class called `Sampler`. A `Sampler` is initialized with two arguments supplied by the user:
+
+- `choices` is a `list` of possible choices, which will always be words in this assignment. 
+- `weights` is a `list` of numbers representing how likely each element of `choices` is to be chosen. 
+
+A `Sampler` has two methods: 
+
+- `__init__(self, choices, weights)` saves `choices` and `weights` as instance variables. 
+- `sample(self)` makes a random choice from among `choices`, using the `weights`. This method just needs to call the `random.choices()` function from the `random` module, and extract the zeroth element from the result. For example, the following code will result in the variable `s` holding the string `"heads"` approximately twice as often as the string `"tails"`. 
+```python
+    choices = ["heads", "tails"]
+    weights = [2, 1]
+    s = random.choices(population = self.choices, weights = self.weights)[0]
+```
+:::
+
+::: {.callout-tip}
+
+## Test Your Solution
+
+I have supplied `tests.py` containing unit tests that you can use to test your solution. Note that you'll only pass the first couple tests at first, since these relate to the `Sampler` class. At this stage, you should pass the first two tests. 
+
+You'll pass more of the tests as you progress through the assignment. 
+
+:::
+
+### Creating a Sampler from Text
+
+You might notice that `Samplers` are very related to a data structure that we've already studied: dictionaries whose keys are words and whose values are counts. For example, the dictionary `{"heads" : 2, "tails" : 1}` contains the same information as a Sampler with `choices` `["heads", "tails"]` and `weights`  `[2, 1]`. So, if we can create a dictionary of counts, we can create a corresponding `Sampler`. 
+
+Here's an implementation of `count_words()` that uses a special Python class to solve the problem in a single line. Include this function in your solution file. 
+
+```python
+from collections import Counter
+def count_words(words):
+    """
+    compute a dictionary of counts from a list of words. 
+
+    ARGUMENT: 
+        words, a list of strings
+    
+    RETURN: 
+        a dictionary whose keys are the unique elements of words and whose 
+        values are the number of times each word appears in the argument. 
+    """
+    return dict(Counter(words))
+```
+
+::: {.callout-note}
+
+## Problem 2
+
+Write a function that can convert a dictionary of counts into a `Sampler`. To get you started, I've supplied an ***incorrect*** version of this function below: 
+
+```python
+def sampler_from_dict_wrong(d):
+    choices = list(d.keys())
+    weights = list(d.values())
+    return Sampler(choices, weights)
+```
+
+1. In a comment, explain why this function is incorrect. 
+2. Then, write a correct version of this function called `sampler_from_dict()`. 
+3. Add an informative docstring describing the purpose, argument, and return value of this function. 
+
+**Hint**: dictionaries don't have an order. 
+
+:::
+
+::: {.callout-tip}
+
+This is a good time to run `tests.py` again to check whether your solution is working. At this stage, you should pass the first three tests. 
+
+::: 
+
+### The Random Word Model
+
+In the random word model, we predict that the next word is going to be random from among all the words that exist in the list. In our case, we are going use the `Sampler` class to handle generating random text. 
+
+::: {.callout-note}
+
+## Problem 3
+
+Write a class called `RandomWordModel`. This class should have an instance variable called `sampler`, which is an instance of the `Sampler` class. It should have the following methods: 
+
+- The `__init__()` method should accept a string of text (called `text`) as an argument. It should then: 
+    - Create a list of words in the text like this: `words = text.split()`. 
+    - Use `count_words()` to create a dictionary of counts from `words`, called `counts`. 
+    - Use `sampler_from_dict()` to create a `Sampler` from the `counts`. 
+    - Save the resulting `Sampler` as an instance variable called `sampler`. 
+- The `sample_word()` method should accept no arguments and return the result of `self.sampler.sample()`. So, this method returns a random word. 
+- The `generate_text()` method should accept an integer argument called `num_words` and return a single string containing a number of random words equal to `num_words`, with each word separated by a space. 
+
+Here's an example. Suppose that our starting text is the prose-poem "Joy" by Mary Oliver. 
+
+```python
+text = \
+    """
+    If you suddenly and unexpectedly feel joy, don't hesitate. Give in to it. 
+    There are plenty of lives and whole towns destroyed or about to be. We are 
+    not wise, and not very often kind. And much can never be redeemed. Still, 
+    life has some possibility left. Perhaps this is its way of fighting back, 
+    that sometimes something happens better than all the riches or power in the 
+    world. It could be anything, but very likely you notice it in the instant 
+    when love begins. Anyway, that's often the case. Anyway, whatever it is, 
+    don’t be afraid of its plenty. Joy is not made to be a crumb.
+    """
+
+model = RandomWordModel(text)
+s = model.generate_text(50)
+print(s)
+```
+```
+>>> don't don't It never It Anyway, a or love Still, is be its made it towns
+    redeemed. a very is the instant afraid be be some life It in If Anyway, 
+    left. Perhaps to Anyway, be case. not that of 
+```
+
+**Note**: In this problem (and the remainder of the assignment), a "word" is just a sequence of characters that does not include spaces. This means that there are some funny things that count as "words." For example, `"ignorance."` (*including the period*) counts as a word. 
+
+It's possible to make modified code to handle some of these funky "words" but I want to keep things simple for you. So, you don't have to worry about it!  
+:::
+
+::: {.callout-tip}
+
+After completing this problem, you should pass the first five tests. 
+:::
+
+### Some Quick Experiments
+
+You might have concluded from the example above that the Random Word model doesn't lead to very nice text. Let's check this with a larger body of input text. 
+
+::: {.callout-note}
+
+## Problem 4
+
+Obtain a large text file (extension `.txt`) containing some text, ideally text that you've read. The easiest way to do this is to go to [Project Gutenberg](https://www.gutenberg.org/ebooks/search/?sort_order=downloads) and download a book. You will need to choose the Plain Text UTF8 option. Save the file as `text.txt`. Once you've saved the file (in the same location as your homework file), you can run the following code to load the text into a single string variable called `text`. Then, you can construct a `RandomWordModel` and use it to create new random strings, like this: 
+
+```python
+def load_text(path):
+    with open(path, "r", encoding = "utf8") as f:
+        text = " ".join(list(f.readlines()))
+    return text
+
+text = load_text("text.txt")
+model = RandomWordModel(text)
+random_text = model.generate_text(50)
+print(random_text)
+```
+
+Create at least 5 random texts containing at least 50 words and paste them into your homework file. Afterwards, include a short comment: do you find these texts to be "realistic" or "in the style" of the original text that you downloaded? 
+
+:::
+
+## Markov Language Models
+
+In a *Markov* language model, we don't just pick the next word entirely randomly. Here's what we do instead. Each time we want to generate a word, 
+
+1. We look at the most recent word we've generated. Call this word `w`. 
+2. We then look in the text at all the times that `w` appeared, and ask what word came *after*. 
+3. We randomly choose one of those words, and that's the next word. 
+
+We repeat this process until we've generated the number of words that we want. 
+
+Here's an example. Suppose that our starting text is again the prose-poem "Joy" by Mary Oliver. 
+
+```python
+text = \
+    """
+    If you suddenly and unexpectedly feel joy, don't hesitate. Give in to it. 
+    There are plenty of lives and whole towns destroyed or about to be. We are 
+    not wise, and not very often kind. And much can never be redeemed. Still, 
+    life has some possibility left. Perhaps this is its way of fighting back, 
+    that sometimes something happens better than all the riches or power in the 
+    world. It could be anything, but very likely you notice it in the instant 
+    when love begins. Anyway, that's often the case. Anyway, whatever it is, 
+    don’t be afraid of its plenty. Joy is not made to be a crumb.
+    """
+```
+
+Suppose that our current word is `"not"`. The first thing we need to do is to identify all the times that this word appears in the text, and the word that comes after. These are: 
+
+- `"...not wise,..."`
+- `"...not very..."`
+- `"...not made..."`
+
+So, for our next word, we would choose randomly from the `choices` `["wise,", "very", "made"]` with `weights` `[1, 1, 1]`. 
+
+There are two small wrinkles here: 
+
+- We usually need to choose the *first* word to get this process started. 
+- If the *last* word of the text is unique (like `crumb.`), and if we generate that word, we won't have any possibilities to choose from for the next word. In this case, we can just choose a random word from the text. 
+
+Here is an example of text generated from this poem, using a Markov model: 
+
+```python
+"""
+It could be afraid of lives and whole towns destroyed or power in the world. It 
+could be anything, but very often kind. And much can never be afraid of 
+fighting back, that sometimes something happens better than all the riches
+"""
+```
+
+### Samplers from Text
+
+We're now going to write the function that is going to allow us to construct a set of `Sampler`s from some text. Our goal is to create a dictionary in which the keys are words and the values are `Sampler`s. If `w` is a word, then its corresponding `Sampler` should have `choices` corresponding to the words that immediately follow `w` in the text, and `weights` corresponding to the number of times that occurs. 
+
+*This problem is perhaps the most challenging one in this assignment. Please give yourself plenty of time!* 
+
+::: {.callout-note}
+
+## Problem 5
+
+Write a function called `next_word_samplers()`. This function should take a single argument, `text`, the input text. Here's the algorithm for this function: 
+
+1. Split the text into a list of individual words, called `words`, using `text.split()`. 
+2. Create an empty dictionary called `d`. 
+3. For each `i` from `0` to `len(words) - 1`: 
+    - Check of `words[i]` is already a key in `d`. If not, make it a key, *with am empty dictionary as its value`. Now, `d[words[i]]` is itself a dictionary. This dictionary will hold key-value pairs in which the key is a word and the value is a count.  
+    - If `words[i+1]` is already a key in `d[words[i]]`, add it as a key with value `1`. Otherwise, increase its value by `1`. 
+4. Let `samplers` be a *new* empty dictionary. 
+5. For each key `word` of `d`: 
+    - Let `samplers[word]` be the result of calling `sampler_from_dict` on `d[word]`. 
+6. Finally, return the `samplers` dictionary. 
+
+So, in the case of the Mary Oliver poem above, we should be able to do this: 
+
+```python
+samplers = next_word_samplers(text)
+s = samplers["not"]
+```
+
+`s` is now a `Sampler` with `choices` `["wise,", "very", "made"]` with `weights` `[1, 1, 1]`. 
+
+:::
+
+::: {.callout-tip}
+Now is a good time to run `tests.py` again. At this stage, you should pass six of the tests. 
+
+:::
+
+### The `MarkovModel` Class
+
+Now we're finally ready to implement a class for our Markov model. Fortunately, this class is relatively simple once we've implemented `next_word_samplers()`. 
+
+::: {.callout-note}
+
+## Problem 6
+
+Implement the `MarkovModel` class. This class should have a single instance variable, called `self.samplers`. It should have the following methods: 
+
+- `__init__()` should accept an argument called `text`. It should call `next_word_samplers()` on `text` and save the result as `self.samplers`. 
+- `next_word()` should accept a single argument `current_word`. 
+    - If `current_word` is in the keys of `self.samplers`, then return `self.samplers[current_word].sample()`. 
+    - Otherwise, return a random key from `self.samplers`. 
+- `generate_text()` should accept a single argument, `num_words`, the number of words to generate using the Markov model. The first word should be a random key from `self.samplers`. The next word should be obtained by calling `self.next_word()` on the most recent word, and so on, until the number of words generated is equal to the number of desired words. Then, a string is returned, containing these words separated by spaces. 
+
+:::
+
+For example, still using the poem "Joy" by Mary Oliver, we can do this: 
+
+```python
+m = MarkovModel(text)
+print(m.generate_text(40))
+```
+
+```
+>>> be. We are plenty of lives and not very likely you notice it in the world. 
+    It could be afraid of fighting back, that sometimes something happens 
+    better than all the instant when love begins. Anyway, that's often kind. 
+    And much
+```
+
+::: {.callout-tip}
+
+After completing this problem, you should pass all eight of the tests in `tests.py`. 
+
+:::
+
+## Experiments
+
+Find a long body of text, ideally one that you have read before. A good way to do this is by heading over to [Project Gutenberg](https://www.gutenberg.org/ebooks/search/?sort_order=downloads) and choosing a book. Download the book in Plain Text UTF8 format, and save the file in the same directory as `text.txt`. Then, in your homework file, you can load the text like this: 
+
+```python
+def load_text(path):
+    with open(path, "r", encoding = "utf8") as f:
+        s = " ".join(list(f.readlines()))
+    return s
+
+text = load_text("text.txt")
+```
+
+::: {.callout-note}
+
+## Problem 7
+
+Using the text you found, generate at least 5 pieces of random text using the `MarkovModel`. Each piece of random text should contain at least 50 words. 
+
+Paste your random text into your homework file. Then, comment on whether the results are "more realistic" or "more interesting" than the text created by the `RandomWordModel`. Justify your answer. 
+:::
+
+## Challenges with Modern Language Models
+
+Language models can be powerful tools for solving problems that require the generation of text. Modern language models don't use Markov Chain approaches. Instead, they use extremely complex deep neural networks in order to generate text. The big-picture approach, however, is always the same: 
+
+> Use the previously-generated words in order to generate the next word. 
+
+The way the prediction works is always contextualized by the real, input text with which we begin. This text is called often called *training data*. In this problem, you'll learn a bit more about large language models and reflect on a few important social and ethical questions. 
+
+::: {.callout-note}
+
+## Problem 8
+
+Read this long-form blog post by [Marty Oelschläger](https://dida.do/blog/ethics-in-natural-language-processing). Then, in your homework file, write *brief* answers to each of the following questions (a sentence or two is fine). 
+
+1. Some words are used as slurs against members of marginalized communities, but then eventually reclaimed by those communities. The word "queer" is an example. Why do reclaimed words pose a challenge for ethically deploying large language models? 
+2. Do you agree with the "octopus argument" that language models that use only statistical correlations between words can never "truly understand" language?
+3. Do you believe that language models used in widespread tools like autocomplete and chatbots should replicate biases and stereotypes shared by large numbers of people, or that developers should strive to make these models as "neutral" as possible? Are there any other alternatives? 
+
+:::
+
+## Submit Your Assignment
+
+Before submitting, please run the file 
+
+Submit the file `submission.py`, **with exactly that file name**, on Gradescope. Nice job! 

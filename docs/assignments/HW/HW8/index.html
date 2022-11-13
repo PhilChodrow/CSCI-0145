@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Homework Project: Markov Language Models</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/img/icons/favicon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Homework Project: Markov Language Models</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../../"><b>Introduction to Computing</b><br>CSCI 0145</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">Welcome!</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../collaboration.html" class="sidebar-item-text sidebar-link">Collaboration And Academic Honesty</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../tools.html" class="sidebar-item-text sidebar-link">Course Resources</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../help.html" class="sidebar-item-text sidebar-link">Asking for Help</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../schedule.html" class="sidebar-item-text sidebar-link">Course Schedule</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../philosophy.html" class="sidebar-item-text sidebar-link">Some Teaching Philosophies</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction-language-models" id="toc-introduction-language-models" class="nav-link active" data-scroll-target="#introduction-language-models">Introduction: Language Models</a></li>
+  <li><a href="#the-random-word-model" id="toc-the-random-word-model" class="nav-link" data-scroll-target="#the-random-word-model">The Random Word Model</a>
+  <ul class="collapse">
+  <li><a href="#the-sampler-class" id="toc-the-sampler-class" class="nav-link" data-scroll-target="#the-sampler-class">The Sampler Class</a></li>
+  <li><a href="#creating-a-sampler-from-text" id="toc-creating-a-sampler-from-text" class="nav-link" data-scroll-target="#creating-a-sampler-from-text">Creating a Sampler from Text</a></li>
+  <li><a href="#the-random-word-model-1" id="toc-the-random-word-model-1" class="nav-link" data-scroll-target="#the-random-word-model-1">The Random Word Model</a></li>
+  <li><a href="#some-quick-experiments" id="toc-some-quick-experiments" class="nav-link" data-scroll-target="#some-quick-experiments">Some Quick Experiments</a></li>
+  </ul></li>
+  <li><a href="#markov-language-models" id="toc-markov-language-models" class="nav-link" data-scroll-target="#markov-language-models">Markov Language Models</a>
+  <ul class="collapse">
+  <li><a href="#samplers-from-text" id="toc-samplers-from-text" class="nav-link" data-scroll-target="#samplers-from-text">Samplers from Text</a></li>
+  <li><a href="#the-markovmodel-class" id="toc-the-markovmodel-class" class="nav-link" data-scroll-target="#the-markovmodel-class">The <code>MarkovModel</code> Class</a></li>
+  </ul></li>
+  <li><a href="#experiments" id="toc-experiments" class="nav-link" data-scroll-target="#experiments">Experiments</a></li>
+  <li><a href="#challenges-with-modern-language-models" id="toc-challenges-with-modern-language-models" class="nav-link" data-scroll-target="#challenges-with-modern-language-models">Challenges with Modern Language Models</a></li>
+  <li><a href="#submit-your-assignment" id="toc-submit-your-assignment" class="nav-link" data-scroll-target="#submit-your-assignment">Submit Your Assignment</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Homework Project: Markov Language Models</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>This is a challenging homework assignment with multiple related parts. It’s more of a mini-project than a homework, which is why I’m calling it a “homework project.”</p>
+<div class="page-columns page-full"><p>You have extra time to complete this assignment. However, the assignment is worth as much as a normal homework assignment. This means that, if you’re feeling overwhelmed and need a break, <strong>this is a very good homework assignment to drop.</strong> </p><div class="no-row-height column-margin column-container"><span class="aside">Remember, your lowest homework score in this course is ignored when calculating your final grade.</span></div></div>
+<div class="callout-important callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Docstrings are required</strong> for all classes and methods in this assignment.</p>
+</div>
+</div>
+</div>
+<section id="introduction-language-models" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-language-models">Introduction: Language Models</h2>
+<p>A <em>language model</em> is an algorithm that generates sequences of characters or words. Language models have a large number of applications. Most of us interact with language models every day. When you use auto-correct, mobile keyboards with word prediction, chatbots, automatic translation, or similar tools, you are using language models.</p>
+</section>
+<section id="the-random-word-model" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="the-random-word-model">The Random Word Model</h2>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">This model is sometimes also called the <em>unigram</em> model.</span></div></div>
+<p>First, we’re going to implement the <em>random word</em> model. In the random word model, we simply pick words at random from a given list. For example, suppose our list of possible words was <code>["to", "boldly", "go"]</code>. Then, a sequence of 5 random words from this list might be <code>"boldly to boldly go to"</code>. In the first part of this assignment, you’ll implement the random word model. We’re going to implement this model in a slightly complicated way, because that’s going to eventually help us implement more interesting models in effective ways.</p>
+<section id="the-sampler-class" class="level3">
+<h3 class="anchored" data-anchor-id="the-sampler-class">The Sampler Class</h3>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Problem 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Implement a class called <code>Sampler</code>. A <code>Sampler</code> is initialized with two arguments supplied by the user:</p>
+<ul>
+<li><code>choices</code> is a <code>list</code> of possible choices, which will always be words in this assignment.</li>
+<li><code>weights</code> is a <code>list</code> of numbers representing how likely each element of <code>choices</code> is to be chosen.</li>
+</ul>
+<p>A <code>Sampler</code> has two methods:</p>
+<ul>
+<li><code>__init__(self, choices, weights)</code> saves <code>choices</code> and <code>weights</code> as instance variables.</li>
+<li><code>sample(self)</code> makes a random choice from among <code>choices</code>, using the <code>weights</code>. This method just needs to call the <code>random.choices()</code> function from the <code>random</code> module, and extract the zeroth element from the result. For example, the following code will result in the variable <code>s</code> holding the string <code>"heads"</code> approximately twice as often as the string <code>"tails"</code>.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [<span class="st">"heads"</span>, <span class="st">"tails"</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    weights <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">1</span>]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    s <span class="op">=</span> random.choices(population <span class="op">=</span> <span class="va">self</span>.choices, weights <span class="op">=</span> <span class="va">self</span>.weights)[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout-tip callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Test Your Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I have supplied <code>tests.py</code> containing unit tests that you can use to test your solution. Note that you’ll only pass the first couple tests at first, since these relate to the <code>Sampler</code> class. At this stage, you should pass the first two tests.</p>
+<p>You’ll pass more of the tests as you progress through the assignment.</p>
+</div>
+</div>
+</section>
+<section id="creating-a-sampler-from-text" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-sampler-from-text">Creating a Sampler from Text</h3>
+<p>You might notice that <code>Samplers</code> are very related to a data structure that we’ve already studied: dictionaries whose keys are words and whose values are counts. For example, the dictionary <code>{"heads" : 2, "tails" : 1}</code> contains the same information as a Sampler with <code>choices</code> <code>["heads", "tails"]</code> and <code>weights</code> <code>[2, 1]</code>. So, if we can create a dictionary of counts, we can create a corresponding <code>Sampler</code>.</p>
+<p>Here’s an implementation of <code>count_words()</code> that uses a special Python class to solve the problem in a single line. Include this function in your solution file.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_words(words):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">    compute a dictionary of counts from a list of words. </span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">    ARGUMENT: </span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">        words, a list of strings</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">    RETURN: </span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">        a dictionary whose keys are the unique elements of words and whose </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">        values are the number of times each word appears in the argument. </span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">dict</span>(Counter(words))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Problem 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a function that can convert a dictionary of counts into a <code>Sampler</code>. To get you started, I’ve supplied an <strong><em>incorrect</em></strong> version of this function below:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sampler_from_dict_wrong(d):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> <span class="bu">list</span>(d.keys())</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    weights <span class="op">=</span> <span class="bu">list</span>(d.values())</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Sampler(choices, weights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>In a comment, explain why this function is incorrect.</li>
+<li>Then, write a correct version of this function called <code>sampler_from_dict()</code>.</li>
+<li>Add an informative docstring describing the purpose, argument, and return value of this function.</li>
+</ol>
+<p><strong>Hint</strong>: dictionaries don’t have an order.</p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>This is a good time to run <code>tests.py</code> again to check whether your solution is working. At this stage, you should pass the first three tests.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-random-word-model-1" class="level3">
+<h3 class="anchored" data-anchor-id="the-random-word-model-1">The Random Word Model</h3>
+<p>In the random word model, we predict that the next word is going to be random from among all the words that exist in the list. In our case, we are going use the <code>Sampler</code> class to handle generating random text.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Problem 3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a class called <code>RandomWordModel</code>. This class should have an instance variable called <code>sampler</code>, which is an instance of the <code>Sampler</code> class. It should have the following methods:</p>
+<ul>
+<li>The <code>__init__()</code> method should accept a string of text (called <code>text</code>) as an argument. It should then:
+<ul>
+<li>Create a list of words in the text like this: <code>words = text.split()</code>.</li>
+<li>Use <code>count_words()</code> to create a dictionary of counts from <code>words</code>, called <code>counts</code>.</li>
+<li>Use <code>sampler_from_dict()</code> to create a <code>Sampler</code> from the <code>counts</code>.</li>
+<li>Save the resulting <code>Sampler</code> as an instance variable called <code>sampler</code>.</li>
+</ul></li>
+<li>The <code>sample_word()</code> method should accept no arguments and return the result of <code>self.sampler.sample()</code>. So, this method returns a random word.</li>
+<li>The <code>generate_text()</code> method should accept an integer argument called <code>num_words</code> and return a single string containing a number of random words equal to <code>num_words</code>, with each word separated by a space.</li>
+</ul>
+<p>Here’s an example. Suppose that our starting text is the prose-poem “Joy” by Mary Oliver.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="op">\</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"""</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">    If you suddenly and unexpectedly feel joy, don't hesitate. Give in to it. </span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">    There are plenty of lives and whole towns destroyed or about to be. We are </span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">    not wise, and not very often kind. And much can never be redeemed. Still, </span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">    life has some possibility left. Perhaps this is its way of fighting back, </span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">    that sometimes something happens better than all the riches or power in the </span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">    world. It could be anything, but very likely you notice it in the instant </span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="st">    when love begins. Anyway, that's often the case. Anyway, whatever it is, </span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="st">    don’t be afraid of its plenty. Joy is not made to be a crumb.</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="st">    """</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> RandomWordModel(text)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> model.generate_text(<span class="dv">50</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>&gt;&gt;&gt; don't don't It never It Anyway, a or love Still, is be its made it towns
+    redeemed. a very is the instant afraid be be some life It in If Anyway, 
+    left. Perhaps to Anyway, be case. not that of </code></pre>
+<p><strong>Note</strong>: In this problem (and the remainder of the assignment), a “word” is just a sequence of characters that does not include spaces. This means that there are some funny things that count as “words.” For example, <code>"ignorance."</code> (<em>including the period</em>) counts as a word.</p>
+<p>It’s possible to make modified code to handle some of these funky “words” but I want to keep things simple for you. So, you don’t have to worry about it!</p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>After completing this problem, you should pass the first five tests.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="some-quick-experiments" class="level3">
+<h3 class="anchored" data-anchor-id="some-quick-experiments">Some Quick Experiments</h3>
+<p>You might have concluded from the example above that the Random Word model doesn’t lead to very nice text. Let’s check this with a larger body of input text.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Problem 4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Obtain a large text file (extension <code>.txt</code>) containing some text, ideally text that you’ve read. The easiest way to do this is to go to <a href="https://www.gutenberg.org/ebooks/search/?sort_order=downloads">Project Gutenberg</a> and download a book. You will need to choose the Plain Text UTF8 option. Save the file as <code>text.txt</code>. Once you’ve saved the file (in the same location as your homework file), you can run the following code to load the text into a single string variable called <code>text</code>. Then, you can construct a <code>RandomWordModel</code> and use it to create new random strings, like this:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> load_text(path):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">"r"</span>, encoding <span class="op">=</span> <span class="st">"utf8"</span>) <span class="im">as</span> f:</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        text <span class="op">=</span> <span class="st">" "</span>.join(<span class="bu">list</span>(f.readlines()))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> text</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> load_text(<span class="st">"text.txt"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> RandomWordModel(text)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>random_text <span class="op">=</span> model.generate_text(<span class="dv">50</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(random_text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Create at least 5 random texts containing at least 50 words and paste them into your homework file. Afterwards, include a short comment: do you find these texts to be “realistic” or “in the style” of the original text that you downloaded?</p>
+</div>
+</div>
+</section>
+</section>
+<section id="markov-language-models" class="level2">
+<h2 class="anchored" data-anchor-id="markov-language-models">Markov Language Models</h2>
+<p>In a <em>Markov</em> language model, we don’t just pick the next word entirely randomly. Here’s what we do instead. Each time we want to generate a word,</p>
+<ol type="1">
+<li>We look at the most recent word we’ve generated. Call this word <code>w</code>.</li>
+<li>We then look in the text at all the times that <code>w</code> appeared, and ask what word came <em>after</em>.</li>
+<li>We randomly choose one of those words, and that’s the next word.</li>
+</ol>
+<p>We repeat this process until we’ve generated the number of words that we want.</p>
+<p>Here’s an example. Suppose that our starting text is again the prose-poem “Joy” by Mary Oliver.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="op">\</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"""</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="st">    If you suddenly and unexpectedly feel joy, don't hesitate. Give in to it. </span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="st">    There are plenty of lives and whole towns destroyed or about to be. We are </span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="st">    not wise, and not very often kind. And much can never be redeemed. Still, </span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="st">    life has some possibility left. Perhaps this is its way of fighting back, </span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="st">    that sometimes something happens better than all the riches or power in the </span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="st">    world. It could be anything, but very likely you notice it in the instant </span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="st">    when love begins. Anyway, that's often the case. Anyway, whatever it is, </span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="st">    don’t be afraid of its plenty. Joy is not made to be a crumb.</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="st">    """</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Suppose that our current word is <code>"not"</code>. The first thing we need to do is to identify all the times that this word appears in the text, and the word that comes after. These are:</p>
+<ul>
+<li><code>"...not wise,..."</code></li>
+<li><code>"...not very..."</code></li>
+<li><code>"...not made..."</code></li>
+</ul>
+<p>So, for our next word, we would choose randomly from the <code>choices</code> <code>["wise,", "very", "made"]</code> with <code>weights</code> <code>[1, 1, 1]</code>.</p>
+<p>There are two small wrinkles here:</p>
+<ul>
+<li>We usually need to choose the <em>first</em> word to get this process started.</li>
+<li>If the <em>last</em> word of the text is unique (like <code>crumb.</code>), and if we generate that word, we won’t have any possibilities to choose from for the next word. In this case, we can just choose a random word from the text.</li>
+</ul>
+<p>Here is an example of text generated from this poem, using a Markov model:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">It could be afraid of lives and whole towns destroyed or power in the world. It </span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">could be anything, but very often kind. And much can never be afraid of </span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">fighting back, that sometimes something happens better than all the riches</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="samplers-from-text" class="level3">
+<h3 class="anchored" data-anchor-id="samplers-from-text">Samplers from Text</h3>
+<p>We’re now going to write the function that is going to allow us to construct a set of <code>Sampler</code>s from some text. Our goal is to create a dictionary in which the keys are words and the values are <code>Sampler</code>s. If <code>w</code> is a word, then its corresponding <code>Sampler</code> should have <code>choices</code> corresponding to the words that immediately follow <code>w</code> in the text, and <code>weights</code> corresponding to the number of times that occurs.</p>
+<p><em>This problem is perhaps the most challenging one in this assignment. Please give yourself plenty of time!</em></p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Problem 5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a function called <code>next_word_samplers()</code>. This function should take a single argument, <code>text</code>, the input text. Here’s the algorithm for this function:</p>
+<ol type="1">
+<li>Split the text into a list of individual words, called <code>words</code>, using <code>text.split()</code>.</li>
+<li>Create an empty dictionary called <code>d</code>.</li>
+<li>For each <code>i</code> from <code>0</code> to <code>len(words) - 1</code>:
+<ul>
+<li>Check of <code>words[i]</code> is already a key in <code>d</code>. If not, make it a key, *with am empty dictionary as its value<code>. Now,</code>d[words[i]]` is itself a dictionary. This dictionary will hold key-value pairs in which the key is a word and the value is a count.<br>
+</li>
+<li>If <code>words[i+1]</code> is already a key in <code>d[words[i]]</code>, add it as a key with value <code>1</code>. Otherwise, increase its value by <code>1</code>.</li>
+</ul></li>
+<li>Let <code>samplers</code> be a <em>new</em> empty dictionary.</li>
+<li>For each key <code>word</code> of <code>d</code>:
+<ul>
+<li>Let <code>samplers[word]</code> be the result of calling <code>sampler_from_dict</code> on <code>d[word]</code>.</li>
+</ul></li>
+<li>Finally, return the <code>samplers</code> dictionary.</li>
+</ol>
+<p>So, in the case of the Mary Oliver poem above, we should be able to do this:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>samplers <span class="op">=</span> next_word_samplers(text)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> samplers[<span class="st">"not"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>s</code> is now a <code>Sampler</code> with <code>choices</code> <code>["wise,", "very", "made"]</code> with <code>weights</code> <code>[1, 1, 1]</code>.</p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Now is a good time to run <code>tests.py</code> again. At this stage, you should pass six of the tests.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="the-markovmodel-class" class="level3">
+<h3 class="anchored" data-anchor-id="the-markovmodel-class">The <code>MarkovModel</code> Class</h3>
+<p>Now we’re finally ready to implement a class for our Markov model. Fortunately, this class is relatively simple once we’ve implemented <code>next_word_samplers()</code>.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Problem 6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Implement the <code>MarkovModel</code> class. This class should have a single instance variable, called <code>self.samplers</code>. It should have the following methods:</p>
+<ul>
+<li><code>__init__()</code> should accept an argument called <code>text</code>. It should call <code>next_word_samplers()</code> on <code>text</code> and save the result as <code>self.samplers</code>.</li>
+<li><code>next_word()</code> should accept a single argument <code>current_word</code>.
+<ul>
+<li>If <code>current_word</code> is in the keys of <code>self.samplers</code>, then return <code>self.samplers[current_word].sample()</code>.</li>
+<li>Otherwise, return a random key from <code>self.samplers</code>.</li>
+</ul></li>
+<li><code>generate_text()</code> should accept a single argument, <code>num_words</code>, the number of words to generate using the Markov model. The first word should be a random key from <code>self.samplers</code>. The next word should be obtained by calling <code>self.next_word()</code> on the most recent word, and so on, until the number of words generated is equal to the number of desired words. Then, a string is returned, containing these words separated by spaces.</li>
+</ul>
+</div>
+</div>
+<p>For example, still using the poem “Joy” by Mary Oliver, we can do this:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> MarkovModel(text)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.generate_text(<span class="dv">40</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>&gt;&gt;&gt; be. We are plenty of lives and not very likely you notice it in the world. 
+    It could be afraid of fighting back, that sometimes something happens 
+    better than all the instant when love begins. Anyway, that's often kind. 
+    And much</code></pre>
+<div class="callout-tip callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>After completing this problem, you should pass all eight of the tests in <code>tests.py</code>.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="experiments" class="level2">
+<h2 class="anchored" data-anchor-id="experiments">Experiments</h2>
+<p>Find a long body of text, ideally one that you have read before. A good way to do this is by heading over to <a href="https://www.gutenberg.org/ebooks/search/?sort_order=downloads">Project Gutenberg</a> and choosing a book. Download the book in Plain Text UTF8 format, and save the file in the same directory as <code>text.txt</code>. Then, in your homework file, you can load the text like this:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> load_text(path):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">"r"</span>, encoding <span class="op">=</span> <span class="st">"utf8"</span>) <span class="im">as</span> f:</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        s <span class="op">=</span> <span class="st">" "</span>.join(<span class="bu">list</span>(f.readlines()))</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> s</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> load_text(<span class="st">"text.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Problem 7
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using the text you found, generate at least 5 pieces of random text using the <code>MarkovModel</code>. Each piece of random text should contain at least 50 words.</p>
+<p>Paste your random text into your homework file. Then, comment on whether the results are “more realistic” or “more interesting” than the text created by the <code>RandomWordModel</code>. Justify your answer.</p>
+</div>
+</div>
+</section>
+<section id="challenges-with-modern-language-models" class="level2">
+<h2 class="anchored" data-anchor-id="challenges-with-modern-language-models">Challenges with Modern Language Models</h2>
+<p>Language models can be powerful tools for solving problems that require the generation of text. Modern language models don’t use Markov Chain approaches. Instead, they use extremely complex deep neural networks in order to generate text. The big-picture approach, however, is always the same:</p>
+<blockquote class="blockquote">
+<p>Use the previously-generated words in order to generate the next word.</p>
+</blockquote>
+<p>The way the prediction works is always contextualized by the real, input text with which we begin. This text is called often called <em>training data</em>. In this problem, you’ll learn a bit more about large language models and reflect on a few important social and ethical questions.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Problem 8
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Read this long-form blog post by <a href="https://dida.do/blog/ethics-in-natural-language-processing">Marty Oelschläger</a>. Then, in your homework file, write <em>brief</em> answers to each of the following questions (a sentence or two is fine).</p>
+<ol type="1">
+<li>Some words are used as slurs against members of marginalized communities, but then eventually reclaimed by those communities. The word “queer” is an example. Why do reclaimed words pose a challenge for ethically deploying large language models?</li>
+<li>Do you agree with the “octopus argument” that language models that use only statistical correlations between words can never “truly understand” language?</li>
+<li>Do you believe that language models used in widespread tools like autocomplete and chatbots should replicate biases and stereotypes shared by large numbers of people, or that developers should strive to make these models as “neutral” as possible? Are there any other alternatives?</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="submit-your-assignment" class="level2">
+<h2 class="anchored" data-anchor-id="submit-your-assignment">Submit Your Assignment</h2>
+<p>Before submitting, please run the file</p>
+<p>Submit the file <code>submission.py</code>, <strong>with exactly that file name</strong>, on Gradescope. Nice job!</p>
+
+
+</section>
+
+<p><br> <br> <span style="color:grey;">© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022</span></p></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
