@@ -9,9 +9,10 @@ time now, and we already know how to do things like indexing. Strings have a lot
 more tricks, and today we're going to go into depth on some of them. Now that we
 know object-oriented programming we're prepared to describe these tricks
 accurately: *string methods*. Let's see an example: 
-
 """
 
+s = "to boldly go"
+# print(s.upper())
 
 """
 Nice and simple! s.capitalize() is a string method that returns a modified
@@ -20,13 +21,15 @@ version of the string in which the first character is capitalized.
 String methods return a modified copy of the original string. They don't modify
 that string: 
 """
+# print(s)
+
 
 
 """
 Here are a few other string methods: 
 """
 
-
+print(s.capitalize())
 
 """
 There are LOTS of string methods. You can see all of them here, and you can use
