@@ -447,8 +447,13 @@ Test Your Solution
 <li><code>ballot-bullet.txt</code>: “The Ballot or the Bullet” by Malcom X, 1964</li>
 <li><code>keynote.txt</code>: “Keynote Address at the Democratic National Convention” by Barack Obama, 2004</li>
 </ul>
-<p>You can read one of these speeches into Python as a string like this:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>speech <span class="op">=</span> load_text(<span class="st">"dream.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here’s a function you can use to read the speeches into Python:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> load_text(path):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(path, <span class="st">"r"</span>, encoding <span class="op">=</span> <span class="st">"utf8"</span>) <span class="im">as</span> f:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        text <span class="op">=</span> <span class="st">" "</span>.join(<span class="bu">list</span>(f.readlines()))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Use it like this:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>speech <span class="op">=</span> load_text(<span class="st">"dream.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In the next two activities, we will briefly study the sentiment of these speeches. We’ll first check for some of the highest-sentiment lines in each speech. We’ll then make a simple plot to see if we can learn anything about how the emotional arc of the speeches changes over time.</p>
 <div class="callout-note callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -476,9 +481,9 @@ Test Your Solution
 </div>
 <div class="callout-body-container callout-body">
 <p>You should be able to use your function like this, with the following result:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pos_lines <span class="op">=</span> positive_lines(<span class="st">"dream.txt"</span>, <span class="fl">6.0</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> pos_lines: </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(line)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pos_lines <span class="op">=</span> positive_lines(<span class="st">"dream.txt"</span>, <span class="fl">6.0</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> pos_lines: </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(line)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>I have a dream today!
 I have a dream today!
 My country 'tis of thee, sweet land of liberty, of thee I sing.
@@ -498,26 +503,26 @@ Activity 5
 </div>
 <div class="callout-body-container callout-body">
 <p>The following function will divide a speech into paragraphs (not individual lines) and then create a scatterplot with the sentiment score of each paragraph in the speech. You can paste this function into <code>lab.py</code>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> scatterplot(path):</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Create a scatterplot of the sentiment score of each paragraph in a speech. </span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">    The plot is shown in a popup window in Thonny. </span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">    ARGUMENT: </span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">        path, string, the path to the text file containing the speech. </span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">    RETURN: </span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">        None</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    speech <span class="op">=</span> load_text(path)</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> [H.score(par) <span class="cf">for</span> par <span class="kw">in</span> speech.split(<span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>)]</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    plt.scatter(<span class="bu">range</span>(<span class="bu">len</span>(v)), v)</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"Paragraph"</span>, </span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>                  ylabel <span class="op">=</span> <span class="st">"Sentiment score"</span>, </span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>                  title <span class="op">=</span> path)</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    plt.gca().set_ylim([<span class="dv">4</span>, <span class="dv">7</span>])</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> scatterplot(path):</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Create a scatterplot of the sentiment score of each paragraph in a speech. </span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">    The plot is shown in a popup window in Thonny. </span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">    ARGUMENT: </span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">        path, string, the path to the text file containing the speech. </span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">    RETURN: </span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">        None</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    speech <span class="op">=</span> load_text(path)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> [H.score(par) <span class="cf">for</span> par <span class="kw">in</span> speech.split(<span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>)]</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    plt.scatter(<span class="bu">range</span>(<span class="bu">len</span>(v)), v)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"Paragraph"</span>, </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>                  ylabel <span class="op">=</span> <span class="st">"Sentiment score"</span>, </span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>                  title <span class="op">=</span> path)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    plt.gca().set_ylim([<span class="dv">4</span>, <span class="dv">7</span>])</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Create scatterplots for each of the three speeches that I gave you, and save them (one of the buttons on the scatterplot will let you do this). Then, in the ACTIVITY 5 area, please briefly write to address the following questions:</p>
 <ol type="1">
 <li>Which of these speeches appears to have the overall highest sentiment? Which of these speeches appears to have the overall lowest sentiment?</li>
