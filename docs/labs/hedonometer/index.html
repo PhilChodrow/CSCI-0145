@@ -281,7 +281,7 @@ Content Warning
 <blockquote class="blockquote">
 <ol type="1">
 <li>I had a great time playing in the snow!</li>
-<li>I hate how dark it is this time of year.</li>
+<li>I hate how cold it is this time of year.</li>
 </ol>
 </blockquote>
 <p>You might naturally feel that sentence 1 is happier than sentence 2. As a human being, you have a well-developed, intricate, holistic understanding of language. Computers don’t have that, but they do have the ability to follow simple instructions.</p>
@@ -289,10 +289,10 @@ Content Warning
 <blockquote class="blockquote">
 <ol type="1">
 <li>I had a <strong>great</strong> time <strong>playing</strong> in the snow!</li>
-<li>I <em>hate</em> how <em>dark</em> it is this time of year.</li>
+<li>I <em>hate</em> how <em>cold</em> it is this time of year.</li>
 </ol>
 </blockquote>
-<p>“<strong>Great</strong>” and “<strong>playing</strong>” are words that feel good, happy, and positive. On the other hand, “<strong>hate</strong>” and “<strong>dark</strong>” are words that feel bad, sad, and negative.</p>
+<p>“<strong>Great</strong>” and “<strong>playing</strong>” are words that feel good, happy, and positive. On the other hand, “<strong>hate</strong>” and “<strong>cold</strong>” are words that feel bad, sad, and negative.</p>
 <div class="callout-note callout callout-style-simple no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -309,7 +309,7 @@ Activity 0
 <li><code>"great"</code></li>
 <li><code>"playing"</code></li>
 <li><code>"hate"</code></li>
-<li><code>"dark"</code>.</li>
+<li><code>"cold"</code>.</li>
 </ol>
 <p>Write the scores for each word in the <code>ACTIVITY 0</code> area of <code>lab.py</code>.</p>
 </div>
@@ -335,7 +335,7 @@ Activity 1
 <blockquote class="blockquote">
 <ol type="1">
 <li>I had a <strong>great</strong> time <strong>playing</strong> in the snow!</li>
-<li>I <em>hate</em> how <em>dark</em> it is this time of year.</li>
+<li>I <em>hate</em> how <em>cold</em> it is this time of year.</li>
 </ol>
 </blockquote>
 <p>For the purposes of this activity, you can assume that only the <strong>bolded</strong> and <em>italicized</em> words are in the <code>sentiment</code> dictionary. (In fact, several other words in these sentences are also in that dictionary, but we won’t worry about it at this stage.)</p>
@@ -362,7 +362,7 @@ Activity 2
 <p>Write a function called <code>strip_punctuation(s)</code> that removes all punctuation marks from a string. <strong>Write this function in <code>hedonometer.py</code></strong>. Here’s what you’ll need:</p>
 <ul>
 <li><code>string.punctuation</code> is a special string containing all the English punctuation marks. Its value is <code>'!"#$%&amp;\'()*+,-./:;&lt;=&gt;?@[\\]^_{|}~'</code>. It is imported from the <code>string</code> package. I put the <code>import</code> statement at the top of <code>lab.py</code> for you so you don’t have to worry about it.</li>
-<li><code>str.replace(pattern, replace)</code> is a string method that replaces all instances of <code>pattern</code> with a specified string <code>replace</code>. For example:</li>
+<li><code>str.replace(pattern, replace)</code> is a string method that replaces all instances of <code>pattern</code> with a specified string <code>replace</code>. It is used like this:</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"to boldly go"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>no_punc <span class="op">=</span> s.replace(<span class="st">"go"</span>, <span class="st">"dance"</span>)</span>
@@ -377,7 +377,7 @@ Activity 2
 <p><strong>HINT</strong>: Here is the pseudocode for this function.</p>
 <ol type="1">
 <li>First, create a string called <code>new_s</code> that has value equal to <code>s</code>.</li>
-<li>Loop through all the elements of <code>string.punctuation</code> and replace all occurrences of each punctuation mark with the empty string <code>""</code> in <code>new_s</code>. You will need to ensure that the variable <code>new_s</code> is updated each time.<br>
+<li>Loop through all the elements of <code>string.punctuation</code> and replace all occurrences of each punctuation mark with the empty string <code>""</code> in <code>new_s</code>. You will need to ensure that the variable <code>new_s</code> is updated each time with the result of calling the <code>replace</code> method.<br>
 </li>
 <li>Finally, return <code>new_s</code>.</li>
 </ol>
@@ -432,7 +432,7 @@ Test Your Solution
 <blockquote class="blockquote">
 <ol type="1">
 <li>I had a great time playing in the snow! (score <strong>5.94</strong>)</li>
-<li>I hate how dark it is this time of year. (score <strong>4.808</strong>)</li>
+<li>I hate how cold it is this time of year. (score <strong>4.85</strong>)</li>
 </ol>
 </blockquote>
 <p>Note that these numbers may be different from what you calculated by hand because the <code>sentiment</code> dictionary includes more words than the ones we considered earlier.</p>
