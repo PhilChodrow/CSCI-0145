@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>The Hedonometer</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/img/icons/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">The Hedonometer</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../"><b>Introduction to Computing</b><br>CSCI 0145</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">Welcome!</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../collaboration.html" class="sidebar-item-text sidebar-link">Collaboration And Academic Honesty</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tools.html" class="sidebar-item-text sidebar-link">Course Resources</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../help.html" class="sidebar-item-text sidebar-link">Asking for Help</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../schedule.html" class="sidebar-item-text sidebar-link">Course Schedule</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../philosophy.html" class="sidebar-item-text sidebar-link">Some Teaching Philosophies</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#word-based-sentiment-analysis" id="toc-word-based-sentiment-analysis" class="nav-link" data-scroll-target="#word-based-sentiment-analysis">Word-Based Sentiment Analysis</a>
+  <ul class="collapse">
+  <li><a href="#scoring-passages" id="toc-scoring-passages" class="nav-link" data-scroll-target="#scoring-passages">Scoring Passages</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#the-hedonometer-class" id="toc-the-hedonometer-class" class="nav-link" data-scroll-target="#the-hedonometer-class">The Hedonometer Class</a></li>
+  <li><a href="#analyzing-speeches" id="toc-analyzing-speeches" class="nav-link" data-scroll-target="#analyzing-speeches">Analyzing Speeches</a>
+  <ul class="collapse">
+  <li><a href="#finishing-up" id="toc-finishing-up" class="nav-link" data-scroll-target="#finishing-up">Finishing Up</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">The Hedonometer</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level1 page-columns page-full">
+<h1>Introduction</h1>
+<p>Is today a happy day or a sad day? You might know how it’s feeling to you personally. You might have a feeling for the vibe of your friend group, or even of Middlebury College as a whole. But what about the entire U.S.A? Is today a happy day or a sad day?</p>
+<div id="fig-hedonometer" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="https://pbs.twimg.com/media/EZR8XqoXgAITGk_.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure 1: A range of overall Twitter sentiment data from the <a href="https://hedonometer.org/timeseries/en_all/?from=2021-05-16&amp;to=2022-11-15">The Hedonometer</a>.</figcaption><p></p>
+</figure>
+</div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">These researchers are right up the road, at the University of Vermont!</span></div></div>
+<p>That’s question that the researchers behind <a href="https://hedonometer.org/timeseries/en_all/?from=2021-05-16&amp;to=2022-11-15">The Hedonometer</a> aim to address. Their data analysis pipeline starts by taking in a huge quantity of English-language tweets each day. They then use a technique called <em>sentiment analysis</em> to quantify how happy or sad each tweet is. Finally, they use this information to compute an overall happiness score each day. Using their tool, you can see major peaks in happiness on Christmas Day, as well as major dips in happiness on days with traumatic news. For example, the day of lowest (saddest) sentiment recorded in the history of the Hedonometer was the first day of large-scale protests against police brutality in the wake of the murder of George Floyd.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">In case you’re wondering, <em>hedonometer</em> comes from the Greek words <em>hedone</em>, refering to pleasure, and <em>metron</em>, referring to measurement.</span></div></div>
+<p>In this lab, you will write a simplified version of the Hedonometer, implemented as a <code>Hedonometer</code> class. In doing so, you’ll practice your skills using Python programming to work on our current application area, strings and text processing. You’ll then use your mini <code>Hedonometer</code> to analyze how sentiment progresses in several famous speeches.</p>
+<div class="callout-important callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Content Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Although we will not be discussing topics during this lab, please be aware that we will be working with a dictionary whose keys are words that are considered extremely negative or sad. Some of these words relate to violence, self-harm, and mental illness. You will only encounter these words if you directly inspect the <code>sentiment</code> dictionary, which is not required in this lab.</p>
+</div>
+</div>
+<div class="callout-warning callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>As we have done in several recent assignments, you will need to modify code in <code>hedonometer.py</code> and save, but you will only <em>run</em> the file <code>lab.py</code>.</p>
+</div>
+</div>
+</div>
+<section id="word-based-sentiment-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="word-based-sentiment-analysis">Word-Based Sentiment Analysis</h2>
+<p>Consider the following two sentences:</p>
+<blockquote class="blockquote">
+<ol type="1">
+<li>I had a great time playing in the snow!</li>
+<li>I hate how dark it is this time of year.</li>
+</ol>
+</blockquote>
+<p>You might naturally feel that sentence 1 is happier than sentence 2. As a human being, you have a well-developed, intricate, holistic understanding of language. Computers don’t have that, but they do have the ability to follow simple instructions.</p>
+<p>In word-based sentiment analysis, we determine how happy or sad a given sentence is by focusing on whether or not specific words appear in that sentence. For example, we can look for <strong>happy</strong> and <em>sad</em> words in these two sentences:</p>
+<blockquote class="blockquote">
+<ol type="1">
+<li>I had a <strong>great</strong> time <strong>playing</strong> in the snow!</li>
+<li>I <em>hate</em> how <em>dark</em> it is this time of year.</li>
+</ol>
+</blockquote>
+<p>“<strong>Great</strong>” and “<strong>playing</strong>” are words that feel good, happy, and positive. On the other hand, “<strong>hate</strong>” and “<strong>dark</strong>” are words that feel bad, sad, and negative.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 0
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Open the file <code>lab.py</code>. I have supplied and <code>import</code> statement in the lab file that will assign a large dictionary to a variable. The keys of this dictionary are words, and the values are <em>sentiment scores</em> for each word. High scores indicate words with high sentiment, while low scores indicate words with low sentiment.</p>
+<p>Using this dictionary, determine the sentiment scores of the following words:</p>
+<ol type="1">
+<li><code>"great"</code></li>
+<li><code>"playing"</code></li>
+<li><code>"hate"</code></li>
+<li><code>"dark"</code>.</li>
+</ol>
+<p>Write the scores for each word in the <code>ACTIVITY 0</code> area of <code>lab.py</code>.</p>
+</div>
+</div>
+<section id="scoring-passages" class="level3">
+<h3 class="anchored" data-anchor-id="scoring-passages">Scoring Passages</h3>
+<p>The <code>sentiment</code> dictionary gives a sentiment score to each word. In order to compute the sentiment of a passage, we compute the <em>average</em> sentiment. This means:</p>
+<ol type="1">
+<li>Sum up the total score of all words in the passage that are keys in <code>sentiment</code>.</li>
+<li>Divide by the number of words that are keys in <code>sentiment</code>.</li>
+</ol>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using this algorithm, compute the sentiment score of the following two sentences:</p>
+<blockquote class="blockquote">
+<ol type="1">
+<li>I had a <strong>great</strong> time <strong>playing</strong> in the snow!</li>
+<li>I <em>hate</em> how <em>dark</em> it is this time of year.</li>
+</ol>
+</blockquote>
+<p>For the purposes of this activity, you can assume that only the <strong>bolded</strong> and <em>italicized</em> words are in the <code>sentiment</code> dictionary. (In fact, several other words in these sentences are also in that dictionary, but we won’t worry about it at this stage.)</p>
+<p>Place your computed scores in the ACTIVITY 1 area of <code>lab.py</code>.</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="the-hedonometer-class" class="level1">
+<h1>The Hedonometer Class</h1>
+<p>The words in the <code>sentiment</code> dictionary don’t include any punctuation. This means that, in order to reliably use this dictionary to assign sentiment scores to sentences, we need to remove the punctuation. Otherwise, a sentence like <code>"I am so happy!"</code> would not necessary be considered positive, because <code>"happy!"</code> is not in <code>sentiment</code> (only <code>"happy"</code> is, without the exclamation point).</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a function called <code>strip_punctuation(s)</code> that removes all punctuation marks from a string. <strong>Write this function in <code>hedonometer.py</code></strong>. Here’s what you’ll need:</p>
+<ul>
+<li><code>string.punctuation</code> is a special string containing all the English punctuation marks. It is imported from the <code>string</code> package. I put the <code>import</code> statement at the top of <code>lab.py</code> for you so you don’t have to worry about it.</li>
+<li><code>str.replace(pattern, replace)</code> is a string method that replaces all instances of <code>pattern</code> with a specified string <code>replace</code>. For example:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"to boldly go"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>s.replace(<span class="st">"go"</span>, <span class="st">"dance"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="st">"to boldly dance"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once you’re done, you should be able to call your function like this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="st">"I'll have what he's having."</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>no_punc <span class="op">=</span> strip_punctuation(s)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(no_punc)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span>Ill have what hes having</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Place the source code for your function under <code>lab.py</code>. Then, check your function with the supplied test case, confirming that you obtain the expected result.</p>
+<p><strong>HINT</strong>: Loop through the elements of <code>string.punctuation</code> and replace occurrences of them in <code>s</code> with the empty string.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Now it is time to write the <code>Hedonometer</code> class and its primary methods. You should write your code for this problem in <code>Hedonometer.py</code>.</p>
+<p>A <code>Hedonometer</code> has exactly one instance variable: <code>self.sentiment</code>, a dictionary of sentiment scores per word which the user is able to specify.</p>
+<p>A <code>Hedonometer</code> has two methods:</p>
+<ul>
+<li>In the <code>__init__()</code> method, the user may specify the dictionary of sentiment scores per word to be used. In our running example, this is just the <code>sentiment</code> dictionary we’ve been playing with. This dictionary is saved as the instance variable <code>self.sentiment</code>.</li>
+<li>In the <code>score()</code> method, the user passes a string <code>s</code>. Then:
+<ol type="1">
+<li>The punctuation is removed from <code>s</code> using <code>strip_punctuation()</code>.</li>
+<li><code>s</code> is converted to all lowercase. Remember that you can use <code>list(dir(str))</code> to see a list of available string methods.<br>
+</li>
+<li>Then, the sentiment score of <code>s</code> is calculated:
+<ul>
+<li>The total score for all words in <code>s</code> that are keys in <code>self.sentiment</code> is computed.</li>
+<li>The <em>number</em> of words in <code>s</code> that are keys in <code>self.sentiment</code> is computed.</li>
+<li>The total score is divided by the number of words to produce the mean, which is returned.
+<ul>
+<li>If there are no words in <code>s</code> that are keys in <code>self.sentiment</code>, then instead <code>None</code> is returned.</li>
+</ul></li>
+</ul></li>
+</ol></li>
+</ul>
+<p><strong>Hint</strong>: You are likely to want some <code>for</code>-loops and <code>if</code>-statements for this.</p>
+<p><strong>Note</strong>: This is the most difficult part of the lab. Work with your partner and take your time!</p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Test Your Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Once you’ve completed your solution, please test it with the two sample sentences I supplied you earlier. I found:</p>
+<blockquote class="blockquote">
+<ol type="1">
+<li>I had a great time playing in the snow! (score <strong>5.94</strong>)</li>
+<li>I hate how dark it is this time of year. (score <strong>4.808</strong>)</li>
+</ol>
+</blockquote>
+<p>Note that these numbers may be different from what you calculated by hand because the <code>sentiment</code> dictionary includes more words than the ones we considered earlier.</p>
+</div>
+</div>
+</section>
+<section id="analyzing-speeches" class="level1">
+<h1>Analyzing Speeches</h1>
+<p>I’ve supplied three text files containing famous speeches for you:</p>
+<ul>
+<li><code>dream.txt</code>: “I Have a Dream” by Dr.&nbsp;Martin Luther King Jr, 1963</li>
+<li><code>ballot-bullet.txt</code>: “The Ballot or the Bullet” by Malcom X, 1964</li>
+<li><code>keynote.txt</code>: “Keynote Address at the Democratic National Convention” by Barack Obama, 2004</li>
+</ul>
+<p>You can read one of these speeches into Python as a string like this:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>speech <span class="op">=</span> load_text(<span class="st">"dream.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In the next two activities, we will briefly study the sentiment of these speeches. We’ll first check for some of the highest-sentiment lines in each speech. We’ll then make a simple plot to see if we can learn anything about how the emotional arc of the speeches changes over time.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a function called <code>positive_lines()</code> (in <code>lab.py</code>). This function should accept two arguments: - <code>path</code>, the name of a <code>.txt</code> file. - <code>threshold</code>, a minimum threshold for the Hedonometer score. - Read the file as a string using <code>load_text()</code>. - Split the string into individual lines using <code>.split(\n)</code>. - Create a <code>Hedonometer</code> and compute the <code>score</code> of each individual line. - Return a list of all lines that (a) have a score (i.e.&nbsp;their score isn’t <code>None</code>) and (b) have a score above <code>threshold</code>.</p>
+<p>Once you have written your function, use it to print the lines of each of the three speeches that have sentiment scores of <code>6.0</code> or larger. Copy and paste these lines into the ACTIVITY 4 area of <code>lab.py</code>.</p>
+<p><strong><em>Hint</em></strong>: You can check whether a variable is equal to <code>None</code> using the syntax <code>if score is not None:</code>.</p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Test Your Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You should be able to use your function like this, with the following result:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pos_lines <span class="op">=</span> positive_lines(<span class="st">"dream.txt"</span>, <span class="fl">6.0</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> pos_lines: </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(line)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>I have a dream today!
+I have a dream today!
+My country 'tis of thee, sweet land of liberty, of thee I sing.
+Let freedom ring from the mighty mountains of New York.
+From every mountainside, let freedom ring.
+Thank God Almighty, we are free at last!</code></pre>
+</div>
+</div>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The following function will divide a speech into paragraphs (not individual lines) and then create a scatterplot with the sentiment score of each paragraph in the speech. You can paste this function into <code>lab.py</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> scatterplot(path):</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Create a scatterplot of the sentiment score of each paragraph in a speech. </span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">    The plot is shown in a popup window in Thonny. </span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">    ARGUMENT: </span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">        path, string, the path to the text file containing the speech. </span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">    RETURN: </span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">        None</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    speech <span class="op">=</span> load_text(path)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> [H.score(par) <span class="cf">for</span> par <span class="kw">in</span> speech.split(<span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>)]</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    plt.scatter(<span class="bu">range</span>(<span class="bu">len</span>(v)), v)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"Paragraph"</span>, </span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>                  ylabel <span class="op">=</span> <span class="st">"Sentiment score"</span>, </span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>                  title <span class="op">=</span> path)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    plt.gca().set_ylim([<span class="dv">4</span>, <span class="dv">7</span>])</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Create scatterplots for each of the three speeches that I gave you, and save them (one of the buttons on the scatterplot will let you do this). Then, in the ACTIVITY 5 area, please briefly write to address the following questions:</p>
+<ol type="1">
+<li>Which of these speeches appears to have the overall highest sentiment? Which of these speeches appears to have the overall lowest sentiment?</li>
+<li>One of these speeches <em>ends</em> with a significantly higher sentiment than it begins. Which one? Why might that be an effective rhetorical strategy?</li>
+</ol>
+</div>
+</div>
+<div class="callout-warning callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>If you have trouble running this code, then you may need to install the <code>matplotlib</code> package in Thonny. Go to Tools –&gt; Manage Packages and search for <code>matplotlib</code>.</p>
+</div>
+</div>
+</div>
+<section id="finishing-up" class="level2">
+<h2 class="anchored" data-anchor-id="finishing-up">Finishing Up</h2>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Please write docstrings</strong> for all the functions, classes, and methods that you defined in this lab.</p>
+</div>
+</div>
+<p>Great job! Submit <code>lab.py</code>, <code>hedonometer.py</code>, and all three scatterplots on Gradescope.</p>
+
+
+</section>
+</section>
+
+<p><br> <br> <span style="color:grey;">© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022</span></p></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

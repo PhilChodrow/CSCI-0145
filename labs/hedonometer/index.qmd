@@ -1,0 +1,289 @@
+---
+title: The Hedonometer
+summary: Some stuff we do. 
+order: 3
+callout-icon: false
+callout-appearance: simple
+fig-cap-location: margin
+---
+
+# Introduction
+
+
+
+Is today a happy day or a sad day? You might know how it's feeling to you personally. You might have a feeling for the vibe of your friend group, or even of Middlebury College as a whole. But what about the entire U.S.A? Is today a happy day or a sad day? 
+
+::: {#fig-hedonometer}
+
+![](https://pbs.twimg.com/media/EZR8XqoXgAITGk_.jpg)
+
+A range of overall Twitter sentiment data from the [The Hedonometer](https://hedonometer.org/timeseries/en_all/?from=2021-05-16&to=2022-11-15). 
+
+:::
+
+[These researchers are right up the road, at the University of Vermont!]{.aside}
+
+That's question that the researchers behind [The Hedonometer](https://hedonometer.org/timeseries/en_all/?from=2021-05-16&to=2022-11-15) aim to address. Their data analysis pipeline starts by taking in a huge quantity of English-language tweets each day. They then use a technique called *sentiment analysis* to quantify how happy or sad each tweet is. Finally, they use this information to compute an overall happiness score each day. Using their tool, you can see major peaks in happiness on Christmas Day, as well as major dips in happiness on days with traumatic news. For example, the day of lowest (saddest) sentiment recorded in the history of the Hedonometer was the first day of large-scale protests against police brutality in the wake of the murder of George Floyd. 
+
+[In case you're wondering, *hedonometer* comes from the Greek words *hedone*, refering to pleasure, and *metron*, referring to measurement.]{.aside}
+
+In this lab, you will write a simplified version of the Hedonometer, implemented as a `Hedonometer` class. In doing so, you'll practice your skills using Python programming to work on our current application area, strings and text processing. You'll then use your mini `Hedonometer` to analyze how sentiment progresses in several famous speeches. 
+
+::: {.callout-important}
+
+## Content Warning
+
+Although we will not be discussing topics during this lab, please be aware that we will be working with a dictionary whose keys are words that are considered extremely negative or sad. Some of these words relate to violence, self-harm, and mental illness. You will only encounter these words if you directly inspect the `sentiment` dictionary, which is not required in this lab. 
+
+:::
+
+::: {.callout-warning}
+
+As we have done in several recent assignments, you will need to modify code in `hedonometer.py` and save, but you will only *run* the file `lab.py`. 
+
+:::
+
+## Word-Based Sentiment Analysis
+
+Consider the following two sentences: 
+
+> 1. I had a great time playing in the snow! 
+> 2. I hate how dark it is this time of year. 
+
+You might naturally feel that sentence 1 is happier than sentence 2. As a human being, you have a well-developed, intricate, holistic understanding of language. Computers don't have that, but they do have the ability to follow simple instructions. 
+
+In word-based sentiment analysis, we determine how happy or sad a given sentence is by focusing on whether or not specific words appear in that sentence. For example, we can look for **happy** and *sad* words in these two sentences: 
+
+> 1. I had a **great** time **playing** in the snow! 
+> 2. I *hate* how *dark* it is this time of year. 
+
+"**Great**" and "**playing**" are words that feel good, happy, and positive. On the other hand, "**hate**" and "**dark**" are words that feel bad, sad, and negative. 
+
+::: {.callout-note}
+
+## Activity 0
+
+Open the file `lab.py`. I have supplied and `import` statement in the lab file that will assign a large dictionary to a variable. The keys of this dictionary are words, and the values are *sentiment scores* for each word. High scores indicate words with high sentiment, while low scores indicate words with low sentiment. 
+
+Using this dictionary, determine the sentiment scores of the following words:  
+
+1. `"great"`
+2. `"playing"`
+3. `"hate"`
+4. `"dark"`. 
+
+Write the scores for each word in the `ACTIVITY 0` area of `lab.py`. 
+
+:::
+
+
+### Scoring Passages
+
+The `sentiment` dictionary gives a sentiment score to each word. In order to compute the sentiment of a passage, we compute the *average* sentiment. This means: 
+
+1. Sum up the total score of all words in the passage that are keys in `sentiment`. 
+2. Divide by the number of words that are keys in `sentiment`. 
+
+::: {.callout-note}
+
+## Activity 1
+
+Using this algorithm, compute the sentiment score of the following two sentences: 
+
+> 1. I had a **great** time **playing** in the snow! 
+> 2. I *hate* how *dark* it is this time of year. 
+
+For the purposes of this activity, you can assume that only the **bolded** and *italicized* words are in the `sentiment` dictionary. (In fact, several other words in these sentences are also in that dictionary, but we won't worry about it at this stage.)
+
+Place your computed scores in the ACTIVITY 1 area of `lab.py`. 
+
+:::
+
+# The Hedonometer Class
+
+The words in the `sentiment` dictionary don't include any punctuation. This means that, in order to reliably use this dictionary to assign sentiment scores to sentences, we need to remove the punctuation. Otherwise, a sentence like `"I am so happy!"` would not necessary be considered positive, because `"happy!"` is not in `sentiment` (only `"happy"` is, without the exclamation point). 
+
+::: {.callout-note}
+
+## Activity 2
+
+Write a function called `strip_punctuation(s)` that removes all punctuation marks from a string. **Write this function in `hedonometer.py`**. Here's what you'll need: 
+
+- `string.punctuation` is a special string containing all the English punctuation marks. It is imported from the `string` package. I put the `import` statement at the top of `lab.py` for you so you don't have to worry about it. 
+- `str.replace(pattern, replace)` is a string method that replaces all instances of `pattern` with a specified string `replace`. For example: 
+
+```python
+s = "to boldly go"
+s.replace("go", "dance")
+>>> "to boldly dance"
+```
+
+Once you're done, you should be able to call your function like this: 
+
+```python
+s = "I'll have what he's having."
+no_punc = strip_punctuation(s)
+print(no_punc)
+>>>Ill have what hes having
+```
+
+Place the source code for your function under `lab.py`. Then, check your function with the supplied test case, confirming that you obtain the expected result. 
+
+**HINT**: Loop through the elements of `string.punctuation` and replace occurrences of them in `s` with the empty string. 
+
+:::
+
+::: {.callout-note}
+
+## Activity 3
+
+Now it is time to write the `Hedonometer` class and its primary methods. You should write your code for this problem in `Hedonometer.py`. 
+
+A `Hedonometer` has exactly one instance variable: `self.sentiment`, a dictionary of sentiment scores per word which the user is able to specify. 
+
+A `Hedonometer` has two methods: 
+
+- In the `__init__()` method, the user may specify the dictionary of sentiment scores per word to be used. In our running example, this is just the `sentiment` dictionary we've been playing with. This dictionary is saved as the instance variable `self.sentiment`. 
+- In the `score()` method, the user passes a string `s`. Then: 
+    1. The punctuation is removed from `s` using `strip_punctuation()`. 
+    2. `s` is converted to all lowercase. Remember that you can use `list(dir(str))` to see a list of available string methods.  
+    3. Then, the sentiment score of `s` is calculated: 
+        - The total score for all words in `s` that are keys in `self.sentiment` is computed. 
+        - The *number* of words in `s` that are keys in `self.sentiment` is computed. 
+        - The total score is divided by the number of words to produce the mean, which is returned. 
+            - If there are no words in `s` that are keys in `self.sentiment`, then instead `None` is returned. 
+
+**Hint**: You are likely to want some `for`-loops and `if`-statements for this. 
+
+**Note**: This is the most difficult part of the lab. Work with your partner and take your time!
+
+:::
+
+::: {.callout-tip}
+
+## Test Your Solution
+
+Once you've completed your solution, please test it with the two sample sentences I supplied you earlier. I found: 
+
+> 1. I had a great time playing in the snow! (score **5.94**)
+> 2. I hate how dark it is this time of year. (score **4.808**)
+
+Note that these numbers may be different from what you calculated by hand because the `sentiment` dictionary includes more words than the ones we considered earlier. 
+
+:::
+
+# Analyzing Speeches
+
+I've supplied three text files containing famous speeches for you: 
+
+- `dream.txt`: "I Have a Dream" by Dr. Martin Luther King Jr, 1963
+- `ballot-bullet.txt`: "The Ballot or the Bullet" by Malcom X, 1964
+- `keynote.txt`: "Keynote Address at the Democratic National Convention" by Barack Obama, 2004
+
+You can read one of these speeches into Python as a string like this: 
+
+```python
+speech = load_text("dream.txt")
+```
+
+In the next two activities, we will briefly study the sentiment of these speeches. We'll first check for some of the highest-sentiment lines in each speech. We'll then make a simple plot to see if we can learn anything about how the emotional arc of the speeches changes over time. 
+
+::: {.callout-note}
+
+## Activity 4
+
+Write a function called `positive_lines()` (in `lab.py`). This function should accept two arguments:
+    - `path`, the name of a `.txt` file. 
+    - `threshold`, a minimum threshold for the Hedonometer score. 
+- Read the file as a string using `load_text()`. 
+- Split the string into individual lines using `.split(\n)`. 
+- Create a `Hedonometer` and compute the `score` of each individual line. 
+- Return a list of all lines that (a) have a score (i.e. their score isn't `None`) and (b) have a score above `threshold`. 
+
+Once you have written your function, use it to print the lines of each of the three speeches that have sentiment scores of `6.0` or larger. Copy and paste these lines into the ACTIVITY 4 area of `lab.py`. 
+
+***Hint***: You can check whether a variable is equal to `None` using the syntax `if score is not None:`. 
+
+:::
+
+::: {.callout-tip}
+
+## Test Your Solution
+
+You should be able to use your function like this, with the following result: 
+
+```python
+pos_lines = positive_lines("dream.txt", 6.0)
+for line in pos_lines: 
+    print(line)
+```
+```
+I have a dream today!
+I have a dream today!
+My country 'tis of thee, sweet land of liberty, of thee I sing.
+Let freedom ring from the mighty mountains of New York.
+From every mountainside, let freedom ring.
+Thank God Almighty, we are free at last!
+```
+:::
+
+::: {.callout-note}
+
+## Activity 5
+
+The following function will divide a speech into paragraphs (not individual lines) and then create a scatterplot with the sentiment score of each paragraph in the speech. You can paste this function into `lab.py`. 
+
+```python
+from matplotlib import pyplot as plt
+def scatterplot(path):
+    """
+    Create a scatterplot of the sentiment score of each paragraph in a speech. 
+    The plot is shown in a popup window in Thonny. 
+
+    ARGUMENT: 
+        path, string, the path to the text file containing the speech. 
+    
+    RETURN: 
+        None
+    """
+    speech = load_text(path)
+    v = [H.score(par) for par in speech.split("\n\n")]
+    plt.scatter(range(len(v)), v)
+    plt.gca().set(xlabel = "Paragraph", 
+                  ylabel = "Sentiment score", 
+                  title = path)
+    plt.gca().set_ylim([4, 7])
+    plt.show()
+
+```
+
+Create scatterplots for each of the three speeches that I gave you, and save them (one of the buttons on the scatterplot will let you do this). Then, in the ACTIVITY 5 area, please briefly write to address the following questions: 
+
+1. Which of these speeches appears to have the overall highest sentiment? Which of these speeches appears to have the overall lowest sentiment? 
+2. One of these speeches *ends* with a significantly higher sentiment than it begins. Which one? Why might that be an effective rhetorical strategy? 
+
+:::
+
+::: {.callout-warning}
+
+If you have trouble running this code, then you may need to install the `matplotlib` package in Thonny. Go to Tools --> Manage Packages and search for `matplotlib`. 
+
+:::
+
+## Finishing Up
+
+::: {.callout-note}
+
+## Activity 6
+
+**Please write docstrings** for all the functions, classes, and methods that you defined in this lab. 
+
+:::
+
+Great job! Submit `lab.py`, `hedonometer.py`, and all three scatterplots on Gradescope. 
+
+
+
+
+
+
