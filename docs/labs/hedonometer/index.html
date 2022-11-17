@@ -393,7 +393,7 @@ Activity 3
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Now it is time to write the <code>Hedonometer</code> class and its primary methods. You should write your code for this problem in <code>Hedonometer.py</code>.</p>
+<p>Now it is time to write the <code>Hedonometer</code> class and its primary methods. You should write your code for this problem in <code>hedonometer.py</code>.</p>
 <p>A <code>Hedonometer</code> has exactly one instance variable: <code>self.sentiment</code>, a dictionary of sentiment scores per word which the user is able to specify.</p>
 <p>A <code>Hedonometer</code> has two methods:</p>
 <ul>
@@ -503,6 +503,7 @@ Activity 5
 </div>
 <div class="callout-body-container callout-body">
 <p>The following function will divide a speech into paragraphs (not individual lines) and then create a scatterplot with the sentiment score of each paragraph in the speech. You can paste this function into <code>lab.py</code>.</p>
+<p>Depending on how your computer encodes text, it may be that the function below leads to generating only a single point. In this case, please try turning <code>"\n\n"</code> into simply <code>"\n"</code>. This will lead to slightly messier looking plots, but you’ll still be able to answer the questions below.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> scatterplot(path):</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
@@ -516,13 +517,14 @@ Activity 5
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">        None</span></span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    speech <span class="op">=</span> load_text(path)</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> [H.score(par) <span class="cf">for</span> par <span class="kw">in</span> speech.split(<span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>)]</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    plt.scatter(<span class="bu">range</span>(<span class="bu">len</span>(v)), v)</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"Paragraph"</span>, </span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>                  ylabel <span class="op">=</span> <span class="st">"Sentiment score"</span>, </span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>                  title <span class="op">=</span> path)</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    plt.gca().set_ylim([<span class="dv">4</span>, <span class="dv">7</span>])</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    H <span class="op">=</span> Hedonometer(sentiment)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> [H.score(par) <span class="cf">for</span> par <span class="kw">in</span> speech.split(<span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>)]</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    plt.scatter(<span class="bu">range</span>(<span class="bu">len</span>(v)), v)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    plt.gca().<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">"Paragraph"</span>, </span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>                  ylabel <span class="op">=</span> <span class="st">"Sentiment score"</span>, </span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>                  title <span class="op">=</span> path)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    plt.gca().set_ylim([<span class="dv">4</span>, <span class="dv">7</span>])</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Create scatterplots for each of the three speeches that I gave you, and save them (one of the buttons on the scatterplot will let you do this). Then, in the ACTIVITY 5 area, please briefly write to address the following questions:</p>
 <ol type="1">
 <li>Which of these speeches appears to have the overall highest sentiment? Which of these speeches appears to have the overall lowest sentiment?</li>
