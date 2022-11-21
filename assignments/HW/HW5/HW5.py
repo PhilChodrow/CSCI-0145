@@ -42,7 +42,6 @@ of the function, the argument (including its data type) and the return value
 NOTE: It is possible to do this problem using recursion instead of a loop. Extra
 credit if you do!! 
 """
-
         
 """
 ---------------------
@@ -83,7 +82,7 @@ words = load_words("text.txt") words >>> ["the", "cat", "sat", "on", "the",
 import string
 
 def load_words(path):
-    with open(path, "r") as f:
+    with open(path, "r", encoding = "utf8") as f:
         s = " ".join(list(f.readlines()))
     for punc in string.punctuation:
         s = s.replace(punc, "")
@@ -252,8 +251,11 @@ if __name__ == "__main__":
             print(f"Found    : to_binary({n}) = {answer}\n")
             
             
-    except NameError: 
-        print("to_binary() not yet implemented.")
+    except NameError as e:
+        if "to_binary" in str(e): 
+            print("to_binary() not yet implemented.")
+        else:
+            raise(e)
         
     print("\n---------------")
     print("Problem 2 Tests")
@@ -272,8 +274,11 @@ if __name__ == "__main__":
         samples = list(d.keys())[:5]
         for sample in samples: 
             print(f"{sample:25}{d[sample]}")
-    except NameError:
-        print("count_words() not yet implemented")
+    except NameError as e:
+        if "count_words" in str(e):
+            print("count_words() not yet implemented")
+        else:
+            raise(e)
     
     stopwords = ["i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours", "yourself", "yourselves", "he", "him", "his", "himself", "she", "her", "hers", "herself", "it", "its", "itself", "they", "them", "their", "theirs", "themselves", "what", "which", "who", "whom", "this", "that", "these", "those", "am", "is", "are", "was", "were", "be", "been", "being", "have", "has", "had", "having", "do", "does", "did", "doing", "a", "an", "the", "and", "but", "if", "or", "because", "as", "until", "while", "of", "at", "by", "for", "with", "about", "against", "between", "into", "through", "during", "before", "after", "above", "below", "to", "from", "up", "down", "in", "out", "on", "off", "over", "under", "again", "further", "then", "once", "here", "there", "when", "where", "why", "how", "all", "any", "both", "each", "few", "more", "most", "other", "some", "such", "no", "nor", "not", "only", "own", "same", "so", "than", "too", "very", "s", "t", "can", "will", "just", "don", "should", "now", "said", "came", "went", "one", "‘i", "would", "could", "go", "took", "upon", "saw"]
     
@@ -291,8 +296,11 @@ if __name__ == "__main__":
         if not found: 
             print("Looks good! No stopwords detected in dictionary!")
         
-    except NameError:
-        print("remove_stopwords() not yet implemented")
+    except NameError as e:
+        if "remove_stopwords" in str(e):
+            print("remove_stopwords() not yet implemented")
+        else:
+            raise(e)
     
     print("")
     print("---------------")
@@ -303,8 +311,11 @@ if __name__ == "__main__":
         print("Top 10 Words In Text")
         print("--------------------")
         print_top_words(d, 10)
-    except NameError:
-        print("print_top_words() not yet implemented")
+    except NameError as e:
+        if "print_top_words" in str(e):
+            print("print_top_words() not yet implemented")
+        else:
+            raise(e)
         
     print("---------------")
     print("Problem 5 Tests")
