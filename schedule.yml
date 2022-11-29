@@ -304,7 +304,6 @@
     We begin a discussion of why computers represent data in binary, and how to convert between binary and decimal representations of integers. 
   objectives: 
     - Computational Thinking
-    - Python Programming
   reading: 
     - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/representing_data.html">Representing Data</a>
     - <a href="https://docs.google.com/presentation/d/1oz58DPWj-NSQRxrz0r4F5-gE2NwPAaudpOnuwclcmms/edit?usp=sharing">Lecture Slides</a>
@@ -314,9 +313,24 @@
   publish: true
 - date: 2022-10-24
   header: |
-    Representing Data: Floating Point Numbers and Images
+    Representing Data: Floating Point Numbers
   summary: |
-    We continue our discussion of data representation. We highlight some of the challenges for computers in representing floating point numbers. We then move on to representations of digital images as arrays of pixels. 
+    We continue our discussion of data representation. We highlight some of the challenges for computers in representing floating point numbers. 
+  objectives: 
+    - Computational Thinking
+  reading: 
+    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/representing_data.html">Representing Data</a>
+    - <a href="https://docs.google.com/presentation/d/1oz58DPWj-NSQRxrz0r4F5-gE2NwPAaudpOnuwclcmms/edit?usp=sharing">Lecture Slides</a>
+  assigned: 
+    - HW5
+  module: |
+    Data Representation
+  publish: true
+- date: 2022-10-26
+  header: |
+    Representing Data: and Images
+  summary: |
+    We discuss representations of digital images as arrays of pixels. 
   objectives: 
     - Computational Thinking
     - Python Programming
@@ -329,4 +343,181 @@
     - HW5
   module: |
     Application: Image Processing
+  publish: true
+- date: 2022-10-27
+  header: |
+    Lab: Image Manipulation
+  summary: |
+    We write functions that allow us to manipulate digital images. We implement brightening, contrast-heightening, reflection, and several other transformations. 
+  objectives: 
+    - Computational Thinking
+    - Python Programming
+    - Applications
+  activity: 
+    - <a href="labs/images/">Lab 5</a>
+  assigned: 
+    - Lab 4
+  module: |
+    Application: Image Processing
+  publish: true
+- date: 2022-10-31
+  header: |
+    Introducing Object-Oriented Programming
+  summary: |
+    We begin a discussion of object-oriented programming, the standard approach in Python for writing complex programs by combining data (attributes) and behavior (methods). 
+  objectives: 
+    - Computational Thinking
+    - Python Programming
+  reading: 
+    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/object_oriented_programming.html">Object-Oriented Programming</a>
+    - <a href="https://docs.google.com/presentation/d/1enzYDGoOycH_Ih-uL8WIaNlKMnasozw7DUPxQXd3b8Y/edit?usp=sharing">Lecture Slides</a>
+  assigned: 
+    - HW5
+  module: |
+    Object-Oriented Programming
+  publish: true
+- date: 2022-11-02
+  header: |
+    More Object-Oriented Programming
+  summary: |
+    We continue using object-oriented programming to implement complex program behavior. 
+  objectives: 
+    - Computational Thinking
+    - Python Programming
+  reading: 
+    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/object_oriented_programming.html">Object-Oriented Programming</a>
+    - <a href="https://docs.google.com/presentation/d/1enzYDGoOycH_Ih-uL8WIaNlKMnasozw7DUPxQXd3b8Y/edit?usp=sharing">Lecture Slides</a>
+  assigned: 
+    - HW5
+  module: |
+    Object-Oriented Programming
+  publish: true
+- date: 2022-11-03
+  header: |
+    Lab: Object-Oriented Programming
+  summary: |
+    We use object-oriented programming to create a set of interacting classes that model a computer science course. 
+  objectives: 
+    - Computational Thinking
+    - Python Programming
+  activity: 
+    - <a href="labs/introducing-oop/">Lab 6</a>
+  assigned: 
+    - Lab 6
+  module: |
+    Object-Oriented Programming
+  publish: true
+- date: 2022-11-07
+  header: |
+    Unit Testing
+  summary: |
+    We introduce unit testing, an automated framework for checking correct functionality of small pieces ("units") of code. 
+  objectives: 
+    - Python Programming
+    - Applications
+  reading: 
+    - <a href="https://towardsdatascience.com/how-to-easily-and-confidently-implement-unit-tests-in-python-cad48d91ab74">Blog Post on Medium</a>
+  assigned: 
+    - Lab 6
+  module: |
+    Unit Testing
+  publish: true
+- date: 2022-11-09
+  header: |
+    More Unit Testing
+  summary: |
+    We continue with an extended example of unit-testing. 
+  objectives: 
+    - Python Programming
+    - Applications
+  reading: 
+    - <a href="https://towardsdatascience.com/how-to-easily-and-confidently-implement-unit-tests-in-python-cad48d91ab74">Blog Post on Medium</a>
+  assigned: 
+    - Lab 6
+  module: |
+    Unit Testing
+  publish: true
+- date: 2022-11-10
+  header: |
+    Lab: Developers as Prioritizers
+  summary: |
+    We develop our skills using object-oriented interfaces while reflecting on some of the difficult choices posed by automated vehicles and rescue services. 
+  objectives: 
+    - Social Responsibility
+    - Applications
+  activity: 
+    - <a href="labs/prioritizers/">Lab 7</a>
+  assigned: 
+    - Lab 7
+  module: |
+    Object-Oriented Programming
+  publish: true
+- date: 2022-11-14
+  header: |
+    String Methods
+  summary: |
+    We survey several important string methods and use them for basic text analysis tasks. 
+  objectives: 
+    - Python Programming
+    - Applications
+  reading: 
+    - <a href="https://www.digitalocean.com/community/tutorials/python-string-functions">String methods reference</a>
+    - <a href="http://cissandbox.bentley.edu/sandbox/wp-content/uploads/2022-02-10-Documentation-on-f-strings-Updated.pdf">A Guide to Formatting with f-strings in Python </a>
+  assigned: 
+    - Lab 6
+  module: |
+    Text Analysis
+  publish: true
+- date: 2022-11-16
+  header: |
+    Case Study: Lines in Plays
+  summary: |
+    We use string methods in combination with our iteration and data structure skills to count the number of lines spoken by each character in Shakespeare's <i>Hamlet</i>. 
+  objectives: 
+    - Python Programming
+    - Applications
+  reading: 
+    - <a href="https://www.digitalocean.com/community/tutorials/python-string-functions">String methods reference</a>
+    - <a href="http://cissandbox.bentley.edu/sandbox/wp-content/uploads/2022-02-10-Documentation-on-f-strings-Updated.pdf">A Guide to Formatting with f-strings in Python </a>
+  assigned: 
+    - Lab 6
+  module: |
+    Text Analysis
+  publish: true
+- date: 2022-11-17
+  header: |
+    Lab: The Hedonometer
+  summary: |
+    We implement sentiment analysis in the style of <a href="https://hedonometer.org/timeseries/en_all/">The Hedonometer</a> at the University of Vermont, and use it to analyze the emotional arc of several famous speeches. 
+  objectives: 
+    - Social Responsibility
+    - Applications
+  activity: 
+    - <a href="labs/hedonometer/">Lab 8</a>
+  assigned: 
+    - Lab 8
+  module: |
+    Text Analysis
+  publish: true
+- date: 2022-11-21
+  header: |
+    Thanksgiving Break! 
+  summary: |
+    No class this week, enjoy the holiday! 
+  publish: true
+- date: 2022-11-28
+  header: |
+    Introducing Analysis of Algorithms
+  summary: |
+    We begin the study of analyzing the worst-case runtime of algorithms using big-O analysis. 
+  objectives: 
+    - Analysis
+    - Computational Thinking
+  reading: 
+    - <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/complexity.html">Computational Complexity</a>
+    - <a href="https://greenteapress.com/thinkpython2/html/thinkpython2022.html">ThinkPython2e, Appendix B</a>
+  assigned: 
+    - Lab 6
+  module: |
+    Analysis
   publish: true
