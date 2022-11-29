@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Hard Problems and Heuristics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/img/icons/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Hard Problems and Heuristics</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../"><b>Introduction to Computing</b><br>CSCI 0145</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">Welcome!</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../collaboration.html" class="sidebar-item-text sidebar-link">Collaboration And Academic Honesty</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../tools.html" class="sidebar-item-text sidebar-link">Course Resources</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../help.html" class="sidebar-item-text sidebar-link">Asking for Help</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../schedule.html" class="sidebar-item-text sidebar-link">Course Schedule</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../philosophy.html" class="sidebar-item-text sidebar-link">Some Teaching Philosophies</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../acknowledgements.html" class="sidebar-item-text sidebar-link">Acknowledgements</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#objective" id="toc-objective" class="nav-link" data-scroll-target="#objective">Objective</a></li>
+  </ul></li>
+  <li><a href="#our-data" id="toc-our-data" class="nav-link" data-scroll-target="#our-data">Our Data</a></li>
+  <li><a href="#the-length-of-a-tour" id="toc-the-length-of-a-tour" class="nav-link" data-scroll-target="#the-length-of-a-tour">The Length of a Tour</a></li>
+  <li><a href="#exhaustive-search" id="toc-exhaustive-search" class="nav-link" data-scroll-target="#exhaustive-search">Exhaustive Search</a>
+  <ul class="collapse">
+  <li><a href="#test-exhaustive-search" id="toc-test-exhaustive-search" class="nav-link" data-scroll-target="#test-exhaustive-search">Test Exhaustive Search</a></li>
+  </ul></li>
+  <li><a href="#the-greedy-heuristic" id="toc-the-greedy-heuristic" class="nav-link" data-scroll-target="#the-greedy-heuristic">The Greedy Heuristic</a></li>
+  <li><a href="#timing-comparisons" id="toc-timing-comparisons" class="nav-link" data-scroll-target="#timing-comparisons">Timing Comparisons</a></li>
+  <li><a href="#in-case-you-were-wondering" id="toc-in-case-you-were-wondering" class="nav-link" data-scroll-target="#in-case-you-were-wondering">In Case You Were Wondering…</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Hard Problems and Heuristics</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level1 page-columns page-full">
+<h1>Introduction</h1>
+<p>The “Traveling Salesman Problem” is an old and somewhat dated problem in the history of mathematics and computer science. One way in which it’s dated is the gender – everyone can be a salesperson, not just men! Another way in which it’s dated is that “traveling salesperson” is a much less relevant job in this day and age.</p>
+<p>What I’ll now call the Traveling Salesperson Problem (TSP) asks us to find the <em>shortest</em> route that allows us to visit a series of locations and then return home. So, you can think of this as a closed loop that includes every location exactly once, except for the starting point (which is visited once at the beginning and once at the end). In graph theory, a loop that visits every location once and returns to its start is sometimes called a <em>tour</em>, and so the TSP asks us to find the shortest possible tour of the locations.</p>
+<div id="fig-tsp" class="quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="https://optimization.mccormick.northwestern.edu/images/e/ea/48StatesTSP.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure 1: A solution to the TSP for visiting the capitals of the 48 contiguous US states.</figcaption><p></p>
+</figure>
+</div>
+<p>Although there are very few actual traveling salespeople anymore, the TSP has a number of applications in engineering and computational science.</p>
+<p>The TSP is an example of what’s called an <em>optimization</em> problem. Optimization problems ask us to find a solution to a problem that makes a <em>cost function</em> large or small. In this case, the cost function is the total distance traveled, and we’d like to make that cost as small as possible.</p>
+<section id="objective" class="level2">
+<h2 class="anchored" data-anchor-id="objective">Objective</h2>
+<p>In this lab, you will compare multiple approaches to the TSP in terms of runtime and performance, and use Big-<span class="math inline">\(\mathcal{O}\)</span> notation to explain your results.</p>
+<div class="callout-important callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Docstrings are not necessary in this lab, although please make sure to supply useful comments in the functions you write.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="our-data" class="level1">
+<h1>Our Data</h1>
+<p>Throughout this lab, we’ll work with randomly generated locations using the <code>random_locations()</code> function that I provided for you. This function accepts a single argument <code>n</code>, which is the number of random locations to be generated. For example, I can generate 5 random locations like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>locs <span class="op">=</span> random_locations(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These locations are stored in a list. Each element of this list is a tuple with two elements, an <code>x</code>-coordinate and a <code>y</code>-coordinate. If you want, you can think of these as latitudes and longitudes.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> loc <span class="kw">in</span> locs: </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(loc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>(0.41714593276721035, 0.3280831032574511)
+(0.4337981635440652, 0.01293283611992346)
+(0.9644031013188052, 0.28351704148345425)
+(0.9208299217315873, 0.16325776387955515)
+(0.24954878352816445, 0.7663845987404052)</code></pre>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create a variable called <code>locs</code> with 10 random locations using the <code>random_locations()</code> function. Then, write a single expression that gets the <code>y</code>-coordinate (the second coordinate) from the 7th location (the location with index 6). Print both this result and the full list of locations in order to check your answer. Note that the locations are random, so the list will change each time.</p>
+<p>Include your code to create <code>locs</code> and find the <code>y</code>-coordinate of the 7th location in the <code>ACTIVITY 1</code> area of <code>lab.py</code>.</p>
+</div>
+</div>
+</section>
+<section id="the-length-of-a-tour" class="level1">
+<h1>The Length of a Tour</h1>
+<p>Now we are going to take steps toward computing the length of a tour.</p>
+<p>A <em>distance matrix</em> is a 2-dimensional array of numbers that gives the distance between many pairs of locations. You can calculate the distance matrix for a list of locations using the <code>distance_matrix()</code> function that I have supplied for you in <code>tsp</code>. You use it like this:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>locs <span class="op">=</span> random_locations(<span class="dv">5</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dists <span class="op">=</span> distance_matrix(locs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The variable <code>dists</code> is a <em>list of lists</em>. If you want to know the distance between the location with index <code>1</code> and the location with index <code>3</code>, you would check <code>dists[1][3]</code> (or <code>dists[3][1]</code>, these are the same).</p>
+<p>With the distance matrix in hand, we are ready to compute the length of a tour.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a function called <code>total_dist()</code> that accepts two arguments:</p>
+<ol type="1">
+<li><code>seq</code>, a sequence of indices corresponding to locations, provided as a list. For example, the list <code>[4, 1, 0, 3, 2]</code> says “start at the location with index <code>4</code>, then go to <code>1</code>, then go to <code>0</code>, then go to <code>3</code>, then go to <code>2</code>, then finish by going back to <code>4</code>.” Note that the list doesn’t include the “go back to 4” part: that’s implied.</li>
+<li><code>dists</code>, a distance matrix as would be returned by the <code>distance_matrix()</code> function.</li>
+</ol>
+<p>The return value of <code>total_dist(seq, dists)</code> should be the total distance traveled in the tour described by <code>seq</code>. In our example above, this would be the sum of the following distances: - The distance from <code>4</code> to <code>1</code>. - The distance from <code>1</code> to <code>0</code>. - The distance from <code>0</code> to <code>3</code>. - The distance from <code>3</code> to <code>2</code>. - The distance from <code>2</code> to <code>4</code>.</p>
+<p>Remember that you can get the distances you need using the <code>dists</code> matrix; for example, the distance from <code>4</code> to <code>1</code> is <code>dists[1][4]</code>.</p>
+<p>Place your function in the <code>ACTIVITY 2</code> area of <code>lab.py</code>.</p>
+<p><strong><em>Hint</em></strong>: You are going to need to compute distances between things like <code>seq[i]</code> and <code>seq[i+1]</code>.</p>
+<p><strong><em>Hint</em></strong>: You can use a simple <code>for</code>-loop to add together all the distances except the last one (the one that adds the distance for returning to the starting point). You can add that last distance using one additional line of code.</p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Before moving on, make sure that you’re able to use your function like this:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>locs <span class="op">=</span> random_locations(<span class="dv">5</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>dists <span class="op">=</span> distance_matrix(locs)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>seq <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">2</span>]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total_dist(seq, dists))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should get a number, although the number you get may be different each time.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="exhaustive-search" class="level1 page-columns page-full">
+<h1>Exhaustive Search</h1>
+<p>Now we’re ready to try our first go at the TSP. To start, we are going to use <em>exhaustive search</em>. Exhaustive search means literally just looking at all the possibilities, computing their distance, and returning the one with the smallest distance.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a function called <code>exhaustive_search()</code> that accepts a single argument, <code>locs</code>, a list of locations of the kind that would be returned by <code>random_locations()</code>. It should return two things: 1. The sequence of indices of locations that achieves the shortest distance. 2. The shortest distance itself.</p>
+<p>To do this, you are going to need to be able to write a <code>for</code>-loop that runs through all possible sequences of locations. Fortunately, there’s a nice way to do that using <code>permutations()</code> from the <code>itertools</code> module:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> seq <span class="kw">in</span> permutations(<span class="bu">range</span>(n), n):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># seq takes on the values of all ways of rearranging the indices [0, 1, 2, ..., n-1]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you need to see more about how this works, you might want to try running the below in Thonny:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> seq <span class="kw">in</span> permutations(<span class="bu">range</span>(<span class="dv">4</span>), <span class="dv">4</span>):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(seq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here’s how I suggest you write the body of this function:</p>
+<ol type="1">
+<li>Compute <code>dists</code>, the distances between all pairs of points using <code>distance_matrix()</code>.</li>
+<li>Initialize a variable <code>best_seq = None</code> and <code>best_dist = 1000000</code>.</li>
+<li>For each possible sequence of locations (see above):
+<ol type="1">
+<li>Compute the distance associated with that sequence, using the <code>total_dist()</code> function from Activity 2.</li>
+<li>If the current distance is less than <code>best_dist</code>, set <code>best_dist</code> equal to the current distance and set <code>best_seq</code> equal to the current sequence.</li>
+</ol></li>
+<li>Finally, return <code>best_seq</code> and <code>best_dist</code>.</li>
+</ol>
+</div>
+</div>
+<div class="callout-tip callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>You should be able to use your function like this:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>locs <span class="op">=</span> random_locations(<span class="dv">5</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>best_seq, best_dist <span class="op">=</span> exhaustive_search(locs)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(best_seq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>[4, 1, 0, 3, 2]</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(best_dist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>4.592385</code></pre>
+<p>Of course, your numbers are likely to be different because of the random number generation.</p>
+<p>Make sure that you are able to call your <code>exhaustive_search()</code> function in this way and obtain results resembling the above before continuing.</p>
+</div>
+</div>
+</div>
+<section id="test-exhaustive-search" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="test-exhaustive-search">Test Exhaustive Search</h2>
+<p>Let’s see if our exhaustive search really works. We can test it by comparing it to a much sillier algorithm that just chooses a totally random path.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><img src="img-sample/Random%20Tour.png" class="img-fluid"> Example tour visualized from <code>random_tour()</code>.</span></div></div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><img src="img-sample/Exhaustive%20Search.png" class="img-fluid"> Example tour visualized from <code>exhaustive_search()</code>.</span></div></div>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The following code will generate some random locations and then visualize two tours through those locations. The first tour is totally random. The second tour is the optimal route computed using the <code>exhaustive_search()</code> function. <strong>After the code successfully runs, plots will appear in the <code>img</code> directory</strong>. You’ll eventually turn them in along with the rest of your assignment.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>locs <span class="op">=</span> random_locations(<span class="dv">10</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>seq <span class="op">=</span> random_tour(locs)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>plot_tour(seq, locs, <span class="st">"Random Tour"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>best_seq, best_dist <span class="op">=</span> exhaustive_search(locs)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>plot_tour(best_seq, locs, <span class="st">"Exhaustive Search"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Add this code to <code>lab.py</code> in the <code>ACTIVITY 4</code> area and run it. Check that you have successfully generated two plots in the <code>img</code> directory and that they qualitatively resemble the examples shown to the right. You should observe that the distance traveled by the <code>exhaustive_search()</code> tour is significantly lower than the <code>random_tour()</code> tour.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="the-greedy-heuristic" class="level1 page-columns page-full">
+<h1>The Greedy Heuristic</h1>
+<p>Another common term for “exhaustive” search is “exhausting” search, because it’s so slow! Just doing exhaustive search for 10 locations may take several seconds. This is because there are <span class="math inline">\(n!\)</span> possible tours through <span class="math inline">\(n\)</span> locations, and exhaustive search checks all of them. This means that exhaustive search in the TSP has <span class="math inline">\(\mathcal{O}(n!)\)</span> runtime. This is <em>extremely bad</em> runtime scaling, and means that exhaustive search is basically unusable for <span class="math inline">\(n\)</span> larger than 12 or so. For example, <span class="math inline">\(15! \approx 1 \; \mathrm{trillion}\)</span>, which would take my laptop at least several hours to work through.</p>
+<p>What if we have 50 locations to visit? Exhaustive search is simply not an option, and so we may not be able to guarantee that we can find <strong>the best</strong> tour. This is where we <strong>compromise</strong>: what if we could find a <em>pretty good</em> tour <em>quickly</em>? Algorithms that give “pretty good” results with practical runtimes are often called <em>heuristics</em>. In the remainder of the lab, you’ll implement the <strong><em>greedy heuristic</em></strong>.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">The heuristic is called “greedy” because at each step I do the thing that looks best “at the time,” without doing any planning ahead.</span></div></div>
+<p>Here’s how the greedy heuristic works:</p>
+<ol type="1">
+<li>I start out at an initial location.</li>
+<li>Then, I move to the nearest location.</li>
+<li>Then, I move to the nearest location that I haven’t yet visited.</li>
+<li>I continue to move to the nearest location that I haven’t yet visited, until I’ve visited all locations.</li>
+<li>Once I’ve visited all locations, I return to my initial location.</li>
+</ol>
+<p>First, let’s see if we can learn something about the runtime of this algorithm.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that I have <span class="math inline">\(n\)</span> locations to visit. How many times do I need to check the distance between two points when running this algorithm? It’s ok to express your answer as a sum rather than in a single formula.</p>
+<ul>
+<li><strong><em>Hint</em></strong>: How many distances do I need to look up in order to move from my initial location? How many do I need to look up in order to move from my next location? How many do I need to look up by the time I’ve visited all locations?</li>
+</ul>
+<p>Write your answer as a comment in the <code>ACTIVITY 5</code> area of <code>lab.py</code>.</p>
+<p><strong>Optional challenge</strong>: The runtime of the greedy heuristic is <span class="math inline">\(\mathcal{O}(n^p)\)</span> for some power <span class="math inline">\(p\geq 1\)</span>. Can determine the correct power <span class="math inline">\(p\)</span>?</p>
+</div>
+</div>
+<p>Now it’s time to implement the greedy heuristic.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a function called <code>greedy_search()</code> that seeks a tour through a supplied list <code>locs</code> of locations using the greedy heuristic. Your function should return both a sequence of locations and the total distance of the corresponding tour.</p>
+<p>Here’s how I suggest you implement this function. I’m assume that there are <code>n</code> locations.</p>
+<ol type="1">
+<li>Compute and store the distances between all the <code>locs</code>.</li>
+<li>Assume that your starting current location is <code>0</code> (we are going to make a loop, so the starting point doesn’t actually matter). You probably should make a variable to store this information. Create a list called <code>seq</code> that will hold your sequence of locations, and add your starting location to this list.</li>
+<li>Make a list of all the locations you haven’t visited yet (to start with, it should be locations <code>1</code> through <code>n-1</code>.)</li>
+<li>While there are still locations that you haven’t visited yet:
+<ul>
+<li>Find the location that has the smallest distance from your current location. Call this location <code>new_loc</code>.</li>
+<li>Remove <code>new_loc</code> from the list of locations you haven’t visited yet.</li>
+<li>Add <code>new_loc</code> to your <code>seq</code>.</li>
+<li>Set <code>new_loc</code> as your current location.</li>
+</ul></li>
+<li>Now you have a <code>seq</code>! Return both the <code>seq</code> and the total distance of the tour (use <code>total_dist()</code> from Activity 2.)</li>
+</ol>
+<p>Place your implementation of <code>greedy_search()</code> in the <code>ACTIVITY 6</code> area of <code>lab.py</code>.</p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>You should be able to use your <code>greedy_search()</code> function like this, similar to <code>exhaustive_search()</code> from before.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>locs <span class="op">=</span> random_locations(<span class="dv">10</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>seq, dist <span class="op">=</span> greedy_search(locs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><img src="img-sample/Greedy%20Search.png" class="img-fluid"> Example tour visualized from <code>greedy_search()</code>, using the same locations as the previous two examples.</span></div></div>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 7
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Paste the following code into the <code>ACTIVITY 7</code> area and run it.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>locs <span class="op">=</span> random_locations(<span class="dv">10</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>seq <span class="op">=</span> random_tour(locs)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>plot_tour(seq, locs, <span class="st">"Random Tour"</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>seq, dist <span class="op">=</span> exhaustive_search(locs)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>plot_tour(seq, locs, <span class="st">"Exhaustive Search"</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>seq, dist <span class="op">=</span> greedy_search(locs)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>plot_tour(seq, locs, <span class="st">"Greedy Search"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You’ll now have <strong>three</strong> plots in the <code>img</code> directory, visualizing the results for each of these three methods.</p>
+<p>In a comment in the <code>ACTIVITY 7</code> area, describe how greedy search performs in comparison to the random tour and exhaustive search. Is it closer to one or the other?</p>
+</div>
+</div>
+</section>
+<section id="timing-comparisons" class="level1">
+<h1>Timing Comparisons</h1>
+<p>Based on your analysis and early experiments, you may already suspect that <code>greedy_search()</code> is much faster than <code>exhaustive_search()</code>. How much faster? Let’s check!</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 8
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Paste the following code into the <code>ACTIVITY 8</code> area of <code>lab.py</code> and run it.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>max_n <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>exhaustive_times <span class="op">=</span> [time_search(exhaustive_search, n) <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, max_n)]</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>plot_times(exhaustive_times, <span class="st">"Exhaustive Search Times"</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>greedy_times <span class="op">=</span> [time_search(greedy_search, n) <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, max_n)]</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>plot_times(greedy_times, <span class="st">"Greedy Search Times"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This code will save two more plots in the <code>img</code> directory. The horizontal axis describes the number of locations to be visited, and the vertical axis is the number of seconds that your code took to solve the problem.</p>
+<p>In a comment, please compare the runtime of <code>exhaustive_search()</code> and <code>greedy_search()</code> when there are 10 locations to be visited.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 9
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that you wanted to do <code>exhaustive_search</code> with <em>20</em> locations to visit instead of 10. The <span class="math inline">\(\mathcal{O}(n!)\)</span> scaling implies that <code>exhaustive_search()</code> would require approximately <strong>500 billion</strong> times as long to run on 20 locations as it would on 10 locations.</p>
+<p>Based on your observation for how long it took your <code>exhaustive_search()</code> to run on 10 locations, estimate the amount of time that would be required to run on 20 locations. <strong>Please give your answer in units of years</strong>.</p>
+<p><strong>Hint</strong>: according to the musical <em>Rent</em>, there are 525,600 minutes in a year. As you may know, a minute contains 60 seconds.</p>
+</div>
+</div>
+<p>However, we can get <em>decent</em> solutions to <em>much</em> larger problems using greedy search.</p>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 10
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Run the following code</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>max_n <span class="op">=</span> <span class="dv">201</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>greedy_times <span class="op">=</span> [time_search(greedy_search, n) <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, max_n)]</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>plot_times(greedy_times, <span class="st">"Greedy Search Times Large"</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>locs <span class="op">=</span> random_locations(max_n)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>seq, dist <span class="op">=</span> greedy_search(locs)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>plot_tour(seq, locs, <span class="st">"Greedy Search Large"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You’ll obtain two new plots in the <code>img</code> directory. The first plot generated shows how the time elaped for greedy search depends on the number of locations to search, while the second plot shows an example solution found by greedy search using 201 locations.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-simple no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Activity 11
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is no Activity 11! One group member should turn in the file <code>lab.py</code> and <em>all</em> of the images generated. You should have plots titled:</p>
+<ol type="1">
+<li>Exhaustive Search</li>
+<li>Greedy Search</li>
+<li>Random Tour</li>
+<li>Exhaustive Search Times</li>
+<li>Greedy Search Times</li>
+<li>Greedy Search Times Large</li>
+<li>Greedy Search Large</li>
+</ol>
+<p>Submit all of these plots on Gradescope alongside your <code>lab.py</code> file. Nice work!</p>
+</div>
+</div>
+</section>
+<section id="in-case-you-were-wondering" class="level1">
+<h1>In Case You Were Wondering…</h1>
+<p>There are methods that can exactly solve instances of the TSP for several thousand locations in practical time. These methods don’t use exhaustive search; instead, they often use techniques from areas of mathematics called <em>discrete optimization</em>.</p>
+
+
+</section>
+
+<p><br> <br> <span style="color:grey;">© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022</span></p></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
