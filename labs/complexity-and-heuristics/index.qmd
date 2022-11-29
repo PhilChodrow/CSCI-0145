@@ -214,6 +214,10 @@ best_seq, best_dist = exhaustive_search(locs)
 plot_tour(best_seq, locs, "Exhaustive Search")
 ```
 
+::: {.callout-important}
+If you are getting a `ModuleNotFoundError` about `matplotlib`, use the Thonny Tools --> Manage Packages menu to install the `matplotlib` module. 
+:::
+
 Add this code to `lab.py` in the `ACTIVITY 4` area and run it. Check that you have successfully generated two plots in the `img` directory and that they qualitatively resemble the examples shown to the right. You should observe that the distance traveled by the `exhaustive_search()` tour is significantly lower than the `random_tour()` tour. 
 
 :::
