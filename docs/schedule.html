@@ -67,7 +67,8 @@ ul.task-list{list-style: none;}
 
     const options = {
       valueNames: ['listing-date','listing-day','listing-header','listing-summary','listing-objectives','listing-reading','listing-module','listing-publish','listing-assigned','listing-activity','listing-optional','listing-due','listing-Due',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
-      
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-date","listing-day","listing-header","listing-summary","listing-objectives","listing-reading","listing-module","listing-publish","listing-assigned","listing-activity","listing-optional","listing-due","listing-Due"],
     };
 
@@ -881,7 +882,6 @@ ul.task-list{list-style: none;}
             <td class="smaller syllabus-item-objective">
                     <b>Learning Objectives</b><br>
                             Computational Thinking <br> 
-                            Python Programming <br> 
             </td>
             <td class="smaller syllabus-item-readings">
                     <b>Reading</b><br>
@@ -903,12 +903,43 @@ ul.task-list{list-style: none;}
                     <span class="syllabus-day-of-week">M</span>
                     <br>
                     <span class="syllabus-date">Oct. 24</span></td> 
-            <td colspan="2"> Representing Data: Floating Point Numbers and Images
+            <td colspan="2"> Representing Data: Floating Point Numbers
  </td>  
         </tr>
         <tr>
             <td colspan="4" class="smaller"> 
-                We continue our discussion of data representation. We highlight some of the challenges for computers in representing floating point numbers. We then move on to representations of digital images as arrays of pixels. 
+                We continue our discussion of data representation. We highlight some of the challenges for computers in representing floating point numbers. 
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="smaller syllabus-item-objective">
+                    <b>Learning Objectives</b><br>
+                            Computational Thinking <br> 
+            </td>
+            <td class="smaller syllabus-item-readings">
+                    <b>Reading</b><br>
+                            <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/representing_data.html">Representing Data</a> <br> 
+                            <a href="https://docs.google.com/presentation/d/1oz58DPWj-NSQRxrz0r4F5-gE2NwPAaudpOnuwclcmms/edit?usp=sharing">Lecture Slides</a> <br> 
+            </td>
+            <td class="smaller syllabus-item-assignment">
+                    <b>Assigned</b><br>
+                        HW5 <br>
+            </td>
+            <td class="smaller syllabus-item-assignment">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" class="syllabus-date-pane">
+                    <span class="syllabus-day-of-week">W</span>
+                    <br>
+                    <span class="syllabus-date">Oct. 26</span></td> 
+            <td colspan="2"> Representing Data: and Images
+ </td>  
+        </tr>
+        <tr>
+            <td colspan="4" class="smaller"> 
+                We discuss representations of digital images as arrays of pixels. 
             </td>
         </tr>
         <tr>
@@ -932,10 +963,399 @@ ul.task-list{list-style: none;}
             <td class="smaller syllabus-item-assignment">
             </td>
         </tr>
+        <tr>
+            <td rowspan="2" class="syllabus-date-pane">
+                    <span class="syllabus-day-of-week">T</span>
+                    <br>
+                    <span class="syllabus-date">Oct. 27</span></td> 
+            <td colspan="2"> Lab: Image Manipulation
+ </td>  
+        </tr>
+        <tr>
+            <td colspan="4" class="smaller"> 
+                We write functions that allow us to manipulate digital images. We implement brightening, contrast-heightening, reflection, and several other transformations. 
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="smaller syllabus-item-objective">
+                    <b>Learning Objectives</b><br>
+                            Computational Thinking <br> 
+                            Python Programming <br> 
+                            Applications <br> 
+            </td>
+            <td class="smaller syllabus-item-readings">
+                    <b>Activity</b><br>
+                            <a href="labs/images/">Lab 5</a> <br> 
+            </td>
+            <td class="smaller syllabus-item-assignment">
+                    <b>Assigned</b><br>
+                        Lab 4 <br>
+            </td>
+            <td class="smaller syllabus-item-assignment">
+            </td>
+        </tr>
+            </tbody></table>
+            <h2 class="anchored"> Week 8 </h2>
+            <table>
+        <tbody><tr>
+            <td rowspan="2" class="syllabus-date-pane">
+                    <span class="syllabus-day-of-week">M</span>
+                    <br>
+                    <span class="syllabus-date">Oct. 31</span></td> 
+            <td colspan="2"> Introducing Object-Oriented Programming
+ </td>  
+        </tr>
+        <tr>
+            <td colspan="4" class="smaller"> 
+                We begin a discussion of object-oriented programming, the standard approach in Python for writing complex programs by combining data (attributes) and behavior (methods). 
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="smaller syllabus-item-objective">
+                    <b>Learning Objectives</b><br>
+                            Computational Thinking <br> 
+                            Python Programming <br> 
+            </td>
+            <td class="smaller syllabus-item-readings">
+                    <b>Reading</b><br>
+                            <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/object_oriented_programming.html">Object-Oriented Programming</a> <br> 
+                            <a href="https://docs.google.com/presentation/d/1enzYDGoOycH_Ih-uL8WIaNlKMnasozw7DUPxQXd3b8Y/edit?usp=sharing">Lecture Slides</a> <br> 
+            </td>
+            <td class="smaller syllabus-item-assignment">
+                    <b>Assigned</b><br>
+                        HW5 <br>
+            </td>
+            <td class="smaller syllabus-item-assignment">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" class="syllabus-date-pane">
+                    <span class="syllabus-day-of-week">W</span>
+                    <br>
+                    <span class="syllabus-date">Nov. 02</span></td> 
+            <td colspan="2"> More Object-Oriented Programming
+ </td>  
+        </tr>
+        <tr>
+            <td colspan="4" class="smaller"> 
+                We continue using object-oriented programming to implement complex program behavior. 
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="smaller syllabus-item-objective">
+                    <b>Learning Objectives</b><br>
+                            Computational Thinking <br> 
+                            Python Programming <br> 
+            </td>
+            <td class="smaller syllabus-item-readings">
+                    <b>Reading</b><br>
+                            <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/object_oriented_programming.html">Object-Oriented Programming</a> <br> 
+                            <a href="https://docs.google.com/presentation/d/1enzYDGoOycH_Ih-uL8WIaNlKMnasozw7DUPxQXd3b8Y/edit?usp=sharing">Lecture Slides</a> <br> 
+            </td>
+            <td class="smaller syllabus-item-assignment">
+                    <b>Assigned</b><br>
+                        HW5 <br>
+            </td>
+            <td class="smaller syllabus-item-assignment">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" class="syllabus-date-pane">
+                    <span class="syllabus-day-of-week">T</span>
+                    <br>
+                    <span class="syllabus-date">Nov. 03</span></td> 
+            <td colspan="2"> Lab: Object-Oriented Programming
+ </td>  
+        </tr>
+        <tr>
+            <td colspan="4" class="smaller"> 
+                We use object-oriented programming to create a set of interacting classes that model a computer science course. 
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="smaller syllabus-item-objective">
+                    <b>Learning Objectives</b><br>
+                            Computational Thinking <br> 
+                            Python Programming <br> 
+            </td>
+            <td class="smaller syllabus-item-readings">
+                    <b>Activity</b><br>
+                            <a href="labs/introducing-oop/">Lab 6</a> <br> 
+            </td>
+            <td class="smaller syllabus-item-assignment">
+                    <b>Assigned</b><br>
+                        Lab 6 <br>
+            </td>
+            <td class="smaller syllabus-item-assignment">
+            </td>
+        </tr>
+            </tbody></table>
+            <h2 class="anchored"> Week 9 </h2>
+            <table>
+        <tbody><tr>
+            <td rowspan="2" class="syllabus-date-pane">
+                    <span class="syllabus-day-of-week">M</span>
+                    <br>
+                    <span class="syllabus-date">Nov. 07</span></td> 
+            <td colspan="2"> Unit Testing
+ </td>  
+        </tr>
+        <tr>
+            <td colspan="4" class="smaller"> 
+                We introduce unit testing, an automated framework for checking correct functionality of small pieces ("units") of code. 
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="smaller syllabus-item-objective">
+                    <b>Learning Objectives</b><br>
+                            Python Programming <br> 
+                            Applications <br> 
+            </td>
+            <td class="smaller syllabus-item-readings">
+                    <b>Reading</b><br>
+                            <a href="https://towardsdatascience.com/how-to-easily-and-confidently-implement-unit-tests-in-python-cad48d91ab74">Blog Post on Medium</a> <br> 
+            </td>
+            <td class="smaller syllabus-item-assignment">
+                    <b>Assigned</b><br>
+                        Lab 6 <br>
+            </td>
+            <td class="smaller syllabus-item-assignment">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" class="syllabus-date-pane">
+                    <span class="syllabus-day-of-week">W</span>
+                    <br>
+                    <span class="syllabus-date">Nov. 09</span></td> 
+            <td colspan="2"> More Unit Testing
+ </td>  
+        </tr>
+        <tr>
+            <td colspan="4" class="smaller"> 
+                We continue with an extended example of unit-testing. 
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="smaller syllabus-item-objective">
+                    <b>Learning Objectives</b><br>
+                            Python Programming <br> 
+                            Applications <br> 
+            </td>
+            <td class="smaller syllabus-item-readings">
+                    <b>Reading</b><br>
+                            <a href="https://towardsdatascience.com/how-to-easily-and-confidently-implement-unit-tests-in-python-cad48d91ab74">Blog Post on Medium</a> <br> 
+            </td>
+            <td class="smaller syllabus-item-assignment">
+                    <b>Assigned</b><br>
+                        Lab 6 <br>
+            </td>
+            <td class="smaller syllabus-item-assignment">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" class="syllabus-date-pane">
+                    <span class="syllabus-day-of-week">T</span>
+                    <br>
+                    <span class="syllabus-date">Nov. 10</span></td> 
+            <td colspan="2"> Lab: Developers as Prioritizers
+ </td>  
+        </tr>
+        <tr>
+            <td colspan="4" class="smaller"> 
+                We develop our skills using object-oriented interfaces while reflecting on some of the difficult choices posed by automated vehicles and rescue services. 
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="smaller syllabus-item-objective">
+                    <b>Learning Objectives</b><br>
+                            Social Responsibility <br> 
+                            Applications <br> 
+            </td>
+            <td class="smaller syllabus-item-readings">
+                    <b>Activity</b><br>
+                            <a href="labs/prioritizers/">Lab 7</a> <br> 
+            </td>
+            <td class="smaller syllabus-item-assignment">
+                    <b>Assigned</b><br>
+                        Lab 7 <br>
+            </td>
+            <td class="smaller syllabus-item-assignment">
+            </td>
+        </tr>
+            </tbody></table>
+            <h2 class="anchored"> Week 10 </h2>
+            <table>
+        <tbody><tr>
+            <td rowspan="2" class="syllabus-date-pane">
+                    <span class="syllabus-day-of-week">M</span>
+                    <br>
+                    <span class="syllabus-date">Nov. 14</span></td> 
+            <td colspan="2"> String Methods
+ </td>  
+        </tr>
+        <tr>
+            <td colspan="4" class="smaller"> 
+                We survey several important string methods and use them for basic text analysis tasks. 
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="smaller syllabus-item-objective">
+                    <b>Learning Objectives</b><br>
+                            Python Programming <br> 
+                            Applications <br> 
+            </td>
+            <td class="smaller syllabus-item-readings">
+                    <b>Reading</b><br>
+                            <a href="https://www.digitalocean.com/community/tutorials/python-string-functions">String methods reference</a> <br> 
+                            <a href="http://cissandbox.bentley.edu/sandbox/wp-content/uploads/2022-02-10-Documentation-on-f-strings-Updated.pdf">A Guide to Formatting with f-strings in Python </a> <br> 
+            </td>
+            <td class="smaller syllabus-item-assignment">
+                    <b>Assigned</b><br>
+                        Lab 6 <br>
+            </td>
+            <td class="smaller syllabus-item-assignment">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" class="syllabus-date-pane">
+                    <span class="syllabus-day-of-week">W</span>
+                    <br>
+                    <span class="syllabus-date">Nov. 16</span></td> 
+            <td colspan="2"> Case Study: Lines in Plays
+ </td>  
+        </tr>
+        <tr>
+            <td colspan="4" class="smaller"> 
+                We use string methods in combination with our iteration and data structure skills to count the number of lines spoken by each character in Shakespeare's <i>Hamlet</i>. 
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="smaller syllabus-item-objective">
+                    <b>Learning Objectives</b><br>
+                            Python Programming <br> 
+                            Applications <br> 
+            </td>
+            <td class="smaller syllabus-item-readings">
+                    <b>Reading</b><br>
+                            <a href="https://www.digitalocean.com/community/tutorials/python-string-functions">String methods reference</a> <br> 
+                            <a href="http://cissandbox.bentley.edu/sandbox/wp-content/uploads/2022-02-10-Documentation-on-f-strings-Updated.pdf">A Guide to Formatting with f-strings in Python </a> <br> 
+            </td>
+            <td class="smaller syllabus-item-assignment">
+                    <b>Assigned</b><br>
+                        Lab 6 <br>
+            </td>
+            <td class="smaller syllabus-item-assignment">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" class="syllabus-date-pane">
+                    <span class="syllabus-day-of-week">T</span>
+                    <br>
+                    <span class="syllabus-date">Nov. 17</span></td> 
+            <td colspan="2"> Lab: The Hedonometer
+ </td>  
+        </tr>
+        <tr>
+            <td colspan="4" class="smaller"> 
+                We implement sentiment analysis in the style of <a href="https://hedonometer.org/timeseries/en_all/">The Hedonometer</a> at the University of Vermont, and use it to analyze the emotional arc of several famous speeches. 
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="smaller syllabus-item-objective">
+                    <b>Learning Objectives</b><br>
+                            Social Responsibility <br> 
+                            Applications <br> 
+            </td>
+            <td class="smaller syllabus-item-readings">
+                    <b>Activity</b><br>
+                            <a href="labs/hedonometer/">Lab 8</a> <br> 
+            </td>
+            <td class="smaller syllabus-item-assignment">
+                    <b>Assigned</b><br>
+                        Lab 8 <br>
+            </td>
+            <td class="smaller syllabus-item-assignment">
+            </td>
+        </tr>
+            </tbody></table>
+            <h2 class="anchored"> Week 11 </h2>
+            <table>
+        <tbody><tr>
+            <td rowspan="2" class="syllabus-date-pane">
+                    <span class="syllabus-day-of-week">M</span>
+                    <br>
+                    <span class="syllabus-date">Nov. 21</span></td> 
+            <td colspan="2"> Thanksgiving Break! 
+ </td>  
+        </tr>
+        <tr>
+            <td colspan="4" class="smaller"> 
+                No class this week, enjoy the holiday! 
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="smaller syllabus-item-objective">
+            </td>
+            <td class="smaller syllabus-item-readings">
+            </td>
+            <td class="smaller syllabus-item-assignment">
+            </td>
+            <td class="smaller syllabus-item-assignment">
+            </td>
+        </tr>
+            </tbody></table>
+            <h2 class="anchored"> Week 12 </h2>
+            <table>
+        <tbody><tr>
+            <td rowspan="2" class="syllabus-date-pane">
+                    <span class="syllabus-day-of-week">M</span>
+                    <br>
+                    <span class="syllabus-date">Nov. 28</span></td> 
+            <td colspan="2"> Introducing Analysis of Algorithms
+ </td>  
+        </tr>
+        <tr>
+            <td colspan="4" class="smaller"> 
+                We begin the study of analyzing the worst-case runtime of algorithms using big-O analysis. 
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="smaller syllabus-item-objective">
+                    <b>Learning Objectives</b><br>
+                            Analysis <br> 
+                            Computational Thinking <br> 
+            </td>
+            <td class="smaller syllabus-item-readings">
+                    <b>Reading</b><br>
+                            <a href="https://avaccari.gitlab.io/csci-0145/sp22/notes/complexity.html">Computational Complexity</a> <br> 
+                            <a href="https://greenteapress.com/thinkpython2/html/thinkpython2022.html">ThinkPython2e, Appendix B</a> <br> 
+            </td>
+            <td class="smaller syllabus-item-assignment">
+                    <b>Assigned</b><br>
+                        Lab 6 <br>
+            </td>
+            <td class="smaller syllabus-item-assignment">
+            </td>
+        </tr>
         </tbody></table>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div><p><br> <br> <span style="color:grey;">© Philip Claude Caplan, Andrea Vaccari, and Phil Chodrow, 2022</span></p></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
