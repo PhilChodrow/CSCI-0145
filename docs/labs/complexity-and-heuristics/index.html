@@ -318,7 +318,14 @@ Activity 2
 <li><code>seq</code>, a sequence of indices corresponding to locations, provided as a list. For example, the list <code>[4, 1, 0, 3, 2]</code> says “start at the location with index <code>4</code>, then go to <code>1</code>, then go to <code>0</code>, then go to <code>3</code>, then go to <code>2</code>, then finish by going back to <code>4</code>.” Note that the list doesn’t include the “go back to 4” part: that’s implied.</li>
 <li><code>dists</code>, a distance matrix as would be returned by the <code>distance_matrix()</code> function.</li>
 </ol>
-<p>The return value of <code>total_dist(seq, dists)</code> should be the total distance traveled in the tour described by <code>seq</code>. In our example above, this would be the sum of the following distances: - The distance from <code>4</code> to <code>1</code>. - The distance from <code>1</code> to <code>0</code>. - The distance from <code>0</code> to <code>3</code>. - The distance from <code>3</code> to <code>2</code>. - The distance from <code>2</code> to <code>4</code>.</p>
+<p>The return value of <code>total_dist(seq, dists)</code> should be the total distance traveled in the tour described by <code>seq</code>. In our example above, this would be the sum of the following distances:</p>
+<ul>
+<li>The distance from <code>4</code> to <code>1</code>.</li>
+<li>The distance from <code>1</code> to <code>0</code>.</li>
+<li>The distance from <code>0</code> to <code>3</code>.</li>
+<li>The distance from <code>3</code> to <code>2</code>.</li>
+<li>The distance from <code>2</code> to <code>4</code>.</li>
+</ul>
 <p>Remember that you can get the distances you need using the <code>dists</code> matrix; for example, the distance from <code>4</code> to <code>1</code> is <code>dists[1][4]</code>.</p>
 <p>Place your function in the <code>ACTIVITY 2</code> area of <code>lab.py</code>.</p>
 <p><strong><em>Hint</em></strong>: You are going to need to compute distances between things like <code>seq[i]</code> and <code>seq[i+1]</code>.</p>
@@ -355,7 +362,11 @@ Activity 3
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Write a function called <code>exhaustive_search()</code> that accepts a single argument, <code>locs</code>, a list of locations of the kind that would be returned by <code>random_locations()</code>. It should return two things: 1. The sequence of indices of locations that achieves the shortest distance. 2. The shortest distance itself.</p>
+<p>Write a function called <code>exhaustive_search()</code> that accepts a single argument, <code>locs</code>, a list of locations of the kind that would be returned by <code>random_locations()</code>. It should return two things:</p>
+<ol type="1">
+<li>The sequence of indices of locations that achieves the shortest distance.</li>
+<li>The shortest distance itself.</li>
+</ol>
 <p>To do this, you are going to need to be able to write a <code>for</code>-loop that runs through all possible sequences of locations. Fortunately, there’s a nice way to do that using <code>permutations()</code> from the <code>itertools</code> module:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> seq <span class="kw">in</span> permutations(<span class="bu">range</span>(n), n):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># seq takes on the values of all ways of rearranging the indices [0, 1, 2, ..., n-1]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
