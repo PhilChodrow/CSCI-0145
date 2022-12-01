@@ -136,6 +136,7 @@ Now we're ready to try our first go at the TSP. To start, we are going to use *e
 ## Activity 3
 
 Write a function called `exhaustive_search()` that accepts a single argument, `locs`, a list of locations of the kind that would be returned by `random_locations()`. It should return two things: 
+
 1. The sequence of indices of locations that achieves the shortest distance. 
 2. The shortest distance itself. 
 
